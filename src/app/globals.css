@@ -44,18 +44,22 @@ body {
   opacity: 0.8;
 }
 
-/* Full-bleed signature gradient: a warm cream dome of light framed by
-   periwinkle above and an orange sun-glow rising from below. */
+/* Full-bleed signature gradient: a rising sun. A bright orange semicircle
+   sits at the bottom-center and the whole wash diffuses outward from it —
+   orange → peach → cream → lavender → periwinkle at the top corners. */
 .gradient-mesh {
   background:
-    /* cream dome of light, peaking above center */
-    radial-gradient(62% 52% at 50% 44%, #f8eeda 0%, rgba(248, 238, 218, 0.55) 34%, rgba(248, 238, 218, 0) 66%),
-    /* periwinkle arch across the top, curving down at the sides */
-    radial-gradient(130% 78% at 50% -34%, #7f8dd6 0%, #9da9db 26%, rgba(157, 169, 219, 0) 60%),
-    /* orange sun-glow rising from the bottom-center */
-    radial-gradient(86% 60% at 50% 118%, #f5811d 0%, rgba(245, 129, 29, 0.5) 30%, rgba(245, 129, 29, 0) 62%),
-    /* warm base: blue → sand → orange */
-    linear-gradient(180deg, #98a2da 0%, #c6bfcd 30%, #ecdac2 50%, #f2b982 72%, #ef7c28 100%);
+    radial-gradient(circle at 50% 100%,
+      #ffa62c 0%,
+      #ff8d1e 11%,
+      #f57c17 19%,
+      #f38f36 27%,
+      #f1ac63 37%,
+      #eecb9c 49%,
+      #e4d3c2 60%,
+      #cbc6d0 74%,
+      #a7add3 88%,
+      #8b9ad7 100%);
 }
 
 /* Softer corner glow used behind split-feature text columns. */
