@@ -49,18 +49,17 @@ body {
    The orange is a wide, gently-curved glow rising from the bottom-center. */
 .gradient-mesh {
   background:
-    /* warm orange half-circle radiating from the bottom-center, wide and
-       diffusing out through peach, fading before it reaches the top. The
-       deepest orange is held across the core so the middle stays uniform. */
-    radial-gradient(70% 62% at 50% 100%,
+    /* warm orange half-circle radiating from the bottom-center, diffusing
+       out through peach and fading before it reaches the top */
+    radial-gradient(circle at 50% 100%,
       #ea7b30 0%,
-      #ea7b30 17%,
-      #ec8a44 27%,
-      #efa268 38%,
-      #f0bb8f 51%,
-      rgba(234, 204, 185, 0.6) 64%,
-      rgba(202, 195, 206, 0.22) 79%,
-      rgba(170, 176, 220, 0) 92%),
+      #ea7b30 9%,
+      #ee9351 17%,
+      #f0ad78 27%,
+      #eec2a0 37%,
+      rgba(233, 203, 184, 0.62) 49%,
+      rgba(203, 195, 205, 0.24) 64%,
+      rgba(170, 176, 220, 0) 80%),
     /* soft periwinkle/lavender filling the upper half */
     linear-gradient(180deg,
       #a3aadb 0%,
