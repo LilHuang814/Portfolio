@@ -50,15 +50,17 @@ body {
 .gradient-mesh {
   background:
     radial-gradient(circle at 50% 100%,
-      #f37a1a 0%,
-      #f37a1a 12%,
-      #f28630 18%,
-      #f09750 26%,
-      #eeb276 36%,
-      #e8c99e 48%,
-      #ddccbe 60%,
-      #cbc6cd 72%,
-      #b1b4d4 86%,
+      #f2760f 0%,
+      #f2760f 9%,
+      #f5871c 14%,
+      #f89a26 19%,
+      #fab135 25%,
+      #f9c74d 31%,
+      #f4d675 38%,
+      #ecd99f 46%,
+      #e3d5bd 56%,
+      #d1cbcb 69%,
+      #b2b4d3 85%,
       #8f9cd8 100%);
 }
 
