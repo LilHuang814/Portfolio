@@ -26,7 +26,7 @@ export function FeaturedProject({
   const { lang } = useLanguage();
 
   return (
-    <section className="relative mx-3 my-6 overflow-hidden rounded-[2rem] bg-card px-6 py-14 shadow-sm sm:mx-6 sm:my-10 sm:px-10 sm:py-16 lg:px-14">
+    <section className="relative mx-3 overflow-hidden px-6 py-14 sm:mx-6 sm:px-10 sm:py-16 lg:px-14">
       <GradientGlow bias={glowBias} className="-left-24 -top-24 h-[420px] w-[420px]" />
 
       <div className="relative z-10 grid gap-10 lg:grid-cols-[minmax(0,0.85fr)_minmax(0,1.6fr)] lg:gap-16">

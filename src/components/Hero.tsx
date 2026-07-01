@@ -11,23 +11,23 @@ export function Hero() {
         <div className="grain-overlay" />
 
         <nav className="relative z-10 flex items-center justify-between">
-          <span className="rounded-full bg-white/90 px-5 py-2.5 text-sm font-semibold text-ink shadow-sm">
+          <span className="rounded-full bg-white px-5 py-2.5 text-sm font-semibold text-[#4a57d0] shadow-sm">
             LH
           </span>
 
-          <div className="flex items-center gap-1 rounded-full bg-white/90 px-5 py-2.5 text-sm font-semibold shadow-sm">
+          <div className="flex items-center gap-2 rounded-full bg-white px-5 py-2.5 text-sm font-semibold shadow-sm">
             <button
               type="button"
               onClick={() => setLang("zh")}
-              className={lang === "zh" ? "text-periwinkle" : "text-ink/70"}
+              className={lang === "zh" ? "text-[#4a57d0]" : "text-ink/60"}
             >
               中文
             </button>
-            <span className="text-ink/30">|</span>
+            <span className="text-ink/25">|</span>
             <button
               type="button"
               onClick={() => setLang("en")}
-              className={lang === "en" ? "text-periwinkle" : "text-ink/70"}
+              className={lang === "en" ? "text-[#4a57d0]" : "text-ink/60"}
             >
               English
             </button>
@@ -35,7 +35,7 @@ export function Hero() {
 
           <a
             href="/resume"
-            className="rounded-full bg-white/90 px-5 py-2.5 text-sm font-semibold text-periwinkle shadow-sm transition hover:bg-white"
+            className="rounded-full bg-white px-5 py-2.5 text-sm font-semibold text-[#4a57d0] shadow-sm transition hover:bg-white/90"
           >
             {lang === "zh" ? "简历" : "Resume"}
           </a>

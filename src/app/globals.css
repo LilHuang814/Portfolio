@@ -1,10 +1,10 @@
 @import "tailwindcss";
 
 :root {
-  --background: #f7f4ee;
+  --background: #f4f0e8;
   --ink: #1c1a16;
   --muted-ink: #75705f;
-  --card: #ffffff;
+  --card: #faf7f1;
 
   --periwinkle: #7c86e0;
   --lavender: #b6a9e8;
@@ -44,13 +44,15 @@ body {
   opacity: 0.5;
 }
 
-/* Full-bleed signature gradient: periwinkle top, light cream center, warm orange bottom. */
+/* Full-bleed signature gradient: periwinkle top, warm cream center, orange sun-glow bottom. */
 .gradient-mesh {
   background:
-    radial-gradient(115% 70% at 50% -18%, var(--periwinkle) 0%, rgba(124, 134, 224, 0) 55%),
-    radial-gradient(120% 78% at 50% 120%, var(--orange) 0%, rgba(239, 122, 58, 0) 58%),
-    radial-gradient(90% 55% at 50% 46%, rgba(250, 244, 234, 0.9) 0%, rgba(250, 244, 234, 0) 70%),
-    linear-gradient(180deg, #cdd0f0 0%, #f3ede2 46%, #f6cfa6 74%, var(--orange) 100%);
+    /* orange sun glow rising from bottom-center */
+    radial-gradient(78% 62% at 50% 114%, #f7841c 0%, rgba(247, 132, 28, 0.6) 26%, rgba(247, 132, 28, 0) 60%),
+    /* periwinkle glow from the top */
+    radial-gradient(90% 62% at 50% -14%, #8b98d8 0%, rgba(139, 152, 216, 0) 58%),
+    /* warm base: blue → sand → orange */
+    linear-gradient(180deg, #9ba6dd 0%, #c4bccb 26%, #e8d7c2 48%, #f2c088 68%, #f4934a 84%, #ef7c28 100%);
 }
 
 /* Softer corner glow used behind split-feature text columns. */
