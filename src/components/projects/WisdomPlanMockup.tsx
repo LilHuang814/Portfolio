@@ -4,7 +4,8 @@ const TABS = ["Programming", "Data Science", "AI Tools", "Visual Design", "AI Sk
 
 export function WisdomPlanMockup() {
   return (
-    <div className="w-full max-w-2xl overflow-hidden rounded-2xl border border-ink/5 bg-white shadow-md">
+    <div className="w-full max-w-2xl rounded-[1.75rem] bg-[#eeeafb]/70 p-3 shadow-sm ring-1 ring-periwinkle/15">
+      <div className="overflow-hidden rounded-2xl border border-ink/5 bg-white shadow-md">
       <div className="flex items-center justify-between border-b border-ink/5 px-6 py-4">
         <div className="flex items-center gap-2 text-sm font-semibold text-ink">
           <BookOpen className="h-4 w-4 text-periwinkle" /> WisdomPlan
@@ -71,6 +72,7 @@ export function WisdomPlanMockup() {
             Next <ChevronRight className="h-3 w-3" />
           </button>
         </div>
+      </div>
       </div>
     </div>
   );

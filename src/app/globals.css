@@ -44,13 +44,13 @@ body {
   opacity: 0.5;
 }
 
-/* Full-bleed signature gradient: periwinkle top, warm through the middle, orange bottom. */
+/* Full-bleed signature gradient: periwinkle top, light cream center, warm orange bottom. */
 .gradient-mesh {
   background:
-    radial-gradient(120% 85% at 50% -12%, var(--periwinkle) 0%, rgba(124, 134, 224, 0) 62%),
-    radial-gradient(130% 95% at 50% 118%, var(--orange) 0%, rgba(239, 122, 58, 0) 66%),
-    linear-gradient(180deg, rgba(214, 187, 199, 0.55), rgba(243, 193, 159, 0.55)),
-    var(--background);
+    radial-gradient(115% 70% at 50% -18%, var(--periwinkle) 0%, rgba(124, 134, 224, 0) 55%),
+    radial-gradient(120% 78% at 50% 120%, var(--orange) 0%, rgba(239, 122, 58, 0) 58%),
+    radial-gradient(90% 55% at 50% 46%, rgba(250, 244, 234, 0.9) 0%, rgba(250, 244, 234, 0) 70%),
+    linear-gradient(180deg, #cdd0f0 0%, #f3ede2 46%, #f6cfa6 74%, var(--orange) 100%);
 }
 
 /* Softer corner glow used behind split-feature text columns. */
