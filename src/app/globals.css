@@ -1,0 +1,78 @@
+@import "tailwindcss";
+
+:root {
+  --background: #f7f4ee;
+  --ink: #1c1a16;
+  --muted-ink: #75705f;
+  --card: #ffffff;
+
+  --periwinkle: #7c86e0;
+  --lavender: #b6a9e8;
+  --peach: #f3c19f;
+  --orange: #ef7a3a;
+  --amber: #e0a545;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-ink: var(--ink);
+  --color-muted-ink: var(--muted-ink);
+  --color-card: var(--card);
+  --color-periwinkle: var(--periwinkle);
+  --color-lavender: var(--lavender);
+  --color-peach: var(--peach);
+  --color-orange: var(--orange);
+  --color-amber: var(--amber);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+body {
+  background: var(--background);
+  color: var(--ink);
+}
+
+/* Fine grain texture, tiled, used as an overlay on top of every gradient. */
+.grain-overlay {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  border-radius: inherit;
+  background-image: url("/grain.svg");
+  background-size: 180px 180px;
+  mix-blend-mode: overlay;
+  opacity: 0.5;
+}
+
+/* Full-bleed signature gradient: periwinkle top, warm through the middle, orange bottom. */
+.gradient-mesh {
+  background:
+    radial-gradient(120% 85% at 50% -12%, var(--periwinkle) 0%, rgba(124, 134, 224, 0) 62%),
+    radial-gradient(130% 95% at 50% 118%, var(--orange) 0%, rgba(239, 122, 58, 0) 66%),
+    linear-gradient(180deg, rgba(214, 187, 199, 0.55), rgba(243, 193, 159, 0.55)),
+    var(--background);
+}
+
+/* Softer corner glow used behind split-feature text columns. */
+.glow-cool {
+  background: radial-gradient(65% 65% at 22% 30%, rgba(124, 134, 224, 0.45) 0%, rgba(124, 134, 224, 0) 70%);
+}
+
+.glow-warm {
+  background: radial-gradient(65% 65% at 22% 30%, rgba(239, 122, 58, 0.4) 0%, rgba(239, 122, 58, 0) 70%);
+}
+
+.gradient-bar {
+  background: linear-gradient(180deg, var(--periwinkle), var(--peach), var(--orange));
+}
+
+.gradient-pill {
+  background: linear-gradient(90deg, var(--periwinkle), var(--lavender), var(--peach), var(--orange));
+}
+
+.eyebrow {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+}
