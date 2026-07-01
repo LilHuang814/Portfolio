@@ -50,16 +50,16 @@ body {
 .gradient-mesh {
   background:
     radial-gradient(circle at 50% 100%,
-      #ffa62c 0%,
-      #ff8d1e 6%,
-      #f57c17 11%,
-      #f38f36 16%,
-      #f1ac63 23%,
-      #eecb9c 32%,
-      #e4d3c2 43%,
-      #cbc6d0 60%,
-      #a7add3 80%,
-      #8b9ad7 100%);
+      #f37a1a 0%,
+      #f37a1a 12%,
+      #f28630 18%,
+      #f09750 26%,
+      #eeb276 36%,
+      #e8c99e 48%,
+      #ddccbe 60%,
+      #cbc6cd 72%,
+      #b1b4d4 86%,
+      #8f9cd8 100%);
 }
 
 /* Softer corner glow used behind split-feature text columns. */
