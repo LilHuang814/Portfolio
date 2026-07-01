@@ -68,13 +68,28 @@ body {
       #e5cdbb 100%);
 }
 
-/* Softer corner glow used behind split-feature text columns. */
-.glow-cool {
-  background: radial-gradient(65% 65% at 22% 30%, rgba(124, 134, 224, 0.45) 0%, rgba(124, 134, 224, 0) 70%);
+/* Soft corner glow behind the split-feature text columns: light
+   periwinkle diffusing into warm cream, then out to nothing. Meant to
+   bleed past the section edge into the page background. */
+.glow-periwinkle-cream {
+  background: radial-gradient(circle,
+    rgba(150, 160, 222, 0.5) 0%,
+    rgba(150, 160, 222, 0.32) 26%,
+    rgba(234, 213, 192, 0.42) 50%,
+    rgba(234, 213, 192, 0) 74%);
 }
 
-.glow-warm {
-  background: radial-gradient(65% 65% at 22% 30%, rgba(239, 122, 58, 0.4) 0%, rgba(239, 122, 58, 0) 70%);
+/* Contact section: the hero wash flipped — warm orange at the top,
+   diffusing down through peach and cream to periwinkle at the bottom. */
+.gradient-mesh-contact {
+  background: linear-gradient(180deg,
+    #f0965a 0%,
+    #f2aa74 17%,
+    #f1c095 34%,
+    #e9ccb5 51%,
+    #d0c8d1 69%,
+    #a8afdc 88%,
+    #8f9cd8 100%);
 }
 
 .gradient-bar {

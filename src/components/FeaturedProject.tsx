@@ -12,7 +12,6 @@ export function FeaturedProject({
   description,
   tags,
   tagVariant = "plain",
-  glowBias,
   children,
 }: {
   eyebrowColor: "orange" | "periwinkle";
@@ -20,14 +19,13 @@ export function FeaturedProject({
   description: Bilingual<string>;
   tags: Bilingual<string[]>;
   tagVariant?: "plain" | "lavender";
-  glowBias: "cool" | "warm";
   children: React.ReactNode;
 }) {
   const { lang } = useLanguage();
 
   return (
-    <section className="relative mx-3 overflow-hidden px-6 py-14 sm:mx-6 sm:px-10 sm:py-16 lg:px-14">
-      <GradientGlow bias={glowBias} className="-left-24 -top-24 h-[420px] w-[420px]" />
+    <section className="relative mx-3 px-6 py-14 sm:mx-6 sm:px-10 sm:py-16 lg:px-14">
+      <GradientGlow className="-left-40 -top-40 h-[620px] w-[620px]" />
 
       <div className="relative z-10 grid gap-10 lg:grid-cols-[minmax(0,0.85fr)_minmax(0,1.6fr)] lg:gap-16">
         <div className="flex flex-col">

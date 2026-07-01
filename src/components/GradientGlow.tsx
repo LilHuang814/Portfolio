@@ -1,18 +1,8 @@
-export function GradientGlow({
-  bias = "cool",
-  className = "",
-}: {
-  bias?: "cool" | "warm";
-  className?: string;
-}) {
+export function GradientGlow({ className = "" }: { className?: string }) {
   return (
     <div
       aria-hidden
-      className={`pointer-events-none absolute rounded-full blur-3xl ${
-        bias === "cool" ? "glow-cool" : "glow-warm"
-      } ${className}`}
-    >
-      <div className="grain-overlay" />
-    </div>
+      className={`glow-periwinkle-cream pointer-events-none absolute rounded-full blur-3xl ${className}`}
+    />
   );
 }

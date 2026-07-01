@@ -7,7 +7,7 @@ export function ContactSection() {
 
   return (
     <section className="relative mx-3 my-6 overflow-hidden rounded-[2rem] sm:mx-6 sm:my-10">
-      <div className="gradient-mesh relative flex min-h-[420px] flex-col justify-between px-6 py-8 sm:px-10 sm:py-10">
+      <div className="gradient-mesh-contact relative flex min-h-[420px] flex-col justify-between px-6 py-8 sm:px-10 sm:py-10">
         <div className="grain-overlay" />
 
         <div className="relative z-10 flex flex-1 items-center justify-center py-16 text-center">

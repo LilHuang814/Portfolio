@@ -16,7 +16,6 @@ export default function Home() {
       <FeaturedProject
         eyebrowColor="orange"
         title="Blour"
-        glowBias="warm"
         description={{
           zh: "自动整理用户感兴趣的新闻，替用户处理紧急的待办事项。支持用户上传资料生成个性化播客，并通过笔记功能整理信息。",
           en: "Automatically curates the news users care about and handles urgent to-dos on their behalf. Users can upload their own material to generate personalized podcasts, with a notes feature to keep everything organized.",
@@ -32,7 +31,6 @@ export default function Home() {
       <FeaturedProject
         eyebrowColor="periwinkle"
         title="JPMorgan Chase"
-        glowBias="cool"
         tagVariant="lavender"
         description={{
           en: "Designed scalable internal tools and intake systems to streamline cross-functional collaboration and improve operational efficiency for 52+ teams.",
@@ -49,7 +47,6 @@ export default function Home() {
       <FeaturedProject
         eyebrowColor="orange"
         title="WisdomPlan"
-        glowBias="cool"
         description={{
           zh: "帮助用户降低寻找学习资源的时间与低效成本，以更低成本、更个性化的方式提供学习路径与职业发展。",
           en: "Helps users cut the time and inefficiency of hunting for learning resources — delivering personalized learning paths and career development in a lower-cost, more tailored way.",
