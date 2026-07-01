@@ -49,20 +49,23 @@ body {
    The orange is a wide, gently-curved glow rising from the bottom-center. */
 .gradient-mesh {
   background:
-    /* warm orange glow, wide and gently curved, rising from the bottom */
-    radial-gradient(135% 82% at 50% 116%,
-      #ec7f36 0%,
-      #ef9553 16%,
-      #f0b184 32%,
-      rgba(240, 197, 160, 0) 56%),
-    /* soft periwinkle → lavender → muted peach base */
+    /* warm orange half-circle radiating from the bottom-center, diffusing
+       out through peach and fading before it reaches the top */
+    radial-gradient(circle at 50% 100%,
+      #ea7b30 0%,
+      #ea7b30 9%,
+      #ee9351 17%,
+      #f0ad78 27%,
+      #eec2a0 37%,
+      rgba(233, 203, 184, 0.62) 49%,
+      rgba(203, 195, 205, 0.24) 64%,
+      rgba(170, 176, 220, 0) 80%),
+    /* soft periwinkle/lavender filling the upper half */
     linear-gradient(180deg,
       #a3aadb 0%,
-      #b4b4d8 22%,
-      #cabfcf 44%,
-      #e6cdba 64%,
-      #f0c4a1 82%,
-      #eeb890 100%);
+      #b0b2d7 32%,
+      #c7c1d0 58%,
+      #e5cdbb 100%);
 }
 
 /* Softer corner glow used behind split-feature text columns. */
