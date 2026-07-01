@@ -39,29 +39,30 @@ body {
   pointer-events: none;
   border-radius: inherit;
   background-image: url("/grain.svg");
-  background-size: 140px 140px;
+  background-size: 150px 150px;
   mix-blend-mode: overlay;
-  opacity: 0.8;
+  opacity: 0.45;
 }
 
-/* Full-bleed signature gradient: a rising sun. A bright orange semicircle
-   sits at the bottom-center and the whole wash diffuses outward from it —
-   orange → peach → cream → lavender → periwinkle at the top corners. */
+/* Full-bleed signature gradient: soft periwinkle/lavender at the top,
+   a muted peach glow through the middle, and warm orange near the bottom.
+   The orange is a wide, gently-curved glow rising from the bottom-center. */
 .gradient-mesh {
   background:
-    radial-gradient(circle at 50% 100%,
-      #f2760f 0%,
-      #f2760f 9%,
-      #f5871c 14%,
-      #f89a26 19%,
-      #fab135 25%,
-      #f9c74d 31%,
-      #f4d675 38%,
-      #ecd99f 46%,
-      #e3d5bd 56%,
-      #d1cbcb 69%,
-      #b2b4d3 85%,
-      #8f9cd8 100%);
+    /* warm orange glow, wide and gently curved, rising from the bottom */
+    radial-gradient(135% 82% at 50% 116%,
+      #ec7f36 0%,
+      #ef9553 16%,
+      #f0b184 32%,
+      rgba(240, 197, 160, 0) 56%),
+    /* soft periwinkle → lavender → muted peach base */
+    linear-gradient(180deg,
+      #a3aadb 0%,
+      #b4b4d8 22%,
+      #cabfcf 44%,
+      #e6cdba 64%,
+      #f0c4a1 82%,
+      #eeb890 100%);
 }
 
 /* Softer corner glow used behind split-feature text columns. */
