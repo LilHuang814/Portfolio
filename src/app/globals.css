@@ -39,20 +39,23 @@ body {
   pointer-events: none;
   border-radius: inherit;
   background-image: url("/grain.svg");
-  background-size: 180px 180px;
+  background-size: 140px 140px;
   mix-blend-mode: overlay;
-  opacity: 0.5;
+  opacity: 0.8;
 }
 
-/* Full-bleed signature gradient: periwinkle top, warm cream center, orange sun-glow bottom. */
+/* Full-bleed signature gradient: a warm cream dome of light framed by
+   periwinkle above and an orange sun-glow rising from below. */
 .gradient-mesh {
   background:
-    /* orange sun glow rising from bottom-center */
-    radial-gradient(78% 62% at 50% 114%, #f7841c 0%, rgba(247, 132, 28, 0.6) 26%, rgba(247, 132, 28, 0) 60%),
-    /* periwinkle glow from the top */
-    radial-gradient(90% 62% at 50% -14%, #8b98d8 0%, rgba(139, 152, 216, 0) 58%),
+    /* cream dome of light, peaking above center */
+    radial-gradient(62% 52% at 50% 44%, #f8eeda 0%, rgba(248, 238, 218, 0.55) 34%, rgba(248, 238, 218, 0) 66%),
+    /* periwinkle arch across the top, curving down at the sides */
+    radial-gradient(130% 78% at 50% -34%, #7f8dd6 0%, #9da9db 26%, rgba(157, 169, 219, 0) 60%),
+    /* orange sun-glow rising from the bottom-center */
+    radial-gradient(86% 60% at 50% 118%, #f5811d 0%, rgba(245, 129, 29, 0.5) 30%, rgba(245, 129, 29, 0) 62%),
     /* warm base: blue → sand → orange */
-    linear-gradient(180deg, #9ba6dd 0%, #c4bccb 26%, #e8d7c2 48%, #f2c088 68%, #f4934a 84%, #ef7c28 100%);
+    linear-gradient(180deg, #98a2da 0%, #c6bfcd 30%, #ecdac2 50%, #f2b982 72%, #ef7c28 100%);
 }
 
 /* Softer corner glow used behind split-feature text columns. */
