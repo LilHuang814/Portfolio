@@ -49,26 +49,24 @@ body {
    The orange is a wide, gently-curved glow rising from the bottom-center. */
 .gradient-mesh {
   background:
-    /* warm orange half-circle radiating from the bottom-center, diffusing
-       out through peach into a bright cream that bleeds up toward the blue.
-       The deepest orange is held across the core so the middle stays uniform. */
-    radial-gradient(60% 66% at 50% 100%,
+    /* warm orange half-circle radiating from the bottom-center, wide and
+       diffusing out through peach, fading before it reaches the top. The
+       deepest orange is held across the core so the middle stays uniform. */
+    radial-gradient(70% 62% at 50% 100%,
       #ea7b30 0%,
-      #ea7b30 15%,
-      #ec8a44 25%,
-      #efa76d 36%,
-      #f4c8a2 47%,
-      rgba(247, 224, 202, 0.78) 58%,
-      rgba(245, 224, 210, 0.5) 71%,
-      rgba(214, 205, 214, 0.24) 84%,
-      rgba(175, 180, 222, 0) 96%),
-    /* soft periwinkle/lavender filling the upper half, lighter through
-       the middle so the cream blends brighter into the blue */
+      #ea7b30 17%,
+      #ec8a44 27%,
+      #efa268 38%,
+      #f0bb8f 51%,
+      rgba(234, 204, 185, 0.6) 64%,
+      rgba(202, 195, 206, 0.22) 79%,
+      rgba(170, 176, 220, 0) 92%),
+    /* soft periwinkle/lavender filling the upper half */
     linear-gradient(180deg,
-      #a6acdc 0%,
-      #b9b8d9 34%,
-      #d3ccce 60%,
-      #ecd3bf 100%);
+      #a3aadb 0%,
+      #b0b2d7 32%,
+      #c7c1d0 58%,
+      #e5cdbb 100%);
 }
 
 /* Softer corner glow used behind split-feature text columns. */
