@@ -18,7 +18,7 @@ export function ProjectImage({
       width={width}
       height={height}
       sizes="(min-width: 1024px) 55vw, 100vw"
-      className="h-auto w-full rounded-2xl shadow-sm ring-1 ring-ink/5"
+      className="h-auto w-full rounded-2xl"
     />
   );
 }
