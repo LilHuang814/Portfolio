@@ -31,8 +31,7 @@ export default function Home() {
 
       <FeaturedProject
         eyebrowColor="periwinkle"
-        title="JPMorgan Chase"
-        tagVariant="lavender"
+        title="JPMC"
         description={{
           en: "Designed scalable internal tools and intake systems that streamlined collaboration for 52+ teams.",
           zh: "设计可扩展的内部工具与受理系统，为 52+ 个团队简化协作、提升效率。",
@@ -42,7 +41,7 @@ export default function Home() {
           en: ["Process design", "Systems design", "Cross-team", "UX optimization"],
         }}
       >
-        <ProjectPlaceholder name="JPMorgan Chase" />
+        <ProjectPlaceholder name="JPMC" />
       </FeaturedProject>
 
       <FeaturedProject

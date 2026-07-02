@@ -47,11 +47,6 @@ export function ResumeCard() {
           <p className="eyebrow mt-4 text-muted-ink">
             {lang === "zh" ? "产品设计师" : "Product Designer"}
           </p>
-          <p className="mt-2 text-sm text-muted-ink">
-            {lang === "zh" ? "AI 产品设计" : "AI Product Design"} <span className="text-orange">•</span>{" "}
-            {lang === "zh" ? "用户体验设计" : "UX Design"} <span className="text-periwinkle">•</span>{" "}
-            {lang === "zh" ? "0→1 产品思维" : "0→1 Product Thinking"}
-          </p>
           <p
             className="mt-6 max-w-lg border-l-2 border-transparent pl-4 text-lg leading-relaxed text-ink/90"
             style={{ borderImage: "linear-gradient(180deg, var(--periwinkle), var(--peach), var(--orange)) 1" }}
