@@ -1,0 +1,445 @@
+"use client";
+
+import { useState } from "react";
+import {
+  Users,
+  Globe,
+  TrendingUp,
+  Compass,
+  Layers,
+  BadgeCheck,
+  MessageCircle,
+  Gauge,
+  MessageSquare,
+  Bot,
+  GraduationCap,
+  Briefcase,
+  Laptop,
+  Target,
+  Search,
+  BookOpen,
+  Network,
+  Sparkles,
+  Check,
+  ImageIcon,
+  type LucideIcon,
+} from "lucide-react";
+import { Eyebrow } from "@/components/Eyebrow";
+import { SiteNav } from "@/components/SiteNav";
+import { CursorGlow } from "@/components/CursorGlow";
+import { ContactSection } from "@/components/ContactSection";
+import { useLanguage, type Lang } from "@/lib/language";
+
+type BL = { en: string; zh: string };
+const t = (lang: Lang, v: BL) => v[lang];
+
+/** Product screenshot. Drop a PNG at the given path and it appears automatically;
+    until then it shows a labelled placeholder. */
+function Shot({ src, label }: { src: string; label: string }) {
+  const [ok, setOk] = useState(true);
+  if (ok) {
+    return (
+      // eslint-disable-next-line @next/next/no-img-element
+      <img
+        src={src}
+        alt={label}
+        onError={() => setOk(false)}
+        className="w-full rounded-2xl"
+      />
+    );
+  }
+  return (
+    <div className="flex aspect-[16/10] w-full items-center justify-center rounded-2xl border border-dashed border-ink/20 bg-white/50">
+      <div className="flex flex-col items-center gap-2 text-center text-muted-ink">
+        <ImageIcon className="h-8 w-8" strokeWidth={1.5} />
+        <span className="text-sm font-medium text-ink/70">{label}</span>
+        <span className="text-xs text-muted-ink/70">{src}</span>
+      </div>
+    </div>
+  );
+}
+
+const heading = "text-[clamp(1.7rem,3.4vw,2.6rem)] font-bold leading-[1.1] tracking-tight text-ink";
+
+/* ------------------------------ content ------------------------------ */
+
+const STATS: { icon: LucideIcon; value: string; label: BL }[] = [
+  { icon: Users, value: "10K+", label: { en: "global learners", zh: "全球学习者" } },
+  { icon: Globe, value: "100+", label: { en: "countries & regions", zh: "国家与地区" } },
+  { icon: TrendingUp, value: "70%", label: { en: "boost in learning efficiency", zh: "学习效率提升" } },
+];
+
+const CHALLENGES: { icon: LucideIcon; title: BL; desc: BL }[] = [
+  {
+    icon: Compass,
+    title: { en: "Not knowing where to start", zh: "不知道从哪里开始学" },
+    desc: {
+      en: "Entering the workforce or switching careers, you want new skills but don't know where to begin.",
+      zh: "踏入职场 / 转行时，想要学习新技能，但不知道从哪里开始。",
+    },
+  },
+  {
+    icon: Layers,
+    title: { en: "Scattered resources", zh: "学习资源分散" },
+    desc: {
+      en: "Hunting across many platforms is tiring and inefficient.",
+      zh: "在多个平台之间搜寻的过程令人疲惫。",
+    },
+  },
+  {
+    icon: BadgeCheck,
+    title: { en: "Uneven quality", zh: "资源质量参差不齐" },
+    desc: {
+      en: "Hard to judge quickly which content is good, reliable, and right for you.",
+      zh: "难以快速判断哪些内容优质、靠谱、适合自己。",
+    },
+  },
+  {
+    icon: MessageCircle,
+    title: { en: "Questions go unanswered", zh: "疑问无法快速解决" },
+    desc: {
+      en: "You can't get quick, in-context answers — and it only gets more confusing.",
+      zh: "没法根据内容快速得到问题的解答，越学越混乱。",
+    },
+  },
+  {
+    icon: Gauge,
+    title: { en: "No effective assessment", zh: "缺乏有效的评估" },
+    desc: {
+      en: "Hard to gauge your current level against your learning goal.",
+      zh: "难以判断当前能力水平与学习目标的差距。",
+    },
+  },
+];
+
+const PROBLEMS: { icon: LucideIcon; title: BL; points: BL[] }[] = [
+  {
+    icon: MessageSquare,
+    title: { en: "Forums / online courses", zh: "网络论坛 / 网课" },
+    points: [
+      { en: "High manual search cost; results may not fit the user's needs.", zh: "手动搜索成本高，结果也未必符合用户需求。" },
+      { en: "Inconsistent quality; users have to filter it themselves.", zh: "信息质量不稳定，需要用户自己筛选。" },
+    ],
+  },
+  {
+    icon: Bot,
+    title: { en: "General AI like ChatGPT", zh: "ChatGPT 等通用 AI" },
+    points: [
+      { en: "No automatic context — users must supply it manually.", zh: "缺乏自动上下文连接，用户需要手动提供。" },
+      { en: "Can't track progress against a syllabus or guide the process.", zh: "无法根据课程表追踪学习进度、引导学习过程。" },
+    ],
+  },
+  {
+    icon: GraduationCap,
+    title: { en: "Private tutors / mentors", zh: "私教 / 导师" },
+    points: [
+      { en: "High cost and time barriers.", zh: "成本与时间门槛高。" },
+      { en: "Feedback lacks immediacy.", zh: "学习体验缺乏及时性。" },
+    ],
+  },
+];
+
+const PERSONAS: { icon: LucideIcon; title: BL; desc: BL }[] = [
+  {
+    icon: Briefcase,
+    title: { en: "Career switchers", zh: "转行探索者" },
+    desc: {
+      en: "Moving into a new field; needs a systematic path and clear role-specific skills.",
+      zh: "想要转行进入新领域，需要系统的学习路径和明确的岗位所需技能。",
+    },
+  },
+  {
+    icon: Laptop,
+    title: { en: "Working learners", zh: "在职学习者" },
+    desc: {
+      en: "Upskilling on the job; needs flexible methods and efficient resources.",
+      zh: "希望提升专业技能，需要灵活的学习方式与高效的资源。",
+    },
+  },
+  {
+    icon: GraduationCap,
+    title: { en: "Students & job seekers", zh: "大学求职者" },
+    desc: {
+      en: "Overwhelmed by job-hunting and study pressure; needs a clear learning path.",
+      zh: "面对求职与学习压力时容易迷茫与焦虑，需要清晰的学习路径。",
+    },
+  },
+];
+
+const STEPS: { icon: LucideIcon; title: BL }[] = [
+  { icon: Target, title: { en: "Set goals & level", zh: "设定目标和水平" } },
+  { icon: Search, title: { en: "AI recommends courses", zh: "AI 个性化推荐课程" } },
+  { icon: BookOpen, title: { en: "Real-time answers & guidance", zh: "实时 AI 解答与引导" } },
+  { icon: MessageCircle, title: { en: "Staged quizzes & feedback", zh: "阶段测验和反馈" } },
+  { icon: Network, title: { en: "Connect & review knowledge", zh: "知识串联与复盘" } },
+];
+
+const FEATURES: { icon: LucideIcon; title: BL; shot: { src: string; label: string }; points: BL[] }[] = [
+  {
+    icon: Target,
+    title: { en: "Set goals, understand the user's level", zh: "设定目标，了解用户水平" },
+    shot: { src: "/projects/wisdomplan/goal.png", label: "Set goals" },
+    points: [
+      { en: "AI analyzes the user's current level and goals to generate a personalized path.", zh: "AI 分析用户当前水平与学习目标，生成个性化学习路径。" },
+      { en: "Breaks long-term goals into clearer, actionable milestones.", zh: "将长期学习目标拆解为更清晰、可执行的阶段任务。" },
+      { en: "Low-friction guided interaction reduces the overwhelm of starting.", zh: "通过低门槛引导式交互，降低用户开始学习时的迷茫感。" },
+    ],
+  },
+  {
+    icon: Search,
+    title: { en: "Find & recommend personalized courses", zh: "寻找并推荐个性化课程" },
+    shot: { src: "/projects/wisdomplan/courses.png", label: "Course recommendations" },
+    points: [
+      { en: "AI aggregates relevant courses, exercises, and resources — cutting manual search.", zh: "AI 自动聚合相关课程、练习与学习资源，减少用户手动搜索与筛选成本。" },
+      { en: "Content, AI answers, and the path live in one place for a continuous, immersive flow.", zh: "将学习内容、AI 解答与学习路径整合在同一界面中，保持连续沉浸的学习体验。" },
+      { en: "Context-aware support tied to the current lesson aids understanding.", zh: "基于当前课程内容提供上下文关联支持，帮助用户更高效地理解与吸收知识。" },
+    ],
+  },
+  {
+    icon: BookOpen,
+    title: { en: "Real-time AI answers & guidance", zh: "实时 AI 解答与引导" },
+    shot: { src: "/projects/wisdomplan/tutor.png", label: "AI tutor" },
+    points: [
+      { en: "AI understands the current lesson and context without the user re-explaining.", zh: "AI 自动理解当前课程内容与学习上下文，无需用户重复提供背景信息。" },
+      { en: "Proactively suggests directions and study methods to lower the barrier to ask.", zh: "主动推荐提问方向与学习方式，降低用户主动提问门槛。" },
+      { en: "A collapsible AI assistant keeps the view clean and the experience immersive.", zh: "可折叠式 AI 助手设计，减少视觉干扰并保持沉浸式学习体验。" },
+    ],
+  },
+  {
+    icon: MessageCircle,
+    title: { en: "Staged quizzes & feedback", zh: "阶段测验与反馈" },
+    shot: { src: "/projects/wisdomplan/quiz.png", label: "Quizzes & feedback" },
+    points: [
+      { en: "Staged quizzes and instant feedback confirm how well material is understood.", zh: "通过阶段测验与即时反馈，帮助用户确认知识掌握程度。" },
+      { en: "AI generates explanations and study suggestions, cutting review effort.", zh: "AI 自动生成解析与学习建议，降低用户复盘与总结成本。" },
+      { en: "Encouraging feedback and progress cues sustain long-term motivation.", zh: "结合鼓励式反馈与进度引导，提升长期学习动力与持续性。" },
+    ],
+  },
+  {
+    icon: Network,
+    title: { en: "Connect & review knowledge", zh: "知识串联与复盘" },
+    shot: { src: "/projects/wisdomplan/review.png", label: "Knowledge map" },
+    points: [
+      { en: "A visual path and node relationships build a clearer knowledge structure.", zh: "通过可视化学习路径与节点关系，帮助用户建立更清晰的知识结构。" },
+      { en: "AI links courses and resources by progress into a continuous experience.", zh: "AI 根据学习进度动态串联课程与资源，形成连续的学习体验。" },
+      { en: "Breaking complex content into modules lowers long-term cognitive load.", zh: "将复杂学习内容拆解为阶段模块，降低长期学习中的认知负担。" },
+    ],
+  },
+];
+
+/* ------------------------------ page ------------------------------ */
+
+export default function WisdomPlanPage() {
+  const { lang } = useLanguage();
+
+  return (
+    <main className="relative mx-auto w-full max-w-[90rem] pb-6">
+      <CursorGlow />
+      <SiteNav />
+
+      {/* Hero */}
+      <section className="relative mx-3 mt-6 overflow-hidden rounded-[2rem] bg-card px-6 py-12 shadow-sm sm:mx-6 sm:px-10 sm:py-16 lg:px-14">
+        <div
+          aria-hidden
+          className="pointer-events-none absolute -right-24 -top-28 h-[460px] w-[460px] rounded-full blur-3xl"
+          style={{
+            background:
+              "radial-gradient(circle, rgba(150,160,222,0.42) 0%, rgba(243,193,159,0.28) 45%, rgba(243,193,159,0) 72%)",
+          }}
+        >
+          <div className="grain-overlay" />
+        </div>
+
+        <div className="relative z-10 grid gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.1fr)] lg:items-center lg:gap-16">
+          <div>
+            <Eyebrow label={lang === "zh" ? "案例研究" : "Case Study"} color="periwinkle" />
+            <h1 className="mt-6 text-[clamp(2rem,4.2vw,3.4rem)] font-bold leading-[1.1] tracking-tight text-ink">
+              WisdomPlan
+            </h1>
+            <p className={`mt-4 ${heading}`}>
+              {lang === "zh" ? "在 AI 时代，重新定义学习体验" : "Redefining the learning experience in the age of AI"}
+            </p>
+            <p className="mt-6 max-w-xl text-[17px] leading-relaxed text-muted-ink">
+              {lang === "zh"
+                ? "随着生成式 AI 的发展，学习平台开始从静态内容库转向更动态、个性化的学习体验。WisdomPlan 通过 AI 推荐、学习路径生成与实时辅助，为用户构建更智能、更具陪伴感的成长体验。"
+                : "As generative AI matures, learning platforms are shifting from static content libraries toward dynamic, personalized experiences. WisdomPlan uses AI recommendations, learning-path generation, and real-time assistance to build a smarter, more supportive growth experience."}
+            </p>
+
+            <div className="mt-8 flex flex-wrap items-center gap-x-10 gap-y-6">
+              <div className="flex items-center gap-3 rounded-2xl bg-[#eeeafb] px-4 py-3">
+                <span className="flex h-9 w-9 items-center justify-center rounded-full bg-periwinkle text-white">
+                  <Sparkles className="h-4 w-4" />
+                </span>
+                <div className="leading-tight">
+                  <p className="text-[11px] font-semibold uppercase tracking-wide text-periwinkle">
+                    {lang === "zh" ? "#1 本月最佳产品" : "#1 Product of the Month"}
+                  </p>
+                  <p className="text-sm font-semibold text-ink">{lang === "zh" ? "教育" : "Education"}</p>
+                </div>
+              </div>
+
+              {STATS.map(({ icon: Icon, value, label }) => (
+                <div key={value} className="flex items-center gap-2.5">
+                  <Icon className="h-5 w-5 text-periwinkle" />
+                  <div className="leading-tight">
+                    <p className="text-lg font-bold text-ink">{value}</p>
+                    <p className="text-xs text-muted-ink">{t(lang, label)}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <Shot src="/projects/wisdomplan/hero.png" label="WisdomPlan product" />
+        </div>
+      </section>
+
+      {/* User challenges */}
+      <section className="relative mx-3 px-6 py-16 sm:mx-6 sm:px-10 sm:py-20 lg:px-14">
+        <Eyebrow label={lang === "zh" ? "用户挑战" : "User Challenges"} color="orange" />
+        <h2 className={`mt-6 ${heading}`}>
+          {lang === "zh" ? "学习时真正的困难，不只是学习本身" : "The real difficulty in learning isn't the learning itself"}
+        </h2>
+
+        <div className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-5">
+          {CHALLENGES.map(({ icon: Icon, title, desc }) => (
+            <div key={title.en}>
+              <span className="flex h-12 w-12 items-center justify-center rounded-full bg-[#eeeafb] text-periwinkle">
+                <Icon className="h-5 w-5" />
+              </span>
+              <p className="mt-4 font-semibold text-ink">{t(lang, title)}</p>
+              <p className="mt-2 text-sm leading-relaxed text-muted-ink">{t(lang, desc)}</p>
+            </div>
+          ))}
+        </div>
+
+        <div className="mt-12 flex flex-col gap-4 rounded-2xl bg-[#efeafb] p-6 sm:flex-row sm:items-start sm:gap-6 sm:p-8">
+          <div className="flex shrink-0 items-center gap-2 text-periwinkle">
+            <Sparkles className="h-5 w-5" />
+            <span className="font-semibold">{lang === "zh" ? "我们的机会" : "Our opportunity"}</span>
+          </div>
+          <p className="text-[15px] leading-relaxed text-ink/80">
+            {lang === "zh"
+              ? "生成式 AI 与数据分析能够有效缓解上述问题：系统结合用户目标、当前水平与学习内容，帮助用户推荐并推送下一步该学什么、快速解决学习中的疑问、制定合理的目标，并持续反馈学习进度，让整个学习过程更清晰、更高效。"
+              : "Generative AI and data analytics can ease these problems: by combining the user's goals, current level, and learning content, the system recommends what to learn next, resolves questions quickly, sets sensible goals, and continuously reflects progress — making the whole journey clearer and more efficient."}
+          </p>
+        </div>
+      </section>
+
+      {/* Existing experience + target users */}
+      <section className="relative mx-3 px-6 py-8 sm:mx-6 sm:px-10 lg:px-14">
+        <div className="grid gap-12 lg:grid-cols-2 lg:gap-16">
+          <div>
+            <h3 className="text-xl font-bold text-ink">
+              {lang === "zh" ? "现有学习体验中的问题" : "Problems in today's learning experience"}
+            </h3>
+            <div className="mt-6 space-y-6">
+              {PROBLEMS.map(({ icon: Icon, title, points }) => (
+                <div key={title.en} className="flex gap-4">
+                  <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-[#eeeafb] text-periwinkle">
+                    <Icon className="h-5 w-5" />
+                  </span>
+                  <div>
+                    <p className="font-semibold text-ink">{t(lang, title)}</p>
+                    <ul className="mt-2 space-y-1.5">
+                      {points.map((p) => (
+                        <li key={p.en} className="flex gap-2 text-sm leading-relaxed text-muted-ink">
+                          <span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-muted-ink/60" />
+                          {t(lang, p)}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div>
+            <h3 className="text-xl font-bold text-ink">{lang === "zh" ? "目标用户" : "Target users"}</h3>
+            <div className="mt-6 space-y-6">
+              {PERSONAS.map(({ icon: Icon, title, desc }) => (
+                <div key={title.en} className="flex gap-4">
+                  <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-periwinkle/20 to-peach/30 text-periwinkle">
+                    <Icon className="h-5 w-5" />
+                  </span>
+                  <div>
+                    <p className="font-semibold text-periwinkle">{t(lang, title)}</p>
+                    <p className="mt-1 text-sm leading-relaxed text-muted-ink">{t(lang, desc)}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* AI-driven flow */}
+      <section className="relative mx-3 px-6 py-16 sm:mx-6 sm:px-10 sm:py-20 lg:px-14">
+        <Eyebrow label={lang === "zh" ? "AI 学习体验" : "AI Learning Experience"} color="periwinkle" />
+        <h2 className={`mt-6 ${heading}`}>{lang === "zh" ? "AI 驱动的学习流程" : "An AI-driven learning flow"}</h2>
+
+        <div className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-5">
+          {STEPS.map(({ icon: Icon, title }, i) => (
+            <div key={title.en} className="flex flex-col items-center text-center">
+              <div className="relative">
+                <span className="flex h-14 w-14 items-center justify-center rounded-full bg-[#eeeafb] text-periwinkle">
+                  <Icon className="h-6 w-6" />
+                </span>
+                <span className="absolute -right-1 -top-1 flex h-6 w-6 items-center justify-center rounded-full bg-periwinkle text-xs font-bold text-white">
+                  {i + 1}
+                </span>
+              </div>
+              <p className="mt-4 text-sm font-medium text-ink">{t(lang, title)}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Feature deep-dives */}
+      {FEATURES.map(({ icon: Icon, title, shot, points }, idx) => (
+        <section key={title.en} className="relative mx-3 px-6 py-12 sm:mx-6 sm:px-10 sm:py-14 lg:px-14">
+          <div className="flex items-center justify-center gap-4 text-center">
+            <span className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-[#eeeafb] text-periwinkle">
+              <Icon className="h-6 w-6" />
+            </span>
+            <h3 className="text-2xl font-bold tracking-tight text-ink sm:text-3xl">{t(lang, title)}</h3>
+          </div>
+
+          <div
+            className={`mt-10 grid items-center gap-10 lg:gap-16 ${
+              idx % 2 === 1
+                ? "lg:grid-cols-[minmax(0,1fr)_minmax(0,1.6fr)]"
+                : "lg:grid-cols-[minmax(0,1.6fr)_minmax(0,1fr)]"
+            }`}
+          >
+            <div className={idx % 2 === 1 ? "lg:order-2" : ""}>
+              <Shot src={shot.src} label={shot.label} />
+            </div>
+            <ul className={`space-y-5 ${idx % 2 === 1 ? "lg:order-1" : ""}`}>
+              {points.map((p) => (
+                <li key={p.en} className="flex gap-3 text-[15px] leading-relaxed text-muted-ink">
+                  <Check className="mt-1 h-4 w-4 shrink-0 text-periwinkle" />
+                  {t(lang, p)}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </section>
+      ))}
+
+      {/* Reflection */}
+      <section className="relative mx-3 px-6 py-16 sm:mx-6 sm:px-10 sm:py-20 lg:px-14">
+        <Eyebrow label={lang === "zh" ? "心得" : "Reflection"} color="orange" />
+        <h2 className={`mt-6 ${heading}`}>{lang === "zh" ? "心得体会" : "Reflection"}</h2>
+        <p className="mt-6 max-w-3xl text-[17px] leading-relaxed text-ink/85">
+          {lang === "zh"
+            ? "设计 WisdomPlan 的过程中，我重新思考了 AI 在学习体验中的角色。学习的困难往往不仅来自内容本身，更来自缺乏方向感、持续反馈与长期陪伴。因此，我希望通过 AI 主动引导、上下文理解与连续性的学习支持，帮助用户降低学习门槛，建立更持续、更轻松的学习体验。"
+            : "Designing WisdomPlan, I rethought AI's role in the learning experience. The difficulty often comes not from the content itself but from a lack of direction, ongoing feedback, and long-term companionship. So I set out to use AI-driven guidance, contextual understanding, and continuous support to lower the barrier to learning and build a more sustainable, relaxed experience."}
+        </p>
+      </section>
+
+      <ContactSection />
+    </main>
+  );
+}

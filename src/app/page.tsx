@@ -17,6 +17,7 @@ export default function Home() {
       <FeaturedProject
         eyebrowColor="periwinkle"
         title="WisdomPlan"
+        href="/work/wisdomplan"
         description={{
           zh: "帮助用户降低寻找学习资源的时间与成本，提供更个性化的学习路径与职业发展",
           en: "Cuts the time and cost of hunting for learning resources, delivering personalized learning paths and career growth.",
