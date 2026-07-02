@@ -48,59 +48,47 @@ export function ResumeCard() {
         />
       </div>
 
-      <div className="mt-12 grid gap-8 lg:grid-cols-[1fr_auto] lg:gap-12">
-        <div>
-          <h2 className="text-[clamp(1.9rem,3.75vw,3.4rem)] font-bold leading-[1.05] tracking-tight text-ink">Lily Huang</h2>
+      <div className="mt-12">
+        <h2 className="text-[clamp(1.9rem,3.75vw,3.4rem)] font-bold leading-[1.05] tracking-tight text-ink">Lily Huang</h2>
 
-          <div className="mt-6 grid gap-10 lg:grid-cols-[2fr_1px_1fr] lg:items-start">
-            <div>
-              <p className="eyebrow text-muted-ink">
-                {lang === "zh" ? "产品设计师" : "Product Designer"}
-              </p>
-              <p
-                className="mt-6 max-w-lg border-l-2 border-transparent pl-4 text-lg leading-relaxed text-ink/90"
-                style={{ borderImage: "linear-gradient(180deg, var(--periwinkle), var(--peach), var(--orange)) 1" }}
-              >
-                {lang === "zh"
-                  ? "深耕 AI 原生产品与人机交互设计，擅长以用户研究为根基重构完整任务流程，把复杂的 AI 能力转化为自然流畅、落地可行的产品体验。"
-                  : "Designing thoughtful digital experiences at the intersection of AI, product strategy, and human-centered design."}
-              </p>
-            </div>
+        <div className="mt-6 grid gap-10 lg:grid-cols-[2fr_1px_1fr] lg:items-start">
+          <div>
+            <p className="eyebrow text-muted-ink">
+              {lang === "zh" ? "产品设计师" : "Product Designer"}
+            </p>
+            <p
+              className="mt-6 max-w-lg border-l-2 border-transparent pl-4 text-lg leading-relaxed text-ink/90"
+              style={{ borderImage: "linear-gradient(180deg, var(--periwinkle), var(--peach), var(--orange)) 1" }}
+            >
+              {lang === "zh"
+                ? "深耕 AI 原生产品与人机交互设计，擅长以用户研究为根基重构完整任务流程，把复杂的 AI 能力转化为自然流畅、落地可行的产品体验。"
+                : "Designing thoughtful digital experiences at the intersection of AI, product strategy, and human-centered design."}
+            </p>
+          </div>
 
-            <div className="hidden bg-ink/10 lg:block" />
+          <div className="hidden bg-ink/10 lg:block" />
 
-            <div>
-              <p className="eyebrow text-muted-ink">{lang === "zh" ? "教育背景" : "Education"}</p>
-              <div className="mt-6 flex items-start gap-4">
-                <Image
-                  src="/projects/cornell.png"
-                  alt="Cornell University"
-                  width={56}
-                  height={56}
-                  className="h-14 w-14 shrink-0 object-contain"
-                />
-                <div>
-                  <p className="text-lg font-semibold text-ink">
-                    {lang === "zh" ? "康奈尔大学" : "Cornell University"}
-                  </p>
-                  <p className="text-sm text-muted-ink">B.A. + M.P.S.</p>
-                  <p className="text-sm text-muted-ink">
-                    {lang === "zh" ? "信息科学" : "in Information Science"}
-                  </p>
-                </div>
+          <div>
+            <p className="eyebrow text-muted-ink">{lang === "zh" ? "教育背景" : "Education"}</p>
+            <div className="mt-6 flex items-start gap-4">
+              <Image
+                src="/projects/cornell.png"
+                alt="Cornell University"
+                width={56}
+                height={56}
+                className="h-14 w-14 shrink-0 object-contain"
+              />
+              <div>
+                <p className="text-lg font-semibold text-ink">
+                  {lang === "zh" ? "康奈尔大学" : "Cornell University"}
+                </p>
+                <p className="text-sm text-muted-ink">B.A. + M.P.S.</p>
+                <p className="text-sm text-muted-ink">
+                  {lang === "zh" ? "信息科学" : "in Information Science"}
+                </p>
               </div>
             </div>
           </div>
-        </div>
-
-        <div className="relative order-first mx-auto h-80 w-56 shrink-0 overflow-hidden rounded-2xl lg:order-none lg:mx-0 lg:h-auto lg:min-h-[320px] lg:self-stretch">
-          <Image
-            src="/projects/lily-2.jpg"
-            alt="Lily Huang"
-            fill
-            sizes="224px"
-            className="object-cover"
-          />
         </div>
       </div>
 
