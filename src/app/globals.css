@@ -80,17 +80,14 @@ body {
     rgba(202, 208, 244, 0) 84%);
 }
 
-/* Contact section: the hero wash flipped — warm orange at the top,
-   diffusing down through peach and cream to periwinkle at the bottom. */
+/* Contact section: warm orange at the top diffusing down through a light
+   coral and pink-lavender to periwinkle at the bottom. */
 .gradient-mesh-contact {
   background: linear-gradient(180deg,
-    #f0965a 0%,
-    #f2aa74 17%,
-    #f1c095 34%,
-    #e9ccb5 51%,
-    #d0c8d1 69%,
-    #a8afdc 88%,
-    #8f9cd8 100%);
+    #fd9259 0%,
+    #fdb16e 34%,
+    #e2bfcb 67%,
+    #b9c7e9 100%);
 }
 
 .gradient-bar {

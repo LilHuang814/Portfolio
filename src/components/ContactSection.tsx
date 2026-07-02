@@ -16,7 +16,7 @@ export function ContactSection() {
           </h2>
         </div>
 
-        <div className="relative z-10 flex flex-col gap-6 text-white sm:flex-row sm:items-end sm:justify-between">
+        <div className="relative z-10 flex flex-col gap-6 text-white sm:flex-row sm:items-end sm:justify-start sm:gap-16">
           <div>
             <p className="eyebrow text-white/70">{lang === "zh" ? "邮箱" : "Email"}</p>
             <a href="mailto:sh835@cornell.edu" className="mt-1 block text-lg font-medium">
