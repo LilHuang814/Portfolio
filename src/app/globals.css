@@ -68,17 +68,16 @@ body {
       #e5cdbb 100%);
 }
 
-/* Interactive glow behind the split-feature sections: a soft radial that
-   follows the cursor (via --mx / --my), diffusing from bright light cream
-   at the center out to light periwinkle and then nothing. Sits on an
-   over-sized div so it can bleed past the section edges into the page. */
+/* A single ambient glow that follows the cursor (via --mx / --my),
+   diffusing from bright light cream at the center out to a light
+   periwinkle and then nothing. */
 .interactive-glow {
-  background: radial-gradient(280px circle at var(--mx, 30%) var(--my, 34%),
-    rgba(253, 246, 235, 0.95) 0%,
-    rgba(240, 224, 210, 0.7) 26%,
-    rgba(190, 190, 232, 0.55) 48%,
-    rgba(164, 172, 226, 0.3) 64%,
-    rgba(164, 172, 226, 0) 80%);
+  background: radial-gradient(280px circle at var(--mx, 50%) var(--my, 38%),
+    rgba(253, 247, 237, 0.92) 0%,
+    rgba(242, 230, 218, 0.58) 30%,
+    rgba(214, 216, 242, 0.34) 54%,
+    rgba(202, 208, 244, 0.16) 70%,
+    rgba(202, 208, 244, 0) 84%);
 }
 
 /* Contact section: the hero wash flipped — warm orange at the top,

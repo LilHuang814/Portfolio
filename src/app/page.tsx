@@ -3,10 +3,13 @@ import { ResumeCard } from "@/components/ResumeCard";
 import { FeaturedProject } from "@/components/FeaturedProject";
 import { ProjectPlaceholder } from "@/components/ProjectPlaceholder";
 import { ContactSection } from "@/components/ContactSection";
+import { CursorGlow } from "@/components/CursorGlow";
 
 export default function Home() {
   return (
-    <main className="mx-auto w-full max-w-6xl pb-6">
+    <main className="relative mx-auto w-full max-w-6xl pb-6">
+      <CursorGlow />
+
       <Hero />
 
       <ResumeCard />
