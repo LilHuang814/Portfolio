@@ -1,6 +1,7 @@
 "use client";
 
-import { Target, MapPin, Briefcase, Mail, ArrowUpRight, ImageIcon } from "lucide-react";
+import Image from "next/image";
+import { Target, MapPin, Briefcase, Mail, ArrowUpRight } from "lucide-react";
 import { useLanguage } from "@/lib/language";
 
 const META = [
@@ -70,11 +71,13 @@ export function ResumeCard() {
           <div>
             <p className="eyebrow text-muted-ink">{lang === "zh" ? "教育背景" : "Education"}</p>
             <div className="mt-6 flex items-center gap-4">
-              {/* Placeholder for the Cornell logo. Drop the file at
-                  /public/cornell-logo.png and swap this for a next/image. */}
-              <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full border border-dashed border-ink/25 bg-white/40 text-muted-ink">
-                <ImageIcon className="h-5 w-5" strokeWidth={1.5} />
-              </div>
+                <Image
+                src="/projects/cornell.png"
+                alt="Cornell University"
+                width={56}
+                height={56}
+                className="h-14 w-14 shrink-0 object-contain"
+              />
               <div>
                 <p className="text-lg font-semibold text-ink">
                   {lang === "zh" ? "康奈尔大学" : "Cornell University"}
