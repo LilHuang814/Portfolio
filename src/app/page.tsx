@@ -52,8 +52,8 @@ export default function Home() {
           en: "Clearer payment error-state messaging to reduce checkout confusion, plus automated scheduling and config flows for a more efficient Payadmin back office.",
         }}
         tags={{
-          zh: ["设计游戏 UI", "调研用户需求", "优化体验", "跨部门协作"],
-          en: ["Game UI design", "User research", "Experience optimization", "Cross-functional collaboration"],
+          zh: ["设计游戏 UI", "调研用户需求", "优化体验", "内容策略"],
+          en: ["Game UI design", "User research", "Experience optimization", "Content strategy"],
         }}
       >
         <ProjectImage
