@@ -1,7 +1,7 @@
 import { Hero } from "@/components/Hero";
 import { ResumeCard } from "@/components/ResumeCard";
 import { FeaturedProject } from "@/components/FeaturedProject";
-import { ProjectPlaceholder } from "@/components/ProjectPlaceholder";
+import { ProjectImage } from "@/components/ProjectImage";
 import { ContactSection } from "@/components/ContactSection";
 import { CursorGlow } from "@/components/CursorGlow";
 
@@ -26,7 +26,7 @@ export default function Home() {
           en: ["User research", "Interaction design", "Competitive analysis"],
         }}
       >
-        <ProjectPlaceholder name="WisdomPlan" />
+        <ProjectImage src="/projects/wisdomplan.png" alt="WisdomPlan" width={5760} height={2924} />
       </FeaturedProject>
 
       <FeaturedProject
@@ -41,7 +41,7 @@ export default function Home() {
           en: ["AI Agent design", "Design system", "Podcast content", "Competitive analysis"],
         }}
       >
-        <ProjectPlaceholder name="Blour" />
+        <ProjectImage src="/projects/blour.png" alt="Blour" width={6840} height={3376} />
       </FeaturedProject>
 
       <FeaturedProject
@@ -56,7 +56,12 @@ export default function Home() {
           en: ["Game UI design", "User research", "Experience optimization"],
         }}
       >
-        <ProjectPlaceholder name="Payment Ticker Improvements" />
+        <ProjectImage
+          src="/projects/payment-ticker-improvements.png"
+          alt="Payment Ticker Improvements"
+          width={6384}
+          height={3080}
+        />
       </FeaturedProject>
 
       <FeaturedProject
@@ -71,7 +76,7 @@ export default function Home() {
           en: ["Process design", "Systems design", "Cross-team", "UX optimization"],
         }}
       >
-        <ProjectPlaceholder name="JPMC" />
+        <ProjectImage src="/projects/jpmc.png" alt="JPMC" width={6692} height={1964} />
       </FeaturedProject>
 
       <ContactSection />
