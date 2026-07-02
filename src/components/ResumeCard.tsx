@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { Target, MapPin, Briefcase, Mail, ImageIcon } from "lucide-react";
+import { Target, MapPin, Briefcase, Mail } from "lucide-react";
 import { useLanguage } from "@/lib/language";
 
 const META = [
@@ -93,14 +93,14 @@ export function ResumeCard() {
           </div>
         </div>
 
-        {/* Placeholder for a portrait photo. Drop the file at
-            /public/projects/portrait.png and swap this for a next/image. */}
-        <div className="order-first mx-auto flex h-56 w-44 shrink-0 overflow-hidden rounded-2xl border border-dashed border-ink/25 bg-white/40 lg:order-none lg:mx-0 lg:h-auto lg:self-stretch">
-          <div className="flex w-full flex-col items-center justify-center gap-2 px-3 text-center text-muted-ink">
-            <ImageIcon className="h-6 w-6" strokeWidth={1.5} />
-            <span className="text-xs font-medium text-ink/70">Your photo</span>
-            <span className="text-[10px] text-muted-ink/70">/public/projects/portrait.png</span>
-          </div>
+        <div className="relative order-first mx-auto h-56 w-44 shrink-0 overflow-hidden rounded-2xl lg:order-none lg:mx-0 lg:h-auto lg:self-stretch">
+          <Image
+            src="/projects/lily.jpg"
+            alt="Lily Huang"
+            fill
+            sizes="176px"
+            className="object-cover"
+          />
         </div>
       </div>
 
