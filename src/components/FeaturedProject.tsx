@@ -27,10 +27,10 @@ export function FeaturedProject({
       <div className="relative z-10 grid gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.9fr)] lg:gap-12">
         <div className="flex flex-col">
           <Eyebrow label={lang === "zh" ? "精选项目" : "Featured Project"} color={eyebrowColor} />
-          <h2 className="mt-6 text-5xl font-bold tracking-tight text-ink">
-            {title}
-          </h2>
-          <div className="mt-6 h-[3px] w-40 rounded-full gradient-bar" />
+          <div className="mt-6 flex w-fit flex-col items-start">
+            <h2 className="text-5xl font-bold tracking-tight text-ink">{title}</h2>
+            <div className="mt-6 h-[3px] w-full rounded-full gradient-bar" />
+          </div>
           <p className="mt-6 max-w-md text-[17px] leading-relaxed text-muted-ink">
             {description[lang]}
           </p>

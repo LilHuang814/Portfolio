@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { Target, MapPin, Briefcase, Mail } from "lucide-react";
+import { Target, MapPin, Briefcase, Mail, ImageIcon } from "lucide-react";
 import { useLanguage } from "@/lib/language";
 
 const META = [
@@ -48,51 +48,63 @@ export function ResumeCard() {
         />
       </div>
 
-      <div className="mt-10">
-        <h2 className="text-5xl font-bold tracking-tight text-ink">Lily Huang</h2>
+      <div className="mt-10 grid gap-8 lg:grid-cols-[1fr_auto] lg:gap-12">
+        <div>
+          <h2 className="text-5xl font-bold tracking-tight text-ink">Lily Huang</h2>
 
-        <div className="mt-6 grid gap-10 lg:grid-cols-[2fr_1px_1fr] lg:items-start">
-          <div>
-            <p className="eyebrow text-muted-ink">
-              {lang === "zh" ? "产品设计师" : "Product Designer"}
-            </p>
-            <p
-              className="mt-6 max-w-lg border-l-2 border-transparent pl-4 text-lg leading-relaxed text-ink/90"
-              style={{ borderImage: "linear-gradient(180deg, var(--periwinkle), var(--peach), var(--orange)) 1" }}
-            >
-              {lang === "zh"
-                ? "深耕 AI 原生产品与人机交互设计，擅长以用户研究为根基重构完整任务流程，把复杂的 AI 能力转化为自然流畅、落地可行的产品体验。"
-                : "Designing thoughtful digital experiences at the intersection of AI, product strategy, and human-centered design."}
-            </p>
-          </div>
+          <div className="mt-6 grid gap-10 lg:grid-cols-[2fr_1px_1fr] lg:items-start">
+            <div>
+              <p className="eyebrow text-muted-ink">
+                {lang === "zh" ? "产品设计师" : "Product Designer"}
+              </p>
+              <p
+                className="mt-6 max-w-lg border-l-2 border-transparent pl-4 text-lg leading-relaxed text-ink/90"
+                style={{ borderImage: "linear-gradient(180deg, var(--periwinkle), var(--peach), var(--orange)) 1" }}
+              >
+                {lang === "zh"
+                  ? "深耕 AI 原生产品与人机交互设计，擅长以用户研究为根基重构完整任务流程，把复杂的 AI 能力转化为自然流畅、落地可行的产品体验。"
+                  : "Designing thoughtful digital experiences at the intersection of AI, product strategy, and human-centered design."}
+              </p>
+            </div>
 
-          <div className="hidden bg-ink/10 lg:block" />
+            <div className="hidden bg-ink/10 lg:block" />
 
-          <div>
-            <p className="eyebrow text-muted-ink">{lang === "zh" ? "教育背景" : "Education"}</p>
-            <div className="mt-6 flex items-center gap-4">
+            <div>
+              <p className="eyebrow text-muted-ink">{lang === "zh" ? "教育背景" : "Education"}</p>
+              <div className="mt-6 flex items-center gap-4">
                 <Image
-                src="/projects/cornell.png"
-                alt="Cornell University"
-                width={56}
-                height={56}
-                className="h-14 w-14 shrink-0 object-contain"
-              />
-              <div>
-                <p className="text-lg font-semibold text-ink">
-                  {lang === "zh" ? "康奈尔大学" : "Cornell University"}
-                </p>
-                <p className="text-sm text-muted-ink">B.A. + M.P.S.</p>
-                <p className="text-sm text-muted-ink">
-                  {lang === "zh" ? "信息科学" : "in Information Science"}
-                </p>
+                  src="/projects/cornell.png"
+                  alt="Cornell University"
+                  width={56}
+                  height={56}
+                  className="h-14 w-14 shrink-0 object-contain"
+                />
+                <div>
+                  <p className="text-lg font-semibold text-ink">
+                    {lang === "zh" ? "康奈尔大学" : "Cornell University"}
+                  </p>
+                  <p className="text-sm text-muted-ink">B.A. + M.P.S.</p>
+                  <p className="text-sm text-muted-ink">
+                    {lang === "zh" ? "信息科学" : "in Information Science"}
+                  </p>
+                </div>
               </div>
             </div>
           </div>
         </div>
+
+        {/* Placeholder for a portrait photo. Drop the file at
+            /public/projects/portrait.png and swap this for a next/image. */}
+        <div className="hidden w-44 shrink-0 self-stretch overflow-hidden rounded-2xl border border-dashed border-ink/25 bg-white/40 lg:flex">
+          <div className="flex w-full flex-col items-center justify-center gap-2 px-3 text-center text-muted-ink">
+            <ImageIcon className="h-6 w-6" strokeWidth={1.5} />
+            <span className="text-xs font-medium text-ink/70">Your photo</span>
+            <span className="text-[10px] text-muted-ink/70">/public/projects/portrait.png</span>
+          </div>
+        </div>
       </div>
 
-      <div className="mt-12 grid gap-8 border-t border-ink/5 pt-8 sm:grid-cols-2 lg:grid-cols-4">
+      <div className="mt-12 grid gap-8 border-t border-ink/5 pt-8 sm:grid-cols-2 lg:grid-cols-4 lg:gap-x-16">
         {META.map(({ label, icon: Icon, value }) => (
           <div key={label.en}>
             <div className="eyebrow flex items-center gap-2 text-muted-ink">
@@ -110,7 +122,7 @@ export function ResumeCard() {
         <p className="relative z-10 flex items-center gap-2 text-sm font-medium text-white sm:text-base">
           <span aria-hidden>✦</span>
           {lang === "zh"
-            ? "用户同理心。策略清晰度。可衡量的影响。"
+            ? "以用户洞察锚定真实痛点，以系统化设计策略打造流畅体验，以产品长期正向改变定义设计价值。"
             : "Curious by research. Strategic by design. Driven by impact."}
         </p>
       </div>
