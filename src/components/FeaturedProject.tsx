@@ -24,14 +24,14 @@ export function FeaturedProject({
 
   return (
     <section className="relative mx-3 px-6 py-14 sm:mx-6 sm:px-10 sm:py-16 lg:px-14">
-      <div className="relative z-10 grid gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.8fr)] lg:gap-12">
+      <div className="relative z-10 grid gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.9fr)] lg:gap-12">
         <div className="flex flex-col">
           <Eyebrow label={lang === "zh" ? "精选项目" : "Featured Project"} color={eyebrowColor} />
           <h2 className="mt-6 text-5xl font-bold tracking-tight text-ink">
             {title}
           </h2>
           <div className="mt-6 h-[3px] w-40 rounded-full gradient-bar" />
-          <p className="mt-6 max-w-sm text-[15px] leading-relaxed text-muted-ink">
+          <p className="mt-6 max-w-md text-[17px] leading-relaxed text-muted-ink">
             {description[lang]}
           </p>
 
