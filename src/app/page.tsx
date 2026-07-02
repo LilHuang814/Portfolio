@@ -34,7 +34,7 @@ export default function Home() {
         title="Blour"
         description={{
           zh: "自动整理用户感兴趣的新闻并处理紧急待办，还能把上传的资料生成个性化播客，用笔记归纳信息",
-          en: "Curates the news users care about, handles urgent to-dos, and turns uploaded material into personalized podcasts — organized with notes.",
+          en: "Curates relevant news, handles urgent tasks, and transforms uploaded materials into personalized podcasts with organized notes.",
         }}
         tags={{
           zh: ["AI 产品设计", "AIGC", "竞品分析", "视觉设计"],
