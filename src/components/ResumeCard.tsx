@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { Target, MapPin, Briefcase, Mail, ArrowUpRight } from "lucide-react";
+import { Target, MapPin, Briefcase, Mail } from "lucide-react";
 import { useLanguage } from "@/lib/language";
 
 const META = [
@@ -111,9 +111,8 @@ export function ResumeCard() {
           <span aria-hidden>✦</span>
           {lang === "zh"
             ? "用户同理心。策略清晰度。可衡量的影响。"
-            : "User empathy. Strategic clarity. Measurable impact."}
+            : "Curious by research. Strategic by design. Driven by impact."}
         </p>
-        <ArrowUpRight className="relative z-10 h-5 w-5 text-white" />
       </div>
     </section>
   );
