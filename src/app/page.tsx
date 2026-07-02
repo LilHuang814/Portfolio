@@ -48,8 +48,8 @@ export default function Home() {
         eyebrowColor="orange"
         title="Payment Ticker Improvements"
         description={{
-          zh: "优化支付异常状态的提示，减少支付过程中的困惑；设计自动化排期与配置流程，让 Payadmin 后台管理更高效便捷",
-          en: "Clearer payment error-state messaging to reduce checkout confusion, plus automated scheduling and config flows for a more efficient Payadmin back office.",
+          zh: "根据不同游戏的设计系统与支付场景，设计对应的支付异常状态提示信息，确保玩家能够清晰理解问题并完成下一步操作",
+          en: "Created clear and consistent payment error-state messaging across game-specific design systems and payment scenarios.",
         }}
         tags={{
           zh: ["设计游戏 UI", "调研用户需求", "优化体验", "内容策略"],
