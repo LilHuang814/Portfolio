@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import {
   Users,
   Globe,
@@ -33,19 +33,26 @@ import { useLanguage, type Lang } from "@/lib/language";
 type BL = { en: string; zh: string };
 const t = (lang: Lang, v: BL) => v[lang];
 
+/** Tracks whether an image loaded — robust to errors that fire before
+    hydration (checks naturalWidth on mount). */
+function useImgFallback() {
+  const ref = useRef<HTMLImageElement>(null);
+  const [failed, setFailed] = useState(false);
+  useEffect(() => {
+    const el = ref.current;
+    if (el && el.complete && el.naturalWidth === 0) setFailed(true);
+  }, []);
+  return { ref, failed, onError: () => setFailed(true) };
+}
+
 /** Product screenshot. Drop a PNG at the given path and it appears automatically;
     until then it shows a labelled placeholder. */
 function Shot({ src, label }: { src: string; label: string }) {
-  const [ok, setOk] = useState(true);
-  if (ok) {
+  const { ref, failed, onError } = useImgFallback();
+  if (!failed) {
     return (
       // eslint-disable-next-line @next/next/no-img-element
-      <img
-        src={src}
-        alt={label}
-        onError={() => setOk(false)}
-        className="w-full rounded-2xl"
-      />
+      <img ref={ref} src={src} alt={label} onError={onError} className="w-full rounded-2xl" />
     );
   }
   return (
@@ -59,14 +66,37 @@ function Shot({ src, label }: { src: string; label: string }) {
   );
 }
 
+/** WisdomPlan wordmark. Drop /projects/wisdomplan/logo.png and it replaces
+    the text; until then the text wordmark shows. */
+function LogoTitle() {
+  const { ref, failed, onError } = useImgFallback();
+  if (!failed) {
+    return (
+      // eslint-disable-next-line @next/next/no-img-element
+      <img
+        ref={ref}
+        src="/projects/wisdomplan/logo.png"
+        alt="WisdomPlan"
+        onError={onError}
+        className="mt-6 h-11 w-auto"
+      />
+    );
+  }
+  return (
+    <h1 className="mt-6 text-[clamp(2rem,4.2vw,3.4rem)] font-bold leading-[1.1] tracking-tight text-ink">
+      WisdomPlan
+    </h1>
+  );
+}
+
 const heading = "text-[clamp(1.7rem,3.4vw,2.6rem)] font-bold leading-[1.1] tracking-tight text-ink";
 
 /* ------------------------------ content ------------------------------ */
 
 const STATS: { icon: LucideIcon; value: string; label: BL }[] = [
-  { icon: Users, value: "10K+", label: { en: "global learners", zh: "全球学习者" } },
-  { icon: Globe, value: "100+", label: { en: "countries & regions", zh: "国家与地区" } },
-  { icon: TrendingUp, value: "70%", label: { en: "boost in learning efficiency", zh: "学习效率提升" } },
+  { icon: Users, value: "10K+", label: { en: "Global Learners", zh: "全球学习者" } },
+  { icon: Globe, value: "100+", label: { en: "Countries & Regions", zh: "国家与地区" } },
+  { icon: TrendingUp, value: "70%", label: { en: "Boost in Learning Efficiency", zh: "学习效率提升" } },
 ];
 
 const CHALLENGES: { icon: LucideIcon; title: BL; desc: BL }[] = [
@@ -235,28 +265,26 @@ export default function WisdomPlanPage() {
   return (
     <main className="relative mx-auto w-full max-w-[90rem] pb-6">
       <CursorGlow />
+
+      {/* Big radial halo, anchored off the top-right; the hero floats above it. */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute right-[-160px] top-[-320px] h-[900px] w-[900px] rounded-full"
+        style={{
+          background:
+            "radial-gradient(circle, #F2CEFF 0%, #F4F2FF 60%, rgba(244,240,232,0) 100%)",
+        }}
+      />
+
       <SiteNav />
 
       {/* Hero */}
-      <section className="relative mx-3 mt-6 overflow-hidden rounded-[2rem] bg-card px-6 py-12 shadow-sm sm:mx-6 sm:px-10 sm:py-16 lg:px-14">
-        <div
-          aria-hidden
-          className="pointer-events-none absolute -right-24 -top-28 h-[460px] w-[460px] rounded-full blur-3xl"
-          style={{
-            background:
-              "radial-gradient(circle, rgba(150,160,222,0.42) 0%, rgba(243,193,159,0.28) 45%, rgba(243,193,159,0) 72%)",
-          }}
-        >
-          <div className="grain-overlay" />
-        </div>
-
+      <section className="relative mx-3 mt-6 px-6 py-12 sm:mx-6 sm:px-10 sm:py-16 lg:px-14">
         <div className="relative z-10 grid gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.1fr)] lg:items-center lg:gap-16">
           <div>
             <Eyebrow label={lang === "zh" ? "案例研究" : "Case Study"} color="periwinkle" />
-            <h1 className="mt-6 text-[clamp(2rem,4.2vw,3.4rem)] font-bold leading-[1.1] tracking-tight text-ink">
-              WisdomPlan
-            </h1>
-            <p className={`mt-4 ${heading}`}>
+            <LogoTitle />
+            <p className={`mt-5 ${heading}`}>
               {lang === "zh" ? "在 AI 时代，重新定义学习体验" : "Redefining the learning experience in the age of AI"}
             </p>
             <p className="mt-6 max-w-xl text-[17px] leading-relaxed text-muted-ink">
@@ -265,25 +293,25 @@ export default function WisdomPlanPage() {
                 : "As generative AI matures, learning platforms are shifting from static content libraries toward dynamic, personalized experiences. WisdomPlan uses AI recommendations, learning-path generation, and real-time assistance to build a smarter, more supportive growth experience."}
             </p>
 
-            <div className="mt-8 flex flex-wrap items-center gap-x-10 gap-y-6">
-              <div className="flex items-center gap-3 rounded-2xl bg-[#eeeafb] px-4 py-3">
-                <span className="flex h-9 w-9 items-center justify-center rounded-full bg-periwinkle text-white">
-                  <Sparkles className="h-4 w-4" />
-                </span>
-                <div className="leading-tight">
-                  <p className="text-[11px] font-semibold uppercase tracking-wide text-periwinkle">
-                    {lang === "zh" ? "#1 本月最佳产品" : "#1 Product of the Month"}
-                  </p>
-                  <p className="text-sm font-semibold text-ink">{lang === "zh" ? "教育" : "Education"}</p>
-                </div>
+            <div className="mt-8 flex max-w-xl items-center gap-3 rounded-2xl bg-[#eeeafb] px-5 py-4">
+              <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-periwinkle text-white">
+                <Sparkles className="h-5 w-5" />
+              </span>
+              <div className="leading-tight">
+                <p className="text-xs font-semibold uppercase tracking-wide text-periwinkle">
+                  {lang === "zh" ? "#1 本月最佳产品" : "#1 Product of the Month"}
+                </p>
+                <p className="text-sm font-semibold text-ink">{lang === "zh" ? "教育" : "Education"}</p>
               </div>
+            </div>
 
+            <div className="mt-6 grid max-w-xl grid-cols-3 gap-5">
               {STATS.map(({ icon: Icon, value, label }) => (
-                <div key={value} className="flex items-center gap-2.5">
-                  <Icon className="h-5 w-5 text-periwinkle" />
+                <div key={value} className="flex items-start gap-2.5">
+                  <Icon className="mt-1 h-6 w-6 shrink-0 text-periwinkle" />
                   <div className="leading-tight">
-                    <p className="text-lg font-bold text-ink">{value}</p>
-                    <p className="text-xs text-muted-ink">{t(lang, label)}</p>
+                    <p className="text-2xl font-bold text-ink">{value}</p>
+                    <p className="mt-0.5 text-sm text-muted-ink">{t(lang, label)}</p>
                   </div>
                 </div>
               ))}
