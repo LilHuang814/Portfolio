@@ -73,7 +73,7 @@ body {
    at the center out to light periwinkle and then nothing. Sits on an
    over-sized div so it can bleed past the section edges into the page. */
 .interactive-glow {
-  background: radial-gradient(440px circle at var(--mx, 30%) var(--my, 34%),
+  background: radial-gradient(280px circle at var(--mx, 30%) var(--my, 34%),
     rgba(253, 246, 235, 0.95) 0%,
     rgba(240, 224, 210, 0.7) 26%,
     rgba(190, 190, 232, 0.55) 48%,
