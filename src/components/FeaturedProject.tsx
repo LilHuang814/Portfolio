@@ -28,7 +28,7 @@ export function FeaturedProject({
         <div className="flex flex-col">
           <Eyebrow label={lang === "zh" ? "精选项目" : "Featured Project"} color={eyebrowColor} />
           <div className="mt-6 flex w-fit flex-col items-start">
-            <h2 className="text-5xl font-bold tracking-tight text-ink">{title}</h2>
+            <h2 className="text-[clamp(2rem,4.5vw,3rem)] font-bold tracking-tight text-ink">{title}</h2>
             <div className="mt-6 h-[3px] w-full rounded-full gradient-bar" />
           </div>
           <p className="mt-6 max-w-md text-[17px] leading-relaxed text-muted-ink">
@@ -39,7 +39,7 @@ export function FeaturedProject({
             <span className="text-sm font-semibold text-ink">
               {lang === "zh" ? "职责范围" : "Scope of responsibilities"}
             </span>
-            <div className="mt-3 flex max-w-sm flex-wrap gap-2.5">
+            <div className="mt-3 flex flex-wrap gap-2.5 lg:max-w-sm">
               {tags[lang].map((tag) => (
                 <span
                   key={tag}

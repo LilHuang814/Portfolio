@@ -50,7 +50,7 @@ export function ResumeCard() {
 
       <div className="mt-10 grid gap-8 lg:grid-cols-[1fr_auto] lg:gap-12">
         <div>
-          <h2 className="text-5xl font-bold tracking-tight text-ink">Lily Huang</h2>
+          <h2 className="text-[clamp(2rem,4.5vw,3rem)] font-bold tracking-tight text-ink">Lily Huang</h2>
 
           <div className="mt-6 grid gap-10 lg:grid-cols-[2fr_1px_1fr] lg:items-start">
             <div>

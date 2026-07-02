@@ -80,18 +80,18 @@ body {
     rgba(210, 214, 242, 0) 90%);
 }
 
-/* Contact section: warm orange at the top diffusing down through a light
-   coral and pink-lavender to periwinkle at the bottom. */
+/* Contact section: a radial glow from the top-center diffusing out
+   through coral and pink-lavender to periwinkle at the edges. */
 .gradient-mesh-contact {
-  background: linear-gradient(180deg,
-    #fd9259 0%,
-    #fdb16e 34%,
-    #e2bfcb 67%,
+  background: radial-gradient(135% 135% at 50% 0%,
+    #fc935d 0%,
+    #ffba96 20%,
+    #e2bfcb 69%,
     #b9c7e9 100%);
 }
 
 .gradient-bar {
-  background: linear-gradient(180deg, var(--periwinkle), var(--peach), var(--orange));
+  background: linear-gradient(90deg, var(--periwinkle), var(--peach), var(--orange));
 }
 
 .gradient-pill {
