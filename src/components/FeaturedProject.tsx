@@ -1,10 +1,14 @@
 "use client";
 
+import { useRef } from "react";
 import { Eyebrow } from "./Eyebrow";
-import { GradientGlow } from "./GradientGlow";
 import { useLanguage } from "@/lib/language";
 
 type Bilingual<T> = { en: T; zh: T };
+
+// The interactive glow div is inset by this many px on every side so the
+// radial can bleed past the section edges into the page background.
+const GLOW_INSET = 160;
 
 export function FeaturedProject({
   eyebrowColor,
@@ -22,10 +26,26 @@ export function FeaturedProject({
   children: React.ReactNode;
 }) {
   const { lang } = useLanguage();
+  const glowRef = useRef<HTMLDivElement>(null);
+
+  function handleMove(e: React.MouseEvent<HTMLElement>) {
+    const el = glowRef.current;
+    if (!el) return;
+    const rect = e.currentTarget.getBoundingClientRect();
+    el.style.setProperty("--mx", `${e.clientX - rect.left + GLOW_INSET}px`);
+    el.style.setProperty("--my", `${e.clientY - rect.top + GLOW_INSET}px`);
+  }
 
   return (
-    <section className="relative mx-3 px-6 py-14 sm:mx-6 sm:px-10 sm:py-16 lg:px-14">
-      <GradientGlow className="-left-40 -top-40 h-[620px] w-[620px]" />
+    <section
+      onMouseMove={handleMove}
+      className="relative mx-3 px-6 py-14 sm:mx-6 sm:px-10 sm:py-16 lg:px-14"
+    >
+      <div
+        ref={glowRef}
+        aria-hidden
+        className="interactive-glow pointer-events-none absolute -inset-40"
+      />
 
       <div className="relative z-10 grid gap-10 lg:grid-cols-[minmax(0,0.85fr)_minmax(0,1.6fr)] lg:gap-16">
         <div className="flex flex-col">
@@ -42,7 +62,7 @@ export function FeaturedProject({
             <span className="text-sm font-semibold text-ink">
               {lang === "zh" ? "职责范围" : "Scope"}
             </span>
-            <div className="mt-3 flex flex-wrap gap-2.5">
+            <div className="mt-3 flex max-w-sm flex-wrap gap-2.5">
               {tags[lang].map((tag) => (
                 <span
                   key={tag}
