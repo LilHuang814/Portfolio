@@ -16,6 +16,21 @@ export default function Home() {
 
       <FeaturedProject
         eyebrowColor="orange"
+        title="WisdomPlan"
+        description={{
+          zh: "帮助用户降低寻找学习资源的时间与成本，提供更个性化的学习路径与职业发展。",
+          en: "Cuts the time and cost of hunting for learning resources, delivering personalized learning paths and career growth.",
+        }}
+        tags={{
+          zh: ["用户研究", "交互设计", "竞品分析"],
+          en: ["User research", "Interaction design", "Competitive analysis"],
+        }}
+      >
+        <ProjectPlaceholder name="WisdomPlan" />
+      </FeaturedProject>
+
+      <FeaturedProject
+        eyebrowColor="orange"
         title="Blour"
         description={{
           zh: "自动整理用户感兴趣的新闻并处理紧急待办，还能把上传的资料生成个性化播客，用笔记归纳信息。",
@@ -57,21 +72,6 @@ export default function Home() {
         }}
       >
         <ProjectPlaceholder name="JPMC" />
-      </FeaturedProject>
-
-      <FeaturedProject
-        eyebrowColor="orange"
-        title="WisdomPlan"
-        description={{
-          zh: "帮助用户降低寻找学习资源的时间与成本，提供更个性化的学习路径与职业发展。",
-          en: "Cuts the time and cost of hunting for learning resources, delivering personalized learning paths and career growth.",
-        }}
-        tags={{
-          zh: ["用户研究", "交互设计", "竞品分析"],
-          en: ["User research", "Interaction design", "Competitive analysis"],
-        }}
-      >
-        <ProjectPlaceholder name="WisdomPlan" />
       </FeaturedProject>
 
       <ContactSection />
