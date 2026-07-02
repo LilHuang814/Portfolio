@@ -10,12 +10,12 @@ export function Hero() {
       <div className="gradient-mesh relative flex min-h-[620px] flex-col justify-between px-6 py-8 sm:px-10 sm:py-10">
         <div className="grain-overlay" />
 
-        <nav className="relative z-10 flex items-center justify-between">
-          <span className="rounded-full bg-white px-5 py-2.5 text-sm font-semibold text-[#4a57d0] shadow-sm">
+        <nav className="relative z-10 grid grid-cols-3 items-center">
+          <span className="justify-self-start rounded-full bg-white px-5 py-2.5 text-sm font-semibold text-[#4a57d0] shadow-sm">
             LH
           </span>
 
-          <div className="flex items-center gap-2 rounded-full bg-white px-5 py-2.5 text-sm font-semibold shadow-sm">
+          <div className="flex items-center gap-2 justify-self-center rounded-full bg-white px-5 py-2.5 text-sm font-semibold shadow-sm">
             <button
               type="button"
               onClick={() => setLang("zh")}
@@ -35,7 +35,7 @@ export function Hero() {
 
           <a
             href="/resume"
-            className="rounded-full bg-white px-5 py-2.5 text-sm font-semibold text-[#4a57d0] shadow-sm transition hover:bg-white/90"
+            className="justify-self-end rounded-full bg-white px-5 py-2.5 text-sm font-semibold text-[#4a57d0] shadow-sm transition hover:bg-white/90"
           >
             {lang === "zh" ? "简历" : "Resume"}
           </a>

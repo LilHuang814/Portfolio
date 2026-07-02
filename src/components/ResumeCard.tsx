@@ -41,40 +41,43 @@ export function ResumeCard() {
         />
       </div>
 
-      <div className="mt-10 grid gap-10 lg:grid-cols-[2fr_1px_1fr] lg:items-start">
-        <div>
-          <h2 className="text-5xl font-bold tracking-tight text-ink">Lily Huang</h2>
-          <p className="eyebrow mt-4 text-muted-ink">
-            {lang === "zh" ? "产品设计师" : "Product Designer"}
-          </p>
-          <p
-            className="mt-6 max-w-lg border-l-2 border-transparent pl-4 text-lg leading-relaxed text-ink/90"
-            style={{ borderImage: "linear-gradient(180deg, var(--periwinkle), var(--peach), var(--orange)) 1" }}
-          >
-            {lang === "zh"
-              ? "在 AI、产品策略与以人为本的设计交汇处，打造有温度、有思考的数字体验。"
-              : "Designing thoughtful digital experiences at the intersection of AI, product strategy, and human-centered design."}
-          </p>
-        </div>
+      <div className="mt-10">
+        <h2 className="text-5xl font-bold tracking-tight text-ink">Lily Huang</h2>
 
-        <div className="hidden bg-ink/10 lg:block" />
+        <div className="mt-6 grid gap-10 lg:grid-cols-[2fr_1px_1fr] lg:items-start">
+          <div>
+            <p className="eyebrow text-muted-ink">
+              {lang === "zh" ? "产品设计师" : "Product Designer"}
+            </p>
+            <p
+              className="mt-6 max-w-lg border-l-2 border-transparent pl-4 text-lg leading-relaxed text-ink/90"
+              style={{ borderImage: "linear-gradient(180deg, var(--periwinkle), var(--peach), var(--orange)) 1" }}
+            >
+              {lang === "zh"
+                ? "深耕 AI 原生产品与人机交互设计，擅长以用户研究为根基重构完整任务流程，把复杂的 AI 能力转化为自然流畅、落地可行的产品体验。"
+                : "Designing thoughtful digital experiences at the intersection of AI, product strategy, and human-centered design."}
+            </p>
+          </div>
 
-        <div>
-          <p className="eyebrow text-muted-ink">{lang === "zh" ? "教育背景" : "Education"}</p>
-          <div className="mt-4 flex items-center gap-4">
-            {/* Placeholder for the Cornell logo. Drop the file at
-                /public/cornell-logo.png and swap this for a next/image. */}
-            <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full border border-dashed border-ink/25 bg-white/40 text-muted-ink">
-              <ImageIcon className="h-5 w-5" strokeWidth={1.5} />
-            </div>
-            <div>
-              <p className="text-lg font-semibold text-ink">
-                {lang === "zh" ? "康奈尔大学" : "Cornell University"}
-              </p>
-              <p className="text-sm text-muted-ink">B.A. + M.P.S.</p>
-              <p className="text-sm text-muted-ink">
-                {lang === "zh" ? "信息科学" : "in Information Science"}
-              </p>
+          <div className="hidden bg-ink/10 lg:block" />
+
+          <div>
+            <p className="eyebrow text-muted-ink">{lang === "zh" ? "教育背景" : "Education"}</p>
+            <div className="mt-6 flex items-center gap-4">
+              {/* Placeholder for the Cornell logo. Drop the file at
+                  /public/cornell-logo.png and swap this for a next/image. */}
+              <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full border border-dashed border-ink/25 bg-white/40 text-muted-ink">
+                <ImageIcon className="h-5 w-5" strokeWidth={1.5} />
+              </div>
+              <div>
+                <p className="text-lg font-semibold text-ink">
+                  {lang === "zh" ? "康奈尔大学" : "Cornell University"}
+                </p>
+                <p className="text-sm text-muted-ink">B.A. + M.P.S.</p>
+                <p className="text-sm text-muted-ink">
+                  {lang === "zh" ? "信息科学" : "in Information Science"}
+                </p>
+              </div>
             </div>
           </div>
         </div>
