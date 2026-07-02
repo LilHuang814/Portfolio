@@ -48,7 +48,7 @@ export function ResumeCard() {
         />
       </div>
 
-      <div className="mt-10 grid gap-8 lg:grid-cols-[1fr_auto] lg:gap-12">
+      <div className="mt-12 grid gap-8 lg:grid-cols-[1fr_auto] lg:gap-12">
         <div>
           <h2 className="text-[clamp(1.9rem,3.75vw,3.4rem)] font-bold leading-[1.05] tracking-tight text-ink">Lily Huang</h2>
 
@@ -93,12 +93,12 @@ export function ResumeCard() {
           </div>
         </div>
 
-        <div className="relative order-first mx-auto h-56 w-44 shrink-0 overflow-hidden rounded-2xl lg:order-none lg:mx-0 lg:h-auto lg:self-stretch">
+        <div className="relative order-first mx-auto h-80 w-56 shrink-0 overflow-hidden rounded-2xl lg:order-none lg:mx-0 lg:h-auto lg:min-h-[320px] lg:self-stretch">
           <Image
-            src="/projects/lily.jpg"
+            src="/projects/lily-2.jpg"
             alt="Lily Huang"
             fill
-            sizes="176px"
+            sizes="224px"
             className="object-cover"
           />
         </div>
