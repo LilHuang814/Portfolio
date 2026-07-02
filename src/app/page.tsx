@@ -7,7 +7,7 @@ import { CursorGlow } from "@/components/CursorGlow";
 
 export default function Home() {
   return (
-    <main className="relative mx-auto w-full max-w-6xl pb-6">
+    <main className="relative mx-auto w-full max-w-7xl pb-6">
       <CursorGlow />
 
       <Hero />
