@@ -71,7 +71,7 @@ export function ResumeCard() {
 
             <div>
               <p className="eyebrow text-muted-ink">{lang === "zh" ? "教育背景" : "Education"}</p>
-              <div className="mt-6 flex items-center gap-4">
+              <div className="mt-6 flex items-start gap-4">
                 <Image
                   src="/projects/cornell.png"
                   alt="Cornell University"
@@ -95,7 +95,7 @@ export function ResumeCard() {
 
         {/* Placeholder for a portrait photo. Drop the file at
             /public/projects/portrait.png and swap this for a next/image. */}
-        <div className="hidden w-44 shrink-0 self-stretch overflow-hidden rounded-2xl border border-dashed border-ink/25 bg-white/40 lg:flex">
+        <div className="order-first mx-auto flex h-56 w-44 shrink-0 overflow-hidden rounded-2xl border border-dashed border-ink/25 bg-white/40 lg:order-none lg:mx-0 lg:h-auto lg:self-stretch">
           <div className="flex w-full flex-col items-center justify-center gap-2 px-3 text-center text-muted-ink">
             <ImageIcon className="h-6 w-6" strokeWidth={1.5} />
             <span className="text-xs font-medium text-ink/70">Your photo</span>
