@@ -28,7 +28,7 @@ export function FeaturedProject({
         <div className="flex flex-col">
           <Eyebrow label={lang === "zh" ? "精选项目" : "Featured Project"} color={eyebrowColor} />
           <div className="mt-6 flex w-fit flex-col items-start">
-            <h2 className="text-[clamp(1.9rem,3.75vw,3.4rem)] font-bold tracking-tight text-ink">{title}</h2>
+            <h2 className="text-[clamp(1.9rem,3.75vw,3.4rem)] font-bold leading-[1.05] tracking-tight text-ink">{title}</h2>
             <div className="mt-3 h-[3px] w-full rounded-full gradient-bar" />
           </div>
           <p className="mt-6 max-w-md text-[17px] leading-relaxed text-muted-ink">
