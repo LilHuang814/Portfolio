@@ -30,6 +30,21 @@ export default function Home() {
       </FeaturedProject>
 
       <FeaturedProject
+        eyebrowColor="orange"
+        title="Payment Ticker Improvements"
+        description={{
+          zh: "优化支付异常状态的提示，减少支付过程中的困惑；设计自动化排期与配置流程，让 Payadmin 后台管理更高效便捷。",
+          en: "Clearer payment error-state messaging to reduce checkout confusion, plus automated scheduling and config flows for a more efficient Payadmin back office.",
+        }}
+        tags={{
+          zh: ["设计游戏 UI", "调研用户需求", "优化体验"],
+          en: ["Game UI design", "User research", "Experience optimization"],
+        }}
+      >
+        <ProjectPlaceholder name="Payment Ticker Improvements" />
+      </FeaturedProject>
+
+      <FeaturedProject
         eyebrowColor="periwinkle"
         title="JPMC"
         description={{
