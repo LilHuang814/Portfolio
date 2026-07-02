@@ -83,10 +83,10 @@ body {
 /* Contact section: a radial glow from the top-center diffusing out
    through coral and pink-lavender to periwinkle at the edges. */
 .gradient-mesh-contact {
-  background: radial-gradient(135% 135% at 50% 0%,
+  background: radial-gradient(90% 120% at 50% 0%,
     #fc935d 0%,
     #ffba96 20%,
-    #e2bfcb 69%,
+    #e2bfcb 45%,
     #b9c7e9 100%);
 }
 
