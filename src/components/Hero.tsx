@@ -42,8 +42,8 @@ export function Hero() {
           </div>
 
           <a
-            href="/resume.pdf"
-            download="Lily-Huang-Resume.pdf"
+            href={lang === "zh" ? "/resume.pdf" : "/resume-english.pdf"}
+            download={lang === "zh" ? "Lily-Huang-简历.pdf" : "Lily-Huang-Resume.pdf"}
             className="justify-self-end rounded-full bg-white px-5 py-2.5 text-sm font-semibold text-[#4a57d0] shadow-sm transition hover:bg-white/90"
           >
             {lang === "zh" ? "简历" : "Resume"}
