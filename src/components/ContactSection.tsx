@@ -12,7 +12,7 @@ export function ContactSection() {
 
         <div className="relative z-10 flex flex-1 items-center justify-center py-16 text-center">
           <h2 className="text-5xl font-bold tracking-tight text-white drop-shadow-sm sm:text-7xl">
-            {lang === "zh" ? "联系我" : "contact me"}
+            contact me
           </h2>
         </div>
 

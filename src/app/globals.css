@@ -74,10 +74,10 @@ body {
 .interactive-glow {
   background: radial-gradient(280px circle at var(--mx, 50%) var(--my, 38%),
     rgba(253, 247, 237, 0.92) 0%,
-    rgba(242, 230, 218, 0.58) 30%,
-    rgba(214, 216, 242, 0.34) 54%,
-    rgba(202, 208, 244, 0.16) 70%,
-    rgba(202, 208, 244, 0) 84%);
+    rgba(245, 233, 221, 0.62) 42%,
+    rgba(228, 224, 238, 0.24) 64%,
+    rgba(210, 214, 242, 0.08) 78%,
+    rgba(210, 214, 242, 0) 90%);
 }
 
 /* Contact section: warm orange at the top diffusing down through a light
