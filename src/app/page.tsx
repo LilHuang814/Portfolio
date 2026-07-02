@@ -76,7 +76,7 @@ export default function Home() {
           en: ["UX design", "Workflow optimization", "User research", "Visual design"],
         }}
       >
-        <ProjectImage src="/projects/jpmc.png" alt="JPMC" width={6692} height={1964} />
+        <ProjectImage src="/projects/jpmc.png" alt="JPMC" width={6912} height={3508} />
       </FeaturedProject>
 
       <ContactSection />
