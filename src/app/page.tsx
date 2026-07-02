@@ -22,8 +22,8 @@ export default function Home() {
           en: "Cuts the time and cost of hunting for learning resources, delivering personalized learning paths and career growth.",
         }}
         tags={{
-          zh: ["用户研究", "交互设计", "竞品分析"],
-          en: ["User research", "Interaction design", "Competitive analysis"],
+          zh: ["用户研究", "快速原型", "竞品分析", "AI 产品设计"],
+          en: ["User research", "Rapid prototyping", "Competitive analysis", "AI product design"],
         }}
       >
         <ProjectImage src="/projects/wisdomplan.png" alt="WisdomPlan" width={5760} height={2924} />
@@ -37,8 +37,8 @@ export default function Home() {
           en: "Curates the news users care about, handles urgent to-dos, and turns uploaded material into personalized podcasts — organized with notes.",
         }}
         tags={{
-          zh: ["AI Agent 设计", "设计系统", "播客内容", "竞品分析"],
-          en: ["AI Agent design", "Design system", "Podcast content", "Competitive analysis"],
+          zh: ["AI 产品设计", "AIGC", "竞品分析", "视觉设计"],
+          en: ["AI product design", "AIGC", "Competitive analysis", "Visual design"],
         }}
       >
         <ProjectImage src="/projects/blour.png" alt="Blour" width={6840} height={3376} />
@@ -52,8 +52,8 @@ export default function Home() {
           en: "Clearer payment error-state messaging to reduce checkout confusion, plus automated scheduling and config flows for a more efficient Payadmin back office.",
         }}
         tags={{
-          zh: ["设计游戏 UI", "调研用户需求", "优化体验"],
-          en: ["Game UI design", "User research", "Experience optimization"],
+          zh: ["设计游戏 UI", "调研用户需求", "优化体验", "跨部门协作"],
+          en: ["Game UI design", "User research", "Experience optimization", "Cross-functional collaboration"],
         }}
       >
         <ProjectImage
@@ -72,8 +72,8 @@ export default function Home() {
           zh: "设计可扩展的内部工具与受理系统，为 52+ 个团队简化协作、提升效率。",
         }}
         tags={{
-          zh: ["流程设计", "系统设计", "跨部门协作", "体验优化"],
-          en: ["Process design", "Systems design", "Cross-team", "UX optimization"],
+          zh: ["用户体验设计", "流程优化", "用户研究", "视觉设计"],
+          en: ["UX design", "Workflow optimization", "User research", "Visual design"],
         }}
       >
         <ProjectImage src="/projects/jpmc.png" alt="JPMC" width={6692} height={1964} />
