@@ -30,10 +30,15 @@ export function ContactSection() {
             </p>
           </div>
           <div>
-            <p className="eyebrow text-white/70">{lang === "zh" ? "状态" : "Currently"}</p>
-            <p className="mt-1 text-lg font-medium">
-              {lang === "zh" ? "开放产品设计机会" : "Open to product design roles"}
-            </p>
+            <p className="eyebrow text-white/70">{lang === "zh" ? "领英" : "LinkedIn"}</p>
+            <a
+              href="https://linkedin.com/in/lilyshiyihuang/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-1 block text-lg font-medium"
+            >
+              linkedin.com/in/lilyshiyihuang/
+            </a>
           </div>
         </div>
       </div>

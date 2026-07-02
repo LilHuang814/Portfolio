@@ -7,7 +7,7 @@ const META = [
   {
     icon: Target,
     label: { en: "Focus", zh: "专注方向" },
-    value: { en: "AI product design, 0→1, user research", zh: "AI 产品设计、0→1、用户研究" },
+    value: { en: "AI product design, 0→1, user research", zh: "AI 产品设计、孵化新品、用户研究" },
   },
   {
     icon: MapPin,
@@ -17,12 +17,18 @@ const META = [
   {
     icon: Briefcase,
     label: { en: "Experience", zh: "经历" },
-    value: { en: "Riot Games, JPMorgan Chase, WisdomPlan", zh: "Riot Games、JPMorgan Chase、WisdomPlan" },
+    value: {
+      en: "WisdomPlan, Riot Games, JPMorgan Chase, NetEase Games",
+      zh: "WisdomPlan、拳头游戏、摩根大通银行、网易游戏",
+    },
   },
   {
     icon: Mail,
     label: { en: "Contact", zh: "联系方式" },
-    value: { en: "sh835@cornell.edu", zh: "sh835@cornell.edu" },
+    value: {
+      en: "sh835@cornell.edu\n607-262-5141",
+      zh: "sh835@cornell.edu\n+86 189-0189-9696",
+    },
   },
 ] as const;
 
@@ -91,7 +97,7 @@ export function ResumeCard() {
               {label[lang]}
               <span className="h-1 w-1 rounded-full bg-orange" />
             </div>
-            <p className="mt-2 text-sm text-ink/90">{value[lang]}</p>
+            <p className="mt-2 whitespace-pre-line text-sm text-ink/90">{value[lang]}</p>
           </div>
         ))}
       </div>
