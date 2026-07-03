@@ -92,7 +92,7 @@ function LogoTitle() {
   );
 }
 
-const heading = "text-[clamp(1.7rem,3.4vw,2.6rem)] font-bold leading-[1.1] tracking-tight text-ink";
+const heading = "text-[clamp(1.7rem,3.4vw,2.6rem)] font-semibold leading-[1.15] tracking-tight text-ink";
 
 /** Decorative gradient line + dots — the home page's accent motif. */
 function Flourish() {
@@ -312,7 +312,6 @@ export default function WisdomPlanPage() {
             <p className={`mt-5 ${heading}`}>
               {lang === "zh" ? "在 AI 时代，重新定义学习" : "Redefining learning in the age of AI"}
             </p>
-            <Flourish />
             <p className="mt-6 max-w-xl text-[17px] leading-relaxed text-muted-ink">
               {lang === "zh"
                 ? "WisdomPlan 通过 AI 推荐、学习路径与实时辅助，构建更智能、更有陪伴感的成长体验。"
@@ -341,14 +340,14 @@ export default function WisdomPlanPage() {
       </section>
 
       {/* Impact stats */}
-      <section className="relative mx-3 px-6 py-10 sm:mx-6 sm:px-10 sm:py-14 lg:px-14">
+      <section className="relative mx-3 px-6 pb-10 pt-20 sm:mx-6 sm:px-10 sm:pb-14 sm:pt-28 lg:px-14">
         <div className="grid gap-10 sm:grid-cols-3 sm:gap-6">
           {STATS.map(({ value, label }) => (
             <div key={value} className="text-center">
               <p className="text-[clamp(3.25rem,8vw,5.5rem)] font-bold leading-none text-[#A6ADF2]">
                 {value}
               </p>
-              <p className="mt-4 text-base text-muted-ink">{t(lang, label)}</p>
+              <p className="mt-4 text-lg text-muted-ink sm:text-xl">{t(lang, label)}</p>
             </div>
           ))}
         </div>
@@ -375,26 +374,50 @@ export default function WisdomPlanPage() {
           ))}
         </div>
 
-        <div className="mt-12 flex flex-col gap-4 rounded-2xl bg-[#efeafb] p-6 sm:flex-row sm:items-start sm:gap-6 sm:p-8">
-          <div className="flex shrink-0 items-center gap-2.5 text-periwinkle">
-            <Sparkles className="h-7 w-7" />
-            <span className="text-lg font-bold">{lang === "zh" ? "我们的机会" : "Our opportunity"}</span>
+      </section>
+
+      {/* Our opportunity */}
+      <section className="relative mx-3 px-6 py-10 sm:mx-6 sm:px-10 sm:py-12 lg:px-14">
+        <div className="relative overflow-hidden rounded-[2rem] bg-[#efeafb] px-8 py-14 sm:px-14 sm:py-16">
+          <div
+            aria-hidden
+            className="pointer-events-none absolute right-[-140px] top-[-140px] h-[420px] w-[420px] rounded-full"
+            style={{
+              background:
+                "radial-gradient(circle, rgba(182,169,232,0.55) 0%, rgba(243,193,159,0.28) 45%, rgba(239,234,251,0) 72%)",
+            }}
+          />
+          <DotGrid className="absolute bottom-10 right-12 hidden lg:grid" />
+
+          <div className="relative z-10 max-w-3xl">
+            <div className="flex items-center gap-3">
+              <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-periwinkle text-white">
+                <Sparkles className="h-6 w-6" />
+              </span>
+              <Eyebrow label={lang === "zh" ? "我们的机会" : "Our opportunity"} color="periwinkle" />
+            </div>
+            <h2 className={`mt-6 ${heading}`}>
+              {lang === "zh"
+                ? "把这些痛点，转化为 AI 驱动的机会"
+                : "Turning these gaps into an AI-driven opportunity"}
+            </h2>
+            <Flourish />
+            <p className="mt-6 text-lg leading-relaxed text-ink/80">
+              {lang === "zh"
+                ? "AI 与数据分析能缓解这些问题：结合用户目标、当前水平与学习内容，系统推荐下一步该学什么、快速解答疑问、设定合理目标并持续反馈进度，让学习更清晰、更高效。"
+                : "AI and data analytics can ease these problems. By combining the user's goals, level, and learning content, the system recommends what to learn next, answers questions quickly, sets sensible goals, and reflects progress continuously."}
+            </p>
           </div>
-          <p className="text-[15px] leading-relaxed text-ink/80">
-            {lang === "zh"
-              ? "AI 与数据分析能缓解这些问题：结合用户目标、当前水平与学习内容，系统推荐下一步该学什么、快速解答疑问、设定合理目标并持续反馈进度，让学习更清晰、更高效。"
-              : "AI and data analytics can ease these problems. By combining the user's goals, level, and learning content, the system recommends what to learn next, answers questions quickly, sets sensible goals, and reflects progress continuously."}
-          </p>
         </div>
       </section>
 
       {/* Existing experience + target users */}
       <section className="relative mx-3 px-6 py-8 sm:mx-6 sm:px-10 lg:px-14">
         <div className="grid items-start gap-x-12 gap-y-6 lg:grid-cols-2 lg:gap-x-16">
-          <h3 className="text-xl font-bold text-ink">
+          <h3 className="text-xl font-semibold text-ink">
             {lang === "zh" ? "现有学习体验中的问题" : "Problems in today's learning experience"}
           </h3>
-          <h3 className="mt-6 text-xl font-bold text-ink lg:mt-0">
+          <h3 className="mt-6 text-xl font-semibold text-ink lg:mt-0">
             {lang === "zh" ? "目标用户" : "Target users"}
           </h3>
 
@@ -464,7 +487,7 @@ export default function WisdomPlanPage() {
             <span className="flex h-16 w-16 shrink-0 items-center justify-center rounded-full bg-[#787BD7] text-white">
               <Icon className="h-7 w-7" />
             </span>
-            <h3 className="text-2xl font-bold tracking-tight text-ink sm:text-3xl">{t(lang, title)}</h3>
+            <h3 className="text-2xl font-semibold tracking-tight text-ink sm:text-3xl">{t(lang, title)}</h3>
           </div>
 
           <div
