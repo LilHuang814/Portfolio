@@ -131,7 +131,7 @@ const CHALLENGES: { icon: LucideIcon; title: BL; desc: BL }[] = [
     icon: MessageCircle,
     title: { en: "Questions go unanswered", zh: "疑问无法快速解决" },
     desc: {
-      en: "You can't get quick, in-context answers — and it only gets more confusing.",
+      en: "You can't get quick, in-context answers, and it only gets more confusing.",
       zh: "没法根据内容快速得到问题的解答，越学越混乱。",
     },
   },
@@ -158,7 +158,7 @@ const PROBLEMS: { icon: LucideIcon; title: BL; points: BL[] }[] = [
     icon: Bot,
     title: { en: "General AI like ChatGPT", zh: "ChatGPT 等通用 AI" },
     points: [
-      { en: "No automatic context — users must supply it manually.", zh: "缺乏自动上下文连接，用户需要手动提供。" },
+      { en: "No automatic context; users must supply it manually.", zh: "缺乏自动上下文连接，用户需要手动提供。" },
       { en: "Can't track progress against a syllabus or guide the process.", zh: "无法根据课程表追踪学习进度、引导学习过程。" },
     ],
   },
@@ -223,7 +223,7 @@ const FEATURES: { icon: LucideIcon; title: BL; shot: { src: string; label: strin
     title: { en: "Find & recommend personalized courses", zh: "寻找并推荐个性化课程" },
     shot: { src: "/projects/wisdomplan/courses.png", label: "Course recommendations" },
     points: [
-      { en: "AI aggregates relevant courses, exercises, and resources — cutting manual search.", zh: "AI 自动聚合相关课程、练习与学习资源，减少用户手动搜索与筛选成本。" },
+      { en: "AI aggregates relevant courses, exercises, and resources, cutting manual search.", zh: "AI 自动聚合相关课程、练习与学习资源，减少用户手动搜索与筛选成本。" },
       { en: "Content, AI answers, and the path live in one place for a continuous, immersive flow.", zh: "将学习内容、AI 解答与学习路径整合在同一界面中，保持连续沉浸的学习体验。" },
       { en: "Context-aware support tied to the current lesson aids understanding.", zh: "基于当前课程内容提供上下文关联支持，帮助用户更高效地理解与吸收知识。" },
     ],
@@ -292,8 +292,8 @@ export default function WisdomPlanPage() {
             </p>
             <p className="mt-6 max-w-xl text-[17px] leading-relaxed text-muted-ink">
               {lang === "zh"
-                ? "随着生成式 AI 的发展，学习平台开始从静态内容库转向更动态、个性化的学习体验。WisdomPlan 通过 AI 推荐、学习路径生成与实时辅助，为用户构建更智能、更具陪伴感的成长体验。"
-                : "As generative AI matures, learning platforms are shifting from static content libraries toward dynamic, personalized experiences. WisdomPlan uses AI recommendations, learning-path generation, and real-time assistance to build a smarter, more supportive growth experience."}
+                ? "在 AI 时代，学习正从静态内容库转向动态、个性化的体验。WisdomPlan 通过 AI 推荐、学习路径与实时辅助，构建更智能、更有陪伴感的成长体验。"
+                : "Learning is shifting from static content libraries to dynamic, personalized experiences. WisdomPlan uses AI recommendations, learning paths, and real-time assistance to build a smarter, more supportive growth experience."}
             </p>
 
             <div
@@ -307,7 +307,7 @@ export default function WisdomPlanPage() {
                 <p className="text-xs font-semibold uppercase tracking-wide text-white">
                   {lang === "zh" ? "#1 本月最佳产品" : "#1 Product of the Month"}
                 </p>
-                <p className="text-sm font-semibold text-white">{lang === "zh" ? "教育" : "Education"}</p>
+                <p className="text-base font-semibold text-white sm:text-lg">{lang === "zh" ? "教育" : "Education"}</p>
               </div>
             </div>
 
@@ -338,7 +338,7 @@ export default function WisdomPlanPage() {
         <div className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-5">
           {CHALLENGES.map(({ icon: Icon, title, desc }) => (
             <div key={title.en}>
-              <span className="flex h-12 w-12 items-center justify-center rounded-full bg-[#eeeafb] text-periwinkle">
+              <span className="flex h-12 w-12 items-center justify-center rounded-full bg-[#787BD7] text-white">
                 <Icon className="h-5 w-5" />
               </span>
               <p className="mt-4 font-semibold text-ink">{t(lang, title)}</p>
@@ -354,8 +354,8 @@ export default function WisdomPlanPage() {
           </div>
           <p className="text-[15px] leading-relaxed text-ink/80">
             {lang === "zh"
-              ? "生成式 AI 与数据分析能够有效缓解上述问题：系统结合用户目标、当前水平与学习内容，帮助用户推荐并推送下一步该学什么、快速解决学习中的疑问、制定合理的目标，并持续反馈学习进度，让整个学习过程更清晰、更高效。"
-              : "Generative AI and data analytics can ease these problems: by combining the user's goals, current level, and learning content, the system recommends what to learn next, resolves questions quickly, sets sensible goals, and continuously reflects progress — making the whole journey clearer and more efficient."}
+              ? "AI 与数据分析能缓解这些问题：结合用户目标、当前水平与学习内容，系统推荐下一步该学什么、快速解答疑问、设定合理目标并持续反馈进度，让学习更清晰、更高效。"
+              : "AI and data analytics can ease these problems. By combining the user's goals, level, and learning content, the system recommends what to learn next, answers questions quickly, sets sensible goals, and reflects progress continuously."}
           </p>
         </div>
       </section>
@@ -370,7 +370,7 @@ export default function WisdomPlanPage() {
             <div className="mt-6 space-y-6">
               {PROBLEMS.map(({ icon: Icon, title, points }) => (
                 <div key={title.en} className="flex gap-4">
-                  <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-[#eeeafb] text-periwinkle">
+                  <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-[#787BD7] text-white">
                     <Icon className="h-5 w-5" />
                   </span>
                   <div>
@@ -417,7 +417,7 @@ export default function WisdomPlanPage() {
           {STEPS.map(({ icon: Icon, title }, i) => (
             <div key={title.en} className="flex flex-col items-center text-center">
               <div className="relative">
-                <span className="flex h-14 w-14 items-center justify-center rounded-full bg-[#eeeafb] text-periwinkle">
+                <span className="flex h-14 w-14 items-center justify-center rounded-full bg-[#787BD7] text-white">
                   <Icon className="h-6 w-6" />
                 </span>
                 <span className="absolute -right-1 -top-1 flex h-6 w-6 items-center justify-center rounded-full bg-periwinkle text-xs font-bold text-white">
@@ -434,7 +434,7 @@ export default function WisdomPlanPage() {
       {FEATURES.map(({ icon: Icon, title, shot, points }, idx) => (
         <section key={title.en} className="relative mx-3 px-6 py-12 sm:mx-6 sm:px-10 sm:py-14 lg:px-14">
           <div className="flex items-center justify-center gap-4 text-center">
-            <span className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-[#eeeafb] text-periwinkle">
+            <span className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-[#787BD7] text-white">
               <Icon className="h-6 w-6" />
             </span>
             <h3 className="text-2xl font-bold tracking-tight text-ink sm:text-3xl">{t(lang, title)}</h3>
