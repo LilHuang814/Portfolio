@@ -45,12 +45,12 @@ function useImgFallback() {
 
 /** Product screenshot. Drop a PNG at the given path and it appears automatically;
     until then it shows a labelled placeholder. */
-function Shot({ src, label }: { src: string; label: string }) {
+function Shot({ src, label, className }: { src: string; label: string; className?: string }) {
   const { ref, failed, onError } = useImgFallback();
   if (!failed) {
     return (
       // eslint-disable-next-line @next/next/no-img-element
-      <img ref={ref} src={src} alt={label} onError={onError} className="w-full rounded-2xl" />
+      <img ref={ref} src={src} alt={label} onError={onError} className={className ?? "w-full rounded-2xl"} />
     );
   }
   return (
@@ -142,7 +142,7 @@ function DotGrid({ className = "" }: { className?: string }) {
 const STATS: { icon: LucideIcon; value: string; label: BL }[] = [
   { icon: Users, value: "10K+", label: { en: "Global Learners", zh: "全球学习者" } },
   { icon: Globe, value: "100+", label: { en: "Countries", zh: "国家与地区" } },
-  { icon: TrendingUp, value: "70%", label: { en: "Learning Efficiency", zh: "学习效率提升" } },
+  { icon: TrendingUp, value: "70%+", label: { en: "Learning Efficiency", zh: "学习效率提升" } },
 ];
 
 const CHALLENGES: { icon: LucideIcon; title: BL; desc: BL }[] = [
@@ -339,7 +339,7 @@ export default function WisdomPlanPage() {
             </p>
 
             <div
-              className="mt-8 flex w-fit items-center gap-3 rounded-full py-2.5 pl-3 pr-8"
+              className="mt-8 flex w-fit items-center gap-3 rounded-full py-2.5 pl-5 pr-11"
               style={{ background: "linear-gradient(90deg, #646FD9, #B79ED1, #E0AC9F)" }}
             >
               <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-white/20 text-white">
@@ -355,7 +355,11 @@ export default function WisdomPlanPage() {
 
           </div>
 
-          <Shot src="/projects/wisdomplan/hero.png" label="WisdomPlan product" />
+          <Shot
+            src="/projects/wisdomplan/hero.png"
+            label="WisdomPlan product"
+            className="mx-auto max-h-[520px] w-auto rounded-2xl object-contain"
+          />
         </div>
       </section>
 
@@ -364,7 +368,7 @@ export default function WisdomPlanPage() {
         <div className="grid gap-10 sm:grid-cols-3 sm:gap-6">
           {STATS.map(({ value, label }) => (
             <div key={value} className="text-center">
-              <p className="text-[clamp(3.25rem,8vw,5.5rem)] font-bold leading-none text-[#A6ADF2]">
+              <p className="text-[clamp(3.25rem,8vw,5.5rem)] font-bold leading-none text-[#B6A9E8]">
                 {value}
               </p>
               <p className="mt-4 text-lg text-muted-ink sm:text-xl">{t(lang, label)}</p>
@@ -486,7 +490,7 @@ export default function WisdomPlanPage() {
                 <span className="flex h-16 w-16 items-center justify-center rounded-full bg-[#787BD7] text-white">
                   <Icon className="h-7 w-7" />
                 </span>
-                <span className="absolute -right-1 -top-1 flex h-6 w-6 items-center justify-center rounded-full bg-[#A6ADF2] text-xs font-bold text-white">
+                <span className="absolute -right-1 -top-1 flex h-6 w-6 items-center justify-center rounded-full bg-[#B6A9E8] text-xs font-bold text-white">
                   {i + 1}
                 </span>
               </div>
