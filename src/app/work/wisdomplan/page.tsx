@@ -13,8 +13,6 @@ import {
   MessageSquare,
   Bot,
   GraduationCap,
-  Briefcase,
-  Laptop,
   Target,
   Search,
   BookOpen,
@@ -63,6 +61,28 @@ function Shot({ src, label }: { src: string; label: string }) {
         <span className="text-xs text-muted-ink/70">{src}</span>
       </div>
     </div>
+  );
+}
+
+/** Round persona photo. Falls back to a dashed placeholder until the image loads. */
+function PersonaAvatar({ src, alt }: { src: string; alt: string }) {
+  const { ref, failed, onError } = useImgFallback();
+  if (!failed) {
+    return (
+      // eslint-disable-next-line @next/next/no-img-element
+      <img
+        ref={ref}
+        src={src}
+        alt={alt}
+        onError={onError}
+        className="h-16 w-16 shrink-0 rounded-full object-cover"
+      />
+    );
+  }
+  return (
+    <span className="flex h-16 w-16 shrink-0 items-center justify-center overflow-hidden rounded-full border border-dashed border-ink/25 bg-white/50 text-muted-ink">
+      <ImageIcon className="h-6 w-6" strokeWidth={1.5} />
+    </span>
   );
 }
 
@@ -195,9 +215,9 @@ const PROBLEMS: { icon: LucideIcon; title: BL; points: BL[] }[] = [
   },
 ];
 
-const PERSONAS: { icon: LucideIcon; title: BL; desc: BL }[] = [
+const PERSONAS: { img: string; title: BL; desc: BL }[] = [
   {
-    icon: Briefcase,
+    img: "/projects/wisdomplan/career-switcher.png",
     title: { en: "Career switchers", zh: "转行探索者" },
     desc: {
       en: "Moving into a new field and needs a systematic learning path plus a clear picture of the role-specific skills that actually matter.",
@@ -205,7 +225,7 @@ const PERSONAS: { icon: LucideIcon; title: BL; desc: BL }[] = [
     },
   },
   {
-    icon: Laptop,
+    img: "/projects/wisdomplan/working-learners.png",
     title: { en: "Working learners", zh: "在职学习者" },
     desc: {
       en: "Upskilling alongside a full-time job and needs flexible, bite-sized methods with efficient, high-quality resources they can trust.",
@@ -213,7 +233,7 @@ const PERSONAS: { icon: LucideIcon; title: BL; desc: BL }[] = [
     },
   },
   {
-    icon: GraduationCap,
+    img: "/projects/wisdomplan/student.png",
     title: { en: "Students & job seekers", zh: "大学求职者" },
     desc: {
       en: "Facing job-hunting and study pressure at once and needs a clear, structured path to stay focused and cut through the overwhelm.",
@@ -378,7 +398,7 @@ export default function WisdomPlanPage() {
 
       {/* Our opportunity */}
       <section className="relative mx-3 px-6 py-10 sm:mx-6 sm:px-10 sm:py-12 lg:px-14">
-        <div className="relative overflow-hidden rounded-[2rem] bg-[#efeafb] px-8 py-14 sm:px-14 sm:py-16">
+        <div className="relative overflow-hidden rounded-[2rem] bg-white/55 px-8 py-14 sm:px-14 sm:py-16">
           <div
             aria-hidden
             className="pointer-events-none absolute right-[-140px] top-[-140px] h-[420px] w-[420px] rounded-full"
@@ -397,9 +417,7 @@ export default function WisdomPlanPage() {
               <Eyebrow label={lang === "zh" ? "我们的机会" : "Our opportunity"} color="periwinkle" />
             </div>
             <h2 className={`mt-6 ${heading}`}>
-              {lang === "zh"
-                ? "把这些痛点，转化为 AI 驱动的机会"
-                : "Turning these gaps into an AI-driven opportunity"}
+              {lang === "zh" ? "AI 驱动的机会" : "An AI-driven opportunity"}
             </h2>
             <Flourish />
             <p className="mt-6 text-lg leading-relaxed text-ink/80">
@@ -442,9 +460,7 @@ export default function WisdomPlanPage() {
                   </div>
                 </div>
                 <div className="flex gap-4">
-                  <span className="flex h-16 w-16 shrink-0 items-center justify-center overflow-hidden rounded-full border border-dashed border-ink/25 bg-white/50 text-muted-ink">
-                    <ImageIcon className="h-6 w-6" strokeWidth={1.5} />
-                  </span>
+                  <PersonaAvatar src={persona.img} alt={t(lang, persona.title)} />
                   <div>
                     <p className="font-semibold text-periwinkle">{t(lang, persona.title)}</p>
                     <p className="mt-1 text-sm leading-relaxed text-muted-ink">{t(lang, persona.desc)}</p>
@@ -470,7 +486,7 @@ export default function WisdomPlanPage() {
                 <span className="flex h-16 w-16 items-center justify-center rounded-full bg-[#787BD7] text-white">
                   <Icon className="h-7 w-7" />
                 </span>
-                <span className="absolute -right-1 -top-1 flex h-6 w-6 items-center justify-center rounded-full bg-[#A9AEEF] text-xs font-bold text-white">
+                <span className="absolute -right-1 -top-1 flex h-6 w-6 items-center justify-center rounded-full bg-[#A6ADF2] text-xs font-bold text-white">
                   {i + 1}
                 </span>
               </div>
