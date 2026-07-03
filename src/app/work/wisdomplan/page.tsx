@@ -62,7 +62,7 @@ function Shot({ src, label, className }: { src: string; label: string; className
 }
 
 /** Round persona photo. Falls back to a dashed placeholder until the image loads. */
-function PersonaAvatar({ src, alt }: { src: string; alt: string }) {
+function PersonaAvatar({ src, alt, size = "h-16 w-16" }: { src: string; alt: string; size?: string }) {
   const { ref, failed, onError } = useImgFallback();
   if (!failed) {
     return (
@@ -72,12 +72,12 @@ function PersonaAvatar({ src, alt }: { src: string; alt: string }) {
         src={src}
         alt={alt}
         onError={onError}
-        className="h-16 w-16 shrink-0 rounded-full object-cover"
+        className={`${size} shrink-0 rounded-full object-cover`}
       />
     );
   }
   return (
-    <span className="flex h-16 w-16 shrink-0 items-center justify-center overflow-hidden rounded-full border border-dashed border-ink/25 bg-white/50 text-muted-ink">
+    <span className={`${size} flex shrink-0 items-center justify-center overflow-hidden rounded-full border border-dashed border-ink/25 bg-white/50 text-muted-ink`}>
       <ImageIcon className="h-6 w-6" strokeWidth={1.5} />
     </span>
   );
@@ -191,8 +191,8 @@ const PROBLEMS: { img: string; label: string; title: BL; points: BL[] }[] = [
     label: "Forums / online courses",
     title: { en: "Forums / online courses", zh: "网络论坛 / 网课" },
     points: [
-      { en: "High manual search cost; results may not fit the user's needs.", zh: "手动搜索成本高，结果也未必符合用户需求。" },
-      { en: "Inconsistent quality; users have to filter it themselves.", zh: "信息质量不稳定，需要用户自己筛选。" },
+      { en: "High search cost, with uneven relevance.", zh: "搜索成本高，结果未必符合需求。" },
+      { en: "Users must filter the quality themselves.", zh: "质量不稳定，需要自己筛选。" },
     ],
   },
   {
@@ -200,8 +200,8 @@ const PROBLEMS: { img: string; label: string; title: BL; points: BL[] }[] = [
     label: "General AI like ChatGPT",
     title: { en: "General AI like ChatGPT", zh: "ChatGPT 等通用 AI" },
     points: [
-      { en: "No automatic context; users must supply it manually.", zh: "缺乏自动上下文连接，用户需要手动提供。" },
-      { en: "Can't track progress against a syllabus or guide the process.", zh: "无法根据课程表追踪学习进度、引导学习过程。" },
+      { en: "No context; users supply it manually.", zh: "缺乏上下文，需用户手动提供。" },
+      { en: "No progress tracking or guidance.", zh: "无法追踪进度或引导学习。" },
     ],
   },
   {
@@ -446,7 +446,7 @@ export default function WisdomPlanPage() {
               <div className="relative z-10 -mt-5 rounded-full bg-[#787BD7] px-6 py-2.5">
                 <span className="font-semibold text-white">{t(lang, title)}</span>
               </div>
-              <div className="mt-5 max-w-xs space-y-2 text-center">
+              <div className="mt-5 max-w-xs space-y-1 text-center">
                 {points.map((p) => (
                   <p key={p.en} className="text-sm leading-relaxed text-muted-ink">
                     {t(lang, p)}
@@ -464,14 +464,14 @@ export default function WisdomPlanPage() {
           {lang === "zh" ? "目标用户" : "Target users"}
         </h3>
 
-        <div className="mt-10 grid gap-8 sm:grid-cols-3 sm:gap-10">
+        <div className="mt-12 grid gap-10 sm:grid-cols-3 sm:gap-12">
           {PERSONAS.map((persona) => (
-            <div key={persona.title.en} className="flex gap-4">
-              <PersonaAvatar src={persona.img} alt={t(lang, persona.title)} />
-              <div>
-                <p className="font-semibold text-periwinkle">{t(lang, persona.title)}</p>
-                <p className="mt-1 text-sm leading-relaxed text-muted-ink">{t(lang, persona.desc)}</p>
-              </div>
+            <div key={persona.title.en} className="flex flex-col items-center text-center">
+              <PersonaAvatar src={persona.img} alt={t(lang, persona.title)} size="h-24 w-24" />
+              <p className="mt-5 text-lg font-semibold text-periwinkle">{t(lang, persona.title)}</p>
+              <p className="mt-2 max-w-xs text-sm leading-relaxed text-muted-ink">
+                {t(lang, persona.desc)}
+              </p>
             </div>
           ))}
         </div>
