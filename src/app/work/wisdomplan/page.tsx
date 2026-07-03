@@ -98,7 +98,7 @@ function LogoTitle() {
         src="/projects/wisdomplan/logo.png"
         alt="WisdomPlan"
         onError={onError}
-        className="mt-6 h-11 w-auto"
+        className="mt-6 h-8 w-auto"
       />
     );
   }
@@ -371,7 +371,7 @@ export default function WisdomPlanPage() {
               <p className="text-[clamp(3.25rem,8vw,5.5rem)] font-bold leading-none text-[#B6A9E8]">
                 {value}
               </p>
-              <p className="mt-4 text-lg text-muted-ink sm:text-xl">{t(lang, label)}</p>
+              <p className="mt-4 text-lg font-semibold text-ink sm:text-xl">{t(lang, label)}</p>
             </div>
           ))}
         </div>
@@ -380,7 +380,7 @@ export default function WisdomPlanPage() {
       {/* User challenges */}
       <section className="relative mx-3 px-6 py-16 sm:mx-6 sm:px-10 sm:py-20 lg:px-14">
         <DotGrid className="absolute right-10 top-14 hidden lg:grid" />
-        <Eyebrow label={lang === "zh" ? "用户挑战" : "User Challenges"} color="orange" />
+        <Eyebrow label={lang === "zh" ? "用户挑战" : "User Challenges"} color="orange" className="!text-sm" />
         <h2 className={`mt-6 ${heading}`}>
           {lang === "zh" ? "学习时真正的困难，不只是学习本身" : "The real difficulty in learning isn't the learning itself"}
         </h2>
@@ -418,7 +418,7 @@ export default function WisdomPlanPage() {
               <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-periwinkle text-white">
                 <Sparkles className="h-6 w-6" />
               </span>
-              <Eyebrow label={lang === "zh" ? "我们的机会" : "Our opportunity"} color="periwinkle" />
+              <Eyebrow label={lang === "zh" ? "我们的机会" : "Our opportunity"} color="periwinkle" className="!text-sm" />
             </div>
             <h2 className={`mt-6 ${heading}`}>
               {lang === "zh" ? "AI 驱动的机会" : "An AI-driven opportunity"}
@@ -479,7 +479,7 @@ export default function WisdomPlanPage() {
       {/* AI-driven flow */}
       <section className="relative mx-3 px-6 py-16 sm:mx-6 sm:px-10 sm:py-20 lg:px-14">
         <DotGrid className="absolute right-10 top-14 hidden lg:grid" />
-        <Eyebrow label={lang === "zh" ? "AI 学习体验" : "AI Learning Experience"} color="periwinkle" />
+        <Eyebrow label={lang === "zh" ? "AI 学习体验" : "AI Learning Experience"} color="periwinkle" className="!text-sm" />
         <h2 className={`mt-6 ${heading}`}>{lang === "zh" ? "AI 驱动的学习流程" : "An AI-driven learning flow"}</h2>
         <Flourish />
 
@@ -535,7 +535,7 @@ export default function WisdomPlanPage() {
       {/* Reflection */}
       <section className="relative mx-3 px-6 py-16 sm:mx-6 sm:px-10 sm:py-20 lg:px-14">
         <DotGrid className="absolute right-10 top-14 hidden lg:grid" />
-        <Eyebrow label={lang === "zh" ? "心得" : "Reflection"} color="orange" />
+        <Eyebrow label={lang === "zh" ? "心得" : "Reflection"} color="orange" className="!text-sm" />
         <h2 className={`mt-6 ${heading}`}>{lang === "zh" ? "心得体会" : "Reflection"}</h2>
         <Flourish />
         <p className="mt-6 max-w-3xl text-[17px] leading-relaxed text-ink/85">
