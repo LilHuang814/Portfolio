@@ -106,6 +106,17 @@ function Flourish() {
   );
 }
 
+/** Small grid of muted dots — a quiet editorial background accent. */
+function DotGrid({ className = "" }: { className?: string }) {
+  return (
+    <div aria-hidden className={`pointer-events-none grid grid-cols-5 gap-2.5 ${className}`}>
+      {Array.from({ length: 25 }).map((_, i) => (
+        <span key={i} className="h-1 w-1 rounded-full bg-ink/15" />
+      ))}
+    </div>
+  );
+}
+
 /* ------------------------------ content ------------------------------ */
 
 const STATS: { icon: LucideIcon; value: string; label: BL }[] = [
@@ -299,20 +310,21 @@ export default function WisdomPlanPage() {
           <div>
             <LogoTitle />
             <p className={`mt-5 ${heading}`}>
-              {lang === "zh" ? "在 AI 时代，重新定义学习体验" : "Redefining the learning experience in the age of AI"}
+              {lang === "zh" ? "在 AI 时代，重新定义学习" : "Redefining learning in the age of AI"}
             </p>
+            <Flourish />
             <p className="mt-6 max-w-xl text-[17px] leading-relaxed text-muted-ink">
               {lang === "zh"
-                ? "在 AI 时代，学习正从静态内容库转向动态、个性化的体验。WisdomPlan 通过 AI 推荐、学习路径与实时辅助，构建更智能、更有陪伴感的成长体验。"
-                : "Learning is shifting from static content libraries to dynamic, personalized experiences. WisdomPlan uses AI recommendations, learning paths, and real-time assistance to build a smarter, more supportive growth experience."}
+                ? "WisdomPlan 通过 AI 推荐、学习路径与实时辅助，构建更智能、更有陪伴感的成长体验。"
+                : "WisdomPlan uses AI recommendations, learning paths, and real-time assistance to build a smarter, more supportive growth experience."}
             </p>
 
             <div
-              className="mt-8 flex max-w-xl items-center gap-3 rounded-full px-5 py-2.5"
+              className="mt-8 flex w-fit items-center gap-3 rounded-full px-5 py-2.5"
               style={{ background: "linear-gradient(90deg, #646FD9, #B79ED1, #E0AC9F)" }}
             >
-              <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-white/20 text-white">
-                <Sparkles className="h-5 w-5" />
+              <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-white/20 text-white">
+                <Sparkles className="h-6 w-6" />
               </span>
               <div className="leading-tight">
                 <p className="text-xs font-semibold uppercase tracking-wide text-white">
@@ -325,7 +337,7 @@ export default function WisdomPlanPage() {
             <div className="mt-6 grid max-w-xl grid-cols-3 gap-5">
               {STATS.map(({ icon: Icon, value, label }) => (
                 <div key={value} className="flex items-start gap-2.5">
-                  <Icon className="mt-1 h-6 w-6 shrink-0 text-periwinkle" />
+                  <Icon className="mt-1 h-7 w-7 shrink-0 text-periwinkle" />
                   <div className="leading-tight">
                     <p className="text-2xl font-bold text-ink">{value}</p>
                     <p className="mt-0.5 text-sm text-muted-ink">{t(lang, label)}</p>
@@ -341,6 +353,7 @@ export default function WisdomPlanPage() {
 
       {/* User challenges */}
       <section className="relative mx-3 px-6 py-16 sm:mx-6 sm:px-10 sm:py-20 lg:px-14">
+        <DotGrid className="absolute right-10 top-14 hidden lg:grid" />
         <Eyebrow label={lang === "zh" ? "用户挑战" : "User Challenges"} color="orange" />
         <h2 className={`mt-6 ${heading}`}>
           {lang === "zh" ? "学习时真正的困难，不只是学习本身" : "The real difficulty in learning isn't the learning itself"}
@@ -350,8 +363,8 @@ export default function WisdomPlanPage() {
         <div className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-5">
           {CHALLENGES.map(({ icon: Icon, title, desc }) => (
             <div key={title.en}>
-              <span className="flex h-12 w-12 items-center justify-center rounded-full bg-[#787BD7] text-white">
-                <Icon className="h-5 w-5" />
+              <span className="flex h-14 w-14 items-center justify-center rounded-full bg-[#787BD7] text-white">
+                <Icon className="h-6 w-6" />
               </span>
               <p className="mt-4 font-semibold text-ink">{t(lang, title)}</p>
               <p className="mt-2 text-sm leading-relaxed text-muted-ink">{t(lang, desc)}</p>
@@ -387,8 +400,8 @@ export default function WisdomPlanPage() {
             return (
               <Fragment key={title.en}>
                 <div className="flex gap-4">
-                  <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-[#787BD7] text-white">
-                    <Icon className="h-5 w-5" />
+                  <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-[#787BD7] text-white">
+                    <Icon className="h-6 w-6" />
                   </span>
                   <div>
                     <p className="font-semibold text-ink">{t(lang, title)}</p>
@@ -403,8 +416,8 @@ export default function WisdomPlanPage() {
                   </div>
                 </div>
                 <div className="flex gap-4">
-                  <span className="flex h-14 w-14 shrink-0 items-center justify-center overflow-hidden rounded-full border border-dashed border-ink/25 bg-white/50 text-muted-ink">
-                    <ImageIcon className="h-5 w-5" strokeWidth={1.5} />
+                  <span className="flex h-16 w-16 shrink-0 items-center justify-center overflow-hidden rounded-full border border-dashed border-ink/25 bg-white/50 text-muted-ink">
+                    <ImageIcon className="h-6 w-6" strokeWidth={1.5} />
                   </span>
                   <div>
                     <p className="font-semibold text-periwinkle">{t(lang, persona.title)}</p>
@@ -419,6 +432,7 @@ export default function WisdomPlanPage() {
 
       {/* AI-driven flow */}
       <section className="relative mx-3 px-6 py-16 sm:mx-6 sm:px-10 sm:py-20 lg:px-14">
+        <DotGrid className="absolute right-10 top-14 hidden lg:grid" />
         <Eyebrow label={lang === "zh" ? "AI 学习体验" : "AI Learning Experience"} color="periwinkle" />
         <h2 className={`mt-6 ${heading}`}>{lang === "zh" ? "AI 驱动的学习流程" : "An AI-driven learning flow"}</h2>
         <Flourish />
@@ -427,10 +441,10 @@ export default function WisdomPlanPage() {
           {STEPS.map(({ icon: Icon, title }, i) => (
             <div key={title.en} className="flex flex-col items-center text-center">
               <div className="relative">
-                <span className="flex h-14 w-14 items-center justify-center rounded-full bg-[#787BD7] text-white">
-                  <Icon className="h-6 w-6" />
+                <span className="flex h-16 w-16 items-center justify-center rounded-full bg-[#787BD7] text-white">
+                  <Icon className="h-7 w-7" />
                 </span>
-                <span className="absolute -right-1 -top-1 flex h-6 w-6 items-center justify-center rounded-full bg-periwinkle text-xs font-bold text-white">
+                <span className="absolute -right-1 -top-1 flex h-6 w-6 items-center justify-center rounded-full bg-[#A9AEEF] text-xs font-bold text-white">
                   {i + 1}
                 </span>
               </div>
@@ -444,8 +458,8 @@ export default function WisdomPlanPage() {
       {FEATURES.map(({ icon: Icon, title, shot, points }, idx) => (
         <section key={title.en} className="relative mx-3 px-6 py-12 sm:mx-6 sm:px-10 sm:py-14 lg:px-14">
           <div className="flex items-center justify-center gap-4 text-center">
-            <span className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-[#787BD7] text-white">
-              <Icon className="h-6 w-6" />
+            <span className="flex h-16 w-16 shrink-0 items-center justify-center rounded-full bg-[#787BD7] text-white">
+              <Icon className="h-7 w-7" />
             </span>
             <h3 className="text-2xl font-bold tracking-tight text-ink sm:text-3xl">{t(lang, title)}</h3>
           </div>
@@ -474,6 +488,7 @@ export default function WisdomPlanPage() {
 
       {/* Reflection */}
       <section className="relative mx-3 px-6 py-16 sm:mx-6 sm:px-10 sm:py-20 lg:px-14">
+        <DotGrid className="absolute right-10 top-14 hidden lg:grid" />
         <Eyebrow label={lang === "zh" ? "心得" : "Reflection"} color="orange" />
         <h2 className={`mt-6 ${heading}`}>{lang === "zh" ? "心得体会" : "Reflection"}</h2>
         <Flourish />
