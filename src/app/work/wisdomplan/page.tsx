@@ -83,9 +83,12 @@ function LogoTitle() {
     );
   }
   return (
-    <h1 className="mt-6 text-[clamp(2rem,4.2vw,3.4rem)] font-bold leading-[1.1] tracking-tight text-ink">
-      WisdomPlan
-    </h1>
+    <div className="mt-6 flex h-14 w-44 items-center justify-center rounded-xl border border-dashed border-ink/20 bg-white/50">
+      <div className="flex items-center gap-2 text-muted-ink">
+        <ImageIcon className="h-5 w-5" strokeWidth={1.5} />
+        <span className="text-xs font-medium text-ink/70">Logo</span>
+      </div>
+    </div>
   );
 }
 
@@ -96,7 +99,7 @@ const heading = "text-[clamp(1.7rem,3.4vw,2.6rem)] font-bold leading-[1.1] track
 const STATS: { icon: LucideIcon; value: string; label: BL }[] = [
   { icon: Users, value: "10K+", label: { en: "Global Learners", zh: "全球学习者" } },
   { icon: Globe, value: "100+", label: { en: "Countries & Regions", zh: "国家与地区" } },
-  { icon: TrendingUp, value: "70%", label: { en: "Boost in Learning Efficiency", zh: "学习效率提升" } },
+  { icon: TrendingUp, value: "70%", label: { en: "Learning Efficiency", zh: "学习效率提升" } },
 ];
 
 const CHALLENGES: { icon: LucideIcon; title: BL; desc: BL }[] = [
@@ -272,14 +275,14 @@ export default function WisdomPlanPage() {
         className="pointer-events-none absolute right-[-160px] top-[-320px] h-[900px] w-[900px] rounded-full"
         style={{
           background:
-            "radial-gradient(circle, #F2CEFF 0%, #F4F2FF 60%, rgba(244,240,232,0) 100%)",
+            "radial-gradient(circle, #ACAFFF 0%, #F2CEFF 35%, #FFE4D9 65%, rgba(244,240,232,0) 100%)",
         }}
       />
 
       <SiteNav />
 
       {/* Hero */}
-      <section className="relative mx-3 mt-6 px-6 py-12 sm:mx-6 sm:px-10 sm:py-16 lg:px-14">
+      <section className="relative mx-3 mt-6 rounded-[2rem] bg-white/55 px-6 py-12 sm:mx-6 sm:px-10 sm:py-16 lg:px-14">
         <div className="relative z-10 grid gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.1fr)] lg:items-center lg:gap-16">
           <div>
             <Eyebrow label={lang === "zh" ? "案例研究" : "Case Study"} color="periwinkle" />
@@ -293,15 +296,18 @@ export default function WisdomPlanPage() {
                 : "As generative AI matures, learning platforms are shifting from static content libraries toward dynamic, personalized experiences. WisdomPlan uses AI recommendations, learning-path generation, and real-time assistance to build a smarter, more supportive growth experience."}
             </p>
 
-            <div className="mt-8 flex max-w-xl items-center gap-3 rounded-2xl bg-[#eeeafb] px-5 py-4">
-              <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-periwinkle text-white">
+            <div
+              className="mt-8 flex max-w-xl items-center gap-3 rounded-2xl px-5 py-4"
+              style={{ background: "linear-gradient(90deg, #646FD9, #B79ED1, #E0AC9F)" }}
+            >
+              <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-white/20 text-white">
                 <Sparkles className="h-5 w-5" />
               </span>
               <div className="leading-tight">
-                <p className="text-xs font-semibold uppercase tracking-wide text-periwinkle">
+                <p className="text-xs font-semibold uppercase tracking-wide text-white">
                   {lang === "zh" ? "#1 本月最佳产品" : "#1 Product of the Month"}
                 </p>
-                <p className="text-sm font-semibold text-ink">{lang === "zh" ? "教育" : "Education"}</p>
+                <p className="text-sm font-semibold text-white">{lang === "zh" ? "教育" : "Education"}</p>
               </div>
             </div>
 
