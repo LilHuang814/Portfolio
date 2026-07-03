@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
+import { Fragment, useState, useEffect, useRef } from "react";
 import {
   Users,
   Globe,
@@ -98,7 +98,7 @@ const heading = "text-[clamp(1.7rem,3.4vw,2.6rem)] font-bold leading-[1.1] track
 
 const STATS: { icon: LucideIcon; value: string; label: BL }[] = [
   { icon: Users, value: "10K+", label: { en: "Global Learners", zh: "全球学习者" } },
-  { icon: Globe, value: "100+", label: { en: "Countries & Regions", zh: "国家与地区" } },
+  { icon: Globe, value: "100+", label: { en: "Countries", zh: "国家与地区" } },
   { icon: TrendingUp, value: "70%", label: { en: "Learning Efficiency", zh: "学习效率提升" } },
 ];
 
@@ -107,7 +107,7 @@ const CHALLENGES: { icon: LucideIcon; title: BL; desc: BL }[] = [
     icon: Compass,
     title: { en: "Not knowing where to start", zh: "不知道从哪里开始学" },
     desc: {
-      en: "Entering the workforce or switching careers, you want new skills but don't know where to begin.",
+      en: "You want new skills but have no idea where to begin.",
       zh: "踏入职场 / 转行时，想要学习新技能，但不知道从哪里开始。",
     },
   },
@@ -123,7 +123,7 @@ const CHALLENGES: { icon: LucideIcon; title: BL; desc: BL }[] = [
     icon: BadgeCheck,
     title: { en: "Uneven quality", zh: "资源质量参差不齐" },
     desc: {
-      en: "Hard to judge quickly which content is good, reliable, and right for you.",
+      en: "Hard to tell which content is good and right for you.",
       zh: "难以快速判断哪些内容优质、靠谱、适合自己。",
     },
   },
@@ -131,7 +131,7 @@ const CHALLENGES: { icon: LucideIcon; title: BL; desc: BL }[] = [
     icon: MessageCircle,
     title: { en: "Questions go unanswered", zh: "疑问无法快速解决" },
     desc: {
-      en: "You can't get quick, in-context answers, and it only gets more confusing.",
+      en: "No quick, in-context answers, so it only gets more confusing.",
       zh: "没法根据内容快速得到问题的解答，越学越混乱。",
     },
   },
@@ -275,7 +275,7 @@ export default function WisdomPlanPage() {
         className="pointer-events-none absolute right-[-160px] top-[-320px] h-[900px] w-[900px] rounded-full"
         style={{
           background:
-            "radial-gradient(circle, #ACAFFF 0%, #F2CEFF 35%, #FFE4D9 65%, rgba(244,240,232,0) 100%)",
+            "radial-gradient(circle, #ACAFFF 0%, #F2CEFF 32%, #FFE4D9 50%, rgba(255,228,217,0.45) 68%, rgba(244,240,232,0) 100%)",
         }}
       />
 
@@ -297,10 +297,10 @@ export default function WisdomPlanPage() {
             </p>
 
             <div
-              className="mt-8 flex max-w-xl items-center gap-3 rounded-2xl px-5 py-4"
+              className="mt-8 flex max-w-xl items-center gap-3 rounded-full px-5 py-2.5"
               style={{ background: "linear-gradient(90deg, #646FD9, #B79ED1, #E0AC9F)" }}
             >
-              <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-white/20 text-white">
+              <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-white/20 text-white">
                 <Sparkles className="h-5 w-5" />
               </span>
               <div className="leading-tight">
@@ -348,9 +348,9 @@ export default function WisdomPlanPage() {
         </div>
 
         <div className="mt-12 flex flex-col gap-4 rounded-2xl bg-[#efeafb] p-6 sm:flex-row sm:items-start sm:gap-6 sm:p-8">
-          <div className="flex shrink-0 items-center gap-2 text-periwinkle">
-            <Sparkles className="h-5 w-5" />
-            <span className="font-semibold">{lang === "zh" ? "我们的机会" : "Our opportunity"}</span>
+          <div className="flex shrink-0 items-center gap-2.5 text-periwinkle">
+            <Sparkles className="h-7 w-7" />
+            <span className="text-lg font-bold">{lang === "zh" ? "我们的机会" : "Our opportunity"}</span>
           </div>
           <p className="text-[15px] leading-relaxed text-ink/80">
             {lang === "zh"
@@ -362,14 +362,19 @@ export default function WisdomPlanPage() {
 
       {/* Existing experience + target users */}
       <section className="relative mx-3 px-6 py-8 sm:mx-6 sm:px-10 lg:px-14">
-        <div className="grid gap-12 lg:grid-cols-2 lg:gap-16">
-          <div>
-            <h3 className="text-xl font-bold text-ink">
-              {lang === "zh" ? "现有学习体验中的问题" : "Problems in today's learning experience"}
-            </h3>
-            <div className="mt-6 space-y-6">
-              {PROBLEMS.map(({ icon: Icon, title, points }) => (
-                <div key={title.en} className="flex gap-4">
+        <div className="grid items-start gap-x-12 gap-y-6 lg:grid-cols-2 lg:gap-x-16">
+          <h3 className="text-xl font-bold text-ink">
+            {lang === "zh" ? "现有学习体验中的问题" : "Problems in today's learning experience"}
+          </h3>
+          <h3 className="mt-6 text-xl font-bold text-ink lg:mt-0">
+            {lang === "zh" ? "目标用户" : "Target users"}
+          </h3>
+
+          {PROBLEMS.map(({ icon: Icon, title, points }, i) => {
+            const persona = PERSONAS[i];
+            return (
+              <Fragment key={title.en}>
+                <div className="flex gap-4">
                   <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-[#787BD7] text-white">
                     <Icon className="h-5 w-5" />
                   </span>
@@ -385,26 +390,18 @@ export default function WisdomPlanPage() {
                     </ul>
                   </div>
                 </div>
-              ))}
-            </div>
-          </div>
-
-          <div>
-            <h3 className="text-xl font-bold text-ink">{lang === "zh" ? "目标用户" : "Target users"}</h3>
-            <div className="mt-6 space-y-6">
-              {PERSONAS.map(({ icon: Icon, title, desc }) => (
-                <div key={title.en} className="flex gap-4">
-                  <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-periwinkle/20 to-peach/30 text-periwinkle">
-                    <Icon className="h-5 w-5" />
+                <div className="flex gap-4">
+                  <span className="flex h-14 w-14 shrink-0 items-center justify-center overflow-hidden rounded-full border border-dashed border-ink/25 bg-white/50 text-muted-ink">
+                    <ImageIcon className="h-5 w-5" strokeWidth={1.5} />
                   </span>
                   <div>
-                    <p className="font-semibold text-periwinkle">{t(lang, title)}</p>
-                    <p className="mt-1 text-sm leading-relaxed text-muted-ink">{t(lang, desc)}</p>
+                    <p className="font-semibold text-periwinkle">{t(lang, persona.title)}</p>
+                    <p className="mt-1 text-sm leading-relaxed text-muted-ink">{t(lang, persona.desc)}</p>
                   </div>
                 </div>
-              ))}
-            </div>
-          </div>
+              </Fragment>
+            );
+          })}
         </div>
       </section>
 
