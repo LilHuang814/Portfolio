@@ -1,6 +1,6 @@
 "use client";
 
-import { Fragment, useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef } from "react";
 import {
   Users,
   Globe,
@@ -10,9 +10,6 @@ import {
   BadgeCheck,
   MessageCircle,
   Gauge,
-  MessageSquare,
-  Bot,
-  GraduationCap,
   Target,
   Search,
   BookOpen,
@@ -188,9 +185,10 @@ const CHALLENGES: { icon: LucideIcon; title: BL; desc: BL }[] = [
   },
 ];
 
-const PROBLEMS: { icon: LucideIcon; title: BL; points: BL[] }[] = [
+const PROBLEMS: { img: string; label: string; title: BL; points: BL[] }[] = [
   {
-    icon: MessageSquare,
+    img: "/projects/wisdomplan/problem-forums.png",
+    label: "Forums / online courses",
     title: { en: "Forums / online courses", zh: "网络论坛 / 网课" },
     points: [
       { en: "High manual search cost; results may not fit the user's needs.", zh: "手动搜索成本高，结果也未必符合用户需求。" },
@@ -198,7 +196,8 @@ const PROBLEMS: { icon: LucideIcon; title: BL; points: BL[] }[] = [
     ],
   },
   {
-    icon: Bot,
+    img: "/projects/wisdomplan/problem-ai.png",
+    label: "General AI like ChatGPT",
     title: { en: "General AI like ChatGPT", zh: "ChatGPT 等通用 AI" },
     points: [
       { en: "No automatic context; users must supply it manually.", zh: "缺乏自动上下文连接，用户需要手动提供。" },
@@ -206,7 +205,8 @@ const PROBLEMS: { icon: LucideIcon; title: BL; points: BL[] }[] = [
     ],
   },
   {
-    icon: GraduationCap,
+    img: "/projects/wisdomplan/problem-tutor.png",
+    label: "Private tutors / mentors",
     title: { en: "Private tutors / mentors", zh: "私教 / 导师" },
     points: [
       { en: "High cost and time barriers.", zh: "成本与时间门槛高。" },
@@ -433,46 +433,47 @@ export default function WisdomPlanPage() {
         </div>
       </section>
 
-      {/* Existing experience + target users */}
+      {/* Problems in today's learning experience */}
       <section className="relative mx-3 px-6 py-8 sm:mx-6 sm:px-10 lg:px-14">
-        <div className="grid items-start gap-x-12 gap-y-6 lg:grid-cols-2 lg:gap-x-16">
-          <h3 className="text-xl font-semibold text-ink">
-            {lang === "zh" ? "现有学习体验中的问题" : "Problems in today's learning experience"}
-          </h3>
-          <h3 className="mt-6 text-xl font-semibold text-ink lg:mt-0">
-            {lang === "zh" ? "目标用户" : "Target users"}
-          </h3>
+        <h3 className="text-2xl font-semibold text-ink sm:text-3xl">
+          {lang === "zh" ? "现有学习体验中的问题" : "Problems in today's learning experience"}
+        </h3>
 
-          {PROBLEMS.map(({ icon: Icon, title, points }, i) => {
-            const persona = PERSONAS[i];
-            return (
-              <Fragment key={title.en}>
-                <div className="flex gap-4">
-                  <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-[#787BD7] text-white">
-                    <Icon className="h-6 w-6" />
-                  </span>
-                  <div>
-                    <p className="font-semibold text-ink">{t(lang, title)}</p>
-                    <ul className="mt-2 space-y-1.5">
-                      {points.map((p) => (
-                        <li key={p.en} className="flex gap-2 text-sm leading-relaxed text-muted-ink">
-                          <span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-muted-ink/60" />
-                          {t(lang, p)}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                </div>
-                <div className="flex gap-4">
-                  <PersonaAvatar src={persona.img} alt={t(lang, persona.title)} />
-                  <div>
-                    <p className="font-semibold text-periwinkle">{t(lang, persona.title)}</p>
-                    <p className="mt-1 text-sm leading-relaxed text-muted-ink">{t(lang, persona.desc)}</p>
-                  </div>
-                </div>
-              </Fragment>
-            );
-          })}
+        <div className="mt-12 grid gap-10 sm:grid-cols-3 sm:gap-8">
+          {PROBLEMS.map(({ img, label, title, points }) => (
+            <div key={label} className="flex flex-col items-center">
+              <Shot src={img} label={label} className="w-full rounded-2xl" />
+              <div className="relative z-10 -mt-5 rounded-full bg-ink px-6 py-2.5">
+                <span className="font-semibold text-white">{t(lang, title)}</span>
+              </div>
+              <div className="mt-5 max-w-xs space-y-2 text-center">
+                {points.map((p) => (
+                  <p key={p.en} className="text-sm leading-relaxed text-muted-ink">
+                    {t(lang, p)}
+                  </p>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Target users */}
+      <section className="relative mx-3 px-6 py-8 sm:mx-6 sm:px-10 sm:py-10 lg:px-14">
+        <h3 className="text-2xl font-semibold text-ink sm:text-3xl">
+          {lang === "zh" ? "目标用户" : "Target users"}
+        </h3>
+
+        <div className="mt-10 grid gap-8 sm:grid-cols-3 sm:gap-10">
+          {PERSONAS.map((persona) => (
+            <div key={persona.title.en} className="flex gap-4">
+              <PersonaAvatar src={persona.img} alt={t(lang, persona.title)} />
+              <div>
+                <p className="font-semibold text-periwinkle">{t(lang, persona.title)}</p>
+                <p className="mt-1 text-sm leading-relaxed text-muted-ink">{t(lang, persona.desc)}</p>
+              </div>
+            </div>
+          ))}
         </div>
       </section>
 
