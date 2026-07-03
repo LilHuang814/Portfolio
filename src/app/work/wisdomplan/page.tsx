@@ -94,6 +94,18 @@ function LogoTitle() {
 
 const heading = "text-[clamp(1.7rem,3.4vw,2.6rem)] font-bold leading-[1.1] tracking-tight text-ink";
 
+/** Decorative gradient line + dots — the home page's accent motif. */
+function Flourish() {
+  return (
+    <div className="mt-5 flex items-center gap-2">
+      <span className="h-[3px] w-14 rounded-full gradient-bar" />
+      <span className="h-1.5 w-1.5 rounded-full bg-periwinkle" />
+      <span className="h-1.5 w-1.5 rounded-full bg-peach" />
+      <span className="h-1.5 w-1.5 rounded-full bg-orange" />
+    </div>
+  );
+}
+
 /* ------------------------------ content ------------------------------ */
 
 const STATS: { icon: LucideIcon; value: string; label: BL }[] = [
@@ -177,24 +189,24 @@ const PERSONAS: { icon: LucideIcon; title: BL; desc: BL }[] = [
     icon: Briefcase,
     title: { en: "Career switchers", zh: "转行探索者" },
     desc: {
-      en: "Moving into a new field; needs a systematic path and clear role-specific skills.",
-      zh: "想要转行进入新领域，需要系统的学习路径和明确的岗位所需技能。",
+      en: "Moving into a new field and needs a systematic learning path plus a clear picture of the role-specific skills that actually matter.",
+      zh: "想要转行进入新领域，需要系统的学习路径，以及对岗位所需核心技能的清晰认知。",
     },
   },
   {
     icon: Laptop,
     title: { en: "Working learners", zh: "在职学习者" },
     desc: {
-      en: "Upskilling on the job; needs flexible methods and efficient resources.",
-      zh: "希望提升专业技能，需要灵活的学习方式与高效的资源。",
+      en: "Upskilling alongside a full-time job and needs flexible, bite-sized methods with efficient, high-quality resources they can trust.",
+      zh: "希望在繁忙工作之余提升专业技能，需要灵活、碎片化的学习方式与高效可靠的优质资源。",
     },
   },
   {
     icon: GraduationCap,
     title: { en: "Students & job seekers", zh: "大学求职者" },
     desc: {
-      en: "Overwhelmed by job-hunting and study pressure; needs a clear learning path.",
-      zh: "面对求职与学习压力时容易迷茫与焦虑，需要清晰的学习路径。",
+      en: "Facing job-hunting and study pressure at once and needs a clear, structured path to stay focused and cut through the overwhelm.",
+      zh: "同时面对求职与学习压力，容易迷茫焦虑，需要清晰、有结构的学习路径来保持专注。",
     },
   },
 ];
@@ -275,7 +287,7 @@ export default function WisdomPlanPage() {
         className="pointer-events-none absolute right-[-160px] top-[-320px] h-[900px] w-[900px] rounded-full"
         style={{
           background:
-            "radial-gradient(circle, #ACAFFF 0%, #F2CEFF 32%, #FFE4D9 50%, rgba(255,228,217,0.45) 68%, rgba(244,240,232,0) 100%)",
+            "radial-gradient(circle, #ACAFFF 0%, #F2CEFF 30%, #FFE4D9 48%, #F4F0E8 74%)",
         }}
       />
 
@@ -285,7 +297,6 @@ export default function WisdomPlanPage() {
       <section className="relative mx-3 mt-6 rounded-[2rem] bg-white/55 px-6 py-12 sm:mx-6 sm:px-10 sm:py-16 lg:px-14">
         <div className="relative z-10 grid gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.1fr)] lg:items-center lg:gap-16">
           <div>
-            <Eyebrow label={lang === "zh" ? "案例研究" : "Case Study"} color="periwinkle" />
             <LogoTitle />
             <p className={`mt-5 ${heading}`}>
               {lang === "zh" ? "在 AI 时代，重新定义学习体验" : "Redefining the learning experience in the age of AI"}
@@ -334,6 +345,7 @@ export default function WisdomPlanPage() {
         <h2 className={`mt-6 ${heading}`}>
           {lang === "zh" ? "学习时真正的困难，不只是学习本身" : "The real difficulty in learning isn't the learning itself"}
         </h2>
+        <Flourish />
 
         <div className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-5">
           {CHALLENGES.map(({ icon: Icon, title, desc }) => (
@@ -409,6 +421,7 @@ export default function WisdomPlanPage() {
       <section className="relative mx-3 px-6 py-16 sm:mx-6 sm:px-10 sm:py-20 lg:px-14">
         <Eyebrow label={lang === "zh" ? "AI 学习体验" : "AI Learning Experience"} color="periwinkle" />
         <h2 className={`mt-6 ${heading}`}>{lang === "zh" ? "AI 驱动的学习流程" : "An AI-driven learning flow"}</h2>
+        <Flourish />
 
         <div className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-5">
           {STEPS.map(({ icon: Icon, title }, i) => (
@@ -421,7 +434,7 @@ export default function WisdomPlanPage() {
                   {i + 1}
                 </span>
               </div>
-              <p className="mt-4 text-sm font-medium text-ink">{t(lang, title)}</p>
+              <p className="mt-4 font-semibold text-ink">{t(lang, title)}</p>
             </div>
           ))}
         </div>
@@ -463,6 +476,7 @@ export default function WisdomPlanPage() {
       <section className="relative mx-3 px-6 py-16 sm:mx-6 sm:px-10 sm:py-20 lg:px-14">
         <Eyebrow label={lang === "zh" ? "心得" : "Reflection"} color="orange" />
         <h2 className={`mt-6 ${heading}`}>{lang === "zh" ? "心得体会" : "Reflection"}</h2>
+        <Flourish />
         <p className="mt-6 max-w-3xl text-[17px] leading-relaxed text-ink/85">
           {lang === "zh"
             ? "设计 WisdomPlan 的过程中，我重新思考了 AI 在学习体验中的角色。学习的困难往往不仅来自内容本身，更来自缺乏方向感、持续反馈与长期陪伴。因此，我希望通过 AI 主动引导、上下文理解与连续性的学习支持，帮助用户降低学习门槛，建立更持续、更轻松的学习体验。"
