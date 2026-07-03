@@ -225,9 +225,9 @@ const PERSONAS: { icon: LucideIcon; title: BL; desc: BL }[] = [
 const STEPS: { icon: LucideIcon; title: BL }[] = [
   { icon: Target, title: { en: "Set goals & level", zh: "设定目标和水平" } },
   { icon: Search, title: { en: "AI recommends courses", zh: "AI 个性化推荐课程" } },
-  { icon: BookOpen, title: { en: "Real-time answers & guidance", zh: "实时 AI 解答与引导" } },
+  { icon: BookOpen, title: { en: "Real-time guidance", zh: "实时 AI 解答与引导" } },
   { icon: MessageCircle, title: { en: "Staged quizzes & feedback", zh: "阶段测验和反馈" } },
-  { icon: Network, title: { en: "Connect & review knowledge", zh: "知识串联与复盘" } },
+  { icon: Network, title: { en: "Review knowledge", zh: "知识串联与复盘" } },
 ];
 
 const FEATURES: { icon: LucideIcon; title: BL; shot: { src: string; label: string }; points: BL[] }[] = [
@@ -320,7 +320,7 @@ export default function WisdomPlanPage() {
             </p>
 
             <div
-              className="mt-8 flex w-fit items-center gap-3 rounded-full px-5 py-2.5"
+              className="mt-8 flex w-fit items-center gap-3 rounded-full py-2.5 pl-3 pr-8"
               style={{ background: "linear-gradient(90deg, #646FD9, #B79ED1, #E0AC9F)" }}
             >
               <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-white/20 text-white">
@@ -334,20 +334,23 @@ export default function WisdomPlanPage() {
               </div>
             </div>
 
-            <div className="mt-6 grid max-w-xl grid-cols-3 gap-5">
-              {STATS.map(({ icon: Icon, value, label }) => (
-                <div key={value} className="flex items-start gap-2.5">
-                  <Icon className="mt-1 h-7 w-7 shrink-0 text-periwinkle" />
-                  <div className="leading-tight">
-                    <p className="text-2xl font-bold text-ink">{value}</p>
-                    <p className="mt-0.5 text-sm text-muted-ink">{t(lang, label)}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
           </div>
 
           <Shot src="/projects/wisdomplan/hero.png" label="WisdomPlan product" />
+        </div>
+      </section>
+
+      {/* Impact stats */}
+      <section className="relative mx-3 px-6 py-10 sm:mx-6 sm:px-10 sm:py-14 lg:px-14">
+        <div className="grid gap-10 sm:grid-cols-3 sm:gap-6">
+          {STATS.map(({ value, label }) => (
+            <div key={value} className="text-center">
+              <p className="text-[clamp(3.25rem,8vw,5.5rem)] font-bold leading-none text-[#A6ADF2]">
+                {value}
+              </p>
+              <p className="mt-4 text-base text-muted-ink">{t(lang, label)}</p>
+            </div>
+          ))}
         </div>
       </section>
 
