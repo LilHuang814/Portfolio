@@ -443,7 +443,7 @@ export default function WisdomPlanPage() {
           {PROBLEMS.map(({ img, label, title, points }) => (
             <div key={label} className="flex flex-col items-center">
               <Shot src={img} label={label} className="w-full rounded-2xl" />
-              <div className="relative z-10 -mt-5 rounded-full bg-ink px-6 py-2.5">
+              <div className="relative z-10 -mt-5 rounded-full bg-[#787BD7] px-6 py-2.5">
                 <span className="font-semibold text-white">{t(lang, title)}</span>
               </div>
               <div className="mt-5 max-w-xs space-y-2 text-center">
