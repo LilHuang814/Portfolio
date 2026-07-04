@@ -490,7 +490,7 @@ export default function WisdomPlanPage() {
         <Eyebrow label={lang === "zh" ? "心得" : "Reflection"} color="orange" className="!text-sm" />
         <h2 className={`mt-6 ${heading}`}>{lang === "zh" ? "心得体会" : "Reflection"}</h2>
         <Flourish />
-        <p className="mt-6 max-w-3xl text-lg leading-relaxed text-muted-ink">
+        <p className="mt-6 max-w-3xl text-base leading-relaxed text-muted-ink">
           {lang === "zh"
             ? "设计 WisdomPlan 的过程中，我重新思考了 AI 在学习体验中的角色。学习的困难往往不仅来自内容本身，更来自缺乏方向感、持续反馈与长期陪伴。因此，我希望通过 AI 主动引导、上下文理解与连续性的学习支持，帮助用户降低学习门槛，建立更持续、更轻松的学习体验。"
             : "Designing WisdomPlan, I rethought AI's role in the learning experience. The difficulty often comes not from the content itself but from a lack of direction, ongoing feedback, and long-term companionship. So I set out to use AI-driven guidance, contextual understanding, and continuous support to lower the barrier to learning and build a more sustainable, relaxed experience."}
