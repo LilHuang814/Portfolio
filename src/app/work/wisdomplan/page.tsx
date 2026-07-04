@@ -86,7 +86,7 @@ function LogoTitle() {
   );
 }
 
-const heading = "text-[clamp(1.7rem,3.4vw,2.6rem)] font-semibold leading-[1.15] tracking-tight text-ink";
+const heading = "text-[clamp(1.95rem,3.4vw,2.6rem)] font-semibold leading-[1.15] tracking-tight text-ink";
 
 /** Decorative gradient line + dots — the home page's accent motif. */
 function Flourish() {
