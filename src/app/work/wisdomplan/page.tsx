@@ -325,7 +325,7 @@ export default function WisdomPlanPage() {
       </section>
 
       {/* Impact stats */}
-      <section className="relative mx-3 px-6 pb-10 pt-20 sm:mx-6 sm:px-10 sm:pb-14 sm:pt-28 lg:px-14">
+      <section className="relative mx-3 px-6 pb-8 pt-12 sm:mx-6 sm:px-10 sm:pb-14 sm:pt-20 lg:px-14 lg:pt-28">
         <div className="grid gap-10 sm:grid-cols-3 sm:gap-6">
           {STATS.map(({ value, label }) => (
             <div key={value} className="text-center">
@@ -339,7 +339,7 @@ export default function WisdomPlanPage() {
       </section>
 
       {/* User challenges */}
-      <section className="relative mx-3 px-6 py-20 sm:mx-6 sm:px-10 sm:py-24 lg:px-14">
+      <section className="relative mx-3 px-6 py-12 sm:mx-6 sm:px-10 sm:py-20 lg:px-14 lg:py-24">
         <DotGrid className="absolute right-10 top-14 hidden lg:grid" />
         <Eyebrow label={lang === "zh" ? "用户挑战" : "User Challenges"} color="orange" className="!text-sm" />
         <h2 className={`mt-6 ${heading}`}>
@@ -362,7 +362,7 @@ export default function WisdomPlanPage() {
       </section>
 
       {/* Our opportunity */}
-      <section className="relative mx-3 px-6 py-16 sm:mx-6 sm:px-10 sm:py-20 lg:px-14">
+      <section className="relative mx-3 px-6 py-10 sm:mx-6 sm:px-10 sm:py-16 lg:px-14 lg:py-20">
         <div className="relative overflow-hidden rounded-[2rem] bg-white/55 px-8 py-14 sm:px-14 sm:py-16">
           <div
             aria-hidden
@@ -395,7 +395,7 @@ export default function WisdomPlanPage() {
       </section>
 
       {/* Problems in today's learning experience */}
-      <section className="relative mx-3 px-6 py-20 sm:mx-6 sm:px-10 sm:py-24 lg:px-14">
+      <section className="relative mx-3 px-6 py-12 sm:mx-6 sm:px-10 sm:py-20 lg:px-14 lg:py-24">
         <h3 className="text-[clamp(1.5rem,2.7vw,1.9rem)] font-semibold text-ink">
           {lang === "zh" ? "现有学习体验中的问题" : "Problems in today's learning experience"}
         </h3>
@@ -418,7 +418,7 @@ export default function WisdomPlanPage() {
       </section>
 
       {/* Target users */}
-      <section className="relative mx-3 px-6 py-20 sm:mx-6 sm:px-10 sm:py-24 lg:px-14">
+      <section className="relative mx-3 px-6 py-12 sm:mx-6 sm:px-10 sm:py-20 lg:px-14 lg:py-24">
         <div className="grid gap-8 lg:grid-cols-[minmax(0,0.8fr)_minmax(0,1.45fr)] lg:items-center lg:gap-8">
           <div>
             <h3 className="text-[clamp(1.5rem,2.7vw,1.9rem)] font-semibold text-ink">
@@ -440,7 +440,7 @@ export default function WisdomPlanPage() {
       </section>
 
       {/* AI-driven flow */}
-      <section className="relative mx-3 px-6 py-20 sm:mx-6 sm:px-10 sm:py-24 lg:px-14">
+      <section className="relative mx-3 px-6 py-12 sm:mx-6 sm:px-10 sm:py-20 lg:px-14 lg:py-24">
         <DotGrid className="absolute right-10 top-14 hidden lg:grid" />
         <Eyebrow label={lang === "zh" ? "AI 学习体验" : "AI Learning Experience"} color="periwinkle" className="!text-sm" />
         <h2 className={`mt-6 ${heading}`}>{lang === "zh" ? "AI 驱动的学习流程" : "An AI-driven learning flow"}</h2>
@@ -454,7 +454,7 @@ export default function WisdomPlanPage() {
 
       {/* Feature deep-dives */}
       {FEATURES.map(({ icon: Icon, title, shot, points }, idx) => (
-        <section key={title.en} className="relative mx-3 px-6 py-16 sm:mx-6 sm:px-10 sm:py-20 lg:px-14">
+        <section key={title.en} className="relative mx-3 px-6 py-10 sm:mx-6 sm:px-10 sm:py-16 lg:px-14 lg:py-20">
           <div className="flex items-center justify-start gap-4 text-left lg:justify-center lg:text-center">
             <span className="flex h-16 w-16 shrink-0 items-center justify-center rounded-full bg-[#787BD7] text-white">
               <Icon className="h-7 w-7" />
@@ -485,7 +485,7 @@ export default function WisdomPlanPage() {
       ))}
 
       {/* Reflection */}
-      <section className="relative mx-3 px-6 py-20 sm:mx-6 sm:px-10 sm:py-24 lg:px-14">
+      <section className="relative mx-3 px-6 py-12 sm:mx-6 sm:px-10 sm:py-20 lg:px-14 lg:py-24">
         <DotGrid className="absolute right-10 top-14 hidden lg:grid" />
         <Eyebrow label={lang === "zh" ? "心得" : "Reflection"} color="orange" className="!text-sm" />
         <h2 className={`mt-6 ${heading}`}>{lang === "zh" ? "心得体会" : "Reflection"}</h2>
