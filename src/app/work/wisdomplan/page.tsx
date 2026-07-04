@@ -445,7 +445,7 @@ export default function WisdomPlanPage() {
         <Eyebrow label={lang === "zh" ? "AI 学习体验" : "AI Learning Experience"} color="periwinkle" className="!text-sm" />
         <h2 className={`mt-6 ${heading}`}>{lang === "zh" ? "AI 驱动的学习流程" : "An AI-driven learning flow"}</h2>
         <Flourish />
-        <p className="mt-6 max-w-3xl text-lg leading-relaxed text-muted-ink">
+        <p className="mt-6 max-w-3xl text-base leading-relaxed text-muted-ink">
           {lang === "zh"
             ? "WisdomPlan 将学习拆解为五个环环相扣的阶段：先帮助用户设定清晰目标并评估当前水平，再由 AI 推荐个性化课程，在学习过程中提供实时解答与引导，通过阶段测验与反馈检验掌握程度，最后帮助用户复盘并串联知识，形成持久的知识结构。"
             : "WisdomPlan guides learners through five connected stages: it helps them set clear goals and gauge their level, then AI recommends personalized courses, offers real-time guidance as they learn, checks understanding with staged quizzes and feedback, and finally helps them review and connect knowledge into a lasting structure."}
