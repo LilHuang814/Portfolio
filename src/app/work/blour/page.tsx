@@ -181,21 +181,21 @@ const PERSONAS: { title: BL; desc: BL }[] = [
   {
     title: { en: "High-density readers", zh: "高信息密度人群" },
     desc: {
-      en: "Juggling heavy news, study material, messages, and to-dos; prone to overload and scattered focus.",
-      zh: "需要同时处理大量新闻、学习资料、消息与待办事项，容易陷入信息过载与注意力分散。",
+      en: "Juggling heavy news, study material, and to-dos, and prone to overload and scattered focus.",
+      zh: "需要同时处理大量新闻、学习资料与待办事项，容易陷入信息过载与注意力分散。",
     },
   },
   {
     title: { en: "Audio-content consumers", zh: "音频内容消费用户" },
     desc: {
-      en: "Prefer podcasts, video, or audio; want to absorb content during commutes and workouts.",
-      zh: "习惯通过 Podcast、视频或音频获取信息，希望在通勤、运动等碎片化时间中高效接收内容。",
+      en: "Prefer podcasts, video, or audio, and want to absorb content during commutes and workouts.",
+      zh: "习惯通过播客、视频或音频获取信息，希望在通勤、运动等碎片时间高效接收内容。",
     },
   },
   {
     title: { en: "Efficiency & growth seekers", zh: "注重效率与自我成长的人群" },
     desc: {
-      en: "Focused on learning, news, and self-management; want to organize info and turn it into action.",
+      en: "Focused on learning, news, and self-management, and eager to turn information into action.",
       zh: "持续关注学习、资讯与个人管理，希望更轻松地整理信息并快速转化为行动。",
     },
   },
@@ -260,17 +260,17 @@ export default function BlourPage() {
   const { lang } = useLanguage();
 
   return (
-    <main className="relative mx-auto w-full max-w-[90rem] pb-6">
+    <main className="relative mx-auto w-full max-w-[90rem] overflow-x-clip pb-6">
       <CursorGlow />
 
       <SiteNav />
 
       {/* Hero */}
-      <section className="relative mx-3 mt-6 overflow-hidden rounded-[2rem] px-6 py-12 sm:mx-6 sm:px-10 sm:py-16 lg:px-14">
-        {/* Very large radial halo centered behind the hero. */}
+      <section className="relative mx-3 mt-6 rounded-[2rem] px-6 py-12 sm:mx-6 sm:px-10 sm:py-16 lg:px-14">
+        {/* Very large radial halo centered behind the hero, bleeding past its bounds. */}
         <div
           aria-hidden
-          className="pointer-events-none absolute left-1/2 top-1/2 h-[1600px] w-[1600px] -translate-x-1/2 -translate-y-1/2 rounded-full"
+          className="pointer-events-none absolute left-1/2 top-1/2 -z-10 h-[1700px] w-[1700px] -translate-x-1/2 -translate-y-1/2 rounded-full"
           style={{
             background:
               "radial-gradient(circle, #F4F0E8 0%, #FFF0E3 30%, #D6EFFF 62%, #F4F0E8 100%)",
@@ -302,7 +302,7 @@ export default function BlourPage() {
         <DotGrid className="absolute right-10 top-14 hidden lg:grid" />
         <Eyebrow label={lang === "zh" ? "用户挑战" : "User Challenges"} color="periwinkle" className={EB} />
         <h2 className={`mt-6 ${heading}`}>
-          {lang === "zh" ? "信息时代下的注意力与效率负担" : "The attention and efficiency burden of the information age"}
+          {lang === "zh" ? "信息过载的代价" : "The cost of information overload"}
         </h2>
         <Flourish />
 
