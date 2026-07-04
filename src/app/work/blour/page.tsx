@@ -267,13 +267,14 @@ export default function BlourPage() {
 
       {/* Hero */}
       <section className="relative mx-3 mt-6 rounded-[2rem] px-6 py-12 sm:mx-6 sm:px-10 sm:py-16 lg:px-14">
-        {/* Very large radial halo centered behind the hero, bleeding past its bounds. */}
+        {/* Large radial halo behind the hero — a self-contained glow that fades
+            fully back to the background (#F4F0E8) around its whole edge. */}
         <div
           aria-hidden
-          className="pointer-events-none absolute left-1/2 top-1/2 -z-10 h-[1700px] w-[1700px] -translate-x-1/2 -translate-y-1/2 rounded-full"
+          className="pointer-events-none absolute left-1/2 top-[calc(50%-120px)] -z-10 h-[1300px] w-[1300px] -translate-x-1/2 -translate-y-1/2 rounded-full"
           style={{
             background:
-              "radial-gradient(circle, #F4F0E8 0%, #FFF0E3 30%, #D6EFFF 62%, #F4F0E8 100%)",
+              "radial-gradient(circle, #F4F0E8 0%, #FFF0E3 24%, #D6EFFF 48%, #F4F0E8 78%)",
           }}
         />
         <div className="relative z-10 grid gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.1fr)] lg:items-center lg:gap-16">
