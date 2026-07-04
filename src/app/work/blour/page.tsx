@@ -263,25 +263,24 @@ export default function BlourPage() {
     <main className="relative mx-auto w-full max-w-[90rem] pb-6">
       <CursorGlow />
 
-      {/* Big radial halo, anchored off the top-right; the hero floats above it. */}
-      <div
-        aria-hidden
-        className="pointer-events-none absolute right-[-160px] top-[-320px] h-[900px] w-[900px] rounded-full"
-        style={{
-          background:
-            "radial-gradient(circle, #A9C0FF 0%, #CFE0FF 34%, #FFE4D9 60%, #F4F0E8 80%)",
-        }}
-      />
-
       <SiteNav />
 
       {/* Hero */}
-      <section className="relative mx-3 mt-6 rounded-[2rem] bg-white/55 px-6 py-12 sm:mx-6 sm:px-10 sm:py-16 lg:px-14">
+      <section className="relative mx-3 mt-6 overflow-hidden rounded-[2rem] px-6 py-12 sm:mx-6 sm:px-10 sm:py-16 lg:px-14">
+        {/* Very large radial halo centered behind the hero. */}
+        <div
+          aria-hidden
+          className="pointer-events-none absolute left-1/2 top-1/2 h-[1600px] w-[1600px] -translate-x-1/2 -translate-y-1/2 rounded-full"
+          style={{
+            background:
+              "radial-gradient(circle, #F4F0E8 0%, #FFF0E3 30%, #D6EFFF 62%, #F4F0E8 100%)",
+          }}
+        />
         <div className="relative z-10 grid gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.1fr)] lg:items-center lg:gap-16">
           <div>
             <LogoTitle />
             <p className={`mt-5 ${heading}`}>
-              {lang === "zh" ? "重新定义信息获取体验" : "Redefining the way you get informed"}
+              {lang === "zh" ? "重新定义信息消费方式" : "Redefining information consumption"}
             </p>
             <p className="mt-6 max-w-xl text-lg leading-relaxed text-muted-ink">
               {lang === "zh"
