@@ -349,7 +349,7 @@ export default function WisdomPlanPage() {
               <p className="text-[clamp(3.25rem,8vw,5.5rem)] font-bold leading-none text-[#B6A9E8]">
                 {value}
               </p>
-              <p className="mt-4 text-lg font-semibold text-ink sm:text-xl">{t(lang, label)}</p>
+              <p className="mt-4 text-xl font-semibold text-ink">{t(lang, label)}</p>
             </div>
           ))}
         </div>
@@ -420,8 +420,8 @@ export default function WisdomPlanPage() {
         <div className="mt-12 grid gap-10 sm:grid-cols-3 sm:gap-8">
           {PROBLEMS.map(({ img, label, title, points }) => (
             <div key={label} className="flex flex-col items-center">
-              <Shot src={img} label={label} className="mx-auto w-full max-w-[230px] rounded-2xl" />
-              <p className="mt-7 text-lg font-semibold text-ink">{t(lang, title)}</p>
+              <Shot src={img} label={label} className="mx-auto w-full max-w-[280px] rounded-2xl" />
+              <p className="mt-7 text-xl font-semibold text-ink">{t(lang, title)}</p>
               <div className="mt-2 max-w-xs text-center">
                 {points.map((p) => (
                   <p key={p.en} className="text-sm leading-snug text-muted-ink">
@@ -444,7 +444,7 @@ export default function WisdomPlanPage() {
           <div className="space-y-8">
             {PERSONAS.map((persona) => (
               <div key={persona.title.en}>
-                <p className="text-lg font-semibold text-ink">{t(lang, persona.title)}</p>
+                <p className="text-xl font-semibold text-ink">{t(lang, persona.title)}</p>
                 <p className="mt-1.5 max-w-md text-sm leading-relaxed text-muted-ink">
                   {t(lang, persona.desc)}
                 </p>
