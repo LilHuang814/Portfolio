@@ -436,20 +436,21 @@ export default function WisdomPlanPage() {
 
       {/* Target users */}
       <section className="relative mx-3 px-6 py-20 sm:mx-6 sm:px-10 sm:py-24 lg:px-14">
-        <h3 className="text-2xl font-semibold text-ink sm:text-3xl">
-          {lang === "zh" ? "目标用户" : "Target users"}
-        </h3>
-
-        <div className="mt-6 grid gap-8 lg:grid-cols-[minmax(0,0.65fr)_minmax(0,1.7fr)] lg:items-start lg:gap-8">
-          <div className="space-y-8">
-            {PERSONAS.map((persona) => (
-              <div key={persona.title.en}>
-                <p className="text-xl font-semibold text-ink">{t(lang, persona.title)}</p>
-                <p className="mt-1.5 max-w-md text-sm leading-relaxed text-muted-ink">
-                  {t(lang, persona.desc)}
-                </p>
-              </div>
-            ))}
+        <div className="grid gap-8 lg:grid-cols-[minmax(0,0.8fr)_minmax(0,1.45fr)] lg:items-center lg:gap-8">
+          <div>
+            <h3 className="text-2xl font-semibold text-ink sm:text-3xl">
+              {lang === "zh" ? "目标用户" : "Target users"}
+            </h3>
+            <div className="mt-8 space-y-8">
+              {PERSONAS.map((persona) => (
+                <div key={persona.title.en}>
+                  <p className="text-xl font-semibold text-ink">{t(lang, persona.title)}</p>
+                  <p className="mt-1.5 max-w-md text-sm leading-relaxed text-muted-ink">
+                    {t(lang, persona.desc)}
+                  </p>
+                </div>
+              ))}
+            </div>
           </div>
           <Shot src="/projects/wisdomplan/target-users.png" label="Target users" className="w-full rounded-2xl" />
         </div>
@@ -473,7 +474,7 @@ export default function WisdomPlanPage() {
                   {i + 1}
                 </span>
               </div>
-              <p className="mt-4 text-xl font-semibold text-ink">{t(lang, title)}</p>
+              <p className="mt-4 font-semibold text-ink">{t(lang, title)}</p>
             </div>
           ))}
         </div>
@@ -501,8 +502,8 @@ export default function WisdomPlanPage() {
             </div>
             <ul className={`space-y-5 ${idx % 2 === 1 ? "lg:order-1" : ""}`}>
               {points.map((p) => (
-                <li key={p.en} className="flex gap-3 text-[15px] leading-relaxed text-muted-ink">
-                  <Check className="mt-1 h-4 w-4 shrink-0 text-periwinkle" />
+                <li key={p.en} className="flex gap-3 text-lg leading-relaxed text-muted-ink">
+                  <Check className="mt-1.5 h-5 w-5 shrink-0 text-periwinkle" />
                   {t(lang, p)}
                 </li>
               ))}
