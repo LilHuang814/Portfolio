@@ -5,7 +5,6 @@ import {
   Users,
   Globe,
   TrendingUp,
-  Compass,
   Layers,
   BadgeCheck,
   MessageCircle,
@@ -121,14 +120,6 @@ const STATS: { icon: LucideIcon; value: string; label: BL }[] = [
 ];
 
 const CHALLENGES: { icon: LucideIcon; title: BL; desc: BL }[] = [
-  {
-    icon: Compass,
-    title: { en: "Not knowing where to start", zh: "不知道从哪里开始学" },
-    desc: {
-      en: "You want new skills but have no idea where to begin.",
-      zh: "踏入职场 / 转行时，想要学习新技能，但不知道从哪里开始。",
-    },
-  },
   {
     icon: Layers,
     title: { en: "Scattered resources", zh: "学习资源分散" },
@@ -364,13 +355,13 @@ export default function WisdomPlanPage() {
         </h2>
         <Flourish />
 
-        <div className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-5">
+        <div className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
           {CHALLENGES.map(({ icon: Icon, title, desc }) => (
             <div key={title.en}>
               <span className="flex h-14 w-14 items-center justify-center rounded-full bg-[#787BD7] text-white">
                 <Icon className="h-6 w-6" />
               </span>
-              <p className="mt-4 text-xl font-semibold text-ink">{t(lang, title)}</p>
+              <p className="mt-4 text-xl font-semibold leading-snug text-ink sm:min-h-[3.5rem]">{t(lang, title)}</p>
               <p className="mt-2 text-base leading-relaxed text-muted-ink">{t(lang, desc)}</p>
             </div>
           ))}
@@ -402,7 +393,7 @@ export default function WisdomPlanPage() {
               {lang === "zh" ? "AI 驱动的机会" : "An AI-driven opportunity"}
             </h2>
             <Flourish />
-            <p className="mt-6 text-lg leading-relaxed text-ink/80">
+            <p className="mt-6 text-base leading-relaxed text-ink/80">
               {lang === "zh"
                 ? "AI 与数据分析能缓解这些问题：结合用户目标、当前水平与学习内容，系统推荐下一步该学什么、快速解答疑问、设定合理目标并持续反馈进度，让学习更清晰、更高效。"
                 : "AI and data analytics can ease these problems. By combining the user's goals, level, and learning content, the system recommends what to learn next, answers questions quickly, sets sensible goals, and reflects progress continuously."}
@@ -502,8 +493,8 @@ export default function WisdomPlanPage() {
             </div>
             <ul className={`space-y-5 ${idx % 2 === 1 ? "lg:order-1" : ""}`}>
               {points.map((p) => (
-                <li key={p.en} className="flex gap-3 text-lg leading-relaxed text-muted-ink">
-                  <Check className="mt-1.5 h-5 w-5 shrink-0 text-periwinkle" />
+                <li key={p.en} className="flex gap-3 text-base leading-relaxed text-muted-ink">
+                  <Check className="mt-1 h-4 w-4 shrink-0 text-periwinkle" />
                   {t(lang, p)}
                 </li>
               ))}
