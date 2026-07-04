@@ -211,12 +211,32 @@ const PERSONAS: { img: string; title: BL; desc: BL }[] = [
   },
 ];
 
-const STEPS: { icon: LucideIcon; title: BL }[] = [
-  { icon: Target, title: { en: "Set goals & level", zh: "设定目标和水平" } },
-  { icon: Search, title: { en: "AI recommends courses", zh: "AI 个性化推荐课程" } },
-  { icon: BookOpen, title: { en: "Real-time guidance", zh: "实时 AI 解答与引导" } },
-  { icon: MessageCircle, title: { en: "Staged quizzes & feedback", zh: "阶段测验和反馈" } },
-  { icon: Network, title: { en: "Review knowledge", zh: "知识串联与复盘" } },
+const STEPS: { icon: LucideIcon; title: BL; desc: BL }[] = [
+  {
+    icon: Target,
+    title: { en: "Set goals & level", zh: "设定目标和水平" },
+    desc: { en: "Define your target and starting point.", zh: "明确学习目标与当前水平。" },
+  },
+  {
+    icon: Search,
+    title: { en: "AI recommends courses", zh: "AI 个性化推荐课程" },
+    desc: { en: "Personalized courses matched to you.", zh: "AI 匹配个性化课程与资源。" },
+  },
+  {
+    icon: BookOpen,
+    title: { en: "Real-time guidance", zh: "实时 AI 解答与引导" },
+    desc: { en: "In-context answers as you learn.", zh: "学习过程中实时解答引导。" },
+  },
+  {
+    icon: MessageCircle,
+    title: { en: "Staged quizzes & feedback", zh: "阶段测验和反馈" },
+    desc: { en: "Check understanding with instant feedback.", zh: "阶段测验与即时反馈。" },
+  },
+  {
+    icon: Network,
+    title: { en: "Review knowledge", zh: "知识串联与复盘" },
+    desc: { en: "Connect and consolidate what you learn.", zh: "串联并巩固所学知识。" },
+  },
 ];
 
 const FEATURES: { icon: LucideIcon; title: BL; shot: { src: string; label: string }; points: BL[] }[] = [
@@ -355,14 +375,14 @@ export default function WisdomPlanPage() {
         </h2>
         <Flourish />
 
-        <div className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-12 grid grid-cols-1 gap-x-8 gap-y-3 sm:grid-cols-2 lg:grid-cols-4">
           {CHALLENGES.map(({ icon: Icon, title, desc }) => (
-            <div key={title.en}>
+            <div key={title.en} className="grid grid-rows-subgrid row-span-3 mb-6 sm:mb-8 lg:mb-0">
               <span className="flex h-14 w-14 items-center justify-center rounded-full bg-[#787BD7] text-white">
                 <Icon className="h-6 w-6" />
               </span>
-              <p className="mt-4 text-xl font-semibold leading-snug text-ink sm:min-h-[3.5rem]">{t(lang, title)}</p>
-              <p className="mt-2 text-base leading-relaxed text-muted-ink">{t(lang, desc)}</p>
+              <p className="text-xl font-semibold leading-snug text-ink">{t(lang, title)}</p>
+              <p className="text-base leading-relaxed text-muted-ink">{t(lang, desc)}</p>
             </div>
           ))}
         </div>
@@ -454,9 +474,9 @@ export default function WisdomPlanPage() {
         <h2 className={`mt-6 ${heading}`}>{lang === "zh" ? "AI 驱动的学习流程" : "An AI-driven learning flow"}</h2>
         <Flourish />
 
-        <div className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-5">
-          {STEPS.map(({ icon: Icon, title }, i) => (
-            <div key={title.en} className="flex flex-col items-center text-center">
+        <div className="mt-12 grid grid-cols-1 gap-x-8 gap-y-3 sm:grid-cols-2 lg:grid-cols-5">
+          {STEPS.map(({ icon: Icon, title, desc }, i) => (
+            <div key={title.en} className="grid grid-rows-subgrid row-span-3 mb-8 justify-items-center text-center lg:mb-0">
               <div className="relative">
                 <span className="flex h-16 w-16 items-center justify-center rounded-full bg-[#787BD7] text-white">
                   <Icon className="h-7 w-7" />
@@ -465,7 +485,8 @@ export default function WisdomPlanPage() {
                   {i + 1}
                 </span>
               </div>
-              <p className="mt-4 text-xl font-semibold text-ink">{t(lang, title)}</p>
+              <p className="text-xl font-semibold text-ink">{t(lang, title)}</p>
+              <p className="max-w-[15rem] text-base leading-snug text-muted-ink">{t(lang, desc)}</p>
             </div>
           ))}
         </div>
@@ -474,11 +495,11 @@ export default function WisdomPlanPage() {
       {/* Feature deep-dives */}
       {FEATURES.map(({ icon: Icon, title, shot, points }, idx) => (
         <section key={title.en} className="relative mx-3 px-6 py-16 sm:mx-6 sm:px-10 sm:py-20 lg:px-14">
-          <div className="flex items-center justify-center gap-4 text-center">
+          <div className="flex items-center justify-start gap-4 text-left lg:justify-center lg:text-center">
             <span className="flex h-16 w-16 shrink-0 items-center justify-center rounded-full bg-[#787BD7] text-white">
               <Icon className="h-7 w-7" />
             </span>
-            <h3 className="text-2xl font-semibold tracking-tight text-ink sm:text-3xl">{t(lang, title)}</h3>
+            <h3 className="text-2xl font-semibold text-ink sm:text-3xl">{t(lang, title)}</h3>
           </div>
 
           <div
