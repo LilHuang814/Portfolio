@@ -61,28 +61,6 @@ function Shot({ src, label, className }: { src: string; label: string; className
   );
 }
 
-/** Round persona photo. Falls back to a dashed placeholder until the image loads. */
-function PersonaAvatar({ src, alt, size = "h-16 w-16" }: { src: string; alt: string; size?: string }) {
-  const { ref, failed, onError } = useImgFallback();
-  if (!failed) {
-    return (
-      // eslint-disable-next-line @next/next/no-img-element
-      <img
-        ref={ref}
-        src={src}
-        alt={alt}
-        onError={onError}
-        className={`${size} shrink-0 rounded-full object-cover`}
-      />
-    );
-  }
-  return (
-    <span className={`${size} flex shrink-0 items-center justify-center overflow-hidden rounded-full border border-dashed border-ink/25 bg-white/50 text-muted-ink`}>
-      <ImageIcon className="h-6 w-6" strokeWidth={1.5} />
-    </span>
-  );
-}
-
 /** WisdomPlan wordmark. Drop /projects/wisdomplan/logo.png and it replaces
     the text; until then the text wordmark shows. */
 function LogoTitle() {
@@ -442,13 +420,11 @@ export default function WisdomPlanPage() {
         <div className="mt-12 grid gap-10 sm:grid-cols-3 sm:gap-8">
           {PROBLEMS.map(({ img, label, title, points }) => (
             <div key={label} className="flex flex-col items-center">
-              <Shot src={img} label={label} className="w-full rounded-2xl" />
-              <div className="relative z-10 -mt-5 rounded-full bg-[#787BD7] px-6 py-2.5">
-                <span className="font-semibold text-white">{t(lang, title)}</span>
-              </div>
-              <div className="mt-5 max-w-xs space-y-1 text-center">
+              <Shot src={img} label={label} className="mx-auto w-full max-w-[230px] rounded-2xl" />
+              <p className="mt-7 text-lg font-semibold text-ink">{t(lang, title)}</p>
+              <div className="mt-2 max-w-xs text-center">
                 {points.map((p) => (
-                  <p key={p.en} className="text-sm leading-relaxed text-muted-ink">
+                  <p key={p.en} className="text-sm leading-snug text-muted-ink">
                     {t(lang, p)}
                   </p>
                 ))}
@@ -464,16 +440,18 @@ export default function WisdomPlanPage() {
           {lang === "zh" ? "目标用户" : "Target users"}
         </h3>
 
-        <div className="mt-12 grid gap-10 sm:grid-cols-3 sm:gap-12">
-          {PERSONAS.map((persona) => (
-            <div key={persona.title.en} className="flex flex-col items-center text-center">
-              <PersonaAvatar src={persona.img} alt={t(lang, persona.title)} size="h-32 w-32" />
-              <p className="mt-5 text-lg font-semibold text-periwinkle">{t(lang, persona.title)}</p>
-              <p className="mt-2 max-w-xs text-sm leading-relaxed text-muted-ink">
-                {t(lang, persona.desc)}
-              </p>
-            </div>
-          ))}
+        <div className="mt-12 grid gap-12 lg:grid-cols-2 lg:items-center lg:gap-16">
+          <div className="space-y-8">
+            {PERSONAS.map((persona) => (
+              <div key={persona.title.en}>
+                <p className="text-lg font-semibold text-ink">{t(lang, persona.title)}</p>
+                <p className="mt-1.5 max-w-md text-sm leading-relaxed text-muted-ink">
+                  {t(lang, persona.desc)}
+                </p>
+              </div>
+            ))}
+          </div>
+          <Shot src="/projects/wisdomplan/target-users.png" label="Target users" className="w-full rounded-2xl" />
         </div>
       </section>
 
