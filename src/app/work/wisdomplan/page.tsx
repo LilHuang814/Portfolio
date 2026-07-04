@@ -332,7 +332,7 @@ export default function WisdomPlanPage() {
               <p className="text-[clamp(3.25rem,8vw,5.5rem)] font-bold leading-none text-[#B6A9E8]">
                 {value}
               </p>
-              <p className="mt-4 text-xl font-semibold text-ink">{t(lang, label)}</p>
+              <p className="mt-4 text-lg font-semibold sm:text-xl text-ink">{t(lang, label)}</p>
             </div>
           ))}
         </div>
@@ -353,7 +353,7 @@ export default function WisdomPlanPage() {
               <span className="flex h-14 w-14 items-center justify-center rounded-full bg-[#787BD7] text-white">
                 <Icon className="h-6 w-6" />
               </span>
-              <p className="text-xl font-semibold leading-snug text-ink">{t(lang, title)}</p>
+              <p className="text-lg font-semibold sm:text-xl leading-snug text-ink">{t(lang, title)}</p>
               <p className="text-base leading-relaxed text-muted-ink">{t(lang, desc)}</p>
             </div>
           ))}
@@ -404,7 +404,7 @@ export default function WisdomPlanPage() {
           {PROBLEMS.map(({ img, label, title, points }) => (
             <div key={label} className="flex flex-col items-center">
               <Shot src={img} label={label} className="mx-auto w-full max-w-[280px] rounded-2xl" />
-              <p className="mt-7 text-xl font-semibold text-ink">{t(lang, title)}</p>
+              <p className="mt-7 text-lg font-semibold sm:text-xl text-ink">{t(lang, title)}</p>
               <div className="mt-2 max-w-xs text-center">
                 {points.map((p) => (
                   <p key={p.en} className="text-base leading-snug text-muted-ink">
@@ -427,7 +427,7 @@ export default function WisdomPlanPage() {
             <div className="mt-8 space-y-8">
               {PERSONAS.map((persona) => (
                 <div key={persona.title.en}>
-                  <p className="text-xl font-semibold text-ink">{t(lang, persona.title)}</p>
+                  <p className="text-lg font-semibold sm:text-xl text-ink">{t(lang, persona.title)}</p>
                   <p className="mt-1.5 max-w-md text-base leading-relaxed text-muted-ink">
                     {t(lang, persona.desc)}
                   </p>
