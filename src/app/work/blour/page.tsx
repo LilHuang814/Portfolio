@@ -6,7 +6,6 @@ import {
   BookOpen,
   Clock,
   Bell,
-  Shuffle,
   Settings,
   Home,
   Mic,
@@ -149,14 +148,6 @@ const CHALLENGES: { icon: LucideIcon; title: BL; desc: BL }[] = [
       zh: "需要马上处理的邮件和任务容易被掩埋和忽略。",
     },
   },
-  {
-    icon: Shuffle,
-    title: { en: "Scattered information", zh: "收集的信息很散" },
-    desc: {
-      en: "Users read a lot but stay stuck in a “saw plenty, did nothing” state.",
-      zh: "用户容易陷入“看了很多，却没有行动”的状态。",
-    },
-  },
 ];
 
 const PROBLEMS: { img: string; label: string; title: BL; points: BL[] }[] = [
@@ -165,9 +156,7 @@ const PROBLEMS: { img: string; label: string; title: BL; points: BL[] }[] = [
     label: "NotebookLM",
     title: { en: "AI doc-to-podcast tools", zh: "AI 文档转播客工具（如 NotebookLM）" },
     points: [
-      { en: "Users must find and upload content themselves — high effort.", zh: "需要用户主动寻找并上传内容，使用成本较高。" },
-      { en: "Skewed to study and exam prep; weak at everyday info management.", zh: "更偏向学生学习与备考场景，缺少日常信息管理能力。" },
-      { en: "Can't auto-discover and organize content around interests and tasks.", zh: "无法根据用户兴趣与任务自动发现和整理内容。" },
+      { en: "High-effort uploads and a study focus; weak at everyday info management.", zh: "上传成本高、偏向备考，缺少日常信息管理能力。" },
     ],
   },
   {
@@ -175,9 +164,7 @@ const PROBLEMS: { img: string; label: string; title: BL; points: BL[] }[] = [
     label: "Particle News",
     title: { en: "News AI podcast products", zh: "新闻类 AI Podcast 产品（如 Particle News）" },
     points: [
-      { en: "Mostly built on trending news; limited personalization.", zh: "内容主要基于热门新闻，个性化程度有限。" },
-      { en: "Doesn't tie into a user's tasks, schedule, or immediate needs.", zh: "无法结合用户的任务、日程或即时需求提供信息。" },
-      { en: "Listeners stay passive; no support for action or efficiency.", zh: "用户只能被动收听，缺少行动与效率支持。" },
+      { en: "Trending-news focused, with limited personalization and passive listening.", zh: "以热门新闻为主，个性化有限，只能被动收听。" },
     ],
   },
   {
@@ -185,9 +172,7 @@ const PROBLEMS: { img: string; label: string; title: BL; points: BL[] }[] = [
     label: "Meco",
     title: { en: "Newsletter aggregators", zh: "邮件订阅聚合工具（如 Meco）" },
     points: [
-      { en: "Narrow sources — mainly newsletters and recommended channels.", zh: "内容来源较局限，主要依赖订阅邮件与推荐频道。" },
-      { en: "Users can't freely upload the content they want to hear.", zh: "用户无法自由上传自己想收听的内容。" },
-      { en: "Lacks cross-platform, multi-source integration.", zh: "缺少跨平台、多来源的信息整合能力。" },
+      { en: "Narrow subscription sources, with no uploads or multi-source integration.", zh: "来源局限于订阅邮件，无法上传或跨源整合。" },
     ],
   },
 ];
@@ -301,7 +286,7 @@ export default function BlourPage() {
             <p className="mt-6 max-w-xl text-lg leading-relaxed text-muted-ink">
               {lang === "zh"
                 ? "Blour 是一款 AI 个性化音频平台，能够将新闻、日程与用户上传内容自动整理成音频简报，帮助用户更轻松地获取信息、管理任务与提升效率。"
-                : "Blour is an AI-powered personalized audio platform that turns news, schedules, and your own uploads into audio briefings — so getting informed, managing tasks, and staying efficient feels effortless."}
+                : "Blour is an AI-powered personalized audio platform that turns news, schedules, and your own uploads into audio briefings, so getting informed, managing tasks, and staying efficient feels effortless."}
             </p>
           </div>
 
@@ -322,7 +307,7 @@ export default function BlourPage() {
         </h2>
         <Flourish />
 
-        <div className="mt-12 grid grid-cols-1 gap-x-8 gap-y-3 sm:grid-cols-2 lg:grid-cols-5">
+        <div className="mt-12 grid grid-cols-1 gap-x-8 gap-y-3 sm:grid-cols-2 lg:grid-cols-4">
           {CHALLENGES.map(({ icon: Icon, title, desc }) => (
             <div key={title.en} className="grid grid-rows-subgrid row-span-3 mb-6 sm:mb-8 lg:mb-0">
               <span
@@ -368,7 +353,7 @@ export default function BlourPage() {
             <p className="mt-6 text-base leading-relaxed text-muted-ink">
               {lang === "zh"
                 ? "在信息过载与注意力碎片化的环境下，用户越来越难高效地获取真正重要的内容。Blour 希望通过 AI 自动整合新闻、邮件、日程与用户上传内容，并转化为个性化音频简报，让用户能够更轻松地获取信息、管理任务，并减少信息负担。"
-                : "Amid information overload and fragmented attention, it's increasingly hard to reach what truly matters. Blour uses AI to pull together news, email, schedules, and uploads, turning them into personalized audio briefings — so getting informed and managing tasks feels lighter."}
+                : "Amid information overload and fragmented attention, it's increasingly hard to reach what truly matters. Blour uses AI to pull together news, email, schedules, and uploads, turning them into personalized audio briefings, so getting informed and managing tasks feels lighter."}
             </p>
           </div>
         </div>
@@ -403,7 +388,7 @@ export default function BlourPage() {
             <div className="mt-8 space-y-8">
               {PERSONAS.map((persona) => (
                 <div key={persona.title.en}>
-                  <p className="text-lg font-semibold sm:text-xl" style={{ color: BLUE }}>
+                  <p className="text-lg font-semibold text-ink sm:text-xl">
                     {t(lang, persona.title)}
                   </p>
                   <p className="mt-1.5 max-w-md text-base leading-relaxed text-muted-ink">
@@ -478,7 +463,7 @@ export default function BlourPage() {
         <p className="mt-6 max-w-3xl text-base leading-relaxed text-muted-ink">
           {lang === "zh"
             ? "在设计 Blour 的过程中，我重新思考了“信息获取”与“效率工具”之间的关系。相比传统的信息平台只负责提供内容，我更希望 Blour 能够帮助用户真正理解、整理并处理信息，让“获取信息”不再是一种负担，而是一种更轻松、更自然地融入日常生活的体验。在这个项目中，我不仅关注了 AI 功能本身，也更加注重陪伴感、低压力的交互氛围，以及如何通过音频化与自动化设计减少用户在高信息密度环境下的认知负担。"
-            : "Designing Blour, I rethought the relationship between “getting information” and “efficiency tools.” Rather than a platform that just serves content, I wanted Blour to help people truly understand, organize, and act on information — so staying informed feels lighter and folds naturally into daily life. Beyond the AI features, I focused on a sense of companionship, a low-pressure interaction mood, and how audio and automation can reduce cognitive load in high-density information environments."}
+            : "Designing Blour, I rethought the relationship between “getting information” and “efficiency tools.” Rather than a platform that just serves content, I wanted Blour to help people truly understand, organize, and act on information, so staying informed feels lighter and folds naturally into daily life. Beyond the AI features, I focused on a sense of companionship, a low-pressure interaction mood, and how audio and automation can reduce cognitive load in high-density information environments."}
         </p>
       </section>
 
