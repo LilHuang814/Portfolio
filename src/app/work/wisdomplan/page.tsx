@@ -440,7 +440,7 @@ export default function WisdomPlanPage() {
           {lang === "zh" ? "目标用户" : "Target users"}
         </h3>
 
-        <div className="mt-12 grid gap-12 lg:grid-cols-2 lg:items-center lg:gap-16">
+        <div className="mt-12 grid gap-8 lg:grid-cols-[minmax(0,0.8fr)_minmax(0,1.3fr)] lg:items-center lg:gap-8">
           <div className="space-y-8">
             {PERSONAS.map((persona) => (
               <div key={persona.title.en}>
