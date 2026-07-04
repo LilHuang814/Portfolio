@@ -220,24 +220,24 @@ const PERSONAS: { img: string; title: BL; desc: BL }[] = [
     img: "/projects/wisdomplan/career-switcher.png",
     title: { en: "Career switchers", zh: "转行探索者" },
     desc: {
-      en: "Moving into a new field and needs a systematic learning path plus a clear picture of the role-specific skills that actually matter.",
-      zh: "想要转行进入新领域，需要系统的学习路径，以及对岗位所需核心技能的清晰认知。",
+      en: "Entering a new field; needs a clear path and the skills that matter.",
+      zh: "转行进入新领域，需要清晰的路径与关键技能。",
     },
   },
   {
     img: "/projects/wisdomplan/working-learners.png",
     title: { en: "Working learners", zh: "在职学习者" },
     desc: {
-      en: "Upskilling alongside a full-time job and needs flexible, bite-sized methods with efficient, high-quality resources they can trust.",
-      zh: "希望在繁忙工作之余提升专业技能，需要灵活、碎片化的学习方式与高效可靠的优质资源。",
+      en: "Upskilling on the job; needs flexible methods and trusted resources.",
+      zh: "在职提升技能，需要灵活的方式与可靠的资源。",
     },
   },
   {
     img: "/projects/wisdomplan/student.png",
     title: { en: "Students & job seekers", zh: "大学求职者" },
     desc: {
-      en: "Facing job-hunting and study pressure at once and needs a clear, structured path to stay focused and cut through the overwhelm.",
-      zh: "同时面对求职与学习压力，容易迷茫焦虑，需要清晰、有结构的学习路径来保持专注。",
+      en: "Facing job and study pressure; needs a clear, focused path.",
+      zh: "面对求职与学习压力，需要清晰、专注的路径。",
     },
   },
 ];
@@ -378,7 +378,7 @@ export default function WisdomPlanPage() {
       </section>
 
       {/* User challenges */}
-      <section className="relative mx-3 px-6 py-16 sm:mx-6 sm:px-10 sm:py-20 lg:px-14">
+      <section className="relative mx-3 px-6 py-20 sm:mx-6 sm:px-10 sm:py-24 lg:px-14">
         <DotGrid className="absolute right-10 top-14 hidden lg:grid" />
         <Eyebrow label={lang === "zh" ? "用户挑战" : "User Challenges"} color="orange" className="!text-sm" />
         <h2 className={`mt-6 ${heading}`}>
@@ -401,7 +401,7 @@ export default function WisdomPlanPage() {
       </section>
 
       {/* Our opportunity */}
-      <section className="relative mx-3 px-6 py-10 sm:mx-6 sm:px-10 sm:py-12 lg:px-14">
+      <section className="relative mx-3 px-6 py-16 sm:mx-6 sm:px-10 sm:py-20 lg:px-14">
         <div className="relative overflow-hidden rounded-[2rem] bg-white/55 px-8 py-14 sm:px-14 sm:py-16">
           <div
             aria-hidden
@@ -434,7 +434,7 @@ export default function WisdomPlanPage() {
       </section>
 
       {/* Problems in today's learning experience */}
-      <section className="relative mx-3 px-6 py-8 sm:mx-6 sm:px-10 lg:px-14">
+      <section className="relative mx-3 px-6 py-20 sm:mx-6 sm:px-10 sm:py-24 lg:px-14">
         <h3 className="text-2xl font-semibold text-ink sm:text-3xl">
           {lang === "zh" ? "现有学习体验中的问题" : "Problems in today's learning experience"}
         </h3>
@@ -459,7 +459,7 @@ export default function WisdomPlanPage() {
       </section>
 
       {/* Target users */}
-      <section className="relative mx-3 px-6 py-8 sm:mx-6 sm:px-10 sm:py-10 lg:px-14">
+      <section className="relative mx-3 px-6 py-20 sm:mx-6 sm:px-10 sm:py-24 lg:px-14">
         <h3 className="text-2xl font-semibold text-ink sm:text-3xl">
           {lang === "zh" ? "目标用户" : "Target users"}
         </h3>
@@ -467,7 +467,7 @@ export default function WisdomPlanPage() {
         <div className="mt-12 grid gap-10 sm:grid-cols-3 sm:gap-12">
           {PERSONAS.map((persona) => (
             <div key={persona.title.en} className="flex flex-col items-center text-center">
-              <PersonaAvatar src={persona.img} alt={t(lang, persona.title)} size="h-24 w-24" />
+              <PersonaAvatar src={persona.img} alt={t(lang, persona.title)} size="h-32 w-32" />
               <p className="mt-5 text-lg font-semibold text-periwinkle">{t(lang, persona.title)}</p>
               <p className="mt-2 max-w-xs text-sm leading-relaxed text-muted-ink">
                 {t(lang, persona.desc)}
@@ -478,7 +478,7 @@ export default function WisdomPlanPage() {
       </section>
 
       {/* AI-driven flow */}
-      <section className="relative mx-3 px-6 py-16 sm:mx-6 sm:px-10 sm:py-20 lg:px-14">
+      <section className="relative mx-3 px-6 py-20 sm:mx-6 sm:px-10 sm:py-24 lg:px-14">
         <DotGrid className="absolute right-10 top-14 hidden lg:grid" />
         <Eyebrow label={lang === "zh" ? "AI 学习体验" : "AI Learning Experience"} color="periwinkle" className="!text-sm" />
         <h2 className={`mt-6 ${heading}`}>{lang === "zh" ? "AI 驱动的学习流程" : "An AI-driven learning flow"}</h2>
@@ -503,7 +503,7 @@ export default function WisdomPlanPage() {
 
       {/* Feature deep-dives */}
       {FEATURES.map(({ icon: Icon, title, shot, points }, idx) => (
-        <section key={title.en} className="relative mx-3 px-6 py-12 sm:mx-6 sm:px-10 sm:py-14 lg:px-14">
+        <section key={title.en} className="relative mx-3 px-6 py-16 sm:mx-6 sm:px-10 sm:py-20 lg:px-14">
           <div className="flex items-center justify-center gap-4 text-center">
             <span className="flex h-16 w-16 shrink-0 items-center justify-center rounded-full bg-[#787BD7] text-white">
               <Icon className="h-7 w-7" />
@@ -534,7 +534,7 @@ export default function WisdomPlanPage() {
       ))}
 
       {/* Reflection */}
-      <section className="relative mx-3 px-6 py-16 sm:mx-6 sm:px-10 sm:py-20 lg:px-14">
+      <section className="relative mx-3 px-6 py-20 sm:mx-6 sm:px-10 sm:py-24 lg:px-14">
         <DotGrid className="absolute right-10 top-14 hidden lg:grid" />
         <Eyebrow label={lang === "zh" ? "心得" : "Reflection"} color="orange" className="!text-sm" />
         <h2 className={`mt-6 ${heading}`}>{lang === "zh" ? "心得体会" : "Reflection"}</h2>
