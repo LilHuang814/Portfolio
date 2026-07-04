@@ -72,7 +72,7 @@ function LogoTitle() {
         src="/projects/wisdomplan/logo.png"
         alt="WisdomPlan"
         onError={onError}
-        className="mt-6 h-8 w-auto"
+        className="mt-6 h-6 w-auto sm:h-7 lg:h-8"
       />
     );
   }
