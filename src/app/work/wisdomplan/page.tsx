@@ -370,8 +370,8 @@ export default function WisdomPlanPage() {
               <span className="flex h-14 w-14 items-center justify-center rounded-full bg-[#787BD7] text-white">
                 <Icon className="h-6 w-6" />
               </span>
-              <p className="mt-4 font-semibold text-ink">{t(lang, title)}</p>
-              <p className="mt-2 text-sm leading-relaxed text-muted-ink">{t(lang, desc)}</p>
+              <p className="mt-4 text-xl font-semibold text-ink">{t(lang, title)}</p>
+              <p className="mt-2 text-base leading-relaxed text-muted-ink">{t(lang, desc)}</p>
             </div>
           ))}
         </div>
@@ -424,7 +424,7 @@ export default function WisdomPlanPage() {
               <p className="mt-7 text-xl font-semibold text-ink">{t(lang, title)}</p>
               <div className="mt-2 max-w-xs text-center">
                 {points.map((p) => (
-                  <p key={p.en} className="text-sm leading-snug text-muted-ink">
+                  <p key={p.en} className="text-base leading-snug text-muted-ink">
                     {t(lang, p)}
                   </p>
                 ))}
@@ -445,7 +445,7 @@ export default function WisdomPlanPage() {
               {PERSONAS.map((persona) => (
                 <div key={persona.title.en}>
                   <p className="text-xl font-semibold text-ink">{t(lang, persona.title)}</p>
-                  <p className="mt-1.5 max-w-md text-sm leading-relaxed text-muted-ink">
+                  <p className="mt-1.5 max-w-md text-base leading-relaxed text-muted-ink">
                     {t(lang, persona.desc)}
                   </p>
                 </div>
@@ -474,7 +474,7 @@ export default function WisdomPlanPage() {
                   {i + 1}
                 </span>
               </div>
-              <p className="mt-4 font-semibold text-ink">{t(lang, title)}</p>
+              <p className="mt-4 text-xl font-semibold text-ink">{t(lang, title)}</p>
             </div>
           ))}
         </div>
