@@ -293,7 +293,7 @@ export default function WisdomPlanPage() {
             <p className={`mt-5 ${heading}`}>
               {lang === "zh" ? "在 AI 时代，重新定义学习" : "Redefining learning in the age of AI"}
             </p>
-            <p className="mt-6 max-w-xl text-[17px] leading-relaxed text-muted-ink">
+            <p className="mt-6 max-w-xl text-lg leading-relaxed text-muted-ink">
               {lang === "zh"
                 ? "WisdomPlan 通过 AI 推荐、学习路径与实时辅助，构建更智能、更有陪伴感的成长体验。"
                 : "WisdomPlan uses AI recommendations, learning paths, and real-time assistance to build a smarter, more supportive growth experience."}
@@ -385,7 +385,7 @@ export default function WisdomPlanPage() {
               {lang === "zh" ? "AI 驱动的机会" : "An AI-driven opportunity"}
             </h2>
             <Flourish />
-            <p className="mt-6 text-base leading-relaxed text-ink/80">
+            <p className="mt-6 text-base leading-relaxed text-muted-ink">
               {lang === "zh"
                 ? "AI 与数据分析能缓解这些问题：结合用户目标、当前水平与学习内容，系统推荐下一步该学什么、快速解答疑问、设定合理目标并持续反馈进度，让学习更清晰、更高效。"
                 : "AI and data analytics can ease these problems. By combining the user's goals, level, and learning content, the system recommends what to learn next, answers questions quickly, sets sensible goals, and reflects progress continuously."}
@@ -445,7 +445,7 @@ export default function WisdomPlanPage() {
         <Eyebrow label={lang === "zh" ? "AI 学习体验" : "AI Learning Experience"} color="periwinkle" className="!text-sm" />
         <h2 className={`mt-6 ${heading}`}>{lang === "zh" ? "AI 驱动的学习流程" : "An AI-driven learning flow"}</h2>
         <Flourish />
-        <p className="mt-6 max-w-3xl text-[17px] leading-relaxed text-ink/85">
+        <p className="mt-6 max-w-3xl text-lg leading-relaxed text-muted-ink">
           {lang === "zh"
             ? "WisdomPlan 将学习拆解为五个环环相扣的阶段：先帮助用户设定清晰目标并评估当前水平，再由 AI 推荐个性化课程，在学习过程中提供实时解答与引导，通过阶段测验与反馈检验掌握程度，最后帮助用户复盘并串联知识，形成持久的知识结构。"
             : "WisdomPlan guides learners through five connected stages: it helps them set clear goals and gauge their level, then AI recommends personalized courses, offers real-time guidance as they learn, checks understanding with staged quizzes and feedback, and finally helps them review and connect knowledge into a lasting structure."}
@@ -490,7 +490,7 @@ export default function WisdomPlanPage() {
         <Eyebrow label={lang === "zh" ? "心得" : "Reflection"} color="orange" className="!text-sm" />
         <h2 className={`mt-6 ${heading}`}>{lang === "zh" ? "心得体会" : "Reflection"}</h2>
         <Flourish />
-        <p className="mt-6 max-w-3xl text-[17px] leading-relaxed text-ink/85">
+        <p className="mt-6 max-w-3xl text-lg leading-relaxed text-muted-ink">
           {lang === "zh"
             ? "设计 WisdomPlan 的过程中，我重新思考了 AI 在学习体验中的角色。学习的困难往往不仅来自内容本身，更来自缺乏方向感、持续反馈与长期陪伴。因此，我希望通过 AI 主动引导、上下文理解与连续性的学习支持，帮助用户降低学习门槛，建立更持续、更轻松的学习体验。"
             : "Designing WisdomPlan, I rethought AI's role in the learning experience. The difficulty often comes not from the content itself but from a lack of direction, ongoing feedback, and long-term companionship. So I set out to use AI-driven guidance, contextual understanding, and continuous support to lower the barrier to learning and build a more sustainable, relaxed experience."}
