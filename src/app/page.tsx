@@ -33,6 +33,7 @@ export default function Home() {
       <FeaturedProject
         eyebrowColor="orange"
         title="Blour"
+        href="/work/blour"
         description={{
           zh: "自动整理用户感兴趣的新闻并处理紧急待办，还能把上传的资料生成个性化播客，用笔记归纳信息",
           en: "Curates relevant news, handles urgent tasks, and transforms uploaded materials into personalized podcasts with organized notes.",
