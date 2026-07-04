@@ -211,34 +211,6 @@ const PERSONAS: { img: string; title: BL; desc: BL }[] = [
   },
 ];
 
-const STEPS: { icon: LucideIcon; title: BL; desc: BL }[] = [
-  {
-    icon: Target,
-    title: { en: "Set goals & level", zh: "设定目标和水平" },
-    desc: { en: "Define your target and starting point.", zh: "明确学习目标与当前水平。" },
-  },
-  {
-    icon: Search,
-    title: { en: "AI recommends courses", zh: "AI 个性化推荐课程" },
-    desc: { en: "Personalized courses matched to you.", zh: "AI 匹配个性化课程与资源。" },
-  },
-  {
-    icon: BookOpen,
-    title: { en: "Real-time guidance", zh: "实时 AI 解答与引导" },
-    desc: { en: "In-context answers as you learn.", zh: "学习过程中实时解答引导。" },
-  },
-  {
-    icon: MessageCircle,
-    title: { en: "Staged quizzes & feedback", zh: "阶段测验和反馈" },
-    desc: { en: "Check understanding with instant feedback.", zh: "阶段测验与即时反馈。" },
-  },
-  {
-    icon: Network,
-    title: { en: "Review knowledge", zh: "知识串联与复盘" },
-    desc: { en: "Connect and consolidate what you learn.", zh: "串联并巩固所学知识。" },
-  },
-];
-
 const FEATURES: { icon: LucideIcon; title: BL; shot: { src: string; label: string }; points: BL[] }[] = [
   {
     icon: Target,
@@ -473,23 +445,11 @@ export default function WisdomPlanPage() {
         <Eyebrow label={lang === "zh" ? "AI 学习体验" : "AI Learning Experience"} color="periwinkle" className="!text-sm" />
         <h2 className={`mt-6 ${heading}`}>{lang === "zh" ? "AI 驱动的学习流程" : "An AI-driven learning flow"}</h2>
         <Flourish />
-
-        <div className="mt-12 grid grid-cols-1 gap-x-8 gap-y-3 sm:grid-cols-2 lg:grid-cols-5">
-          {STEPS.map(({ icon: Icon, title, desc }, i) => (
-            <div key={title.en} className="grid grid-rows-subgrid row-span-3 mb-8 justify-items-center text-center lg:mb-0">
-              <div className="relative">
-                <span className="flex h-16 w-16 items-center justify-center rounded-full bg-[#787BD7] text-white">
-                  <Icon className="h-7 w-7" />
-                </span>
-                <span className="absolute -right-1 -top-1 flex h-6 w-6 items-center justify-center rounded-full bg-[#B6A9E8] text-xs font-bold text-white">
-                  {i + 1}
-                </span>
-              </div>
-              <p className="text-xl font-semibold text-ink">{t(lang, title)}</p>
-              <p className="max-w-[15rem] text-base leading-snug text-muted-ink">{t(lang, desc)}</p>
-            </div>
-          ))}
-        </div>
+        <p className="mt-6 max-w-3xl text-[17px] leading-relaxed text-ink/85">
+          {lang === "zh"
+            ? "WisdomPlan 将学习拆解为五个环环相扣的阶段：先帮助用户设定清晰目标并评估当前水平，再由 AI 推荐个性化课程，在学习过程中提供实时解答与引导，通过阶段测验与反馈检验掌握程度，最后帮助用户复盘并串联知识，形成持久的知识结构。"
+            : "WisdomPlan guides learners through five connected stages: it helps them set clear goals and gauge their level, then AI recommends personalized courses, offers real-time guidance as they learn, checks understanding with staged quizzes and feedback, and finally helps them review and connect knowledge into a lasting structure."}
+        </p>
       </section>
 
       {/* Feature deep-dives */}
