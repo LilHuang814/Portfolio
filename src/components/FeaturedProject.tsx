@@ -45,7 +45,7 @@ export function FeaturedProject({
             {description[lang]}
           </p>
 
-          <div className="mt-5 sm:mt-8">
+          <div className="mt-4 sm:mt-5">
             <span className="text-sm font-semibold text-ink">
               {lang === "zh" ? "职责范围" : "Scope of responsibilities"}
             </span>

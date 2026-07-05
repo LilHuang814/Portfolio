@@ -49,7 +49,7 @@ export function ResumeCard() {
       </div>
 
       <div className="mt-12">
-        <h2 className="text-[clamp(1.9rem,3.75vw,3.4rem)] font-bold leading-[1.05] tracking-tight text-ink">hi, i&rsquo;m lily</h2>
+        <h2 className="text-[clamp(1.9rem,3.75vw,3.4rem)] font-bold leading-[1.05] tracking-tight text-ink">Hi, i&rsquo;m lily</h2>
 
         <div className="mt-6 grid gap-10 lg:grid-cols-[2fr_1px_1fr] lg:items-start">
           <div>
