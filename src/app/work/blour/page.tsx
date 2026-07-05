@@ -263,22 +263,21 @@ export default function BlourPage() {
     <main className="relative mx-auto w-full max-w-[90rem] overflow-x-clip pb-6">
       <CursorGlow />
 
+      {/* Full-bleed hero background: a warm glow over a blue-to-bone gradient,
+          sitting behind the hero rather than inside its bounds. */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-x-0 top-0 -z-10 h-[860px]"
+        style={{
+          background:
+            "radial-gradient(56% 50% at 50% 18%, #FFF2E6 0%, rgba(255,242,230,0) 60%), linear-gradient(180deg, #D6ECFF 0%, #D6ECFF 50%, #F4F0E8 100%)",
+        }}
+      />
+
       <SiteNav />
 
       {/* Hero */}
-      <section
-        className="relative mx-3 mt-6 overflow-hidden rounded-[2rem] px-6 py-12 sm:mx-6 sm:px-10 sm:py-16 lg:px-14"
-        style={{ background: "linear-gradient(180deg, #D6EFFF 0%, #F4F0E8 100%)" }}
-      >
-        {/* Large radial halo — a warm glow whose edge blends into the blue hero background. */}
-        <div
-          aria-hidden
-          className="pointer-events-none absolute left-1/2 top-[calc(50%-260px)] -z-10 h-[1500px] w-[2600px] -translate-x-1/2 -translate-y-1/2 rounded-full"
-          style={{
-            background:
-              "radial-gradient(ellipse, #FFF6EC 0%, #FFF0E3 20%, #D6EFFF 60%)",
-          }}
-        />
+      <section className="relative mx-3 mt-6 px-6 py-12 sm:mx-6 sm:px-10 sm:py-16 lg:px-14">
         <div className="relative z-10 grid gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.1fr)] lg:items-center lg:gap-16">
           <div>
             <LogoTitle />
