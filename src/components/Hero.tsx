@@ -63,18 +63,14 @@ export function Hero() {
           <h1 className="text-5xl font-bold tracking-tight text-white drop-shadow-sm sm:text-7xl">
             lily&rsquo;s portfolio of
           </h1>
-          <div className="inline-grid rounded-full bg-white/35 px-4 py-4 shadow-md sm:px-5 sm:py-5">
-            {DISCIPLINES.map((d, i) => (
-              <span
-                key={d}
-                aria-hidden={i !== word}
-                className={`col-start-1 row-start-1 whitespace-nowrap text-center text-3xl font-bold text-[#979CD3] transition-opacity duration-500 sm:text-5xl ${
-                  i === word ? "opacity-100" : "opacity-0"
-                }`}
-              >
-                {d}
-              </span>
-            ))}
+          <div className="inline-flex items-center justify-center rounded-full bg-white/55 px-5 py-4 sm:px-7 sm:py-5">
+            <span
+              key={DISCIPLINES[word]}
+              style={{ animation: "wordSwap 0.5s ease" }}
+              className="whitespace-nowrap text-3xl font-bold text-[#979CD3] sm:text-5xl"
+            >
+              {DISCIPLINES[word]}
+            </span>
           </div>
         </div>
       </div>
