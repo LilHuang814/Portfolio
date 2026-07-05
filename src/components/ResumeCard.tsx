@@ -49,7 +49,7 @@ export function ResumeCard() {
       </div>
 
       <div className="mt-12">
-        <h2 className="text-[clamp(1.9rem,3.75vw,3.4rem)] font-bold leading-[1.05] tracking-tight text-ink">Lily Huang</h2>
+        <h2 className="text-[clamp(1.9rem,3.75vw,3.4rem)] font-bold leading-[1.05] tracking-tight text-ink">hi, i&rsquo;m lily</h2>
 
         <div className="mt-6 grid gap-10 lg:grid-cols-[2fr_1px_1fr] lg:items-start">
           <div>
@@ -82,8 +82,8 @@ export function ResumeCard() {
                 <p className="text-lg font-semibold text-ink">
                   {lang === "zh" ? "康奈尔大学" : "Cornell University"}
                 </p>
-                <p className="text-sm text-muted-ink">B.A. + M.P.S.</p>
-                <p className="text-sm text-muted-ink">
+                <p className="text-base text-muted-ink">B.A. + M.P.S.</p>
+                <p className="text-base text-muted-ink">
                   {lang === "zh" ? "信息科学" : "in Information Science"}
                 </p>
               </div>
@@ -100,7 +100,7 @@ export function ResumeCard() {
               {label[lang]}
               <span className="h-1 w-1 rounded-full bg-orange" />
             </div>
-            <p className="mt-2 whitespace-pre-line text-sm text-muted-ink">{value[lang]}</p>
+            <p className="mt-2 whitespace-pre-line text-base text-muted-ink">{value[lang]}</p>
           </div>
         ))}
       </div>
