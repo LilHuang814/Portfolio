@@ -271,10 +271,10 @@ export default function BlourPage() {
             fully back to the background (#F4F0E8) around its whole edge. */}
         <div
           aria-hidden
-          className="pointer-events-none absolute left-1/2 top-[calc(50%-230px)] -z-10 h-[1650px] w-[1650px] -translate-x-1/2 -translate-y-1/2 rounded-full"
+          className="pointer-events-none absolute left-1/2 top-[calc(50%-420px)] -z-10 h-[1600px] w-[2600px] -translate-x-1/2 -translate-y-1/2 rounded-full"
           style={{
             background:
-              "radial-gradient(circle, #F4F0E8 0%, #FFF0E3 16%, #D6EFFF 34%, #F4F0E8 58%)",
+              "radial-gradient(ellipse, #F4F0E8 0%, #FFF0E3 16%, #D6EFFF 34%, #F4F0E8 56%)",
           }}
         />
         <div className="relative z-10 grid gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.1fr)] lg:items-center lg:gap-16">
