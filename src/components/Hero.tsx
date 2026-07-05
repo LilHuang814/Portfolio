@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useLanguage } from "@/lib/language";
 
 const DISCIPLINES = ["ux design", "product design", "visual design", "game design"];
@@ -9,11 +9,23 @@ const DISCIPLINES = ["ux design", "product design", "visual design", "game desig
 export function Hero() {
   const { lang, setLang } = useLanguage();
   const [word, setWord] = useState(0);
+  const measureRef = useRef<HTMLSpanElement>(null);
+  const [barW, setBarW] = useState<number>();
 
   useEffect(() => {
-    const id = setInterval(() => setWord((v) => (v + 1) % DISCIPLINES.length), 2200);
+    const id = setInterval(() => setWord((v) => (v + 1) % DISCIPLINES.length), 2400);
     return () => clearInterval(id);
   }, []);
+
+  // Measure the current word (with padding) so the pill can smoothly resize to it.
+  useEffect(() => {
+    const el = measureRef.current;
+    if (!el) return;
+    const update = () => setBarW(el.offsetWidth);
+    update();
+    window.addEventListener("resize", update);
+    return () => window.removeEventListener("resize", update);
+  }, [word]);
 
   return (
     <section className="relative mx-3 mt-3 overflow-hidden rounded-[2rem] sm:mx-6 sm:mt-6">
@@ -63,14 +75,26 @@ export function Hero() {
           <h1 className="text-5xl font-bold tracking-tight text-white drop-shadow-sm sm:text-7xl">
             lily&rsquo;s portfolio of
           </h1>
-          <div className="inline-flex items-center justify-center rounded-full bg-white/55 px-5 py-4 sm:px-7 sm:py-5">
+          <div className="relative">
             <span
-              key={DISCIPLINES[word]}
-              style={{ animation: "wordSwap 0.5s ease" }}
-              className="whitespace-nowrap text-3xl font-bold text-[#979CD3] sm:text-5xl"
+              ref={measureRef}
+              aria-hidden
+              className="invisible absolute left-0 top-0 inline-block whitespace-nowrap rounded-full px-5 py-4 text-3xl font-bold sm:px-7 sm:py-5 sm:text-5xl"
             >
               {DISCIPLINES[word]}
             </span>
+            <div
+              className="flex items-center justify-center overflow-hidden rounded-full bg-white/55 px-5 py-4 sm:px-7 sm:py-5"
+              style={{ width: barW, transition: "width 0.4s cubic-bezier(0.4, 0, 0.2, 1)" }}
+            >
+              <span
+                key={DISCIPLINES[word]}
+                style={{ animation: "wordSwap 0.55s ease-out" }}
+                className="block whitespace-nowrap text-3xl font-bold text-[#979CD3] sm:text-5xl"
+              >
+                {DISCIPLINES[word]}
+              </span>
+            </div>
           </div>
         </div>
       </div>
