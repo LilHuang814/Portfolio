@@ -59,16 +59,16 @@ export function Hero() {
           </a>
         </nav>
 
-        <div className="relative z-10 flex flex-1 flex-col items-center justify-center gap-5 py-16 text-center sm:gap-7">
+        <div className="relative z-10 flex flex-1 flex-col items-center justify-center gap-5 py-16 text-center sm:gap-7 lg:flex-row lg:flex-wrap lg:gap-6">
           <h1 className="text-5xl font-bold tracking-tight text-white drop-shadow-sm sm:text-7xl">
             lily&rsquo;s portfolio of
           </h1>
-          <div className="inline-grid rounded-full bg-white px-6 py-2 shadow-md sm:px-9 sm:py-3">
+          <div className="inline-grid rounded-full bg-white/35 px-4 py-4 shadow-md sm:px-5 sm:py-5">
             {DISCIPLINES.map((d, i) => (
               <span
                 key={d}
                 aria-hidden={i !== word}
-                className={`col-start-1 row-start-1 whitespace-nowrap text-center text-3xl font-bold text-[#4a57d0] transition-opacity duration-500 sm:text-5xl ${
+                className={`col-start-1 row-start-1 whitespace-nowrap text-center text-3xl font-bold text-[#979CD3] transition-opacity duration-500 sm:text-5xl ${
                   i === word ? "opacity-100" : "opacity-0"
                 }`}
               >
