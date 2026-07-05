@@ -93,7 +93,7 @@ export function Hero() {
               {DISCIPLINES[word]}
             </span>
             <div
-              className="flex items-center justify-center overflow-hidden rounded-full bg-white/55 px-5 pb-[0.85rem] pt-[0.95rem] sm:px-7 sm:pb-[1.1rem] sm:pt-[1.25rem]"
+              className="flex items-center justify-center overflow-hidden rounded-full bg-white/55 px-5 pb-[0.86rem] pt-[0.9rem] sm:px-7 sm:pb-[1.12rem] sm:pt-[1.17rem]"
               style={{ width: barW, transition: "width 0.4s cubic-bezier(0.4, 0, 0.2, 1)" }}
             >
               <span
