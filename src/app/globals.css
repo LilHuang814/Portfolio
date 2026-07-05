@@ -108,7 +108,7 @@ body {
 @keyframes wordSwap {
   from {
     opacity: 0;
-    transform: translateY(0.16em);
+    transform: translateY(0.05em);
   }
   to {
     opacity: 1;
