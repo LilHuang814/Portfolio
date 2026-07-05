@@ -25,7 +25,7 @@ type BL = { en: string; zh: string };
 const t = (lang: Lang, v: BL) => v[lang];
 
 /** Blour's brand blue, used for icon fills and accents. */
-const BLUE = "#4E7FE8";
+const BLUE = "#8BB0FF";
 /** Eyebrow overrides so section labels read in Blour blue. */
 const EB = "!text-sm !text-[#6f86ec]";
 
@@ -270,7 +270,7 @@ export default function BlourPage() {
         className="pointer-events-none absolute inset-x-0 top-0 -z-10 h-[860px]"
         style={{
           background:
-            "radial-gradient(58% 52% at 50% 6%, #F4F0E8 0%, #FFEAD7 35%, rgba(214,236,255,0) 72%), linear-gradient(180deg, #D6ECFF 0%, #D6ECFF 50%, #F4F0E8 100%)",
+            "radial-gradient(58% 52% at 50% 6%, #F4F0E8 0%, #FFEAD7 35%, rgba(205,221,255,0) 72%), linear-gradient(180deg, #CDDDFF 0%, #CDDDFF 50%, #F4F0E8 100%)",
         }}
       />
 
@@ -332,7 +332,7 @@ export default function BlourPage() {
             className="pointer-events-none absolute right-[-140px] top-[-140px] h-[420px] w-[420px] rounded-full"
             style={{
               background:
-                "radial-gradient(circle, rgba(214,236,255,0.9) 0%, rgba(243,193,159,0.28) 45%, rgba(244,240,232,0) 72%)",
+                "radial-gradient(circle, rgba(205,221,255,0.9) 0%, rgba(243,193,159,0.28) 45%, rgba(244,240,232,0) 72%)",
             }}
           />
           <DotGrid className="absolute bottom-10 right-12 hidden lg:grid" />
