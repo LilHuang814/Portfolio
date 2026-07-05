@@ -274,7 +274,7 @@ export default function BlourPage() {
           className="pointer-events-none absolute left-1/2 top-[calc(50%-120px)] -z-10 h-[1300px] w-[1300px] -translate-x-1/2 -translate-y-1/2 rounded-full"
           style={{
             background:
-              "radial-gradient(circle, #F4F0E8 0%, #FFF0E3 24%, #D6EFFF 48%, #F4F0E8 78%)",
+              "radial-gradient(circle, #F4F0E8 0%, #FFF0E3 16%, #D6EFFF 34%, #F4F0E8 58%)",
           }}
         />
         <div className="relative z-10 grid gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.1fr)] lg:items-center lg:gap-16">
