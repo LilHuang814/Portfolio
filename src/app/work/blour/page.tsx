@@ -266,15 +266,17 @@ export default function BlourPage() {
       <SiteNav />
 
       {/* Hero */}
-      <section className="relative mx-3 mt-6 rounded-[2rem] px-6 py-12 sm:mx-6 sm:px-10 sm:py-16 lg:px-14">
-        {/* Large radial halo behind the hero — a self-contained glow that fades
-            fully back to the background (#F4F0E8) around its whole edge. */}
+      <section
+        className="relative mx-3 mt-6 overflow-hidden rounded-[2rem] px-6 py-12 sm:mx-6 sm:px-10 sm:py-16 lg:px-14"
+        style={{ background: "linear-gradient(180deg, #D6EFFF 0%, #F4F0E8 100%)" }}
+      >
+        {/* Large radial halo — a warm glow whose edge blends into the blue hero background. */}
         <div
           aria-hidden
-          className="pointer-events-none absolute left-1/2 top-[calc(50%-420px)] -z-10 h-[1600px] w-[2600px] -translate-x-1/2 -translate-y-1/2 rounded-full"
+          className="pointer-events-none absolute left-1/2 top-[calc(50%-260px)] -z-10 h-[1500px] w-[2600px] -translate-x-1/2 -translate-y-1/2 rounded-full"
           style={{
             background:
-              "radial-gradient(ellipse, #F4F0E8 0%, #FFF0E3 16%, #D6EFFF 34%, #F4F0E8 56%)",
+              "radial-gradient(ellipse, #FFF6EC 0%, #FFF0E3 20%, #D6EFFF 60%)",
           }}
         />
         <div className="relative z-10 grid gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.1fr)] lg:items-center lg:gap-16">
