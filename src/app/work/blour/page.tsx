@@ -260,14 +260,15 @@ export default function BlourPage() {
   const { lang } = useLanguage();
 
   return (
-    <main className="relative mx-auto w-full max-w-[90rem] overflow-x-clip pb-6">
+    <main className="relative mx-auto w-full max-w-[90rem] pb-6">
       <CursorGlow />
 
       {/* Full-bleed hero background: a warm glow over a blue-to-bone gradient,
-          sitting behind the hero rather than inside its bounds. */}
+          spanning the full viewport width so it is never clipped to the
+          content column on wide screens. */}
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-x-0 top-0 -z-10 h-[860px]"
+        className="pointer-events-none absolute left-1/2 top-0 -z-10 h-[860px] w-screen -translate-x-1/2"
         style={{
           background:
             "radial-gradient(58% 52% at 50% 6%, #F4F0E8 0%, #FFEAD7 35%, rgba(205,221,255,0) 72%), linear-gradient(180deg, #CDDDFF 0%, #CDDDFF 50%, #F4F0E8 100%)",
