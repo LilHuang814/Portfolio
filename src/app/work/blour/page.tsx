@@ -73,7 +73,7 @@ function LogoTitle() {
         src="/projects/blour/logo.png"
         alt="Blour"
         onError={onError}
-        className="mt-6 h-6 w-auto sm:h-7 lg:h-8"
+        className="h-6 w-auto sm:h-7 lg:h-8"
       />
     );
   }
@@ -277,10 +277,10 @@ export default function BlourPage() {
       <SiteNav />
 
       {/* Hero */}
-      <section className="relative mx-3 mt-6 px-6 py-12 sm:mx-6 sm:px-10 sm:py-16 lg:px-14">
+      <section className="relative mx-3 mt-6 px-6 pb-12 pt-4 sm:mx-6 sm:px-10 sm:pb-16 sm:pt-6 lg:px-14">
         <div className="relative z-10 flex flex-col items-center">
           <LogoTitle />
-          <div className="mt-10 w-full max-w-4xl">
+          <div className="mt-5 w-full max-w-4xl sm:mt-6">
             <Shot
               src="/projects/blour/hero.png"
               label="Blour product"
@@ -292,8 +292,8 @@ export default function BlourPage() {
 
       {/* Intro */}
       <section className="relative mx-3 px-6 pb-6 pt-4 sm:mx-6 sm:px-10 sm:pb-10 lg:px-14">
-        <div className="mx-auto max-w-3xl text-center">
-          <h1 className={heading}>
+        <div className="mx-auto max-w-4xl text-center">
+          <h1 className="text-[clamp(2.2rem,5vw,4rem)] font-semibold leading-[1.1] tracking-tight text-ink">
             {lang === "zh" ? "重新定义信息消费方式" : "Redefining information consumption"}
           </h1>
           <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-muted-ink">
