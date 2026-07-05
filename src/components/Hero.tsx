@@ -9,11 +9,20 @@ const DISCIPLINES = ["ux design", "product design", "visual design", "game desig
 export function Hero() {
   const { lang, setLang } = useLanguage();
   const [word, setWord] = useState(0);
+  const [show, setShow] = useState(true);
   const measureRef = useRef<HTMLSpanElement>(null);
   const [barW, setBarW] = useState<number>();
 
+  // Crossfade without remounting: fade out, swap the text + width while
+  // invisible, then fade back in. Nothing unmounts, so the word never jumps.
   useEffect(() => {
-    const id = setInterval(() => setWord((v) => (v + 1) % DISCIPLINES.length), 2400);
+    const id = setInterval(() => {
+      setShow(false);
+      window.setTimeout(() => {
+        setWord((v) => (v + 1) % DISCIPLINES.length);
+        setShow(true);
+      }, 260);
+    }, 2400);
     return () => clearInterval(id);
   }, []);
 
@@ -84,13 +93,13 @@ export function Hero() {
               {DISCIPLINES[word]}
             </span>
             <div
-              className="flex items-center justify-center overflow-hidden rounded-full bg-white/55 px-5 py-4 sm:px-7 sm:py-5"
+              className="flex items-center justify-center overflow-hidden rounded-full bg-white/55 px-5 pb-[0.85rem] pt-[0.95rem] sm:px-7 sm:pb-[1.1rem] sm:pt-[1.25rem]"
               style={{ width: barW, transition: "width 0.4s cubic-bezier(0.4, 0, 0.2, 1)" }}
             >
               <span
-                key={DISCIPLINES[word]}
-                style={{ animation: "wordSwap 0.55s ease-out" }}
-                className="block whitespace-nowrap text-3xl font-bold text-[#979CD3] sm:text-5xl"
+                className={`block whitespace-nowrap text-3xl font-bold leading-none text-[#979CD3] transition-opacity duration-300 sm:text-5xl ${
+                  show ? "opacity-100" : "opacity-0"
+                }`}
               >
                 {DISCIPLINES[word]}
               </span>
