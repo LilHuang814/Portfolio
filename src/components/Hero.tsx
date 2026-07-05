@@ -98,7 +98,7 @@ export function Hero() {
                   style={{ width: barW, transition: "width 0.4s cubic-bezier(0.4, 0, 0.2, 1)" }}
                 >
                   <span
-                    className={`block translate-y-[0.06em] whitespace-nowrap font-bold leading-none text-[#979CD3] transition-opacity duration-300 ${
+                    className={`block -translate-y-[0.083em] whitespace-nowrap font-bold leading-none text-[#979CD3] transition-opacity duration-300 ${
                       show ? "opacity-100" : "opacity-0"
                     }`}
                   >

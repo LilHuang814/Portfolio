@@ -278,7 +278,7 @@ export default function BlourPage() {
       <SiteNav />
 
       {/* Hero */}
-      <section className="relative mx-3 mt-6 px-6 pb-12 pt-4 sm:mx-6 sm:px-10 sm:pb-16 sm:pt-6 lg:px-14">
+      <section className="relative mx-3 mt-6 px-6 pb-12 pt-9 sm:mx-6 sm:px-10 sm:pb-16 sm:pt-12 lg:px-14">
         <div className="relative z-10 flex flex-col items-center">
           <LogoTitle />
           <div className="mt-5 w-full max-w-4xl sm:mt-6">
@@ -292,7 +292,7 @@ export default function BlourPage() {
       </section>
 
       {/* Intro */}
-      <section className="relative mx-3 px-6 pb-6 pt-4 sm:mx-6 sm:px-10 sm:pb-10 lg:px-14">
+      <section className="relative mx-3 px-6 pb-6 pt-10 sm:mx-6 sm:px-10 sm:pb-10 sm:pt-14 lg:px-14">
         <div className="mx-auto max-w-4xl text-center">
           <h1 className="text-[clamp(2.2rem,5vw,4rem)] font-semibold leading-[1.1] tracking-tight text-ink">
             {lang === "zh" ? "重新定义信息消费方式" : "Redefining information consumption"}
