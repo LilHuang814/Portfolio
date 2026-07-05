@@ -80,31 +80,34 @@ export function Hero() {
           </a>
         </nav>
 
-        <div className="relative z-10 flex flex-1 flex-col items-center justify-center gap-5 py-16 text-center sm:gap-7 lg:flex-row lg:flex-wrap lg:gap-6">
-          <h1 className="text-5xl font-bold tracking-tight text-white drop-shadow-sm sm:text-7xl">
-            lily&rsquo;s portfolio of
-          </h1>
-          <div className="relative">
-            <span
-              ref={measureRef}
-              aria-hidden
-              className="invisible absolute left-0 top-0 inline-block whitespace-nowrap rounded-full px-5 py-4 text-3xl font-bold sm:px-7 sm:py-5 sm:text-5xl"
-            >
-              {DISCIPLINES[word]}
-            </span>
-            <div
-              className="flex items-center justify-center overflow-hidden rounded-full bg-white/55 px-5 pb-[0.86rem] pt-[0.9rem] sm:px-7 sm:pb-[1.12rem] sm:pt-[1.17rem]"
-              style={{ width: barW, transition: "width 0.4s cubic-bezier(0.4, 0, 0.2, 1)" }}
-            >
-              <span
-                className={`block whitespace-nowrap text-3xl font-bold leading-none text-[#979CD3] transition-opacity duration-300 sm:text-5xl ${
-                  show ? "opacity-100" : "opacity-0"
-                }`}
-              >
-                {DISCIPLINES[word]}
+        <div className="relative z-10 flex flex-1 items-center justify-center py-16 text-center">
+          <h1 className="text-5xl font-bold leading-[1.18] tracking-tight text-white drop-shadow-sm sm:text-7xl">
+            lily&rsquo;s portfolio{" "}
+            <span className="whitespace-nowrap">
+              of{" "}
+              <span className="relative inline-flex align-middle">
+                <span
+                  ref={measureRef}
+                  aria-hidden
+                  className="invisible absolute left-0 top-0 inline-block whitespace-nowrap rounded-full px-4 text-2xl font-bold sm:px-5 sm:text-3xl lg:px-7 lg:text-5xl"
+                >
+                  {DISCIPLINES[word]}
+                </span>
+                <span
+                  className="flex items-center justify-center overflow-hidden rounded-full bg-white/55 px-4 py-1.5 text-2xl sm:px-5 sm:py-2 sm:text-3xl lg:px-7 lg:py-3 lg:text-5xl"
+                  style={{ width: barW, transition: "width 0.4s cubic-bezier(0.4, 0, 0.2, 1)" }}
+                >
+                  <span
+                    className={`block translate-y-[0.06em] whitespace-nowrap font-bold leading-none text-[#979CD3] transition-opacity duration-300 ${
+                      show ? "opacity-100" : "opacity-0"
+                    }`}
+                  >
+                    {DISCIPLINES[word]}
+                  </span>
+                </span>
               </span>
-            </div>
-          </div>
+            </span>
+          </h1>
         </div>
       </div>
     </section>

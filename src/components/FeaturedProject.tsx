@@ -49,14 +49,14 @@ export function FeaturedProject({
             <span className="text-sm font-semibold text-ink">
               {lang === "zh" ? "职责范围" : "Scope of responsibilities"}
             </span>
-            <div className="mt-3 grid grid-cols-2 gap-2.5 lg:max-w-sm">
+            <div className="mt-3 flex flex-wrap gap-2.5 lg:max-w-md">
               {tags[lang].map((tag) => (
                 <span
                   key={tag}
                   className={
                     tagVariant === "lavender"
-                      ? "justify-self-start rounded-full bg-[#eeeafb] px-3.5 py-1.5 text-sm text-periwinkle"
-                      : "justify-self-start rounded-full border border-ink/5 bg-white/45 px-3.5 py-1.5 text-sm text-ink/80"
+                      ? "whitespace-nowrap rounded-full bg-[#eeeafb] px-3.5 py-1.5 text-sm leading-none text-periwinkle"
+                      : "whitespace-nowrap rounded-full border border-ink/5 bg-white/45 px-3.5 py-1.5 text-sm leading-none text-ink/80"
                   }
                 >
                   {tag}

@@ -92,7 +92,7 @@ export function ResumeCard() {
         </div>
       </div>
 
-      <div className="mt-6 grid gap-8 border-t border-ink/5 pt-6 sm:mt-12 sm:grid-cols-2 sm:pt-8 lg:grid-cols-4 lg:gap-x-16">
+      <div className="mt-6 grid gap-8 border-t border-ink/5 pt-6 sm:mt-8 sm:grid-cols-2 sm:pt-8 lg:grid-cols-4 lg:gap-x-16">
         {META.map(({ label, icon: Icon, value }) => (
           <div key={label.en}>
             <div className="eyebrow flex items-center gap-2 text-muted-ink">
@@ -107,7 +107,7 @@ export function ResumeCard() {
 
       <div className="gradient-pill relative mt-10 flex items-center justify-between overflow-hidden rounded-full px-6 py-4 sm:px-8">
         <div className="grain-overlay" />
-        <p className="relative z-10 flex items-center gap-2 text-sm font-medium text-white">
+        <p className="relative z-10 flex items-center gap-2 text-lg font-medium text-white">
           <span aria-hidden>✦</span>
           {lang === "zh"
             ? "以用户洞察锚定真实痛点，以系统化设计策略打造流畅体验，以产品长期正向改变定义设计价值。"
