@@ -271,7 +271,7 @@ export default function BlourPage() {
             fully back to the background (#F4F0E8) around its whole edge. */}
         <div
           aria-hidden
-          className="pointer-events-none absolute left-1/2 top-[calc(50%-120px)] -z-10 h-[1300px] w-[1300px] -translate-x-1/2 -translate-y-1/2 rounded-full"
+          className="pointer-events-none absolute left-1/2 top-[calc(50%-230px)] -z-10 h-[1650px] w-[1650px] -translate-x-1/2 -translate-y-1/2 rounded-full"
           style={{
             background:
               "radial-gradient(circle, #F4F0E8 0%, #FFF0E3 16%, #D6EFFF 34%, #F4F0E8 58%)",
