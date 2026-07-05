@@ -278,24 +278,29 @@ export default function BlourPage() {
 
       {/* Hero */}
       <section className="relative mx-3 mt-6 px-6 py-12 sm:mx-6 sm:px-10 sm:py-16 lg:px-14">
-        <div className="relative z-10 grid gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.1fr)] lg:items-center lg:gap-16">
-          <div>
-            <LogoTitle />
-            <p className={`mt-5 ${heading}`}>
-              {lang === "zh" ? "重新定义信息消费方式" : "Redefining information consumption"}
-            </p>
-            <p className="mt-6 max-w-xl text-lg leading-relaxed text-muted-ink">
-              {lang === "zh"
-                ? "Blour 是一款 AI 个性化音频平台，能够将新闻、日程与用户上传内容自动整理成音频简报，帮助用户更轻松地获取信息、管理任务与提升效率。"
-                : "Blour is an AI-powered personalized audio platform that turns news, schedules, and your own uploads into audio briefings, so getting informed, managing tasks, and staying efficient feels effortless."}
-            </p>
+        <div className="relative z-10 flex flex-col items-center">
+          <LogoTitle />
+          <div className="mt-10 w-full max-w-4xl">
+            <Shot
+              src="/projects/blour/hero.png"
+              label="Blour product"
+              className="mx-auto max-h-[560px] w-auto rounded-2xl object-contain"
+            />
           </div>
+        </div>
+      </section>
 
-          <Shot
-            src="/projects/blour/hero.png"
-            label="Blour product"
-            className="mx-auto max-h-[520px] w-auto rounded-2xl object-contain"
-          />
+      {/* Intro */}
+      <section className="relative mx-3 px-6 pb-6 pt-4 sm:mx-6 sm:px-10 sm:pb-10 lg:px-14">
+        <div className="mx-auto max-w-3xl text-center">
+          <h1 className={heading}>
+            {lang === "zh" ? "重新定义信息消费方式" : "Redefining information consumption"}
+          </h1>
+          <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-muted-ink">
+            {lang === "zh"
+              ? "Blour 是一款 AI 个性化音频平台，能够将新闻、日程与用户上传内容自动整理成音频简报，帮助用户更轻松地获取信息、管理任务与提升效率。"
+              : "Blour is an AI-powered personalized audio platform that turns news, schedules, and your own uploads into audio briefings, so getting informed, managing tasks, and staying efficient feels effortless."}
+          </p>
         </div>
       </section>
 
