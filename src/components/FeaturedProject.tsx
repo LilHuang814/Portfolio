@@ -1,7 +1,6 @@
 "use client";
 
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
 import { Eyebrow } from "./Eyebrow";
 import { useLanguage } from "@/lib/language";
 
@@ -28,7 +27,7 @@ export function FeaturedProject({
 
   return (
     <section className="relative mx-3 px-6 py-14 sm:mx-6 sm:px-10 sm:py-16 lg:px-14">
-      <div className="relative z-10 grid gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.9fr)] lg:gap-12">
+      <div className="relative z-10 grid gap-6 sm:gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.9fr)] lg:gap-12">
         <div className="flex flex-col">
           <Eyebrow label={lang === "zh" ? "精选项目" : "Featured Project"} color={eyebrowColor} />
           {href ? (
@@ -46,7 +45,7 @@ export function FeaturedProject({
             {description[lang]}
           </p>
 
-          <div className="mt-8">
+          <div className="mt-5 sm:mt-8">
             <span className="text-sm font-semibold text-ink">
               {lang === "zh" ? "职责范围" : "Scope of responsibilities"}
             </span>
@@ -65,16 +64,6 @@ export function FeaturedProject({
               ))}
             </div>
           </div>
-
-          {href && (
-            <Link
-              href={href}
-              className="mt-8 inline-flex items-center gap-1.5 text-sm font-semibold text-periwinkle transition hover:gap-2.5"
-            >
-              {lang === "zh" ? "查看案例" : "View case study"}
-              <ArrowRight className="h-4 w-4" />
-            </Link>
-          )}
         </div>
 
         <div className="relative flex items-center justify-center">

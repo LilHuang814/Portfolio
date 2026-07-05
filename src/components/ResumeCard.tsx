@@ -57,7 +57,7 @@ export function ResumeCard() {
               {lang === "zh" ? "产品设计师" : "Product Designer"}
             </p>
             <p
-              className="mt-6 max-w-lg border-l-2 border-transparent pl-4 text-lg leading-relaxed text-ink/90"
+              className="mt-6 max-w-lg border-l-2 border-transparent pl-4 text-lg leading-relaxed text-ink"
               style={{ borderImage: "linear-gradient(180deg, var(--periwinkle), var(--peach), var(--orange)) 1" }}
             >
               {lang === "zh"
@@ -92,7 +92,7 @@ export function ResumeCard() {
         </div>
       </div>
 
-      <div className="mt-12 grid gap-8 border-t border-ink/5 pt-8 sm:grid-cols-2 lg:grid-cols-4 lg:gap-x-16">
+      <div className="mt-6 grid gap-8 border-t border-ink/5 pt-6 sm:mt-12 sm:grid-cols-2 sm:pt-8 lg:grid-cols-4 lg:gap-x-16">
         {META.map(({ label, icon: Icon, value }) => (
           <div key={label.en}>
             <div className="eyebrow flex items-center gap-2 text-muted-ink">
@@ -100,14 +100,14 @@ export function ResumeCard() {
               {label[lang]}
               <span className="h-1 w-1 rounded-full bg-orange" />
             </div>
-            <p className="mt-2 whitespace-pre-line text-sm text-ink/90">{value[lang]}</p>
+            <p className="mt-2 whitespace-pre-line text-sm text-muted-ink">{value[lang]}</p>
           </div>
         ))}
       </div>
 
       <div className="gradient-pill relative mt-10 flex items-center justify-between overflow-hidden rounded-full px-6 py-4 sm:px-8">
         <div className="grain-overlay" />
-        <p className="relative z-10 flex items-center gap-2 text-sm font-medium text-white sm:text-base">
+        <p className="relative z-10 flex items-center gap-2 text-sm font-medium text-white">
           <span aria-hidden>✦</span>
           {lang === "zh"
             ? "以用户洞察锚定真实痛点，以系统化设计策略打造流畅体验，以产品长期正向改变定义设计价值。"
