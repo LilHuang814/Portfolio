@@ -307,7 +307,7 @@ export default function WisdomPlanPage() {
                 <Sparkles className="h-6 w-6" />
               </span>
               <div className="leading-tight">
-                <p className="text-xs font-semibold uppercase tracking-wide text-white">
+                <p className="text-xs font-semibold uppercase tracking-wide text-white sm:text-sm">
                   {lang === "zh" ? "#1 本月最佳产品" : "#1 Product of the Month"}
                 </p>
                 <p className="text-base font-semibold text-white sm:text-lg">{lang === "zh" ? "教育品类" : "Education"}</p>

@@ -278,7 +278,7 @@ export default function BlourPage() {
       <SiteNav />
 
       {/* Hero */}
-      <section className="relative mx-3 mt-6 px-6 pb-12 pt-9 sm:mx-6 sm:px-10 sm:pb-16 sm:pt-12 lg:px-14">
+      <section className="relative mx-3 mt-4 px-6 pb-12 pt-4 sm:mx-6 sm:mt-6 sm:px-10 sm:pb-16 sm:pt-7 lg:px-14">
         <div className="relative z-10 flex flex-col items-center">
           <LogoTitle />
           <div className="mt-5 w-full max-w-5xl sm:mt-6">

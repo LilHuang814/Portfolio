@@ -82,7 +82,7 @@ export function Hero() {
         </nav>
 
         <div className="relative z-10 flex flex-1 items-center justify-center py-16 text-center">
-          <h1 className="text-[clamp(1.95rem,9vw,2.15rem)] font-bold leading-[1.18] tracking-tight text-white drop-shadow-sm sm:text-7xl">
+          <h1 className="text-[clamp(1.95rem,9vw,2.15rem)] font-bold leading-[1.4] tracking-tight text-white drop-shadow-sm sm:leading-[1.18] sm:text-7xl">
             lily&rsquo;s portfolio{" "}
             <span className="whitespace-nowrap">
               of{" "}
@@ -90,7 +90,7 @@ export function Hero() {
                 <span
                   ref={measureRef}
                   aria-hidden
-                  className="invisible absolute left-0 top-0 inline-block whitespace-nowrap rounded-full px-4 text-[0.94em] font-bold sm:px-5 lg:px-7"
+                  className="invisible absolute left-0 top-0 inline-block whitespace-nowrap rounded-full px-4 text-[0.9em] font-bold sm:px-5 lg:px-7"
                 >
                   {DISCIPLINES[word]}
                 </span>
@@ -99,7 +99,7 @@ export function Hero() {
                   style={{ width: barW, transition: "width 0.4s cubic-bezier(0.4, 0, 0.2, 1)" }}
                 >
                   <span
-                    className={`block -translate-y-[0.083em] whitespace-nowrap text-[0.94em] font-bold leading-none text-[#979CD3] transition-opacity duration-300 ${
+                    className={`block -translate-y-[0.083em] whitespace-nowrap text-[0.9em] font-bold leading-none text-[#979CD3] transition-opacity duration-300 ${
                       show ? "opacity-100" : "opacity-0"
                     }`}
                   >
