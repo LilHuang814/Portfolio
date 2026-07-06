@@ -290,7 +290,13 @@ export default function WisdomPlanPage() {
         <div className="relative z-10 grid gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.1fr)] lg:items-center lg:gap-16">
           <div className="text-center lg:text-left">
             <LogoTitle />
-            <p className={`mt-5 ${heading}`}>
+            {/* On narrow widths the image sits between the logo and the title */}
+            <Shot
+              src="/projects/wisdomplan/hero.png"
+              label="WisdomPlan product"
+              className="mx-auto mt-6 max-h-[380px] w-auto rounded-2xl object-contain lg:hidden"
+            />
+            <p className={`mt-6 ${heading} lg:mt-5`}>
               {lang === "zh" ? "在 AI 时代，重新定义学习" : "Redefining learning in the age of AI"}
             </p>
             <p className="mx-auto mt-6 max-w-xl text-base leading-relaxed text-muted-ink sm:text-lg lg:mx-0">
@@ -319,7 +325,7 @@ export default function WisdomPlanPage() {
           <Shot
             src="/projects/wisdomplan/hero.png"
             label="WisdomPlan product"
-            className="mx-auto max-h-[520px] w-auto rounded-2xl object-contain"
+            className="mx-auto hidden max-h-[520px] w-auto rounded-2xl object-contain lg:block"
           />
         </div>
       </section>
