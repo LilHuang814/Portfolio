@@ -285,7 +285,7 @@ export default function BlourPage() {
             <Shot
               src="/projects/blour/hero.png"
               label="Blour product"
-              className="mx-auto max-h-[660px] w-auto rounded-2xl object-contain"
+              className="mx-auto max-h-[440px] w-auto rounded-2xl object-contain sm:max-h-[660px]"
             />
           </div>
         </div>
