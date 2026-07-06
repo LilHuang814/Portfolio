@@ -49,7 +49,7 @@ export function ResumeCard() {
       </div>
 
       <div className="mt-12">
-        <h2 className="text-[clamp(1.9rem,3.75vw,3.4rem)] font-bold leading-[1.05] tracking-tight text-ink">Hi, i&rsquo;m lily</h2>
+        <h2 className="text-[clamp(1.95rem,9vw,2.15rem)] font-bold leading-[1.05] tracking-tight text-ink sm:text-[clamp(2.2rem,3.75vw,3.4rem)]">Hi, i&rsquo;m lily</h2>
 
         <div className="mt-6 grid gap-10 lg:grid-cols-[2fr_1px_1fr] lg:items-start">
           <div>
@@ -82,8 +82,8 @@ export function ResumeCard() {
                 <p className="text-lg font-semibold text-ink">
                   {lang === "zh" ? "康奈尔大学" : "Cornell University"}
                 </p>
-                <p className="text-base text-muted-ink">B.A. + M.P.S.</p>
-                <p className="text-base text-muted-ink">
+                <p className="text-base text-ink">B.A. + M.P.S.</p>
+                <p className="text-base text-ink">
                   {lang === "zh" ? "信息科学" : "in Information Science"}
                 </p>
               </div>
@@ -92,7 +92,7 @@ export function ResumeCard() {
         </div>
       </div>
 
-      <div className="mt-6 grid gap-8 border-t border-ink/5 pt-6 sm:mt-8 sm:grid-cols-2 sm:pt-8 lg:grid-cols-4 lg:gap-x-16">
+      <div className="mt-6 grid gap-9 border-t border-ink/5 pt-6 sm:mt-8 sm:grid-cols-2 sm:pt-8 lg:grid-cols-4 lg:gap-x-16">
         {META.map(({ label, icon: Icon, value }) => (
           <div key={label.en}>
             <div className="eyebrow flex items-center gap-2 text-muted-ink">
@@ -100,12 +100,12 @@ export function ResumeCard() {
               {label[lang]}
               <span className="h-1 w-1 rounded-full bg-orange" />
             </div>
-            <p className="mt-2 whitespace-pre-line text-base text-muted-ink">{value[lang]}</p>
+            <p className="mt-2 whitespace-pre-line text-base text-ink">{value[lang]}</p>
           </div>
         ))}
       </div>
 
-      <div className="gradient-pill relative mt-10 flex items-center justify-between overflow-hidden rounded-full px-6 py-4 sm:px-8">
+      <div className="gradient-pill relative -mx-6 -mb-10 mt-8 flex items-center overflow-hidden px-6 py-6 sm:mx-0 sm:mb-0 sm:mt-10 sm:rounded-full sm:px-8 sm:py-4">
         <div className="grain-overlay" />
         <p className="relative z-10 flex items-center gap-2 text-lg font-medium text-white">
           <span aria-hidden>✦</span>

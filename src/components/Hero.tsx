@@ -81,7 +81,7 @@ export function Hero() {
         </nav>
 
         <div className="relative z-10 flex flex-1 items-center justify-center py-16 text-center">
-          <h1 className="text-[clamp(1.85rem,7.5vw,3rem)] font-bold leading-[1.18] tracking-tight text-white drop-shadow-sm sm:text-7xl">
+          <h1 className="text-[clamp(1.95rem,9vw,2.15rem)] font-bold leading-[1.18] tracking-tight text-white drop-shadow-sm sm:text-7xl">
             lily&rsquo;s portfolio{" "}
             <span className="whitespace-nowrap">
               of{" "}

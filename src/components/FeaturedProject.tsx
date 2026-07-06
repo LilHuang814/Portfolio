@@ -32,12 +32,12 @@ export function FeaturedProject({
           <Eyebrow label={lang === "zh" ? "精选项目" : "Featured Project"} color={eyebrowColor} />
           {href ? (
             <Link href={href} className="mt-6 flex w-fit flex-col items-start transition hover:opacity-80">
-              <h2 className="text-[clamp(1.9rem,3.75vw,3.4rem)] font-bold leading-[1.05] tracking-tight text-ink">{title}</h2>
+              <h2 className="text-[clamp(1.95rem,9vw,2.15rem)] font-bold leading-[1.05] tracking-tight text-ink sm:text-[clamp(2.2rem,3.75vw,3.4rem)]">{title}</h2>
               <div className="mt-3 h-[3px] w-full rounded-full gradient-bar" />
             </Link>
           ) : (
             <div className="mt-6 flex w-fit flex-col items-start">
-              <h2 className="text-[clamp(1.9rem,3.75vw,3.4rem)] font-bold leading-[1.05] tracking-tight text-ink">{title}</h2>
+              <h2 className="text-[clamp(1.95rem,9vw,2.15rem)] font-bold leading-[1.05] tracking-tight text-ink sm:text-[clamp(2.2rem,3.75vw,3.4rem)]">{title}</h2>
               <div className="mt-3 h-[3px] w-full rounded-full gradient-bar" />
             </div>
           )}
@@ -49,7 +49,7 @@ export function FeaturedProject({
             <span className="text-sm font-semibold text-ink">
               {lang === "zh" ? "职责范围" : "Scope of responsibilities"}
             </span>
-            <div className="mt-3 flex flex-wrap gap-2.5 lg:max-w-md">
+            <div className="mt-3 flex flex-wrap gap-x-2 gap-y-2 lg:max-w-md">
               {tags[lang].map((tag) => (
                 <span
                   key={tag}
