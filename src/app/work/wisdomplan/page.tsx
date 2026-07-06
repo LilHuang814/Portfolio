@@ -270,7 +270,7 @@ export default function WisdomPlanPage() {
   const { lang } = useLanguage();
 
   return (
-    <main className="relative mx-auto w-full max-w-[90rem] pb-6">
+    <main className="relative mx-auto w-full max-w-[90rem] overflow-x-clip pb-6">
       <CursorGlow />
 
       {/* Big radial halo, anchored off the top-right; the hero floats above it. */}
