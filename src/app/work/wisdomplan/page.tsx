@@ -72,7 +72,7 @@ function LogoTitle() {
         src="/projects/wisdomplan/logo.png"
         alt="WisdomPlan"
         onError={onError}
-        className="mt-2 h-6 w-auto sm:mt-6 sm:h-7 lg:h-8"
+        className="mx-auto mt-2 h-6 w-auto sm:mt-6 sm:h-7 lg:mx-0 lg:h-8"
       />
     );
   }
@@ -288,25 +288,25 @@ export default function WisdomPlanPage() {
       {/* Hero */}
       <section className="relative mx-3 mt-4 rounded-[2rem] bg-white/55 px-6 pb-12 pt-6 sm:mx-6 sm:mt-6 sm:px-10 sm:py-16 lg:px-14">
         <div className="relative z-10 grid gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.1fr)] lg:items-center lg:gap-16">
-          <div>
+          <div className="text-center lg:text-left">
             <LogoTitle />
             <p className={`mt-5 ${heading}`}>
               {lang === "zh" ? "在 AI 时代，重新定义学习" : "Redefining learning in the age of AI"}
             </p>
-            <p className="mt-6 max-w-xl text-lg leading-relaxed text-muted-ink">
+            <p className="mx-auto mt-6 max-w-xl text-base leading-relaxed text-muted-ink sm:text-lg lg:mx-0">
               {lang === "zh"
                 ? "WisdomPlan 通过 AI 推荐、学习路径与实时辅助，构建更智能、更有陪伴感的成长体验。"
                 : "WisdomPlan uses AI recommendations, learning paths, and real-time assistance to build a smarter, more supportive growth experience."}
             </p>
 
             <div
-              className="mt-8 flex w-fit items-center gap-3 rounded-full py-2.5 pl-5 pr-11"
+              className="mx-auto mt-8 flex w-fit items-center gap-3 rounded-full py-2.5 pl-5 pr-11 lg:mx-0"
               style={{ background: "linear-gradient(90deg, #646FD9, #B79ED1, #E0AC9F)" }}
             >
               <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-white/20 text-white">
                 <Sparkles className="h-6 w-6" />
               </span>
-              <div className="leading-tight">
+              <div className="text-left leading-tight">
                 <p className="text-xs font-semibold uppercase tracking-wide text-white sm:text-sm">
                   {lang === "zh" ? "#1 本月最佳产品" : "#1 Product of the Month"}
                 </p>
