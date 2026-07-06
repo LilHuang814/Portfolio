@@ -278,7 +278,7 @@ export default function BlourPage() {
       <SiteNav />
 
       {/* Hero */}
-      <section className="relative mx-3 mt-4 px-6 pb-12 pt-4 sm:mx-6 sm:mt-6 sm:px-10 sm:pb-16 sm:pt-7 lg:px-14">
+      <section className="relative mx-3 mt-4 px-6 pb-5 pt-4 sm:mx-6 sm:mt-6 sm:px-10 sm:pb-16 sm:pt-7 lg:px-14">
         <div className="relative z-10 flex flex-col items-center">
           <LogoTitle />
           <div className="mt-5 w-full max-w-5xl sm:mt-6">
@@ -292,7 +292,7 @@ export default function BlourPage() {
       </section>
 
       {/* Intro */}
-      <section className="relative mx-3 px-6 pb-6 pt-10 sm:mx-6 sm:px-10 sm:pb-10 sm:pt-14 lg:px-14">
+      <section className="relative mx-3 px-6 pb-6 pt-4 sm:mx-6 sm:px-10 sm:pb-10 sm:pt-14 lg:px-14">
         <div className="mx-auto max-w-4xl text-center">
           <h1 className="text-[clamp(1.5rem,7.5vw,1.7rem)] font-semibold leading-[1.15] tracking-tight text-ink sm:text-[clamp(2.2rem,5vw,4rem)]">
             {lang === "zh" ? "重新定义信息消费方式" : "Redefining information consumption"}
@@ -374,8 +374,8 @@ export default function BlourPage() {
           {PROBLEMS.map(({ img, label, title, points }) => (
             <div key={label} className="flex flex-col items-center">
               <Shot src={img} label={label} className="mx-auto aspect-[11/10] w-full max-w-[280px] rounded-2xl object-cover" />
-              <p className="mt-7 max-w-xs text-center text-lg font-semibold text-ink sm:text-xl">{t(lang, title)}</p>
-              <div className="mt-3 max-w-xs space-y-1.5 text-center">
+              <p className="mt-3 max-w-xs text-center text-lg font-semibold text-ink sm:mt-7 sm:text-xl">{t(lang, title)}</p>
+              <div className="mt-2 max-w-xs space-y-1.5 text-center sm:mt-3">
                 {points.map((p) => (
                   <p key={p.en} className="text-base leading-snug text-muted-ink">
                     {t(lang, p)}

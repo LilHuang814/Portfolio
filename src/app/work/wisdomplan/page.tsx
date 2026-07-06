@@ -86,7 +86,7 @@ function LogoTitle() {
   );
 }
 
-const heading = "text-[clamp(1.95rem,3.4vw,2.6rem)] font-semibold leading-[1.15] tracking-tight text-ink";
+const heading = "text-[clamp(1.35rem,6vw,1.5rem)] font-semibold leading-[1.15] tracking-tight text-ink sm:text-[clamp(1.95rem,3.4vw,2.6rem)]";
 
 /** Decorative gradient line + dots — the home page's accent motif. */
 function Flourish() {
@@ -296,7 +296,7 @@ export default function WisdomPlanPage() {
               label="WisdomPlan product"
               className="mx-auto mt-6 max-h-[380px] w-auto rounded-2xl object-contain lg:hidden"
             />
-            <p className={`mt-6 ${heading} lg:mt-5`}>
+            <p className="mt-8 text-[clamp(1.5rem,7.5vw,1.7rem)] font-semibold leading-[1.15] tracking-tight text-ink sm:text-[clamp(1.95rem,3.4vw,2.6rem)] lg:mt-5">
               {lang === "zh" ? "在 AI 时代，重新定义学习" : "Redefining learning in the age of AI"}
             </p>
             <p className="mx-auto mt-6 max-w-xl text-base leading-relaxed text-muted-ink sm:text-lg lg:mx-0">
@@ -382,7 +382,7 @@ export default function WisdomPlanPage() {
 
           <div className="relative z-10 max-w-3xl">
             <div className="flex items-center gap-3">
-              <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-periwinkle text-white">
+              <span className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-periwinkle text-white">
                 <Sparkles className="h-6 w-6" />
               </span>
               <Eyebrow label={lang === "zh" ? "我们的机会" : "Our opportunity"} color="periwinkle" className="!text-sm" />
@@ -402,7 +402,7 @@ export default function WisdomPlanPage() {
 
       {/* Problems in today's learning experience */}
       <section className="relative mx-3 px-6 py-12 sm:mx-6 sm:px-10 sm:py-20 lg:px-14 lg:py-24">
-        <h3 className="text-[clamp(1.5rem,2.7vw,1.9rem)] font-semibold text-ink">
+        <h3 className="text-[clamp(1.2rem,5vw,1.35rem)] font-semibold text-ink sm:text-[clamp(1.5rem,2.7vw,1.9rem)]">
           {lang === "zh" ? "现有学习体验中的问题" : "Problems in today's learning experience"}
         </h3>
 
@@ -427,7 +427,7 @@ export default function WisdomPlanPage() {
       <section className="relative mx-3 px-6 py-12 sm:mx-6 sm:px-10 sm:py-20 lg:px-14 lg:py-24">
         <div className="grid gap-8 lg:grid-cols-[minmax(0,0.8fr)_minmax(0,1.45fr)] lg:items-center lg:gap-8">
           <div>
-            <h3 className="text-[clamp(1.5rem,2.7vw,1.9rem)] font-semibold text-ink">
+            <h3 className="text-[clamp(1.2rem,5vw,1.35rem)] font-semibold text-ink sm:text-[clamp(1.5rem,2.7vw,1.9rem)]">
               {lang === "zh" ? "目标用户" : "Target users"}
             </h3>
             <div className="mt-8 space-y-8">
@@ -462,10 +462,10 @@ export default function WisdomPlanPage() {
       {FEATURES.map(({ icon: Icon, title, shot, points }, idx) => (
         <section key={title.en} className="relative mx-3 px-6 py-10 sm:mx-6 sm:px-10 sm:py-16 lg:px-14 lg:py-20">
           <div className="flex items-center justify-start gap-4 text-left lg:justify-center lg:text-center">
-            <span className="flex h-16 w-16 shrink-0 items-center justify-center rounded-full bg-[#787BD7] text-white">
-              <Icon className="h-7 w-7" />
+            <span className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-[#787BD7] text-white">
+              <Icon className="h-6 w-6" />
             </span>
-            <h3 className="text-[clamp(1.5rem,2.7vw,1.9rem)] font-semibold text-ink">{t(lang, title)}</h3>
+            <h3 className="text-[clamp(1.2rem,5vw,1.35rem)] font-semibold text-ink sm:text-[clamp(1.5rem,2.7vw,1.9rem)]">{t(lang, title)}</h3>
           </div>
 
           <div
