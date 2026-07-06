@@ -43,14 +43,14 @@ export default function Home() {
           en: ["AI product design", "AIGC", "Competitive analysis", "Visual design"],
         }}
       >
-        <ProjectImage src="/projects/blour.png" alt="Blour" width={6840} height={3376} />
+        <ProjectImage src="/projects/blour.png" alt="Blour" width={6840} height={3376} rounded="rounded-none sm:rounded-2xl" />
       </FeaturedProject>
 
       <FeaturedProject
         eyebrowColor="orange"
         title="Payment Ticker Improvements"
         description={{
-          zh: "根据不同游戏的设计系统与支付场景，设计对应的支付异常状态提示信息，确保玩家能够清晰理解问题并完成下一步操作",
+          zh: "根据不同游戏的设计系统与支付场景，设计对应的支付异常状态提示信息，确保玩家能够清晰理解问题",
           en: "Created clear and consistent payment error-state messaging across game-specific design systems and payment scenarios.",
         }}
         tags={{

@@ -17,12 +17,13 @@ export function Hero() {
   // invisible, then fade back in. Nothing unmounts, so the word never jumps.
   useEffect(() => {
     const id = setInterval(() => {
-      setShow(false);
-      window.setTimeout(() => {
-        setWord((v) => (v + 1) % DISCIPLINES.length);
-        setShow(true);
-      }, 260);
-    }, 2400);
+      setShow(false); // fade the current word out
+      // Swap the word (and trigger the width resize) while it's invisible,
+      // then fade the new word in only after the pill has finished resizing,
+      // so a longer word is never clipped mid-transition.
+      window.setTimeout(() => setWord((v) => (v + 1) % DISCIPLINES.length), 300);
+      window.setTimeout(() => setShow(true), 760);
+    }, 2600);
     return () => clearInterval(id);
   }, []);
 
@@ -89,12 +90,12 @@ export function Hero() {
                 <span
                   ref={measureRef}
                   aria-hidden
-                  className="invisible absolute left-0 top-0 inline-block whitespace-nowrap rounded-full px-4 text-2xl font-bold sm:px-5 sm:text-3xl lg:px-7 lg:text-5xl"
+                  className="invisible absolute left-0 top-0 inline-block whitespace-nowrap rounded-full px-4 font-bold sm:px-5 lg:px-7"
                 >
                   {DISCIPLINES[word]}
                 </span>
                 <span
-                  className="flex items-center justify-center overflow-hidden rounded-full bg-white/55 px-4 py-1.5 text-2xl sm:px-5 sm:py-2 sm:text-3xl lg:px-7 lg:py-3 lg:text-5xl"
+                  className="flex items-center justify-center overflow-hidden rounded-full bg-white/55 px-4 py-2.5 sm:px-5 sm:py-3 lg:px-7 lg:py-4"
                   style={{ width: barW, transition: "width 0.4s cubic-bezier(0.4, 0, 0.2, 1)" }}
                 >
                   <span

@@ -5,11 +5,13 @@ export function ProjectImage({
   alt,
   width,
   height,
+  rounded = "rounded-2xl",
 }: {
   src: string;
   alt: string;
   width: number;
   height: number;
+  rounded?: string;
 }) {
   return (
     <Image
@@ -18,7 +20,7 @@ export function ProjectImage({
       width={width}
       height={height}
       sizes="(min-width: 1024px) 55vw, 100vw"
-      className="h-auto w-full rounded-2xl"
+      className={`h-auto w-full ${rounded}`}
     />
   );
 }
