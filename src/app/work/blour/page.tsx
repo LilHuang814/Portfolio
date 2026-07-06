@@ -121,7 +121,7 @@ const CHALLENGES: { icon: LucideIcon; title: BL; desc: BL }[] = [
     title: { en: "Too many sources", zh: "信息来源过多" },
     desc: {
       en: "Constantly switching between news, email, calendar, and to-dos.",
-      zh: "用户需要在新闻、邮件、日历与待办事项之间来回切换。",
+      zh: "用户需要在新闻、邮件、日历与待办事项之间来回切换",
     },
   },
   {
@@ -129,7 +129,7 @@ const CHALLENGES: { icon: LucideIcon; title: BL; desc: BL }[] = [
     title: { en: "Long reads are tiring", zh: "长篇内容阅读很累" },
     desc: {
       en: "Information fatigue and scattered attention make it hard to keep going.",
-      zh: "容易产生信息疲劳与注意力分散，难以坚持。",
+      zh: "容易产生信息疲劳与注意力分散，难以坚持",
     },
   },
   {
@@ -137,7 +137,7 @@ const CHALLENGES: { icon: LucideIcon; title: BL; desc: BL }[] = [
     title: { en: "Wasted spare moments", zh: "无法利用碎片时间" },
     desc: {
       en: "Commutes and breaks are hard to turn into useful catch-up time.",
-      zh: "通勤或休息时间无法轻松获取重点信息。",
+      zh: "通勤或休息时间无法轻松获取重点信息",
     },
   },
   {
@@ -145,7 +145,7 @@ const CHALLENGES: { icon: LucideIcon; title: BL; desc: BL }[] = [
     title: { en: "Tasks slip away", zh: "难以想起重要任务" },
     desc: {
       en: "Urgent emails and tasks get buried and forgotten.",
-      zh: "需要马上处理的邮件和任务容易被掩埋和忽略。",
+      zh: "需要马上处理的邮件和任务容易被掩埋和忽略",
     },
   },
 ];
@@ -154,25 +154,25 @@ const PROBLEMS: { img: string; label: string; title: BL; points: BL[] }[] = [
   {
     img: "/projects/blour/problem-notebooklm.png",
     label: "NotebookLM",
-    title: { en: "AI doc-to-podcast tools", zh: "AI 文档转播客工具（如 NotebookLM）" },
+    title: { en: "AI doc-to-podcast tools", zh: "AI 文档转播客工具" },
     points: [
-      { en: "High-effort uploads and a study focus; weak at everyday info management.", zh: "上传成本高、偏向备考，缺少日常信息管理能力。" },
+      { en: "High-effort uploads and a study focus; weak at everyday info management.", zh: "上传成本高、偏向备考，缺少日常信息管理能力" },
     ],
   },
   {
     img: "/projects/blour/problem-particle.png",
     label: "Particle News",
-    title: { en: "News AI podcast products", zh: "新闻类 AI Podcast 产品（如 Particle News）" },
+    title: { en: "News AI podcast products", zh: "新闻类 AI Podcast 产品" },
     points: [
-      { en: "Trending-news focused, with limited personalization and passive listening.", zh: "以热门新闻为主，个性化有限，只能被动收听。" },
+      { en: "Trending-news focused, with limited personalization and passive listening.", zh: "以热门新闻为主，个性化有限，只能被动收听" },
     ],
   },
   {
     img: "/projects/blour/problem-meco.png",
     label: "Meco",
-    title: { en: "Newsletter aggregators", zh: "邮件订阅聚合工具（如 Meco）" },
+    title: { en: "Newsletter aggregators", zh: "邮件订阅聚合工具" },
     points: [
-      { en: "Narrow subscription sources, with no uploads or multi-source integration.", zh: "来源局限于订阅邮件，无法上传或跨源整合。" },
+      { en: "Narrow subscription sources, with no uploads or multi-source integration.", zh: "来源局限于订阅邮件，无法上传或跨源整合" },
     ],
   },
 ];
@@ -182,21 +182,21 @@ const PERSONAS: { title: BL; desc: BL }[] = [
     title: { en: "High-density readers", zh: "高信息密度人群" },
     desc: {
       en: "Juggling heavy news, study material, and to-dos, and prone to overload and scattered focus.",
-      zh: "需要同时处理大量新闻、学习资料与待办事项，容易陷入信息过载与注意力分散。",
+      zh: "需要同时处理大量新闻、学习资料与待办事项，容易陷入信息过载与注意力分散",
     },
   },
   {
     title: { en: "Audio-content consumers", zh: "音频内容消费用户" },
     desc: {
       en: "Prefer podcasts, video, or audio, and want to absorb content during commutes and workouts.",
-      zh: "习惯通过播客、视频或音频获取信息，希望在通勤、运动等碎片时间高效接收内容。",
+      zh: "习惯通过播客、视频或音频获取信息，希望在通勤、运动等碎片时间高效接收内容",
     },
   },
   {
     title: { en: "Efficiency & growth seekers", zh: "注重效率与自我成长的人群" },
     desc: {
       en: "Focused on learning, news, and self-management, and eager to turn information into action.",
-      zh: "持续关注学习、资讯与个人管理，希望更轻松地整理信息并快速转化为行动。",
+      zh: "持续关注学习、资讯与个人管理，希望更轻松地整理信息并快速转化为行动",
     },
   },
 ];
@@ -207,9 +207,9 @@ const FEATURES: { icon: LucideIcon; title: BL; shot: { src: string; label: strin
     title: { en: "Content preference setup", zh: "内容偏好设置" },
     shot: { src: "/projects/blour/preferences.png", label: "Content preferences" },
     points: [
-      { en: "Swipe onboarding quickly captures preferences, lowering the barrier to start.", zh: "通过 swipe onboarding 快速建立用户内容偏好，降低初次使用门槛。" },
-      { en: "AI recommends content and integrates sources like Gmail for a personalized feed.", zh: "AI 自动推荐感兴趣内容，并整合 Gmail 等信息来源生成个性化体验。" },
-      { en: "Card layouts, soft gradients, and clear CTAs make browsing efficient and relaxed.", zh: "运用卡片式布局、柔和渐变与清晰 CTA，提升浏览效率与轻松感。" },
+      { en: "Swipe onboarding quickly captures preferences, lowering the barrier to start.", zh: "通过 swipe onboarding 快速建立用户内容偏好，降低初次使用门槛" },
+      { en: "AI recommends content and integrates sources like Gmail for a personalized feed.", zh: "AI 自动推荐感兴趣内容，并整合 Gmail 等信息来源生成个性化体验" },
+      { en: "Card layouts, soft gradients, and clear CTAs make browsing efficient and relaxed.", zh: "运用卡片式布局、柔和渐变与清晰 CTA，提升浏览效率与轻松感" },
     ],
   },
   {
@@ -217,9 +217,9 @@ const FEATURES: { icon: LucideIcon; title: BL; shot: { src: string; label: strin
     title: { en: "A daily podcast on the home screen", zh: "首页的每日播客" },
     shot: { src: "/projects/blour/podcast.png", label: "Daily podcast" },
     points: [
-      { en: "News, uploads, and a daily podcast live on the home screen for one seamless flow.", zh: "将新闻、上传内容与 Daily Podcast 整合至首页，打造连续的一站式音频体验。" },
-      { en: "Upload files, links, and YouTube to freely generate personalized podcast content.", zh: "支持文件、链接与 YouTube 内容上传，让用户自由生成个性化播客内容。" },
-      { en: "Soft gradients and an immersive player build a warm, companionable mood.", zh: "运用柔和渐变、沉浸式播放器与轻量化布局，强化陪伴感与收听氛围。" },
+      { en: "News, uploads, and a daily podcast live on the home screen for one seamless flow.", zh: "将新闻、上传内容与 Daily Podcast 整合至首页，打造连续的一站式音频体验" },
+      { en: "Upload files, links, and YouTube to freely generate personalized podcast content.", zh: "支持文件、链接与 YouTube 内容上传，让用户自由生成个性化播客内容" },
+      { en: "Soft gradients and an immersive player build a warm, companionable mood.", zh: "运用柔和渐变、沉浸式播放器与轻量化布局，强化陪伴感与收听氛围" },
     ],
   },
   {
@@ -227,9 +227,9 @@ const FEATURES: { icon: LucideIcon; title: BL; shot: { src: string; label: strin
     title: { en: "Reminders and task handling", zh: "待办提醒和处理" },
     shot: { src: "/projects/blour/reminders.png", label: "Reminders" },
     points: [
-      { en: "Email, to-dos, and an AI assistant unite in one flow, cutting app-switching.", zh: "将邮件、待办与 AI 助手整合到统一流程中，减少用户在不同应用之间切换。" },
-      { en: "AI drafts replies, organizes tasks, and handles subscriptions for daily efficiency.", zh: "支持 AI 自动生成邮件回复、整理任务与处理订阅，提升日常效率体验。" },
-      { en: "Lightweight cards and a voice entry make task management intuitive and natural.", zh: "运用轻量化卡片布局与语音交互入口，让任务管理流程更加直观自然。" },
+      { en: "Email, to-dos, and an AI assistant unite in one flow, cutting app-switching.", zh: "将邮件、待办与 AI 助手整合到统一流程中，减少用户在不同应用之间切换" },
+      { en: "AI drafts replies, organizes tasks, and handles subscriptions for daily efficiency.", zh: "支持 AI 自动生成邮件回复、整理任务与处理订阅，提升日常效率体验" },
+      { en: "Lightweight cards and a voice entry make task management intuitive and natural.", zh: "运用轻量化卡片布局与语音交互入口，让任务管理流程更加直观自然" },
     ],
   },
   {
@@ -237,9 +237,9 @@ const FEATURES: { icon: LucideIcon; title: BL; shot: { src: string; label: strin
     title: { en: "Personalized podcast generation", zh: "个性化播客生成" },
     shot: { src: "/projects/blour/generate.png", label: "Podcast generation" },
     points: [
-      { en: "Upload files, links, and YouTube to generate a personalized AI podcast in one tap.", zh: "支持上传文件、链接与 YouTube 内容，一键生成个性化 AI Podcast。" },
-      { en: "Pods, favorites, notes, and topics give a space to collect and organize information.", zh: "提供播客、收藏、笔记与主题等内容管理空间，帮助用户沉淀与整理信息。" },
-      { en: "Blends information intake with a personal knowledge space for a lasting companion.", zh: "将“信息获取”与“个人知识空间”结合，强化长期陪伴式内容体验。" },
+      { en: "Upload files, links, and YouTube to generate a personalized AI podcast in one tap.", zh: "支持上传文件、链接与 YouTube 内容，一键生成个性化 AI Podcast" },
+      { en: "Pods, favorites, notes, and topics give a space to collect and organize information.", zh: "提供播客、收藏、笔记与主题等内容管理空间，帮助用户沉淀与整理信息" },
+      { en: "Blends information intake with a personal knowledge space for a lasting companion.", zh: "将“信息获取”与“个人知识空间”结合，强化长期陪伴式内容体验" },
     ],
   },
   {
@@ -247,9 +247,9 @@ const FEATURES: { icon: LucideIcon; title: BL; shot: { src: string; label: strin
     title: { en: "Membership and settings", zh: "会员订阅服务和设置" },
     shot: { src: "/projects/blour/membership.png", label: "Membership & settings" },
     points: [
-      { en: "Contextual upgrade prompts appear at limits to convey the value of paying.", zh: "当用户触及收藏、Notes 或收听时长等限制时，自动触发对应的会员提示，引导用户理解付费价值。" },
-      { en: "Users can retune content preferences and interest weights anytime for more control.", zh: "用户可随时调整内容偏好与兴趣权重，让推荐结果更加个性化与可控。" },
-      { en: "Upgrade to Premium directly in Settings, with clear benefits and plans.", zh: "支持在 Settings 中直接升级 Premium，并清晰展示会员专属权益与订阅方案。" },
+      { en: "Contextual upgrade prompts appear at limits to convey the value of paying.", zh: "当用户触及收藏、Notes 或收听时长等限制时，自动触发对应的会员提示，引导用户理解付费价值" },
+      { en: "Users can retune content preferences and interest weights anytime for more control.", zh: "用户可随时调整内容偏好与兴趣权重，让推荐结果更加个性化与可控" },
+      { en: "Upgrade to Premium directly in Settings, with clear benefits and plans.", zh: "支持在 Settings 中直接升级 Premium，并清晰展示会员专属权益与订阅方案" },
     ],
   },
 ];
@@ -299,7 +299,7 @@ export default function BlourPage() {
           </h1>
           <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-muted-ink sm:text-lg">
             {lang === "zh"
-              ? "Blour 是一款 AI 个性化音频平台，能够将新闻、日程与用户上传内容自动整理成音频简报，帮助用户更轻松地获取信息、管理任务与提升效率。"
+              ? "Blour 是一款 AI 个性化音频平台，能够将新闻、日程与用户上传内容自动整理成音频简报，帮助用户更轻松地获取信息、管理任务与提升效率"
               : "Blour is an AI-powered personalized audio platform that turns news, schedules, and your own uploads into audio briefings, so getting informed, managing tasks, and staying efficient feels effortless."}
           </p>
         </div>
@@ -324,7 +324,7 @@ export default function BlourPage() {
                 <Icon className="h-6 w-6" />
               </span>
               <p className="text-lg font-semibold leading-snug text-ink sm:text-xl">{t(lang, title)}</p>
-              <p className="text-base leading-relaxed text-muted-ink">{t(lang, desc)}</p>
+              <p className="max-w-[80%] text-base leading-relaxed text-muted-ink sm:max-w-none">{t(lang, desc)}</p>
             </div>
           ))}
         </div>
@@ -359,7 +359,7 @@ export default function BlourPage() {
             <Flourish />
             <p className="mt-6 text-base leading-relaxed text-muted-ink">
               {lang === "zh"
-                ? "在信息过载与注意力碎片化的环境下，用户越来越难高效地获取真正重要的内容。Blour 希望通过 AI 自动整合新闻、邮件、日程与用户上传内容，并转化为个性化音频简报，让用户能够更轻松地获取信息、管理任务，并减少信息负担。"
+                ? "在信息过载与注意力碎片化的环境下，用户越来越难高效地获取真正重要的内容。Blour 希望通过 AI 自动整合新闻、邮件、日程与用户上传内容，并转化为个性化音频简报，让用户能够更轻松地获取信息、管理任务，并减少信息负担"
                 : "Amid information overload and fragmented attention, it's increasingly hard to reach what truly matters. Blour uses AI to pull together news, email, schedules, and uploads, turning them into personalized audio briefings, so getting informed and managing tasks feels lighter."}
             </p>
           </div>
@@ -398,7 +398,7 @@ export default function BlourPage() {
                   <p className="text-lg font-semibold text-ink sm:text-xl">
                     {t(lang, persona.title)}
                   </p>
-                  <p className="mt-1.5 max-w-md text-base leading-relaxed text-muted-ink">
+                  <p className="mt-1.5 max-w-[80%] text-base leading-relaxed text-muted-ink sm:max-w-md">
                     {t(lang, persona.desc)}
                   </p>
                 </div>
@@ -421,7 +421,7 @@ export default function BlourPage() {
         <Flourish />
         <p className="mt-6 max-w-3xl text-base leading-relaxed text-muted-ink">
           {lang === "zh"
-            ? "Blour 将信息获取转化为行动，贯穿五个环节：用户设置内容偏好，在首页收听每日播客，获得待办提醒与处理，从上传内容一键生成个性化播客，并通过会员订阅解锁更多能力。"
+            ? "Blour 将信息获取转化为行动，贯穿五个环节：用户设置内容偏好，在首页收听每日播客，获得待办提醒与处理，从上传内容一键生成个性化播客，并通过会员订阅解锁更多能力"
             : "Blour turns information into action across five connected stages: users set their content preferences, receive a daily podcast on the home screen, get reminders and handling for their to-dos, generate personalized podcasts from their own uploads, and unlock more through a membership subscription."}
         </p>
       </section>
@@ -469,7 +469,7 @@ export default function BlourPage() {
         <Flourish />
         <p className="mt-6 max-w-3xl text-base leading-relaxed text-muted-ink">
           {lang === "zh"
-            ? "在设计 Blour 的过程中，我重新思考了“信息获取”与“效率工具”之间的关系。相比传统的信息平台只负责提供内容，我更希望 Blour 能够帮助用户真正理解、整理并处理信息，让“获取信息”不再是一种负担，而是一种更轻松、更自然地融入日常生活的体验。在这个项目中，我不仅关注了 AI 功能本身，也更加注重陪伴感、低压力的交互氛围，以及如何通过音频化与自动化设计减少用户在高信息密度环境下的认知负担。"
+            ? "在设计 Blour 的过程中，我重新思考了“信息获取”与“效率工具”之间的关系。相比传统的信息平台只负责提供内容，我更希望 Blour 能够帮助用户真正理解、整理并处理信息，让“获取信息”不再是一种负担，而是一种更轻松、更自然地融入日常生活的体验。在这个项目中，我不仅关注了 AI 功能本身，也更加注重陪伴感、低压力的交互氛围，以及如何通过音频化与自动化设计减少用户在高信息密度环境下的认知负担"
             : "Designing Blour, I rethought the relationship between “getting information” and “efficiency tools.” Rather than a platform that just serves content, I wanted Blour to help people truly understand, organize, and act on information, so staying informed feels lighter and folds naturally into daily life. Beyond the AI features, I focused on a sense of companionship, a low-pressure interaction mood, and how audio and automation can reduce cognitive load in high-density information environments."}
         </p>
       </section>

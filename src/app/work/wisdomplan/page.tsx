@@ -125,7 +125,7 @@ const CHALLENGES: { icon: LucideIcon; title: BL; desc: BL }[] = [
     title: { en: "Scattered resources", zh: "学习资源分散" },
     desc: {
       en: "Hunting across many platforms is tiring and inefficient.",
-      zh: "在多个平台之间搜寻的过程令人疲惫。",
+      zh: "在多个平台之间搜寻的过程令人疲惫",
     },
   },
   {
@@ -133,7 +133,7 @@ const CHALLENGES: { icon: LucideIcon; title: BL; desc: BL }[] = [
     title: { en: "Uneven quality", zh: "资源质量参差不齐" },
     desc: {
       en: "Hard to tell which content is good and right for you.",
-      zh: "难以快速判断哪些内容优质、靠谱、适合自己。",
+      zh: "难以快速判断哪些内容优质、靠谱、适合自己",
     },
   },
   {
@@ -141,7 +141,7 @@ const CHALLENGES: { icon: LucideIcon; title: BL; desc: BL }[] = [
     title: { en: "Questions go unanswered", zh: "疑问无法快速解决" },
     desc: {
       en: "No quick, in-context answers, so it only gets more confusing.",
-      zh: "没法根据内容快速得到问题的解答，越学越混乱。",
+      zh: "没法根据内容快速得到问题的解答，越学越混乱",
     },
   },
   {
@@ -149,7 +149,7 @@ const CHALLENGES: { icon: LucideIcon; title: BL; desc: BL }[] = [
     title: { en: "No effective assessment", zh: "缺乏有效的评估" },
     desc: {
       en: "Hard to gauge your current level against your learning goal.",
-      zh: "难以判断当前能力水平与学习目标的差距。",
+      zh: "难以判断当前能力水平与学习目标的差距",
     },
   },
 ];
@@ -160,8 +160,8 @@ const PROBLEMS: { img: string; label: string; title: BL; points: BL[] }[] = [
     label: "Forums / online courses",
     title: { en: "Forums / online courses", zh: "网络论坛 / 网课" },
     points: [
-      { en: "High search cost, with uneven relevance.", zh: "搜索成本高，结果未必符合需求。" },
-      { en: "Users must filter the quality themselves.", zh: "质量不稳定，需要自己筛选。" },
+      { en: "High search cost, with uneven relevance.", zh: "搜索成本高，结果未必符合需求" },
+      { en: "Users must filter the quality themselves.", zh: "质量不稳定，需要自己筛选" },
     ],
   },
   {
@@ -169,8 +169,8 @@ const PROBLEMS: { img: string; label: string; title: BL; points: BL[] }[] = [
     label: "General AI like ChatGPT",
     title: { en: "General AI like ChatGPT", zh: "ChatGPT 等通用 AI" },
     points: [
-      { en: "No context; users supply it manually.", zh: "缺乏上下文，需用户手动提供。" },
-      { en: "No progress tracking or guidance.", zh: "无法追踪进度或引导学习。" },
+      { en: "No context; users supply it manually.", zh: "缺乏上下文，需用户手动提供" },
+      { en: "No progress tracking or guidance.", zh: "无法追踪进度或引导学习" },
     ],
   },
   {
@@ -178,8 +178,8 @@ const PROBLEMS: { img: string; label: string; title: BL; points: BL[] }[] = [
     label: "Private tutors / mentors",
     title: { en: "Private tutors / mentors", zh: "私教 / 导师" },
     points: [
-      { en: "High cost and time barriers.", zh: "成本与时间门槛高。" },
-      { en: "Feedback lacks immediacy.", zh: "学习体验缺乏及时性。" },
+      { en: "High cost and time barriers.", zh: "成本与时间门槛高" },
+      { en: "Feedback lacks immediacy.", zh: "学习体验缺乏及时性" },
     ],
   },
 ];
@@ -190,7 +190,7 @@ const PERSONAS: { img: string; title: BL; desc: BL }[] = [
     title: { en: "Career switchers", zh: "转行探索者" },
     desc: {
       en: "Entering a new field; needs a clear path and the skills that matter.",
-      zh: "转行进入新领域，需要清晰的路径与关键技能。",
+      zh: "转行进入新领域，需要清晰的路径与关键技能",
     },
   },
   {
@@ -198,7 +198,7 @@ const PERSONAS: { img: string; title: BL; desc: BL }[] = [
     title: { en: "Working learners", zh: "在职学习者" },
     desc: {
       en: "Upskilling on the job; needs flexible methods and trusted resources.",
-      zh: "在职提升技能，需要灵活的方式与可靠的资源。",
+      zh: "在职提升技能，需要灵活的方式与可靠的资源",
     },
   },
   {
@@ -206,7 +206,7 @@ const PERSONAS: { img: string; title: BL; desc: BL }[] = [
     title: { en: "Students & job seekers", zh: "大学求职者" },
     desc: {
       en: "Facing job and study pressure; needs a clear, focused path.",
-      zh: "面对求职与学习压力，需要清晰、专注的路径。",
+      zh: "面对求职与学习压力，需要清晰、专注的路径",
     },
   },
 ];
@@ -217,9 +217,9 @@ const FEATURES: { icon: LucideIcon; title: BL; shot: { src: string; label: strin
     title: { en: "Set goals & assess level", zh: "设定目标，了解用户水平" },
     shot: { src: "/projects/wisdomplan/goal.png", label: "Set goals" },
     points: [
-      { en: "AI analyzes the user's current level and goals to generate a personalized path.", zh: "AI 分析用户当前水平与学习目标，生成个性化学习路径。" },
-      { en: "Breaks long-term goals into clearer, actionable milestones.", zh: "将长期学习目标拆解为更清晰、可执行的阶段任务。" },
-      { en: "Low-friction guided interaction reduces the overwhelm of starting.", zh: "通过低门槛引导式交互，降低用户开始学习时的迷茫感。" },
+      { en: "AI analyzes the user's current level and goals to generate a personalized path.", zh: "AI 分析用户当前水平与学习目标，生成个性化学习路径" },
+      { en: "Breaks long-term goals into clearer, actionable milestones.", zh: "将长期学习目标拆解为更清晰、可执行的阶段任务" },
+      { en: "Low-friction guided interaction reduces the overwhelm of starting.", zh: "通过低门槛引导式交互，降低用户开始学习时的迷茫感" },
     ],
   },
   {
@@ -227,9 +227,9 @@ const FEATURES: { icon: LucideIcon; title: BL; shot: { src: string; label: strin
     title: { en: "Personalized course picks", zh: "寻找并推荐个性化课程" },
     shot: { src: "/projects/wisdomplan/courses.png", label: "Course recommendations" },
     points: [
-      { en: "AI aggregates relevant courses, exercises, and resources, cutting manual search.", zh: "AI 自动聚合相关课程、练习与学习资源，减少用户手动搜索与筛选成本。" },
-      { en: "Content, AI answers, and the path live in one place for a continuous, immersive flow.", zh: "将学习内容、AI 解答与学习路径整合在同一界面中，保持连续沉浸的学习体验。" },
-      { en: "Context-aware support tied to the current lesson aids understanding.", zh: "基于当前课程内容提供上下文关联支持，帮助用户更高效地理解与吸收知识。" },
+      { en: "AI aggregates relevant courses, exercises, and resources, cutting manual search.", zh: "AI 自动聚合相关课程、练习与学习资源，减少用户手动搜索与筛选成本" },
+      { en: "Content, AI answers, and the path live in one place for a continuous, immersive flow.", zh: "将学习内容、AI 解答与学习路径整合在同一界面中，保持连续沉浸的学习体验" },
+      { en: "Context-aware support tied to the current lesson aids understanding.", zh: "基于当前课程内容提供上下文关联支持，帮助用户更高效地理解与吸收知识" },
     ],
   },
   {
@@ -237,9 +237,9 @@ const FEATURES: { icon: LucideIcon; title: BL; shot: { src: string; label: strin
     title: { en: "Real-time AI guidance", zh: "实时 AI 解答与引导" },
     shot: { src: "/projects/wisdomplan/tutor.png", label: "AI tutor" },
     points: [
-      { en: "AI understands the current lesson and context without the user re-explaining.", zh: "AI 自动理解当前课程内容与学习上下文，无需用户重复提供背景信息。" },
-      { en: "Proactively suggests directions and study methods to lower the barrier to ask.", zh: "主动推荐提问方向与学习方式，降低用户主动提问门槛。" },
-      { en: "A collapsible AI assistant keeps the view clean and the experience immersive.", zh: "可折叠式 AI 助手设计，减少视觉干扰并保持沉浸式学习体验。" },
+      { en: "AI understands the current lesson and context without the user re-explaining.", zh: "AI 自动理解当前课程内容与学习上下文，无需用户重复提供背景信息" },
+      { en: "Proactively suggests directions and study methods to lower the barrier to ask.", zh: "主动推荐提问方向与学习方式，降低用户主动提问门槛" },
+      { en: "A collapsible AI assistant keeps the view clean and the experience immersive.", zh: "可折叠式 AI 助手设计，减少视觉干扰并保持沉浸式学习体验" },
     ],
   },
   {
@@ -247,9 +247,9 @@ const FEATURES: { icon: LucideIcon; title: BL; shot: { src: string; label: strin
     title: { en: "Staged quizzes & feedback", zh: "阶段测验与反馈" },
     shot: { src: "/projects/wisdomplan/quiz.png", label: "Quizzes & feedback" },
     points: [
-      { en: "Staged quizzes and instant feedback confirm how well material is understood.", zh: "通过阶段测验与即时反馈，帮助用户确认知识掌握程度。" },
-      { en: "AI generates explanations and study suggestions, cutting review effort.", zh: "AI 自动生成解析与学习建议，降低用户复盘与总结成本。" },
-      { en: "Encouraging feedback and progress cues sustain long-term motivation.", zh: "结合鼓励式反馈与进度引导，提升长期学习动力与持续性。" },
+      { en: "Staged quizzes and instant feedback confirm how well material is understood.", zh: "通过阶段测验与即时反馈，帮助用户确认知识掌握程度" },
+      { en: "AI generates explanations and study suggestions, cutting review effort.", zh: "AI 自动生成解析与学习建议，降低用户复盘与总结成本" },
+      { en: "Encouraging feedback and progress cues sustain long-term motivation.", zh: "结合鼓励式反馈与进度引导，提升长期学习动力与持续性" },
     ],
   },
   {
@@ -257,9 +257,9 @@ const FEATURES: { icon: LucideIcon; title: BL; shot: { src: string; label: strin
     title: { en: "Connect & review knowledge", zh: "知识串联与复盘" },
     shot: { src: "/projects/wisdomplan/review.png", label: "Knowledge map" },
     points: [
-      { en: "A visual path and node relationships build a clearer knowledge structure.", zh: "通过可视化学习路径与节点关系，帮助用户建立更清晰的知识结构。" },
-      { en: "AI links courses and resources by progress into a continuous experience.", zh: "AI 根据学习进度动态串联课程与资源，形成连续的学习体验。" },
-      { en: "Breaking complex content into modules lowers long-term cognitive load.", zh: "将复杂学习内容拆解为阶段模块，降低长期学习中的认知负担。" },
+      { en: "A visual path and node relationships build a clearer knowledge structure.", zh: "通过可视化学习路径与节点关系，帮助用户建立更清晰的知识结构" },
+      { en: "AI links courses and resources by progress into a continuous experience.", zh: "AI 根据学习进度动态串联课程与资源，形成连续的学习体验" },
+      { en: "Breaking complex content into modules lowers long-term cognitive load.", zh: "将复杂学习内容拆解为阶段模块，降低长期学习中的认知负担" },
     ],
   },
 ];
@@ -297,11 +297,11 @@ export default function WisdomPlanPage() {
               className="mx-auto mt-6 max-h-[380px] w-auto rounded-2xl object-contain lg:hidden"
             />
             <p className="mt-8 text-[clamp(1.5rem,7.5vw,1.7rem)] font-semibold leading-[1.15] tracking-tight text-ink sm:text-[clamp(1.95rem,3.4vw,2.6rem)] lg:mt-5">
-              {lang === "zh" ? "在 AI 时代，重新定义学习" : "Redefining learning in the age of AI"}
+              {lang === "zh" ? "在 AI 时代重新定义学习" : "Redefining learning in the age of AI"}
             </p>
             <p className="mx-auto mt-6 max-w-xl text-base leading-relaxed text-muted-ink sm:text-lg lg:mx-0">
               {lang === "zh"
-                ? "WisdomPlan 通过 AI 推荐、学习路径与实时辅助，构建更智能、更有陪伴感的成长体验。"
+                ? "WisdomPlan 通过 AI 推荐、个性化学习路径与实时学习辅助，帮助用户更清晰地规划成长目标、持续获得针对性的内容支持，并在学习过程中及时解决疑问，从而构建更智能、更高效，也更有陪伴感的个人成长体验"
                 : "WisdomPlan uses AI recommendations, learning paths, and real-time assistance to build a smarter, more supportive growth experience."}
             </p>
 
@@ -338,7 +338,7 @@ export default function WisdomPlanPage() {
               <p className="text-[clamp(3.25rem,8vw,5.5rem)] font-bold leading-none text-[#B6A9E8]">
                 {value}
               </p>
-              <p className="mt-4 text-lg font-semibold sm:text-xl text-ink">{t(lang, label)}</p>
+              <p className="mt-4 text-base font-semibold text-ink sm:text-lg">{t(lang, label)}</p>
             </div>
           ))}
         </div>
@@ -360,7 +360,7 @@ export default function WisdomPlanPage() {
                 <Icon className="h-6 w-6" />
               </span>
               <p className="text-lg font-semibold sm:text-xl leading-snug text-ink">{t(lang, title)}</p>
-              <p className="text-base leading-relaxed text-muted-ink">{t(lang, desc)}</p>
+              <p className="max-w-[80%] text-base leading-relaxed text-muted-ink sm:max-w-none">{t(lang, desc)}</p>
             </div>
           ))}
         </div>
@@ -393,7 +393,7 @@ export default function WisdomPlanPage() {
             <Flourish />
             <p className="mt-6 text-base leading-relaxed text-muted-ink">
               {lang === "zh"
-                ? "AI 与数据分析能缓解这些问题：结合用户目标、当前水平与学习内容，系统推荐下一步该学什么、快速解答疑问、设定合理目标并持续反馈进度，让学习更清晰、更高效。"
+                ? "AI 与数据分析能缓解这些问题：结合用户目标、当前水平与学习内容，系统推荐下一步该学什么、快速解答疑问、设定合理目标并持续反馈进度，让学习更清晰、更高效"
                 : "AI and data analytics can ease these problems. By combining the user's goals, level, and learning content, the system recommends what to learn next, answers questions quickly, sets sensible goals, and reflects progress continuously."}
             </p>
           </div>
@@ -434,7 +434,7 @@ export default function WisdomPlanPage() {
               {PERSONAS.map((persona) => (
                 <div key={persona.title.en}>
                   <p className="text-lg font-semibold sm:text-xl text-ink">{t(lang, persona.title)}</p>
-                  <p className="mt-1.5 max-w-md text-base leading-relaxed text-muted-ink">
+                  <p className="mt-1.5 max-w-[80%] text-base leading-relaxed text-muted-ink sm:max-w-md">
                     {t(lang, persona.desc)}
                   </p>
                 </div>
@@ -453,7 +453,7 @@ export default function WisdomPlanPage() {
         <Flourish />
         <p className="mt-6 max-w-3xl text-base leading-relaxed text-muted-ink">
           {lang === "zh"
-            ? "WisdomPlan 将学习拆解为五个环环相扣的阶段：先帮助用户设定清晰目标并评估当前水平，再由 AI 推荐个性化课程，在学习过程中提供实时解答与引导，通过阶段测验与反馈检验掌握程度，最后帮助用户复盘并串联知识，形成持久的知识结构。"
+            ? "WisdomPlan 将学习拆解为五个环环相扣的阶段：先帮助用户设定清晰目标并评估当前水平，再由 AI 推荐个性化课程，在学习过程中提供实时解答与引导，通过阶段测验与反馈检验掌握程度，最后帮助用户复盘并串联知识，形成持久的知识结构"
             : "WisdomPlan guides learners through five connected stages: it helps them set clear goals and gauge their level, then AI recommends personalized courses, offers real-time guidance as they learn, checks understanding with staged quizzes and feedback, and finally helps them review and connect knowledge into a lasting structure."}
         </p>
       </section>
@@ -498,7 +498,7 @@ export default function WisdomPlanPage() {
         <Flourish />
         <p className="mt-6 max-w-3xl text-base leading-relaxed text-muted-ink">
           {lang === "zh"
-            ? "设计 WisdomPlan 的过程中，我重新思考了 AI 在学习体验中的角色。学习的困难往往不仅来自内容本身，更来自缺乏方向感、持续反馈与长期陪伴。因此，我希望通过 AI 主动引导、上下文理解与连续性的学习支持，帮助用户降低学习门槛，建立更持续、更轻松的学习体验。"
+            ? "设计 WisdomPlan 的过程中，我重新思考了 AI 在学习体验中的角色。学习的困难往往不仅来自内容本身，更来自缺乏方向感、持续反馈与长期陪伴。因此，我希望通过 AI 主动引导、上下文理解与连续性的学习支持，帮助用户降低学习门槛，建立更持续、更轻松的学习体验"
             : "Designing WisdomPlan, I rethought AI's role in the learning experience. The difficulty often comes not from the content itself but from a lack of direction, ongoing feedback, and long-term companionship. So I set out to use AI-driven guidance, contextual understanding, and continuous support to lower the barrier to learning and build a more sustainable, relaxed experience."}
         </p>
       </section>
