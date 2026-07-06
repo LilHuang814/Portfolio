@@ -294,10 +294,10 @@ export default function BlourPage() {
       {/* Intro */}
       <section className="relative mx-3 px-6 pb-6 pt-10 sm:mx-6 sm:px-10 sm:pb-10 sm:pt-14 lg:px-14">
         <div className="mx-auto max-w-4xl text-center">
-          <h1 className="text-[clamp(2.2rem,5vw,4rem)] font-semibold leading-[1.1] tracking-tight text-ink">
+          <h1 className="text-[clamp(1.95rem,6.5vw,2.6rem)] font-semibold leading-[1.1] tracking-tight text-ink sm:text-[clamp(2.2rem,5vw,4rem)]">
             {lang === "zh" ? "重新定义信息消费方式" : "Redefining information consumption"}
           </h1>
-          <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-muted-ink">
+          <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-muted-ink sm:text-lg">
             {lang === "zh"
               ? "Blour 是一款 AI 个性化音频平台，能够将新闻、日程与用户上传内容自动整理成音频简报，帮助用户更轻松地获取信息、管理任务与提升效率。"
               : "Blour is an AI-powered personalized audio platform that turns news, schedules, and your own uploads into audio briefings, so getting informed, managing tasks, and staying efficient feels effortless."}
@@ -306,7 +306,7 @@ export default function BlourPage() {
       </section>
 
       {/* User challenges */}
-      <section className="relative mx-3 px-6 py-12 sm:mx-6 sm:px-10 sm:py-20 lg:px-14 lg:py-24">
+      <section className="relative mx-3 px-6 pb-8 pt-12 sm:mx-6 sm:px-10 sm:py-20 lg:px-14 lg:py-24">
         <DotGrid className="absolute right-10 top-14 hidden lg:grid" />
         <Eyebrow label={lang === "zh" ? "用户挑战" : "User Challenges"} color="periwinkle" className={EB} />
         <h2 className={`mt-6 ${heading}`}>
@@ -331,7 +331,7 @@ export default function BlourPage() {
       </section>
 
       {/* Our opportunity */}
-      <section className="relative mx-3 px-6 py-12 sm:mx-6 sm:px-10 sm:py-20 lg:px-14 lg:py-24">
+      <section className="relative mx-3 px-6 pb-12 pt-8 sm:mx-6 sm:px-10 sm:py-20 lg:px-14 lg:py-24">
         <div className="relative overflow-hidden rounded-[2rem] bg-white/55 px-8 py-14 sm:px-14 sm:py-16">
           <div
             aria-hidden
@@ -346,7 +346,7 @@ export default function BlourPage() {
           <div className="relative z-10 max-w-3xl">
             <div className="flex items-center gap-3">
               <span
-                className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full text-white"
+                className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full text-white"
                 style={{ background: BLUE }}
               >
                 <Sparkles className="h-6 w-6" />
@@ -370,7 +370,7 @@ export default function BlourPage() {
       <section className="relative mx-3 px-6 py-12 sm:mx-6 sm:px-10 sm:py-20 lg:px-14 lg:py-24">
         <h3 className={subheading}>{lang === "zh" ? "竞品调研" : "Competitor analysis"}</h3>
 
-        <div className="mt-12 grid gap-10 sm:grid-cols-3 sm:gap-8">
+        <div className="mt-6 grid gap-10 sm:mt-12 sm:grid-cols-3 sm:gap-8">
           {PROBLEMS.map(({ img, label, title, points }) => (
             <div key={label} className="flex flex-col items-center">
               <Shot src={img} label={label} className="mx-auto aspect-[11/10] w-full max-w-[280px] rounded-2xl object-cover" />
@@ -431,10 +431,10 @@ export default function BlourPage() {
         <section key={title.en} className="relative mx-3 px-6 py-10 sm:mx-6 sm:px-10 sm:py-16 lg:px-14 lg:py-20">
           <div className="flex items-center justify-start gap-4 text-left lg:justify-center lg:text-center">
             <span
-              className="flex h-16 w-16 shrink-0 items-center justify-center rounded-full text-white"
+              className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full text-white"
               style={{ background: BLUE }}
             >
-              <Icon className="h-7 w-7" />
+              <Icon className="h-6 w-6" />
             </span>
             <h3 className={subheading}>{t(lang, title)}</h3>
           </div>
