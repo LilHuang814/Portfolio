@@ -373,7 +373,7 @@ export default function BlourPage() {
         <div className="mt-12 grid gap-10 sm:grid-cols-3 sm:gap-8">
           {PROBLEMS.map(({ img, label, title, points }) => (
             <div key={label} className="flex flex-col items-center">
-              <Shot src={img} label={label} className="mx-auto w-full max-w-[280px] rounded-2xl" />
+              <Shot src={img} label={label} className="mx-auto aspect-[11/10] w-full max-w-[280px] rounded-2xl object-cover" />
               <p className="mt-7 max-w-xs text-center text-lg font-semibold text-ink sm:text-xl">{t(lang, title)}</p>
               <div className="mt-3 max-w-xs space-y-1.5 text-center">
                 {points.map((p) => (

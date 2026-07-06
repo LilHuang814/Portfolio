@@ -13,12 +13,12 @@ export function SiteNav() {
       <Link
         href="/"
         aria-label="Home"
-        className="flex items-center justify-self-start rounded-full bg-white px-4 py-1.5 shadow-sm transition hover:bg-white/90"
+        className="flex h-9 items-center justify-self-start rounded-full bg-white px-3 shadow-sm transition hover:bg-white/90 sm:h-11 sm:px-4"
       >
-        <Image src="/projects/logo.png" alt="Lily Huang" width={1084} height={980} className="h-7 w-auto" />
+        <Image src="/projects/logo.png" alt="Lily Huang" width={1084} height={980} className="h-5 w-auto sm:h-6" />
       </Link>
 
-      <div className="flex items-center gap-2 justify-self-center rounded-full bg-white px-5 py-2.5 text-sm font-semibold shadow-sm">
+      <div className="flex h-9 items-center gap-1.5 justify-self-center whitespace-nowrap rounded-full bg-white px-3 text-xs font-semibold shadow-sm sm:h-11 sm:gap-2 sm:px-5 sm:text-sm">
         <button
           type="button"
           onClick={() => setLang("zh")}
@@ -39,7 +39,7 @@ export function SiteNav() {
       <a
         href={lang === "zh" ? "/resume.pdf" : "/resume-english.pdf"}
         download={lang === "zh" ? "Lily-Huang-简历.pdf" : "Lily-Huang-Resume.pdf"}
-        className="justify-self-end rounded-full bg-white px-5 py-2.5 text-sm font-semibold text-[#4a57d0] shadow-sm transition hover:bg-white/90"
+        className="flex h-9 items-center justify-self-end whitespace-nowrap rounded-full bg-white px-3 text-xs font-semibold text-[#4a57d0] shadow-sm transition hover:bg-white/90 sm:h-11 sm:px-5 sm:text-sm"
       >
         {lang === "zh" ? "简历" : "Resume"}
       </a>

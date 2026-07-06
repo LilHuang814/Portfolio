@@ -72,7 +72,7 @@ function LogoTitle() {
         src="/projects/wisdomplan/logo.png"
         alt="WisdomPlan"
         onError={onError}
-        className="mt-6 h-6 w-auto sm:h-7 lg:h-8"
+        className="mt-2 h-6 w-auto sm:mt-6 sm:h-7 lg:h-8"
       />
     );
   }
@@ -214,7 +214,7 @@ const PERSONAS: { img: string; title: BL; desc: BL }[] = [
 const FEATURES: { icon: LucideIcon; title: BL; shot: { src: string; label: string }; points: BL[] }[] = [
   {
     icon: Target,
-    title: { en: "Set goals, understand the user's level", zh: "设定目标，了解用户水平" },
+    title: { en: "Set goals & assess level", zh: "设定目标，了解用户水平" },
     shot: { src: "/projects/wisdomplan/goal.png", label: "Set goals" },
     points: [
       { en: "AI analyzes the user's current level and goals to generate a personalized path.", zh: "AI 分析用户当前水平与学习目标，生成个性化学习路径。" },
@@ -224,7 +224,7 @@ const FEATURES: { icon: LucideIcon; title: BL; shot: { src: string; label: strin
   },
   {
     icon: Search,
-    title: { en: "Find & recommend personalized courses", zh: "寻找并推荐个性化课程" },
+    title: { en: "Personalized course picks", zh: "寻找并推荐个性化课程" },
     shot: { src: "/projects/wisdomplan/courses.png", label: "Course recommendations" },
     points: [
       { en: "AI aggregates relevant courses, exercises, and resources, cutting manual search.", zh: "AI 自动聚合相关课程、练习与学习资源，减少用户手动搜索与筛选成本。" },
@@ -234,7 +234,7 @@ const FEATURES: { icon: LucideIcon; title: BL; shot: { src: string; label: strin
   },
   {
     icon: BookOpen,
-    title: { en: "Real-time AI answers & guidance", zh: "实时 AI 解答与引导" },
+    title: { en: "Real-time AI guidance", zh: "实时 AI 解答与引导" },
     shot: { src: "/projects/wisdomplan/tutor.png", label: "AI tutor" },
     points: [
       { en: "AI understands the current lesson and context without the user re-explaining.", zh: "AI 自动理解当前课程内容与学习上下文，无需用户重复提供背景信息。" },
@@ -286,7 +286,7 @@ export default function WisdomPlanPage() {
       <SiteNav />
 
       {/* Hero */}
-      <section className="relative mx-3 mt-6 rounded-[2rem] bg-white/55 px-6 py-12 sm:mx-6 sm:px-10 sm:py-16 lg:px-14">
+      <section className="relative mx-3 mt-4 rounded-[2rem] bg-white/55 px-6 pb-12 pt-6 sm:mx-6 sm:mt-6 sm:px-10 sm:py-16 lg:px-14">
         <div className="relative z-10 grid gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.1fr)] lg:items-center lg:gap-16">
           <div>
             <LogoTitle />
@@ -362,8 +362,8 @@ export default function WisdomPlanPage() {
       </section>
 
       {/* Our opportunity */}
-      <section className="relative mx-3 px-6 py-10 sm:mx-6 sm:px-10 sm:py-16 lg:px-14 lg:py-20">
-        <div className="relative overflow-hidden rounded-[2rem] bg-white/55 px-8 py-14 sm:px-14 sm:py-16">
+      <section className="relative mx-3 px-6 py-6 sm:mx-6 sm:px-10 sm:py-16 lg:px-14 lg:py-20">
+        <div className="relative overflow-hidden rounded-[2rem] bg-white/55 px-8 py-10 sm:px-14 sm:py-16">
           <div
             aria-hidden
             className="pointer-events-none absolute right-[-140px] top-[-140px] h-[420px] w-[420px] rounded-full"
@@ -400,11 +400,11 @@ export default function WisdomPlanPage() {
           {lang === "zh" ? "现有学习体验中的问题" : "Problems in today's learning experience"}
         </h3>
 
-        <div className="mt-12 grid gap-10 sm:grid-cols-3 sm:gap-8">
+        <div className="mt-6 grid gap-10 sm:mt-12 sm:grid-cols-3 sm:gap-8">
           {PROBLEMS.map(({ img, label, title, points }) => (
             <div key={label} className="flex flex-col items-center">
               <Shot src={img} label={label} className="mx-auto w-full max-w-[280px] rounded-2xl" />
-              <p className="mt-7 text-lg font-semibold sm:text-xl text-ink">{t(lang, title)}</p>
+              <p className="mt-3 text-lg font-semibold sm:mt-7 sm:text-xl text-ink">{t(lang, title)}</p>
               <div className="mt-2 max-w-xs text-center">
                 {points.map((p) => (
                   <p key={p.en} className="text-base leading-snug text-muted-ink">
@@ -435,7 +435,7 @@ export default function WisdomPlanPage() {
               ))}
             </div>
           </div>
-          <Shot src="/projects/wisdomplan/target-users.png" label="Target users" className="w-full rounded-2xl" />
+          <Shot src="/projects/wisdomplan/target-users.png" label="Target users" className="-mx-6 mt-2 w-[calc(100%+3rem)] max-w-none rounded-2xl sm:mx-0 sm:mt-0 sm:w-full" />
         </div>
       </section>
 
@@ -463,7 +463,7 @@ export default function WisdomPlanPage() {
           </div>
 
           <div
-            className={`mt-10 grid items-center gap-10 lg:gap-16 ${
+            className={`mt-6 grid items-center gap-6 sm:mt-10 sm:gap-10 lg:gap-16 ${
               idx % 2 === 1
                 ? "lg:grid-cols-[minmax(0,1fr)_minmax(0,1.6fr)]"
                 : "lg:grid-cols-[minmax(0,1.6fr)_minmax(0,1fr)]"
