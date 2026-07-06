@@ -73,7 +73,7 @@ function LogoTitle() {
         src="/projects/blour/logo.png"
         alt="Blour"
         onError={onError}
-        className="h-6 w-auto sm:h-7 lg:h-8"
+        className="h-7 w-auto sm:h-9 lg:h-11"
       />
     );
   }
@@ -281,11 +281,11 @@ export default function BlourPage() {
       <section className="relative mx-3 mt-6 px-6 pb-12 pt-9 sm:mx-6 sm:px-10 sm:pb-16 sm:pt-12 lg:px-14">
         <div className="relative z-10 flex flex-col items-center">
           <LogoTitle />
-          <div className="mt-5 w-full max-w-4xl sm:mt-6">
+          <div className="mt-5 w-full max-w-5xl sm:mt-6">
             <Shot
               src="/projects/blour/hero.png"
               label="Blour product"
-              className="mx-auto max-h-[560px] w-auto rounded-2xl object-contain"
+              className="mx-auto max-h-[660px] w-auto rounded-2xl object-contain"
             />
           </div>
         </div>
