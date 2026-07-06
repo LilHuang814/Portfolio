@@ -310,7 +310,7 @@ export default function WisdomPlanPage() {
                 <p className="text-xs font-semibold uppercase tracking-wide text-white">
                   {lang === "zh" ? "#1 本月最佳产品" : "#1 Product of the Month"}
                 </p>
-                <p className="text-base font-semibold text-white sm:text-lg">{lang === "zh" ? "教育" : "Education"}</p>
+                <p className="text-base font-semibold text-white sm:text-lg">{lang === "zh" ? "教育品类" : "Education"}</p>
               </div>
             </div>
 
@@ -347,7 +347,7 @@ export default function WisdomPlanPage() {
         </h2>
         <Flourish />
 
-        <div className="mt-12 grid grid-cols-1 gap-x-8 gap-y-3 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-12 grid grid-cols-1 gap-x-8 gap-y-3 sm:grid-cols-2 lg:grid-cols-4 lg:gap-x-20">
           {CHALLENGES.map(({ icon: Icon, title, desc }) => (
             <div key={title.en} className="grid grid-rows-subgrid row-span-3 mb-6 sm:mb-8 lg:mb-0">
               <span className="flex h-14 w-14 items-center justify-center rounded-full bg-[#787BD7] text-white">
@@ -474,7 +474,7 @@ export default function WisdomPlanPage() {
             </div>
             <ul className={`space-y-5 ${idx % 2 === 1 ? "lg:order-1" : ""}`}>
               {points.map((p) => (
-                <li key={p.en} className="flex gap-3 text-base leading-relaxed text-muted-ink">
+                <li key={p.en} className="flex gap-3 text-base leading-relaxed text-ink">
                   <Check className="mt-1 h-4 w-4 shrink-0 text-periwinkle" />
                   {t(lang, p)}
                 </li>

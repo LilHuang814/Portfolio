@@ -451,7 +451,7 @@ export default function BlourPage() {
             </div>
             <ul className={`space-y-5 ${idx % 2 === 1 ? "lg:order-1" : ""}`}>
               {points.map((p) => (
-                <li key={p.en} className="flex gap-3 text-base leading-relaxed text-muted-ink">
+                <li key={p.en} className="flex gap-3 text-base leading-relaxed text-ink">
                   <Check className="mt-1 h-4 w-4 shrink-0" style={{ color: BLUE }} />
                   {t(lang, p)}
                 </li>
