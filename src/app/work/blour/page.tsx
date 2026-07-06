@@ -87,8 +87,8 @@ function LogoTitle() {
   );
 }
 
-const heading = "text-[clamp(1.95rem,3.4vw,2.6rem)] font-semibold leading-[1.15] tracking-tight text-ink";
-const subheading = "text-[clamp(1.5rem,2.7vw,1.9rem)] font-semibold text-ink";
+const heading = "text-[clamp(1.35rem,6vw,1.5rem)] font-semibold leading-[1.15] tracking-tight text-ink sm:text-[clamp(1.95rem,3.4vw,2.6rem)]";
+const subheading = "text-[clamp(1.2rem,5vw,1.35rem)] font-semibold text-ink sm:text-[clamp(1.5rem,2.7vw,1.9rem)]";
 
 /** Decorative gradient line + dots — the site's accent motif. */
 function Flourish() {
@@ -294,7 +294,7 @@ export default function BlourPage() {
       {/* Intro */}
       <section className="relative mx-3 px-6 pb-6 pt-10 sm:mx-6 sm:px-10 sm:pb-10 sm:pt-14 lg:px-14">
         <div className="mx-auto max-w-4xl text-center">
-          <h1 className="text-[clamp(1.95rem,6.5vw,2.6rem)] font-semibold leading-[1.1] tracking-tight text-ink sm:text-[clamp(2.2rem,5vw,4rem)]">
+          <h1 className="text-[clamp(1.5rem,7.5vw,1.7rem)] font-semibold leading-[1.15] tracking-tight text-ink sm:text-[clamp(2.2rem,5vw,4rem)]">
             {lang === "zh" ? "重新定义信息消费方式" : "Redefining information consumption"}
           </h1>
           <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-muted-ink sm:text-lg">
