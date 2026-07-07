@@ -362,7 +362,7 @@ export default function JpmcPage() {
             : "I facilitated a cross-functional workshop with product, design, and partner teams to identify collaboration pain points and align on future process improvements."}
         </p>
 
-        <div className="mt-12 grid gap-10 lg:grid-cols-[minmax(0,0.85fr)_minmax(0,1.6fr)] lg:items-center lg:gap-14">
+        <div className="mt-12 grid gap-8 lg:grid-cols-2 lg:items-center lg:gap-14">
           <div className="space-y-6">
             {WORKSHOP_GOALS.map(({ icon: Icon, title }) => (
               <div key={title.en} className="flex items-center gap-4">
@@ -373,7 +373,11 @@ export default function JpmcPage() {
               </div>
             ))}
           </div>
-          <Shot src="/projects/jpmc/workshop-flow.png" label="Requirements flow map" className="w-full rounded-2xl" />
+          <Shot
+            src="/projects/jpmc/workshop-flow.png"
+            label="Research workshop"
+            className="mx-auto max-h-[360px] w-auto object-contain lg:max-h-[440px]"
+          />
         </div>
       </section>
 
