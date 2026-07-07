@@ -566,7 +566,7 @@ export default function PaymentTickerPage() {
                     lang={lang}
                     imgClass={
                       si === 0
-                        ? "mt-7 aspect-[4/3] w-full rounded-xl object-contain"
+                        ? "mt-7 aspect-[16/9] w-full rounded-xl object-cover"
                         : "mt-7 w-full"
                     }
                   />
