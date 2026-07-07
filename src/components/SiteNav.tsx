@@ -4,8 +4,9 @@ import Image from "next/image";
 import Link from "next/link";
 import { useLanguage } from "@/lib/language";
 
-/** Top nav used on interior pages: logo (links home) + language toggle + resume. */
-export function SiteNav() {
+/** Top nav used on interior pages: logo (links home) + language toggle + resume.
+    `accent` tints the active language + resume text to the page's color scheme. */
+export function SiteNav({ accent = "#4a57d0" }: { accent?: string }) {
   const { lang, setLang } = useLanguage();
 
   return (
@@ -22,7 +23,8 @@ export function SiteNav() {
         <button
           type="button"
           onClick={() => setLang("zh")}
-          className={lang === "zh" ? "text-[#4a57d0]" : "text-ink/60"}
+          className={lang === "zh" ? "" : "text-ink/60"}
+          style={lang === "zh" ? { color: accent } : undefined}
         >
           中文
         </button>
@@ -30,7 +32,8 @@ export function SiteNav() {
         <button
           type="button"
           onClick={() => setLang("en")}
-          className={lang === "en" ? "text-[#4a57d0]" : "text-ink/60"}
+          className={lang === "en" ? "" : "text-ink/60"}
+          style={lang === "en" ? { color: accent } : undefined}
         >
           English
         </button>
@@ -39,7 +42,8 @@ export function SiteNav() {
       <a
         href={lang === "zh" ? "/resume.pdf" : "/resume-english.pdf"}
         download={lang === "zh" ? "Lily-Huang-简历.pdf" : "Lily-Huang-Resume.pdf"}
-        className="flex h-9 items-center justify-self-end whitespace-nowrap rounded-full bg-white px-3 text-xs font-semibold text-[#4a57d0] shadow-sm transition hover:bg-white/90 sm:h-11 sm:px-5 sm:text-sm"
+        className="flex h-9 items-center justify-self-end whitespace-nowrap rounded-full bg-white px-3 text-xs font-semibold shadow-sm transition hover:bg-white/90 sm:h-11 sm:px-5 sm:text-sm"
+        style={{ color: accent }}
       >
         {lang === "zh" ? "简历" : "Resume"}
       </a>

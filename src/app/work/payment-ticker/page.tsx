@@ -437,7 +437,7 @@ export default function PaymentTickerPage() {
     <main className="relative mx-auto w-full max-w-[90rem] overflow-x-clip pb-6">
       <CursorGlow />
 
-      <SiteNav />
+      <SiteNav accent={GOLD} />
 
       {/* Hero — dark Riot-gold card (inspired by the deck) */}
       <section className="relative mx-3 mt-4 sm:mx-6 sm:mt-6">
