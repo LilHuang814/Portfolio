@@ -278,7 +278,7 @@ export default function BlourPage() {
       <SiteNav />
 
       {/* Hero */}
-      <section className="relative mx-3 mt-4 px-6 pb-1 pt-4 sm:mx-6 sm:mt-6 sm:px-10 sm:pb-8 sm:pt-7 lg:px-14">
+      <section className="relative mx-3 mt-4 px-6 pb-7 pt-4 sm:mx-6 sm:mt-6 sm:px-10 sm:pb-8 sm:pt-7 lg:px-14">
         {/* Desktop-only decorative background wordmark behind the hero */}
         <div
           aria-hidden
@@ -288,6 +288,7 @@ export default function BlourPage() {
             className="select-none text-center font-bold leading-[1.02] tracking-tight"
             style={{
               fontSize: "clamp(6rem, 14vw, 15rem)",
+              wordSpacing: "0.2em",
               backgroundImage:
                 "linear-gradient(180deg, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0.5) 55%, rgba(255,255,255,0) 100%)",
               WebkitBackgroundClip: "text",
@@ -314,7 +315,7 @@ export default function BlourPage() {
       </section>
 
       {/* Intro */}
-      <section className="relative mx-3 px-6 pb-6 pt-0 sm:mx-6 sm:px-10 sm:pb-10 sm:pt-4 lg:px-14">
+      <section className="relative mx-3 px-6 pb-6 pt-2 sm:mx-6 sm:px-10 sm:pb-10 sm:pt-4 lg:px-14">
         <div className="mx-auto max-w-4xl text-center">
           <h1 className="text-[clamp(1.5rem,7.5vw,1.7rem)] font-semibold leading-[1.15] tracking-tight text-ink sm:text-[clamp(2.2rem,5vw,4rem)]">
             {lang === "zh" ? "重新定义信息消费方式" : "Redefining information consumption"}
