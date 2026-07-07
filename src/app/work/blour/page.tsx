@@ -279,29 +279,6 @@ export default function BlourPage() {
 
       {/* Hero */}
       <section className="relative mx-3 mt-4 px-6 pb-7 pt-4 sm:mx-6 sm:mt-6 sm:px-10 sm:pb-8 sm:pt-7 lg:px-14">
-        {/* Desktop-only decorative background wordmark behind the hero */}
-        <div
-          aria-hidden
-          className="pointer-events-none absolute inset-0 z-0 hidden items-center justify-center overflow-hidden lg:flex"
-        >
-          <span
-            className="select-none text-center font-medium leading-[1.02] tracking-tight"
-            style={{
-              fontSize: "clamp(6rem, 14vw, 15rem)",
-              transform: "translateY(-3rem)",
-              backgroundImage:
-                "linear-gradient(180deg, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0.5) 55%, rgba(255,255,255,0) 100%)",
-              WebkitBackgroundClip: "text",
-              backgroundClip: "text",
-              WebkitTextFillColor: "transparent",
-              color: "transparent",
-            }}
-          >
-            Your <span style={{ marginLeft: "0.4em" }}>world,</span>
-            <br />
-            in your ear.
-          </span>
-        </div>
         <div className="relative z-10 flex flex-col items-center">
           <LogoTitle />
           <div className="mt-5 w-full max-w-5xl sm:mt-6">
