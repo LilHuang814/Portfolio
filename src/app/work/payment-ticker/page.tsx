@@ -456,7 +456,11 @@ export default function PaymentTickerPage() {
                 {t(lang, HERO.subtitle)}
               </p>
             </div>
-            <Shot src="/projects/payment/hero.png" label="Payment screens" className="w-full rounded-2xl" />
+            <Shot
+              src="/projects/payment/hero.png"
+              label="Payment screens"
+              className="aspect-[4/3] w-full rounded-2xl object-cover object-center"
+            />
           </div>
         </div>
       </section>
