@@ -292,7 +292,7 @@ export default function BlourPage() {
       </section>
 
       {/* Intro */}
-      <section className="relative mx-3 px-6 pb-6 pt-2 sm:mx-6 sm:px-10 sm:pb-10 sm:pt-4 lg:px-14">
+      <section className="relative mx-3 px-6 pb-12 pt-2 sm:mx-6 sm:px-10 sm:pb-10 sm:pt-4 lg:px-14">
         <div className="mx-auto max-w-4xl text-center">
           <h1 className="text-[clamp(1.5rem,7.5vw,1.7rem)] font-semibold leading-[1.15] tracking-tight text-ink sm:text-[clamp(2.2rem,5vw,4rem)]">
             {lang === "zh" ? "重新定义信息消费方式" : "Redefining information consumption"}

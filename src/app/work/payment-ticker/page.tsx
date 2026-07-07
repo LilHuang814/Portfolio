@@ -404,13 +404,13 @@ function SolutionCard({ opt, lang, imgClass }: { opt: Option; lang: Lang; imgCla
     >
       <div className="flex flex-wrap items-center gap-2">
         <span
-          className={`rounded-full px-3 py-1 text-xs font-semibold ${
+          className={`rounded-full px-3.5 py-1 text-lg font-semibold ${
             opt.final ? "bg-ink text-white" : "bg-ink/[0.06] text-muted-ink"
           }`}
         >
           {t(lang, opt.label)}
         </span>
-        <span className="text-sm font-semibold text-ink sm:text-base">{t(lang, opt.name)}</span>
+        <span className="text-lg font-semibold text-ink">{t(lang, opt.name)}</span>
       </div>
       <Shot src={opt.img} label={opt.name.en} className={imgClass} />
       <p className="mt-5 text-lg font-semibold" style={{ color: GOLD }}>
@@ -464,17 +464,23 @@ export default function PaymentTickerPage() {
                 {t(lang, HERO.subtitle)}
               </p>
             </div>
-            <Shot
-              src="/projects/payment/hero.png"
-              label="Payment screens"
-              className="mt-8 aspect-[4/3] w-full rounded-2xl object-cover object-center lg:hidden"
-            />
+            {/* Mobile: full-length image bleeding to the card edges, fading
+                into the dark background as it rises toward the text */}
+            <div
+              className="-mx-6 -mb-10 mt-8 w-[calc(100%+3rem)] sm:-mx-10 sm:-mb-12 sm:w-[calc(100%+5rem)] lg:hidden"
+              style={{
+                WebkitMaskImage: "linear-gradient(to bottom, transparent 0%, #000 24%)",
+                maskImage: "linear-gradient(to bottom, transparent 0%, #000 24%)",
+              }}
+            >
+              <Shot src="/projects/payment/hero.png" label="Payment screens" className="w-full" />
+            </div>
           </div>
         </div>
       </section>
 
       {/* The problem */}
-      <section className="relative mx-3 px-6 py-12 sm:mx-6 sm:px-10 sm:py-20 lg:px-14 lg:py-24">
+      <section className="relative mx-3 px-6 pb-12 pt-20 sm:mx-6 sm:px-10 sm:py-20 lg:px-14 lg:py-24">
         <DotGrid className="absolute right-10 top-14 hidden lg:grid" />
         <Eyebrow label={lang === "zh" ? "问题" : "The Problem"} color="orange" className={EB} />
         <h2 className={`mt-6 ${heading}`}>
