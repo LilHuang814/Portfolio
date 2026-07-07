@@ -128,7 +128,7 @@ const CHALLENGES: { icon: LucideIcon; title: BL; desc: BL }[] = [
     icon: BookOpen,
     title: { en: "Long reads are tiring", zh: "长篇内容阅读很累" },
     desc: {
-      en: "Information fatigue and scattered attention make it hard to keep going.",
+      en: "Information fatigue make it hard to keep reading.",
       zh: "容易产生信息疲劳与注意力分散，难以坚持",
     },
   },
@@ -156,7 +156,7 @@ const PROBLEMS: { img: string; label: string; title: BL; points: BL[] }[] = [
     label: "NotebookLM",
     title: { en: "AI doc-to-podcast tools", zh: "AI 文档转播客工具" },
     points: [
-      { en: "High-effort uploads and a study focus; weak at everyday info management.", zh: "上传成本高、偏向备考，缺少日常信息管理能力" },
+      { en: "High-effort uploads and a study focus; weak at everyday info management.", zh: "上传成本高、偏向备考和学习场景，缺少日常信息管理能力" },
     ],
   },
   {
@@ -164,7 +164,7 @@ const PROBLEMS: { img: string; label: string; title: BL; points: BL[] }[] = [
     label: "Particle News",
     title: { en: "News AI podcast products", zh: "新闻类 AI Podcast 产品" },
     points: [
-      { en: "Trending-news focused, with limited personalization and passive listening.", zh: "以热门新闻为主，个性化有限，只能被动收听" },
+      { en: "Trending-news focused, with limited personalization and passive listening.", zh: "以热门新闻为主，个性化有限，用户只能被动收听推荐的内容" },
     ],
   },
   {
@@ -172,7 +172,7 @@ const PROBLEMS: { img: string; label: string; title: BL; points: BL[] }[] = [
     label: "Meco",
     title: { en: "Newsletter aggregators", zh: "邮件订阅聚合工具" },
     points: [
-      { en: "Narrow subscription sources, with no uploads or multi-source integration.", zh: "来源局限于订阅邮件，无法上传或跨源整合" },
+      { en: "Narrow subscription sources, with no uploads or multi-source integration.", zh: "信息来源局限于订阅邮件，无法个性化上传或跨源整合" },
     ],
   },
 ];
@@ -292,7 +292,7 @@ export default function BlourPage() {
       </section>
 
       {/* Intro */}
-      <section className="relative mx-3 px-6 pb-6 pt-4 sm:mx-6 sm:px-10 sm:pb-10 sm:pt-14 lg:px-14">
+      <section className="relative mx-3 px-6 pb-6 pt-1 sm:mx-6 sm:px-10 sm:pb-10 sm:pt-10 lg:px-14">
         <div className="mx-auto max-w-4xl text-center">
           <h1 className="text-[clamp(1.5rem,7.5vw,1.7rem)] font-semibold leading-[1.15] tracking-tight text-ink sm:text-[clamp(2.2rem,5vw,4rem)]">
             {lang === "zh" ? "重新定义信息消费方式" : "Redefining information consumption"}
