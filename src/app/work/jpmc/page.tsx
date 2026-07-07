@@ -238,10 +238,7 @@ export default function JpmcPage() {
       <SiteNav accent={PERI} />
 
       {/* Hero — desktop: title over one 6-panel strip; mobile: 3 panels, title, 3 panels */}
-      <section
-        className="relative mx-3 mt-4 overflow-hidden rounded-[2rem] px-6 pb-8 pt-8 sm:mx-6 sm:mt-6 sm:px-10 sm:py-12 lg:px-14 lg:py-16"
-        style={{ background: "linear-gradient(180deg, #ecebfb 0%, #f4f2fc 100%)" }}
-      >
+      <section className="relative mx-3 mt-4 px-6 pb-8 pt-4 sm:mx-6 sm:mt-6 sm:px-10 sm:py-8 lg:px-14 lg:py-10">
         {/* mobile top panels */}
         <Shot
           src="/projects/jpmc/hero-top.png"
@@ -253,7 +250,7 @@ export default function JpmcPage() {
           <h1 className="text-[clamp(2rem,9vw,2.4rem)] font-bold tracking-tight text-ink sm:text-[clamp(2.6rem,5vw,3.8rem)]">
             Design Intake Platform
           </h1>
-          <p className="mx-auto mt-3 max-w-xl text-base leading-relaxed text-muted-ink sm:mt-4 sm:text-lg">
+          <p className="mx-auto mt-4 max-w-2xl text-lg leading-relaxed text-muted-ink sm:mt-5 sm:text-xl">
             {lang === "zh" ? "让设计需求管理变得更直观、更高效" : "Streamline design requirement workflows"}
           </p>
         </div>
@@ -285,8 +282,8 @@ export default function JpmcPage() {
         <div className="mt-12 grid grid-cols-1 gap-x-10 gap-y-3 sm:grid-cols-3 lg:gap-x-16">
           {CHALLENGES.map(({ icon: Icon, title, desc }) => (
             <div key={title.en} className="row-span-3 mb-6 grid grid-rows-subgrid gap-3 sm:mb-0">
-              <span className="flex h-14 w-14 items-center justify-center rounded-full bg-[#787BD7] text-white">
-                <Icon className="h-6 w-6" />
+              <span className="flex h-16 w-16 items-center justify-center rounded-full bg-[#787BD7] text-white">
+                <Icon className="h-7 w-7" />
               </span>
               <p className="text-lg font-semibold leading-snug text-ink sm:text-xl">{t(lang, title)}</p>
               <p className="max-w-[80%] text-base leading-relaxed text-muted-ink sm:max-w-none sm:text-lg">
@@ -295,19 +292,33 @@ export default function JpmcPage() {
             </div>
           ))}
         </div>
+      </section>
 
-        {/* Project objectives callout */}
-        <div className="mt-12 rounded-[1.75rem] bg-[#ecebfb] px-6 py-7 sm:px-10 sm:py-9">
-          <div className="grid gap-4 lg:grid-cols-[minmax(0,0.5fr)_minmax(0,1.5fr)] lg:items-center lg:gap-10">
+      {/* Project objectives — same card treatment as WisdomPlan's "Our opportunity" */}
+      <section className="relative mx-3 px-6 py-6 sm:mx-6 sm:px-10 sm:py-16 lg:px-14 lg:py-20">
+        <div className="relative overflow-hidden rounded-[2rem] bg-white/55 px-8 py-10 sm:px-14 sm:py-16">
+          <div
+            aria-hidden
+            className="pointer-events-none absolute right-[-140px] top-[-140px] h-[420px] w-[420px] rounded-full"
+            style={{
+              background:
+                "radial-gradient(circle, rgba(182,169,232,0.55) 0%, rgba(243,193,159,0.28) 45%, rgba(239,234,251,0) 72%)",
+            }}
+          />
+          <DotGrid className="absolute bottom-10 right-12 hidden lg:grid" />
+
+          <div className="relative z-10 max-w-3xl">
             <div className="flex items-center gap-3">
-              <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-white/70" style={{ color: PERI }}>
-                <Sparkles className="h-6 w-6" />
+              <span className="flex h-16 w-16 shrink-0 items-center justify-center rounded-full bg-[#787BD7] text-white">
+                <Sparkles className="h-7 w-7" />
               </span>
-              <p className="text-lg font-semibold text-ink sm:text-xl" style={{ color: PERI }}>
-                {lang === "zh" ? "项目目标" : "Project Objectives"}
-              </p>
+              <Eyebrow label={lang === "zh" ? "项目目标" : "Project Objectives"} color="periwinkle" className="!text-sm" />
             </div>
-            <p className="text-base leading-relaxed text-muted-ink sm:text-lg">
+            <h2 className={`mt-6 ${heading}`}>
+              {lang === "zh" ? "建立统一的协作平台" : "A unified collaboration platform"}
+            </h2>
+            <Flourish />
+            <p className="mt-6 text-base leading-relaxed text-muted-ink sm:text-lg">
               {lang === "zh"
                 ? "随着设计团队与合作部门规模扩大，依赖消息沟通与人工同步的流程已难以支撑高频协作。因此，本项目希望通过建立统一、透明且可追踪的协作平台，减少沟通摩擦，提升需求提交、任务管理与设计交付效率"
                 : "As teams scaled, message-based communication and manual coordination became inefficient. This project introduced a unified collaboration platform to improve requirement management, task tracking, and design delivery efficiency."}
@@ -325,8 +336,8 @@ export default function JpmcPage() {
           {SOLUTIONS.map(({ icon: Icon, title, pros, cons }) => (
             <div key={title.en}>
               <div className="flex items-center gap-3">
-                <span className="flex h-12 w-12 items-center justify-center rounded-full bg-[#ecebfb]" style={{ color: PERI }}>
-                  <Icon className="h-6 w-6" />
+                <span className="flex h-16 w-16 items-center justify-center rounded-full bg-[#787BD7] text-white">
+                  <Icon className="h-7 w-7" />
                 </span>
                 <p className="text-xl font-semibold text-ink">{t(lang, title)}</p>
               </div>
@@ -355,8 +366,8 @@ export default function JpmcPage() {
           <div className="space-y-6">
             {WORKSHOP_GOALS.map(({ icon: Icon, title }) => (
               <div key={title.en} className="flex items-center gap-4">
-                <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-[#ecebfb]" style={{ color: PERI }}>
-                  <Icon className="h-6 w-6" />
+                <span className="flex h-16 w-16 shrink-0 items-center justify-center rounded-full bg-[#787BD7] text-white">
+                  <Icon className="h-7 w-7" />
                 </span>
                 <p className="text-lg font-semibold leading-snug text-ink">{t(lang, title)}</p>
               </div>
@@ -370,8 +381,8 @@ export default function JpmcPage() {
       {FEATURES.map(({ icon: Icon, title, shot, points }, idx) => (
         <section key={title.en} className="relative mx-3 px-6 py-10 sm:mx-6 sm:px-10 sm:py-16 lg:px-14 lg:py-20">
           <div className="flex items-center justify-start gap-4 text-left lg:justify-center lg:text-center">
-            <span className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-[#787BD7] text-white">
-              <Icon className="h-6 w-6" />
+            <span className="flex h-16 w-16 shrink-0 items-center justify-center rounded-full bg-[#787BD7] text-white">
+              <Icon className="h-7 w-7" />
             </span>
             <h3 className={subheading}>{t(lang, title)}</h3>
           </div>
