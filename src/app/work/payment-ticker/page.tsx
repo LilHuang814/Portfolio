@@ -524,7 +524,7 @@ export default function PaymentTickerPage() {
         <Flourish />
 
         <div className="mt-10 grid gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.15fr)] lg:items-center lg:gap-14">
-          <Shot src="/projects/payment/current-ticker.png" label="Current alert" className="w-full rounded-2xl" />
+          <Shot src="/projects/payment/current-ticker.png" label="Current alert" className="w-full rounded-md sm:rounded-lg lg:rounded-xl" />
           <div className="space-y-6">
             {WHY_POINTS.map(({ title, desc }, i) => (
               <div key={title.en} className="flex gap-4">
@@ -572,7 +572,7 @@ export default function PaymentTickerPage() {
                     lang={lang}
                     imgClass={
                       si === 0
-                        ? "mt-7 aspect-[16/9] w-full rounded-xl object-cover"
+                        ? "mt-7 aspect-[16/9] w-full rounded-md object-cover sm:rounded-lg lg:rounded-xl"
                         : "mt-7 w-full"
                     }
                   />
@@ -600,7 +600,7 @@ export default function PaymentTickerPage() {
               <div className="mt-8 grid gap-10 sm:grid-cols-3 sm:gap-8">
                 {res.games.map((g) => (
                   <div key={g.name.en} className="flex flex-col">
-                    <Shot src={g.img} label={g.name.en} className="w-full rounded-2xl" />
+                    <Shot src={g.img} label={g.name.en} className="w-full rounded-md sm:rounded-lg lg:rounded-xl" />
                     <p className="mt-4 text-lg font-semibold text-ink sm:text-xl">{t(lang, g.name)}</p>
                     <BulletList items={g.points} lang={lang} />
                   </div>
