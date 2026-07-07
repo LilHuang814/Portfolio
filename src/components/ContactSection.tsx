@@ -10,7 +10,7 @@ export function ContactSection() {
       <div className="gradient-mesh-contact relative flex min-h-[420px] flex-col items-center justify-center gap-6 px-6 py-14 sm:gap-10 sm:px-10 sm:py-16">
         <div className="grain-overlay" />
 
-        <h2 className="relative z-10 text-[clamp(1.95rem,9vw,2.15rem)] font-bold tracking-tight text-white drop-shadow-sm sm:text-7xl">
+        <h2 className="relative z-10 text-[clamp(2.3rem,10.5vw,2.6rem)] font-bold tracking-tight text-white drop-shadow-sm sm:text-7xl">
           contact me
         </h2>
 

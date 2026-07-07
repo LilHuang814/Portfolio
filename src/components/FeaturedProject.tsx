@@ -32,12 +32,12 @@ export function FeaturedProject({
           <Eyebrow label={lang === "zh" ? "精选项目" : "Featured Project"} color={eyebrowColor} />
           {href ? (
             <Link href={href} className="mt-3 flex w-fit flex-col items-start sm:mt-6 transition hover:opacity-80">
-              <h2 className="text-[clamp(1.95rem,9vw,2.15rem)] font-bold leading-[1.05] tracking-tight text-ink sm:text-[clamp(2.2rem,3.75vw,3.4rem)]">{title}</h2>
+              <h2 className="text-[clamp(2.3rem,10.5vw,2.6rem)] font-bold leading-[1.05] tracking-tight text-ink sm:text-[clamp(2.2rem,3.75vw,3.4rem)]">{title}</h2>
               <div className="mt-3 h-[3px] w-full rounded-full gradient-bar" />
             </Link>
           ) : (
             <div className="mt-3 flex w-fit flex-col items-start sm:mt-6">
-              <h2 className="text-[clamp(1.95rem,9vw,2.15rem)] font-bold leading-[1.05] tracking-tight text-ink sm:text-[clamp(2.2rem,3.75vw,3.4rem)]">{title}</h2>
+              <h2 className="text-[clamp(2.3rem,10.5vw,2.6rem)] font-bold leading-[1.05] tracking-tight text-ink sm:text-[clamp(2.2rem,3.75vw,3.4rem)]">{title}</h2>
               <div className="mt-3 h-[3px] w-full rounded-full gradient-bar" />
             </div>
           )}
