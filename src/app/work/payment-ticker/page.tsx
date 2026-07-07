@@ -81,9 +81,6 @@ const heading =
 const subheading =
   "text-[clamp(1.2rem,5vw,1.35rem)] font-semibold text-ink sm:text-[clamp(1.5rem,2.7vw,1.9rem)]";
 const EB = "!text-sm !text-[#b1892f]";
-/** Option-card title size that scales with the card width (container query)
-    so "Final Plan  Simple Confirmation Modal" never wraps to two lines. */
-const OPT_TITLE = "text-[clamp(0.7rem,3.6cqi,1rem)]";
 
 /** Decorative gold gradient line + dots. */
 function Flourish() {
@@ -401,26 +398,26 @@ function BulletList({ items, lang }: { items: BL[]; lang: Lang }) {
 function SolutionCard({ opt, lang, imgClass }: { opt: Option; lang: Lang; imgClass: string }) {
   return (
     <div
-      className={`@container flex flex-col rounded-2xl p-5 sm:p-6 ${
+      className={`flex flex-col rounded-2xl p-5 sm:p-6 ${
         opt.final ? "bg-[#f7efda] ring-1 ring-[#e7d5a4]" : "bg-white/55"
       }`}
     >
-      <div className="flex flex-nowrap items-center gap-2">
+      <div className="flex flex-col items-start gap-2">
         <span
-          className={`shrink-0 rounded-full px-3 py-1 font-semibold ${OPT_TITLE} ${
+          className={`rounded-full px-3 py-1 text-base font-semibold ${
             opt.final ? "bg-ink text-white" : "bg-ink/[0.06] text-muted-ink"
           }`}
         >
           {t(lang, opt.label)}
         </span>
-        <span className={`whitespace-nowrap font-semibold text-ink ${OPT_TITLE}`}>{t(lang, opt.name)}</span>
+        <span className="text-lg font-semibold leading-snug text-ink">{t(lang, opt.name)}</span>
       </div>
       <Shot src={opt.img} label={opt.name.en} className={imgClass} />
-      <p className={`mt-5 font-semibold ${OPT_TITLE}`} style={{ color: GOLD }}>
+      <p className="mt-5 text-lg font-semibold" style={{ color: GOLD }}>
         {lang === "zh" ? "优点" : "Advantages"}
       </p>
       <BulletList items={opt.adv} lang={lang} />
-      <p className={`mt-4 font-semibold ${OPT_TITLE}`} style={{ color: GOLD }}>
+      <p className="mt-4 text-lg font-semibold" style={{ color: GOLD }}>
         {lang === "zh" ? "缺点" : "Disadvantages"}
       </p>
       <BulletList items={opt.dis} lang={lang} />
