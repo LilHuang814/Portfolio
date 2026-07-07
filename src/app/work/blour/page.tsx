@@ -285,10 +285,10 @@ export default function BlourPage() {
           className="pointer-events-none absolute inset-0 z-0 hidden items-center justify-center overflow-hidden lg:flex"
         >
           <span
-            className="select-none text-center font-bold leading-[1.02] tracking-tight"
+            className="select-none text-center font-medium leading-[1.02] tracking-tight"
             style={{
               fontSize: "clamp(6rem, 14vw, 15rem)",
-              wordSpacing: "0.2em",
+              transform: "translateY(-3rem)",
               backgroundImage:
                 "linear-gradient(180deg, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0.5) 55%, rgba(255,255,255,0) 100%)",
               WebkitBackgroundClip: "text",
@@ -297,7 +297,7 @@ export default function BlourPage() {
               color: "transparent",
             }}
           >
-            Your world,
+            Your <span style={{ marginLeft: "0.4em" }}>world,</span>
             <br />
             in your ear.
           </span>
