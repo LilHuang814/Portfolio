@@ -49,6 +49,7 @@ export default function Home() {
       <FeaturedProject
         eyebrowColor="orange"
         title="Payment Ticker Improvements"
+        href="/work/payment-ticker"
         description={{
           zh: "根据不同游戏的设计系统与支付场景，设计对应的支付异常状态提示信息，确保玩家能够清晰理解问题",
           en: "Created clear and consistent payment error-state messaging across game-specific design systems and payment scenarios.",
