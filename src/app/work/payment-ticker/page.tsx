@@ -402,7 +402,7 @@ function SolutionCard({ opt, lang, imgClass }: { opt: Option; lang: Lang; imgCla
         opt.final ? "bg-[#f7efda] ring-1 ring-[#e7d5a4]" : "bg-white/55"
       }`}
     >
-      <div className="flex flex-row items-center gap-2 sm:flex-col sm:items-start">
+      <div className="flex flex-row items-center gap-2">
         <span
           className={`shrink-0 rounded-full px-3 py-1 text-base font-semibold ${
             opt.final ? "bg-ink text-white" : "bg-ink/[0.06] text-muted-ink"
