@@ -287,7 +287,7 @@ export default function BlourPage() {
           <span
             className="select-none text-center font-bold leading-[1.02] tracking-tight"
             style={{
-              fontSize: "clamp(4rem, 8vw, 8rem)",
+              fontSize: "clamp(6rem, 14vw, 15rem)",
               backgroundImage:
                 "linear-gradient(180deg, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0.5) 55%, rgba(255,255,255,0) 100%)",
               WebkitBackgroundClip: "text",
