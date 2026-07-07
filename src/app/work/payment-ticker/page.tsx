@@ -439,7 +439,7 @@ export default function PaymentTickerPage() {
       {/* Hero — dark Riot-gold card (inspired by the deck) */}
       <section className="relative mx-3 mt-4 sm:mx-6 sm:mt-6">
         <div
-          className="relative overflow-hidden rounded-[2rem]"
+          className="relative overflow-hidden rounded-[2rem] lg:min-h-[700px]"
           style={{
             background:
               "linear-gradient(150deg, #0c0a07 0%, #17130b 34%, #4c3d1c 68%, #ab8a3c 100%)",
@@ -454,7 +454,7 @@ export default function PaymentTickerPage() {
               className="h-full w-full object-cover object-center"
             />
           </div>
-          <div className="relative z-10 px-6 py-10 sm:px-10 sm:py-12 lg:px-14 lg:py-16">
+          <div className="relative z-10 px-6 py-10 sm:px-10 sm:py-12 lg:flex lg:min-h-[700px] lg:flex-col lg:justify-center lg:px-14 lg:py-16">
             <div className="text-center lg:max-w-[46%] lg:text-left">
               <RiotLogo />
               <h1 className="mt-6 text-[clamp(1.9rem,8vw,2.4rem)] font-bold leading-[1.1] tracking-tight text-white sm:mt-7 sm:text-[clamp(2.4rem,5vw,4rem)]">
