@@ -395,7 +395,7 @@ function BulletList({ items, lang }: { items: BL[]; lang: Lang }) {
   );
 }
 
-function SolutionCard({ opt, lang }: { opt: Option; lang: Lang }) {
+function SolutionCard({ opt, lang, imgClass }: { opt: Option; lang: Lang; imgClass: string }) {
   return (
     <div
       className={`flex flex-col rounded-2xl p-5 sm:p-6 ${
@@ -412,7 +412,7 @@ function SolutionCard({ opt, lang }: { opt: Option; lang: Lang }) {
         </span>
         <span className="text-sm font-semibold text-ink sm:text-base">{t(lang, opt.name)}</span>
       </div>
-      <Shot src={opt.img} label={opt.name.en} className="mt-7 w-full rounded-xl" />
+      <Shot src={opt.img} label={opt.name.en} className={imgClass} />
       <p className="mt-5 text-sm font-semibold" style={{ color: GOLD }}>
         {lang === "zh" ? "优点" : "Advantages"}
       </p>
@@ -439,27 +439,35 @@ export default function PaymentTickerPage() {
       {/* Hero — dark Riot-gold card (inspired by the deck) */}
       <section className="relative mx-3 mt-4 sm:mx-6 sm:mt-6">
         <div
-          className="relative overflow-hidden rounded-[2rem] px-6 py-10 sm:px-10 sm:py-12 lg:px-14 lg:py-16"
+          className="relative overflow-hidden rounded-[2rem]"
           style={{
             background:
               "linear-gradient(150deg, #0c0a07 0%, #17130b 34%, #4c3d1c 68%, #ab8a3c 100%)",
           }}
         >
           <div className="grain-overlay" />
-          <div className="relative z-10 grid gap-8 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.15fr)] lg:items-center lg:gap-12">
-            <div className="text-center lg:text-left">
+          {/* Desktop: hero image fills the right side, full height to the card border */}
+          <div className="absolute inset-y-0 right-0 hidden w-[48%] lg:block">
+            <Shot
+              src="/projects/payment/hero.png"
+              label="Payment screens"
+              className="h-full w-full object-cover object-center"
+            />
+          </div>
+          <div className="relative z-10 px-6 py-10 sm:px-10 sm:py-12 lg:px-14 lg:py-16">
+            <div className="text-center lg:max-w-[46%] lg:text-left">
               <RiotLogo />
               <h1 className="mt-6 text-[clamp(1.9rem,8vw,2.4rem)] font-bold leading-[1.1] tracking-tight text-white sm:mt-7 sm:text-[clamp(2.4rem,5vw,4rem)]">
                 {t(lang, HERO.title)}
               </h1>
-              <p className="mx-auto mt-5 max-w-xl text-base leading-relaxed text-white/75 sm:text-lg lg:mx-0">
+              <p className="mx-auto mt-5 max-w-md text-base leading-relaxed text-white/75 sm:text-lg lg:mx-0">
                 {t(lang, HERO.subtitle)}
               </p>
             </div>
             <Shot
               src="/projects/payment/hero.png"
               label="Payment screens"
-              className="aspect-[4/3] w-full rounded-2xl object-cover object-center"
+              className="mt-8 aspect-[4/3] w-full rounded-2xl object-cover object-center lg:hidden"
             />
           </div>
         </div>
@@ -552,7 +560,16 @@ export default function PaymentTickerPage() {
               </div>
               <div className="mt-8 grid gap-6 sm:grid-cols-3 sm:gap-5 lg:gap-6">
                 {sc.options.map((opt) => (
-                  <SolutionCard key={opt.name.en} opt={opt} lang={lang} />
+                  <SolutionCard
+                    key={opt.name.en}
+                    opt={opt}
+                    lang={lang}
+                    imgClass={
+                      si === 0
+                        ? "mt-7 aspect-[4/3] w-full rounded-xl object-contain"
+                        : "mt-7 w-full"
+                    }
+                  />
                 ))}
               </div>
             </div>
