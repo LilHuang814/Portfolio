@@ -64,7 +64,7 @@ function RiotLogo() {
         src="/projects/payment/riot-logo.png"
         alt="Riot Games"
         onError={onError}
-        className="mx-auto h-8 w-auto object-contain lg:mx-0"
+        className="mx-auto h-8 w-auto object-contain sm:h-10 lg:mx-0 lg:h-12"
       />
     );
   }
@@ -384,7 +384,7 @@ function BulletList({ items, lang }: { items: BL[]; lang: Lang }) {
   return (
     <ul className="mt-2 space-y-1.5">
       {items.map((it) => (
-        <li key={it.en} className="flex gap-2 text-sm leading-relaxed text-muted-ink">
+        <li key={it.en} className="flex gap-2 text-base leading-relaxed text-muted-ink">
           <span className="mt-[0.15em] shrink-0" style={{ color: GOLD }}>
             •
           </span>
@@ -399,7 +399,7 @@ function SolutionCard({ opt, lang, imgClass }: { opt: Option; lang: Lang; imgCla
   return (
     <div
       className={`flex flex-col rounded-2xl p-5 sm:p-6 ${
-        opt.final ? "bg-[#f7efda] ring-1 ring-[#e7d5a4]" : "bg-white/55"
+        opt.final ? "bg-[#f7efda]" : "bg-white/55"
       }`}
     >
       <div className="flex flex-wrap items-center gap-2">
@@ -413,11 +413,11 @@ function SolutionCard({ opt, lang, imgClass }: { opt: Option; lang: Lang; imgCla
         <span className="text-sm font-semibold text-ink sm:text-base">{t(lang, opt.name)}</span>
       </div>
       <Shot src={opt.img} label={opt.name.en} className={imgClass} />
-      <p className="mt-5 text-sm font-semibold" style={{ color: GOLD }}>
+      <p className="mt-5 text-base font-semibold" style={{ color: GOLD }}>
         {lang === "zh" ? "优点" : "Advantages"}
       </p>
       <BulletList items={opt.adv} lang={lang} />
-      <p className="mt-4 text-sm font-semibold" style={{ color: GOLD }}>
+      <p className="mt-4 text-base font-semibold" style={{ color: GOLD }}>
         {lang === "zh" ? "缺点" : "Disadvantages"}
       </p>
       <BulletList items={opt.dis} lang={lang} />
