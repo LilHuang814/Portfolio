@@ -69,7 +69,10 @@ function RiotLogo() {
     );
   }
   return (
-    <span className="block text-lg font-extrabold uppercase tracking-[0.14em] text-white">Riot Games</span>
+    <span className="mx-auto flex h-11 w-40 items-center justify-center gap-2 rounded-xl border border-dashed border-white/40 text-white/70 lg:mx-0">
+      <ImageIcon className="h-5 w-5" strokeWidth={1.5} />
+      <span className="text-xs font-medium">Riot Games logo</span>
+    </span>
   );
 }
 
@@ -396,7 +399,7 @@ function SolutionCard({ opt, lang }: { opt: Option; lang: Lang }) {
   return (
     <div
       className={`flex flex-col rounded-2xl p-5 sm:p-6 ${
-        opt.final ? "bg-[#f7efda] ring-1 ring-[#e7d5a4]" : "bg-white/55 ring-1 ring-ink/5"
+        opt.final ? "bg-[#f7efda] ring-1 ring-[#e7d5a4]" : "bg-white/55"
       }`}
     >
       <div className="flex flex-wrap items-center gap-2">
@@ -409,7 +412,7 @@ function SolutionCard({ opt, lang }: { opt: Option; lang: Lang }) {
         </span>
         <span className="text-sm font-semibold text-ink sm:text-base">{t(lang, opt.name)}</span>
       </div>
-      <Shot src={opt.img} label={opt.name.en} className="mt-4 w-full rounded-xl" />
+      <Shot src={opt.img} label={opt.name.en} className="mt-7 w-full rounded-xl" />
       <p className="mt-5 text-sm font-semibold" style={{ color: GOLD }}>
         {lang === "zh" ? "优点" : "Advantages"}
       </p>
@@ -517,9 +520,9 @@ export default function PaymentTickerPage() {
           </div>
         </div>
 
-        <div className="mt-10 flex items-start gap-3 rounded-2xl bg-[#f7efda] px-5 py-4 ring-1 ring-[#e7d5a4] sm:px-7 sm:py-5">
-          <span className="mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-ink text-white">
-            <AlertCircle className="h-4 w-4" />
+        <div className="mt-10 flex items-center gap-4 rounded-2xl bg-[#f7efda] px-5 py-4 ring-1 ring-[#e7d5a4] sm:px-7 sm:py-5">
+          <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-ink text-white">
+            <AlertCircle className="h-6 w-6" />
           </span>
           <p className="text-base font-medium leading-relaxed text-ink sm:text-lg">{t(lang, WHY_CALLOUT)}</p>
         </div>
