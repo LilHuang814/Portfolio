@@ -70,6 +70,7 @@ export default function Home() {
       <FeaturedProject
         eyebrowColor="periwinkle"
         title="JPMC"
+        href="/work/jpmc"
         description={{
           en: "Designed scalable internal tools and intake systems that streamlined collaboration for 52+ teams.",
           zh: "设计可扩展的内部工具与受理系统，为 52+ 个团队简化协作、提升效率",
