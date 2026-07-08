@@ -434,8 +434,10 @@ export default function PaymentTickerPage() {
     <main className="relative mx-auto w-full max-w-[90rem] overflow-x-clip pb-6">
       <CursorGlow />
 
+      <SiteNav accent={GOLD} />
+
       {/* Hero — dark Riot-gold card (inspired by the deck) */}
-      <section className="relative mx-3 mt-3 sm:mx-6 sm:mt-6">
+      <section className="relative mx-3 mt-4 sm:mx-6 sm:mt-6">
         <div
           className="relative overflow-hidden rounded-[2rem] lg:min-h-[700px]"
           style={{
@@ -444,7 +446,6 @@ export default function PaymentTickerPage() {
           }}
         >
           <div className="grain-overlay" />
-          <SiteNav accent={GOLD} />
           {/* Desktop: hero image fills the right side, full height to the card border */}
           <div className="absolute inset-y-0 right-0 hidden w-[48%] lg:block">
             <Shot
