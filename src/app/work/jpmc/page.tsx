@@ -282,8 +282,8 @@ export default function JpmcPage() {
         <div className="mt-12 grid grid-cols-1 gap-x-10 gap-y-3 sm:grid-cols-3 lg:gap-x-16">
           {CHALLENGES.map(({ icon: Icon, title, desc }) => (
             <div key={title.en} className="row-span-3 mb-6 grid grid-rows-subgrid gap-3 sm:mb-0">
-              <span className="flex h-16 w-16 items-center justify-center rounded-full bg-[#787BD7] text-white">
-                <Icon className="h-7 w-7" />
+              <span className="flex h-14 w-14 items-center justify-center rounded-full bg-[#787BD7] text-white">
+                <Icon className="h-6 w-6" />
               </span>
               <p className="text-lg font-semibold leading-snug text-ink sm:text-xl">{t(lang, title)}</p>
               <p className="max-w-[80%] text-base leading-relaxed text-muted-ink sm:max-w-none sm:text-lg">
@@ -309,8 +309,8 @@ export default function JpmcPage() {
 
           <div className="relative z-10 max-w-3xl">
             <div className="flex items-center gap-3">
-              <span className="flex h-16 w-16 shrink-0 items-center justify-center rounded-full bg-[#787BD7] text-white">
-                <Sparkles className="h-7 w-7" />
+              <span className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-[#787BD7] text-white">
+                <Sparkles className="h-6 w-6" />
               </span>
               <Eyebrow label={lang === "zh" ? "项目目标" : "Project Objectives"} color="periwinkle" className="!text-sm" />
             </div>
@@ -336,8 +336,8 @@ export default function JpmcPage() {
           {SOLUTIONS.map(({ icon: Icon, title, pros, cons }) => (
             <div key={title.en}>
               <div className="flex items-center gap-3">
-                <span className="flex h-16 w-16 items-center justify-center rounded-full bg-[#787BD7] text-white">
-                  <Icon className="h-7 w-7" />
+                <span className="flex h-14 w-14 items-center justify-center rounded-full bg-[#787BD7] text-white">
+                  <Icon className="h-6 w-6" />
                 </span>
                 <p className="text-xl font-semibold text-ink">{t(lang, title)}</p>
               </div>
@@ -353,30 +353,31 @@ export default function JpmcPage() {
       {/* Research workshop */}
       <section className="relative mx-3 px-6 py-12 sm:mx-6 sm:px-10 sm:py-20 lg:px-14 lg:py-24">
         <DotGrid className="absolute right-10 top-14 hidden lg:grid" />
-        <Eyebrow label={lang === "zh" ? "调研工作坊" : "Research Workshop"} color="periwinkle" className="!text-sm" />
-        <h2 className={`mt-6 ${heading}`}>{lang === "zh" ? "核心用户调研" : "Core User Research"}</h2>
-        <Flourish />
-        <p className="mt-6 max-w-3xl text-base leading-relaxed text-muted-ink sm:text-lg">
-          {lang === "zh"
-            ? "为了更深入理解设计需求流程中的协作问题，我组织了一场跨团队 Workshop，邀请产品、设计与相关合作团队共同参与，收集他们在 Design Intake Process 中的真实痛点、协作挑战，以及对未来流程的期待"
-            : "I facilitated a cross-functional workshop with product, design, and partner teams to identify collaboration pain points and align on future process improvements."}
-        </p>
-
-        <div className="mt-12 grid gap-8 lg:grid-cols-2 lg:items-center lg:gap-14">
-          <div className="space-y-6">
-            {WORKSHOP_GOALS.map(({ icon: Icon, title }) => (
-              <div key={title.en} className="flex items-center gap-4">
-                <span className="flex h-16 w-16 shrink-0 items-center justify-center rounded-full bg-[#787BD7] text-white">
-                  <Icon className="h-7 w-7" />
-                </span>
-                <p className="text-lg font-semibold leading-snug text-ink">{t(lang, title)}</p>
-              </div>
-            ))}
+        <div className="grid gap-8 lg:grid-cols-2 lg:items-center lg:gap-14">
+          <div>
+            <Eyebrow label={lang === "zh" ? "调研工作坊" : "Research Workshop"} color="periwinkle" className="!text-sm" />
+            <h2 className={`mt-6 ${heading}`}>{lang === "zh" ? "核心用户调研" : "Core User Research"}</h2>
+            <Flourish />
+            <p className="mt-6 text-base leading-relaxed text-muted-ink sm:text-lg">
+              {lang === "zh"
+                ? "为了更深入理解设计需求流程中的协作问题，我组织了一场跨团队 Workshop，邀请产品、设计与相关合作团队共同参与，收集他们在 Design Intake Process 中的真实痛点、协作挑战，以及对未来流程的期待"
+                : "I facilitated a cross-functional workshop with product, design, and partner teams to identify collaboration pain points and align on future process improvements."}
+            </p>
+            <div className="mt-10 space-y-6">
+              {WORKSHOP_GOALS.map(({ icon: Icon, title }) => (
+                <div key={title.en} className="flex items-center gap-4">
+                  <span className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-[#787BD7] text-white">
+                    <Icon className="h-6 w-6" />
+                  </span>
+                  <p className="text-lg font-semibold leading-snug text-ink">{t(lang, title)}</p>
+                </div>
+              ))}
+            </div>
           </div>
           <Shot
             src="/projects/jpmc/workshop-flow.png"
             label="Research workshop"
-            className="mx-auto max-h-[360px] w-auto object-contain lg:max-h-[440px]"
+            className="mx-auto max-h-[360px] w-auto object-contain lg:max-h-[520px]"
           />
         </div>
       </section>
@@ -385,8 +386,8 @@ export default function JpmcPage() {
       {FEATURES.map(({ icon: Icon, title, shot, points }, idx) => (
         <section key={title.en} className="relative mx-3 px-6 py-10 sm:mx-6 sm:px-10 sm:py-16 lg:px-14 lg:py-20">
           <div className="flex items-center justify-start gap-4 text-left lg:justify-center lg:text-center">
-            <span className="flex h-16 w-16 shrink-0 items-center justify-center rounded-full bg-[#787BD7] text-white">
-              <Icon className="h-7 w-7" />
+            <span className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-[#787BD7] text-white">
+              <Icon className="h-6 w-6" />
             </span>
             <h3 className={subheading}>{t(lang, title)}</h3>
           </div>
