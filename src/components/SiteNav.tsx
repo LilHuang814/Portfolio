@@ -5,12 +5,14 @@ import Link from "next/link";
 import { useLanguage } from "@/lib/language";
 
 /** Top nav used on interior pages: logo (links home) + language toggle + resume.
-    `accent` tints the active language + resume text to the page's color scheme. */
-export function SiteNav({ accent = "#4a57d0" }: { accent?: string }) {
+    `accent` tints the active language + resume text to the page's color scheme.
+    `flush` drops the nav's own padding so it can sit inside an already-padded
+    hero (matching the home page, where the nav lives inside the hero card). */
+export function SiteNav({ accent = "#4a57d0", flush = false }: { accent?: string; flush?: boolean }) {
   const { lang, setLang } = useLanguage();
 
   return (
-    <nav className="relative z-10 grid grid-cols-3 items-center px-6 pt-6 sm:px-10 lg:px-14">
+    <nav className={`relative z-10 grid grid-cols-3 items-center${flush ? "" : " px-6 pt-6 sm:px-10 lg:px-14"}`}>
       <Link
         href="/"
         aria-label="Home"

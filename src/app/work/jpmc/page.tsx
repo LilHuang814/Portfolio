@@ -235,18 +235,17 @@ export default function JpmcPage() {
     <main className="relative mx-auto w-full max-w-[90rem] overflow-x-clip pb-6">
       <CursorGlow />
 
-      <SiteNav accent={PERI} />
-
       {/* Hero — desktop: title over one 6-panel strip; mobile: 3 panels, title, 3 panels */}
-      <section className="relative mx-3 mt-4 px-6 pb-8 pt-4 sm:mx-6 sm:mt-6 sm:px-10 sm:py-8 lg:px-14 lg:py-10">
+      <section className="relative mx-3 mt-3 px-6 pb-8 pt-5 sm:mx-6 sm:mt-6 sm:px-10 sm:pb-8 sm:pt-6 lg:px-14 lg:pb-10 lg:pt-6">
+        <SiteNav accent={PERI} flush />
         {/* mobile top panels */}
         <Shot
           src="/projects/jpmc/hero-top.png"
           label="Illustration panels (top)"
-          className="w-full rounded-2xl lg:hidden"
+          className="mt-8 w-full rounded-2xl lg:hidden"
         />
 
-        <div className="py-8 text-center lg:py-0">
+        <div className="py-8 text-center lg:py-0 lg:pt-6">
           <h1 className="text-[clamp(2rem,9vw,2.4rem)] font-bold tracking-tight text-ink sm:text-[clamp(2.6rem,5vw,3.8rem)]">
             Design Intake Platform
           </h1>
