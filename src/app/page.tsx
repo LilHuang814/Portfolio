@@ -55,7 +55,7 @@ export default function Home() {
           en: "Created clear and consistent payment error-state messaging across game-specific design systems and payment scenarios.",
         }}
         tags={{
-          zh: ["设计游戏 UI", "调研用户需求", "优化体验", "内容策略"],
+          zh: ["游戏UI设计", "用户研究", "优化体验", "内容策略"],
           en: ["Game UI design", "User research", "Experience optimization", "Content strategy"],
         }}
       >
