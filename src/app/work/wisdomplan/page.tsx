@@ -288,7 +288,7 @@ export default function WisdomPlanPage() {
       <SiteNav />
 
       {/* Hero */}
-      <section className="relative mx-3 mt-4 rounded-[2rem] bg-white/55 px-6 pb-12 pt-6 sm:mx-6 sm:mt-6 sm:px-10 sm:py-16 lg:px-14">
+      <section className="relative mx-3 mt-1 rounded-[2rem] bg-white/55 px-6 pb-12 pt-6 sm:mx-6 sm:mt-1 sm:px-10 sm:py-16 lg:px-14">
         <div className="relative z-10 grid gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.1fr)] lg:items-center lg:gap-16">
           <div className="text-center lg:text-left">
             <LogoTitle />

@@ -238,7 +238,7 @@ export default function JpmcPage() {
       <SiteNav accent={PERI} />
 
       {/* Hero — desktop: title over one 6-panel strip; mobile: 3 panels, title, 3 panels */}
-      <section className="relative mx-3 mt-4 px-6 pb-8 pt-4 sm:mx-6 sm:mt-6 sm:px-10 sm:py-8 lg:px-14 lg:py-10">
+      <section className="relative mx-3 mt-1 px-6 pb-8 pt-4 sm:mx-6 sm:mt-1 sm:px-10 sm:py-8 lg:px-14 lg:py-10">
         {/* mobile top panels */}
         <Shot
           src="/projects/jpmc/hero-top.png"

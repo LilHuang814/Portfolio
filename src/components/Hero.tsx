@@ -35,7 +35,7 @@ export function Hero() {
   }, [word]);
 
   return (
-    <section className="relative mx-3 mt-3 overflow-hidden rounded-[2rem] sm:mx-6 sm:mt-6">
+    <section className="relative mx-3 mt-1 overflow-hidden rounded-[2rem] sm:mx-6 sm:mt-1">
       <div className="gradient-mesh relative flex min-h-[620px] flex-col justify-between px-6 pb-8 pt-5 sm:px-10 sm:pb-10 sm:pt-6">
         <div className="grain-overlay" />
 

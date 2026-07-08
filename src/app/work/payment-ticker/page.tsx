@@ -437,7 +437,7 @@ export default function PaymentTickerPage() {
       <SiteNav accent={GOLD} />
 
       {/* Hero — dark Riot-gold card (inspired by the deck) */}
-      <section className="relative mx-3 mt-4 sm:mx-6 sm:mt-6">
+      <section className="relative mx-3 mt-1 sm:mx-6 sm:mt-1">
         <div
           className="relative overflow-hidden rounded-[2rem] lg:min-h-[700px]"
           style={{
