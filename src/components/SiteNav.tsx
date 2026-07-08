@@ -30,7 +30,7 @@ export function SiteNav({ accent = "#4a57d0" }: { accent?: string }) {
         className={`pointer-events-none absolute left-1/2 top-0 h-full w-screen -translate-x-1/2 border-b border-black/5 backdrop-blur-md transition-opacity duration-300 ${
           scrolled ? "opacity-100" : "opacity-0"
         }`}
-        style={{ background: "rgba(255,255,255,0.45)" }}
+        style={{ background: "rgba(255,255,255,0.32)" }}
       />
 
       <div className="relative z-10 grid grid-cols-3 items-center">
