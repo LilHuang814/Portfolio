@@ -18,7 +18,7 @@ type BL = { en: string; zh: string };
 const t = (lang: Lang, v: BL) => v[lang];
 
 /** Riot gold accent used for eyebrows, bullets, and the flourish. */
-const GOLD = "#FBC963";
+const GOLD = "#b1892f";
 
 /** Tracks whether an image loaded — robust to errors that fire before
     hydration (checks naturalWidth on mount). */
@@ -80,7 +80,7 @@ const heading =
   "text-[clamp(1.35rem,6vw,1.5rem)] font-semibold leading-[1.15] tracking-tight text-ink sm:text-[clamp(1.95rem,3.4vw,2.6rem)]";
 const subheading =
   "text-[clamp(1.2rem,5vw,1.35rem)] font-semibold text-ink sm:text-[clamp(1.5rem,2.7vw,1.9rem)]";
-const EB = "!text-sm !text-[#FBC963]";
+const EB = "!text-sm !text-[#b1892f]";
 
 /** Decorative gold gradient line + dots. */
 function Flourish() {
