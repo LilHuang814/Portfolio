@@ -4,11 +4,14 @@ import { FeaturedProject } from "@/components/FeaturedProject";
 import { ProjectImage } from "@/components/ProjectImage";
 import { ContactSection } from "@/components/ContactSection";
 import { CursorGlow } from "@/components/CursorGlow";
+import { SiteNav } from "@/components/SiteNav";
 
 export default function Home() {
   return (
     <main className="relative mx-auto w-full max-w-[90rem] pb-6">
       <CursorGlow />
+
+      <SiteNav />
 
       <Hero />
 
