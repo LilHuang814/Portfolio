@@ -30,6 +30,10 @@
 body {
   background: var(--background);
   color: var(--ink);
+  /* Clip (not scroll) any full-bleed decoration at the viewport edge, so
+     background halos can reach the screen edges without a horizontal
+     scrollbar. `clip` keeps vertical scrolling and sticky intact. */
+  overflow-x: clip;
 }
 
 /* Fine grain texture, tiled, used as an overlay on top of every gradient. */

@@ -270,16 +270,18 @@ export default function WisdomPlanPage() {
   const { lang } = useLanguage();
 
   return (
-    <main className="relative mx-auto w-full max-w-[90rem] overflow-x-clip pb-6">
+    <main className="relative mx-auto w-full max-w-[90rem] pb-6">
       <CursorGlow />
 
-      {/* Big radial halo, anchored off the top-right; the hero floats above it. */}
+      {/* Big radial halo spanning the full viewport width so it reaches the
+          screen edges (not clipped to the content) and grows with the screen;
+          the hero floats above it. */}
       <div
         aria-hidden
-        className="pointer-events-none absolute right-[-160px] top-[-320px] h-[900px] w-[900px] rounded-full"
+        className="pointer-events-none absolute left-1/2 top-[-240px] -z-10 h-[820px] w-screen -translate-x-1/2 sm:top-[-300px] sm:h-[1040px] lg:top-[-340px] lg:h-[1280px] xl:h-[1480px]"
         style={{
           background:
-            "radial-gradient(circle, #ACAFFF 0%, #F2CEFF 30%, #FFE4D9 48%, #F4F0E8 74%)",
+            "radial-gradient(42% 82% at 80% 30%, #ACAFFF 0%, #F2CEFF 30%, #FFE4D9 50%, rgba(244,240,232,0) 74%)",
         }}
       />
 
