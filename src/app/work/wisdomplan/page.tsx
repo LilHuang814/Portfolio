@@ -285,7 +285,7 @@ export default function WisdomPlanPage() {
         }}
       />
 
-      <SiteNav />
+      <SiteNav accent="#787BD7" />
 
       {/* Hero */}
       <section className="relative mx-3 mt-1 rounded-[2rem] bg-white/55 px-6 pb-12 pt-6 sm:mx-6 sm:mt-1 sm:px-10 sm:py-16 lg:px-14">
@@ -298,7 +298,11 @@ export default function WisdomPlanPage() {
               label="WisdomPlan product"
               className="mx-auto mt-6 max-h-[380px] w-auto rounded-2xl object-contain lg:hidden"
             />
-            <p className="mt-8 text-[clamp(1.5rem,7.5vw,1.7rem)] font-semibold leading-[1.15] tracking-tight text-ink sm:text-[clamp(1.95rem,3.4vw,2.6rem)] lg:mt-5">
+            <p
+              className={`mt-8 text-[clamp(1.5rem,7.5vw,1.7rem)] font-semibold leading-[1.15] tracking-tight text-ink sm:text-[clamp(1.95rem,3.4vw,2.6rem)] lg:mt-5 ${
+                lang === "en" ? "lg:max-w-md" : ""
+              }`}
+            >
               {lang === "zh" ? "在 AI 时代重新定义学习" : "Redefining learning in the age of AI"}
             </p>
             <p className="mx-auto mt-6 max-w-xl text-base leading-relaxed text-ink sm:text-lg lg:mx-0">
