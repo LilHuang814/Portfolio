@@ -98,7 +98,7 @@ function ProsCons({ heading, items, tone }: { heading: string; items: BL[]; tone
       <p className="text-lg font-semibold text-ink">{heading}</p>
       <ul className="mt-3 space-y-2.5">
         {items.map((it) => (
-          <li key={it.en} className="flex gap-2.5 text-base leading-relaxed text-ink">
+          <li key={it.en} className="flex gap-2.5 text-base leading-relaxed text-ink sm:text-lg">
             {tone === "pro" ? (
               <Check className="mt-1 h-4 w-4 shrink-0" style={{ color: PERI }} />
             ) : (
