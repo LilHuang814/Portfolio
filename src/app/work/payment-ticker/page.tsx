@@ -384,7 +384,7 @@ function BulletList({ items, lang }: { items: BL[]; lang: Lang }) {
   return (
     <ul className="mt-2 space-y-1.5">
       {items.map((it) => (
-        <li key={it.en} className="flex gap-2 text-base leading-relaxed text-muted-ink">
+        <li key={it.en} className="flex gap-2 text-base leading-relaxed text-ink">
           <span className="mt-[0.15em] shrink-0" style={{ color: GOLD }}>
             •
           </span>
@@ -487,7 +487,7 @@ export default function PaymentTickerPage() {
           {lang === "zh" ? "玩家会略过支付异常提示" : "Payment alerts are often overlooked"}
         </h2>
         <Flourish />
-        <p className="mt-6 max-w-3xl text-base leading-relaxed text-muted-ink sm:text-lg">
+        <p className="mt-6 max-w-3xl text-base leading-relaxed text-ink sm:text-lg">
           {lang === "zh"
             ? "当前的支付异常提示被放置在客户端首页中，玩家往往会在真正进入购买流程前忽略或遗忘这些信息，最终在支付失败后才意识到问题的存在。项目目标是在更相关、更及时的场景中展示支付异常信息，减少玩家的困惑与失败尝试。"
             : "Payment alerts are often missed on the homepage, so players discover issues only after a failed transaction. This project introduces more timely, contextual error messaging to reduce confusion and failed payments."}
@@ -503,7 +503,7 @@ export default function PaymentTickerPage() {
                 <Icon className="h-6 w-6" />
               </span>
               <p className="text-lg font-semibold leading-snug text-ink sm:text-xl">{t(lang, title)}</p>
-              <p className="max-w-[80%] text-base leading-relaxed text-muted-ink sm:max-w-none sm:text-lg">
+              <p className="max-w-[80%] text-base leading-relaxed text-ink sm:max-w-none sm:text-lg">
                 {t(lang, desc)}
               </p>
             </div>
@@ -531,7 +531,7 @@ export default function PaymentTickerPage() {
                 <NumBadge n={i + 1} />
                 <div>
                   <p className="text-base font-semibold text-ink sm:text-lg">{t(lang, title)}</p>
-                  <p className="mt-1 text-base leading-relaxed text-muted-ink sm:text-lg">{t(lang, desc)}</p>
+                  <p className="mt-1 text-base leading-relaxed text-ink sm:text-lg">{t(lang, desc)}</p>
                 </div>
               </div>
             ))}
@@ -559,7 +559,7 @@ export default function PaymentTickerPage() {
                 <NumBadge n={si + 1} />
                 <div>
                   <h3 className={subheading}>{t(lang, sc.title)}</h3>
-                  <p className="mt-2 max-w-2xl text-base leading-relaxed text-muted-ink sm:text-lg">
+                  <p className="mt-2 max-w-2xl text-base leading-relaxed text-ink sm:text-lg">
                     {t(lang, sc.sub)}
                   </p>
                 </div>
@@ -617,7 +617,7 @@ export default function PaymentTickerPage() {
         <Eyebrow label={lang === "zh" ? "心得" : "Reflection"} color="orange" className={EB} />
         <h2 className={`mt-6 ${heading}`}>{lang === "zh" ? "心得体会" : "Insights & Reflections"}</h2>
         <Flourish />
-        <p className="mt-6 max-w-3xl text-base leading-relaxed text-muted-ink sm:text-lg">{t(lang, REFLECTION)}</p>
+        <p className="mt-6 max-w-3xl text-base leading-relaxed text-ink sm:text-lg">{t(lang, REFLECTION)}</p>
       </section>
 
       <ContactSection />

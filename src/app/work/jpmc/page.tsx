@@ -98,7 +98,7 @@ function ProsCons({ heading, items, tone }: { heading: string; items: BL[]; tone
       <p className="text-lg font-semibold text-ink">{heading}</p>
       <ul className="mt-3 space-y-2.5">
         {items.map((it) => (
-          <li key={it.en} className="flex gap-2.5 text-base leading-relaxed text-muted-ink">
+          <li key={it.en} className="flex gap-2.5 text-base leading-relaxed text-ink">
             {tone === "pro" ? (
               <Check className="mt-1 h-4 w-4 shrink-0" style={{ color: PERI }} />
             ) : (
@@ -250,7 +250,7 @@ export default function JpmcPage() {
           <h1 className="text-[clamp(2rem,9vw,2.4rem)] font-bold tracking-tight text-ink sm:text-[clamp(2.6rem,5vw,3.8rem)]">
             Design Intake Platform
           </h1>
-          <p className="mx-auto mt-4 max-w-2xl text-lg leading-relaxed text-muted-ink sm:mt-5 sm:text-xl">
+          <p className="mx-auto mt-2 max-w-2xl text-lg leading-relaxed text-ink sm:mt-2.5 sm:text-xl">
             {lang === "zh" ? "让设计需求管理变得更直观、更高效" : "Streamline design requirement workflows"}
           </p>
         </div>
@@ -282,11 +282,11 @@ export default function JpmcPage() {
         <div className="mt-12 grid grid-cols-1 gap-x-10 gap-y-3 sm:grid-cols-3 lg:gap-x-16">
           {CHALLENGES.map(({ icon: Icon, title, desc }) => (
             <div key={title.en} className="row-span-3 mb-6 grid grid-rows-subgrid gap-3 sm:mb-0">
-              <span className="flex h-14 w-14 items-center justify-center rounded-full bg-[#787BD7] text-white">
+              <span className="flex h-14 w-14 items-center justify-center rounded-full bg-[#90AFFF] text-white">
                 <Icon className="h-6 w-6" />
               </span>
               <p className="text-lg font-semibold leading-snug text-ink sm:text-xl">{t(lang, title)}</p>
-              <p className="max-w-[80%] text-base leading-relaxed text-muted-ink sm:max-w-none sm:text-lg">
+              <p className="max-w-[80%] text-base leading-relaxed text-ink sm:max-w-none sm:text-lg">
                 {t(lang, desc)}
               </p>
             </div>
@@ -309,7 +309,7 @@ export default function JpmcPage() {
 
           <div className="relative z-10 max-w-3xl">
             <div className="flex items-center gap-3">
-              <span className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-[#787BD7] text-white">
+              <span className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-[#90AFFF] text-white">
                 <Sparkles className="h-6 w-6" />
               </span>
               <Eyebrow label={lang === "zh" ? "项目目标" : "Project Objectives"} color="periwinkle" className="!text-sm" />
@@ -318,7 +318,7 @@ export default function JpmcPage() {
               {lang === "zh" ? "建立统一的协作平台" : "A unified collaboration platform"}
             </h2>
             <Flourish />
-            <p className="mt-6 text-base leading-relaxed text-muted-ink sm:text-lg">
+            <p className="mt-6 text-base leading-relaxed text-ink sm:text-lg">
               {lang === "zh"
                 ? "随着设计团队与合作部门规模扩大，依赖消息沟通与人工同步的流程已难以支撑高频协作。因此，本项目希望通过建立统一、透明且可追踪的协作平台，减少沟通摩擦，提升需求提交、任务管理与设计交付效率"
                 : "As teams scaled, message-based communication and manual coordination became inefficient. This project introduced a unified collaboration platform to improve requirement management, task tracking, and design delivery efficiency."}
@@ -332,11 +332,17 @@ export default function JpmcPage() {
         <h3 className={subheading}>{lang === "zh" ? "现有方案分析" : "Existing Solutions"}</h3>
         <Flourish />
 
-        <div className="mt-10 grid gap-10 lg:grid-cols-2 lg:gap-16">
+        <div
+          className={`mt-10 grid gap-10 ${
+            lang === "zh"
+              ? "lg:grid-cols-[auto_auto] lg:justify-start lg:gap-x-24"
+              : "lg:grid-cols-2 lg:gap-16"
+          }`}
+        >
           {SOLUTIONS.map(({ icon: Icon, title, pros, cons }) => (
             <div key={title.en}>
               <div className="flex items-center gap-3">
-                <span className="flex h-14 w-14 items-center justify-center rounded-full bg-[#787BD7] text-white">
+                <span className="flex h-14 w-14 items-center justify-center rounded-full bg-[#90AFFF] text-white">
                   <Icon className="h-6 w-6" />
                 </span>
                 <p className="text-xl font-semibold text-ink">{t(lang, title)}</p>
@@ -358,7 +364,7 @@ export default function JpmcPage() {
             <Eyebrow label={lang === "zh" ? "调研工作坊" : "Research Workshop"} color="periwinkle" className="!text-sm" />
             <h2 className={`mt-6 ${heading}`}>{lang === "zh" ? "核心用户调研" : "Core User Research"}</h2>
             <Flourish />
-            <p className="mt-6 text-base leading-relaxed text-muted-ink sm:text-lg">
+            <p className="mt-6 text-base leading-relaxed text-ink sm:text-lg">
               {lang === "zh"
                 ? "为了更深入理解设计需求流程中的协作问题，我组织了一场跨团队 Workshop，邀请产品、设计与相关合作团队共同参与，收集他们在 Design Intake Process 中的真实痛点、协作挑战，以及对未来流程的期待"
                 : "I facilitated a cross-functional workshop with product, design, and partner teams to identify collaboration pain points and align on future process improvements."}
@@ -366,7 +372,7 @@ export default function JpmcPage() {
             <div className="mt-10 space-y-6">
               {WORKSHOP_GOALS.map(({ icon: Icon, title }) => (
                 <div key={title.en} className="flex items-center gap-4">
-                  <span className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-[#787BD7] text-white">
+                  <span className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-[#90AFFF] text-white">
                     <Icon className="h-6 w-6" />
                   </span>
                   <p className="text-lg font-semibold leading-snug text-ink">{t(lang, title)}</p>
@@ -386,7 +392,7 @@ export default function JpmcPage() {
       {FEATURES.map(({ icon: Icon, title, shot, points }, idx) => (
         <section key={title.en} className="relative mx-3 px-6 py-10 sm:mx-6 sm:px-10 sm:py-16 lg:px-14 lg:py-20">
           <div className="flex items-center justify-start gap-4 text-left lg:justify-center lg:text-center">
-            <span className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-[#787BD7] text-white">
+            <span className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-[#90AFFF] text-white">
               <Icon className="h-6 w-6" />
             </span>
             <h3 className={subheading}>{t(lang, title)}</h3>
@@ -420,7 +426,7 @@ export default function JpmcPage() {
         <Eyebrow label={lang === "zh" ? "心得" : "Reflection"} color="orange" className="!text-sm" />
         <h2 className={`mt-6 ${heading}`}>{lang === "zh" ? "心得体会" : "Insights & Reflections"}</h2>
         <Flourish />
-        <p className="mt-6 max-w-3xl text-base leading-relaxed text-muted-ink sm:text-lg">
+        <p className="mt-6 max-w-3xl text-base leading-relaxed text-ink sm:text-lg">
           {lang === "zh"
             ? "这段实习经历让我收获很多，我也很感谢能独立负责整个设计流程。虽然因为项目时间只有一个月，还有很多地方可以继续完善，比如尝试更多设计迭代、做用户测试，以及完善更多平台功能，但我依然很为这次项目感到自豪。我特别重视无障碍体验，因此在设计中加入了支持屏幕朗读的结构，帮助视觉障碍用户更顺畅地使用平台。我也第一次组织了 Research Workshop，在经理的指导下学到了很多。整体来说，这是一次非常难忘、也非常有成长感的经历"
             : "Leading this project end-to-end was a valuable learning experience. Beyond delivering the final solution, I explored accessibility through screen reader–friendly design and facilitated my first research workshop. Despite the project's short timeline, it strengthened my design, research, and collaboration skills and remains one of the most meaningful experiences of my internship."}

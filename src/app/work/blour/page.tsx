@@ -297,7 +297,7 @@ export default function BlourPage() {
           <h1 className="text-[clamp(1.5rem,7.5vw,1.7rem)] font-semibold leading-[1.15] tracking-tight text-ink sm:text-[clamp(2.2rem,5vw,4rem)]">
             {lang === "zh" ? "重新定义信息消费方式" : "Redefining information consumption"}
           </h1>
-          <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-muted-ink sm:text-lg">
+          <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-ink sm:text-lg">
             {lang === "zh"
               ? "Blour 是一款 AI 个性化音频平台，能够将新闻、日程与用户上传内容自动整理成音频简报，帮助用户更轻松地获取信息、管理任务与提升效率"
               : "Blour is an AI-powered personalized audio platform that turns news, schedules, and your own uploads into audio briefings, so getting informed, managing tasks, and staying efficient feels effortless."}
@@ -324,7 +324,7 @@ export default function BlourPage() {
                 <Icon className="h-6 w-6" />
               </span>
               <p className="text-lg font-semibold leading-snug text-ink sm:text-xl">{t(lang, title)}</p>
-              <p className="max-w-[80%] text-base leading-relaxed sm:text-lg text-muted-ink sm:max-w-none">{t(lang, desc)}</p>
+              <p className="max-w-[80%] text-base leading-relaxed sm:text-lg text-ink sm:max-w-none">{t(lang, desc)}</p>
             </div>
           ))}
         </div>
@@ -357,7 +357,7 @@ export default function BlourPage() {
               {lang === "zh" ? "用音频重塑信息体验" : "Reshaping information with audio"}
             </h2>
             <Flourish />
-            <p className="mt-6 text-base leading-relaxed sm:text-lg text-muted-ink">
+            <p className="mt-6 text-base leading-relaxed sm:text-lg text-ink">
               {lang === "zh"
                 ? "在信息过载与注意力碎片化的环境下，用户越来越难高效地获取真正重要的内容。Blour 希望通过 AI 自动整合新闻、邮件、日程与用户上传内容，并转化为个性化音频简报，让用户能够更轻松地获取信息、管理任务，并减少信息负担"
                 : "Amid information overload and fragmented attention, it's increasingly hard to reach what truly matters. Blour uses AI to pull together news, email, schedules, and uploads, turning them into personalized audio briefings, so getting informed and managing tasks feels lighter."}
@@ -377,7 +377,7 @@ export default function BlourPage() {
               <p className="mt-3 max-w-xs text-center text-lg font-semibold text-ink sm:mt-7 sm:text-xl">{t(lang, title)}</p>
               <div className="mt-2 max-w-xs space-y-1.5 text-center sm:mt-3">
                 {points.map((p) => (
-                  <p key={p.en} className="text-base leading-snug sm:text-lg text-muted-ink">
+                  <p key={p.en} className="text-base leading-snug sm:text-lg text-ink">
                     {t(lang, p)}
                   </p>
                 ))}
@@ -398,7 +398,7 @@ export default function BlourPage() {
                   <p className="text-lg font-semibold text-ink sm:text-xl">
                     {t(lang, persona.title)}
                   </p>
-                  <p className="mt-1.5 max-w-[80%] text-base leading-relaxed sm:text-lg text-muted-ink sm:max-w-md">
+                  <p className="mt-1.5 max-w-[80%] text-base leading-relaxed sm:text-lg text-ink sm:max-w-md">
                     {t(lang, persona.desc)}
                   </p>
                 </div>
@@ -419,7 +419,7 @@ export default function BlourPage() {
         />
         <h2 className={`mt-6 ${heading}`}>{lang === "zh" ? "从信息获取到行动处理" : "From getting informed to taking action"}</h2>
         <Flourish />
-        <p className="mt-6 max-w-3xl text-base leading-relaxed sm:text-lg text-muted-ink">
+        <p className="mt-6 max-w-3xl text-base leading-relaxed sm:text-lg text-ink">
           {lang === "zh"
             ? "Blour 将信息获取转化为行动，贯穿五个环节：用户设置内容偏好，在首页收听每日播客，获得待办提醒与处理，从上传内容一键生成个性化播客，并通过会员订阅解锁更多能力"
             : "Blour turns information into action across five connected stages: users set their content preferences, receive a daily podcast on the home screen, get reminders and handling for their to-dos, generate personalized podcasts from their own uploads, and unlock more through a membership subscription."}
@@ -467,7 +467,7 @@ export default function BlourPage() {
         <Eyebrow label={lang === "zh" ? "心得" : "Reflection"} color="periwinkle" className={EB} />
         <h2 className={`mt-6 ${heading}`}>{lang === "zh" ? "心得体会" : "Reflection"}</h2>
         <Flourish />
-        <p className="mt-6 max-w-3xl text-base leading-relaxed sm:text-lg text-muted-ink">
+        <p className="mt-6 max-w-3xl text-base leading-relaxed sm:text-lg text-ink">
           {lang === "zh"
             ? "在设计 Blour 的过程中，我重新思考了“信息获取”与“效率工具”之间的关系。相比传统的信息平台只负责提供内容，我更希望 Blour 能够帮助用户真正理解、整理并处理信息，让“获取信息”不再是一种负担，而是一种更轻松、更自然地融入日常生活的体验。在这个项目中，我不仅关注了 AI 功能本身，也更加注重陪伴感、低压力的交互氛围，以及如何通过音频化与自动化设计减少用户在高信息密度环境下的认知负担"
             : "Designing Blour, I rethought the relationship between “getting information” and “efficiency tools.” Rather than a platform that just serves content, I wanted Blour to help people truly understand, organize, and act on information, so staying informed feels lighter and folds naturally into daily life. Beyond the AI features, I focused on a sense of companionship, a low-pressure interaction mood, and how audio and automation can reduce cognitive load in high-density information environments."}

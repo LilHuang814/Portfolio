@@ -41,7 +41,7 @@ export function FeaturedProject({
               <div className="mt-3 h-[3px] w-full rounded-full gradient-bar" />
             </div>
           )}
-          <p className="mt-6 max-w-md text-[17px] leading-relaxed text-muted-ink">
+          <p className="mt-6 max-w-md text-[17px] leading-relaxed text-ink">
             {description[lang]}
           </p>
 
