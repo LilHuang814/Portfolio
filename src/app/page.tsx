@@ -53,7 +53,7 @@ export default function Home() {
 
       <FeaturedProject
         eyebrowColor="orange"
-        title="Payment Ticker Improvements"
+        title={{ en: "Riot Games", zh: "拳头游戏" }}
         logo="/projects/home-logos/payment-ticker.png"
         href="/work/payment-ticker"
         description={{
@@ -75,7 +75,7 @@ export default function Home() {
 
       <FeaturedProject
         eyebrowColor="periwinkle"
-        title="JPMC"
+        title={{ en: "JPMC", zh: "摩根大通" }}
         logo="/projects/home-logos/jpmc.png"
         href="/work/jpmc"
         description={{

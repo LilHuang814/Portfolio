@@ -50,7 +50,7 @@ export function FeaturedProject({
   children,
 }: {
   eyebrowColor: "orange" | "periwinkle";
-  title: string;
+  title: string | Bilingual<string>;
   logo?: string;
   description: Bilingual<string>;
   tags: Bilingual<string[]>;
@@ -59,13 +59,14 @@ export function FeaturedProject({
   children: React.ReactNode;
 }) {
   const { lang } = useLanguage();
+  const titleText = typeof title === "string" ? title : title[lang];
 
   const titleRow = (
     <>
       <div className="flex items-center gap-3 sm:gap-4">
-        {logo && <TitleLogo src={logo} alt={`${title} logo`} />}
+        {logo && <TitleLogo src={logo} alt={`${titleText} logo`} />}
         <h2 className="text-[clamp(2.3rem,10.5vw,2.6rem)] font-bold leading-[1.05] tracking-tight text-ink sm:text-[clamp(2.2rem,3.75vw,3.4rem)]">
-          {title}
+          {titleText}
         </h2>
       </div>
       <div className="mt-3 h-[3px] w-full rounded-full gradient-bar" />
