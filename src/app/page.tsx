@@ -20,6 +20,7 @@ export default function Home() {
       <FeaturedProject
         eyebrowColor="periwinkle"
         title="WisdomPlan"
+        logo="/projects/home-logos/wisdomplan.png"
         href="/work/wisdomplan"
         description={{
           zh: "帮助用户降低寻找学习资源的时间与成本，提供更个性化的学习路径与职业发展",
@@ -36,6 +37,7 @@ export default function Home() {
       <FeaturedProject
         eyebrowColor="orange"
         title="Blour"
+        logo="/projects/home-logos/blour.png"
         href="/work/blour"
         description={{
           zh: "自动整理用户感兴趣的新闻并处理紧急待办，还能把上传的资料生成个性化播客，用笔记归纳信息",
@@ -52,6 +54,7 @@ export default function Home() {
       <FeaturedProject
         eyebrowColor="orange"
         title="Payment Ticker Improvements"
+        logo="/projects/home-logos/payment-ticker.png"
         href="/work/payment-ticker"
         description={{
           zh: "根据不同游戏的设计系统与支付场景，设计对应的支付异常状态提示信息，确保玩家能够清晰理解问题",
@@ -73,6 +76,7 @@ export default function Home() {
       <FeaturedProject
         eyebrowColor="periwinkle"
         title="JPMC"
+        logo="/projects/home-logos/jpmc.png"
         href="/work/jpmc"
         description={{
           en: "Designed scalable internal tools and intake systems that streamlined collaboration for 52+ teams.",
