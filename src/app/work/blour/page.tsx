@@ -309,7 +309,7 @@ export default function BlourPage() {
       <section className="relative mx-3 px-6 pb-8 pt-12 sm:mx-6 sm:px-10 sm:py-20 lg:px-14 lg:py-24">
         <DotGrid className="absolute right-10 top-14 hidden lg:grid" />
         <Eyebrow label={lang === "zh" ? "用户挑战" : "User Challenges"} color="periwinkle" className={EB} />
-        <h2 className={`mt-6 ${heading}`}>
+        <h2 className={`mt-3 sm:mt-6 ${heading}`}>
           {lang === "zh" ? "信息过载的代价" : "The cost of information overload"}
         </h2>
         <Flourish />
@@ -353,7 +353,7 @@ export default function BlourPage() {
               </span>
               <Eyebrow label={lang === "zh" ? "我们的机会" : "Our opportunity"} color="periwinkle" className={EB} />
             </div>
-            <h2 className={`mt-6 ${heading}`}>
+            <h2 className={`mt-3 sm:mt-6 ${heading}`}>
               {lang === "zh" ? "用音频重塑信息体验" : "Reshaping information with audio"}
             </h2>
             <Flourish />
@@ -417,7 +417,7 @@ export default function BlourPage() {
           color="periwinkle"
           className={EB}
         />
-        <h2 className={`mt-6 ${heading}`}>{lang === "zh" ? "从信息获取到行动处理" : "From getting informed to taking action"}</h2>
+        <h2 className={`mt-3 sm:mt-6 ${heading}`}>{lang === "zh" ? "从信息获取到行动处理" : "From getting informed to taking action"}</h2>
         <Flourish />
         <p className="mt-6 max-w-3xl text-base leading-relaxed sm:text-lg text-ink">
           {lang === "zh"
@@ -465,7 +465,7 @@ export default function BlourPage() {
       <section className="relative mx-3 px-6 py-12 sm:mx-6 sm:px-10 sm:py-20 lg:px-14 lg:py-24">
         <DotGrid className="absolute right-10 top-14 hidden lg:grid" />
         <Eyebrow label={lang === "zh" ? "心得" : "Reflection"} color="periwinkle" className={EB} />
-        <h2 className={`mt-6 ${heading}`}>{lang === "zh" ? "心得体会" : "Reflection"}</h2>
+        <h2 className={`mt-3 sm:mt-6 ${heading}`}>{lang === "zh" ? "心得体会" : "Reflection"}</h2>
         <Flourish />
         <p className="mt-6 max-w-3xl text-base leading-relaxed sm:text-lg text-ink">
           {lang === "zh"

@@ -354,7 +354,7 @@ export default function WisdomPlanPage() {
       <section className="relative mx-3 px-6 py-12 sm:mx-6 sm:px-10 sm:py-20 lg:px-14 lg:py-24">
         <DotGrid className="absolute right-10 top-14 hidden lg:grid" />
         <Eyebrow label={lang === "zh" ? "用户挑战" : "User Challenges"} color="orange" className="!text-sm" />
-        <h2 className={`mt-6 ${heading}`}>
+        <h2 className={`mt-3 sm:mt-6 ${heading}`}>
           {lang === "zh" ? "学习时真正的困难，不只是学习本身" : "The real difficulty in learning isn't the learning itself"}
         </h2>
         <Flourish />
@@ -393,7 +393,7 @@ export default function WisdomPlanPage() {
               </span>
               <Eyebrow label={lang === "zh" ? "我们的机会" : "Our opportunity"} color="periwinkle" className="!text-sm" />
             </div>
-            <h2 className={`mt-6 ${heading}`}>
+            <h2 className={`mt-3 sm:mt-6 ${heading}`}>
               {lang === "zh" ? "AI 驱动的机会" : "An AI-driven opportunity"}
             </h2>
             <Flourish />
@@ -455,7 +455,7 @@ export default function WisdomPlanPage() {
       <section className="relative mx-3 px-6 py-12 sm:mx-6 sm:px-10 sm:py-20 lg:px-14 lg:py-24">
         <DotGrid className="absolute right-10 top-14 hidden lg:grid" />
         <Eyebrow label={lang === "zh" ? "AI 学习体验" : "AI Learning Experience"} color="periwinkle" className="!text-sm" />
-        <h2 className={`mt-6 ${heading}`}>{lang === "zh" ? "AI 驱动的学习流程" : "An AI-driven learning flow"}</h2>
+        <h2 className={`mt-3 sm:mt-6 ${heading}`}>{lang === "zh" ? "AI 驱动的学习流程" : "An AI-driven learning flow"}</h2>
         <Flourish />
         <p className="mt-6 max-w-3xl text-base leading-relaxed sm:text-lg text-ink">
           {lang === "zh"
@@ -500,7 +500,7 @@ export default function WisdomPlanPage() {
       <section className="relative mx-3 px-6 py-12 sm:mx-6 sm:px-10 sm:py-20 lg:px-14 lg:py-24">
         <DotGrid className="absolute right-10 top-14 hidden lg:grid" />
         <Eyebrow label={lang === "zh" ? "心得" : "Reflection"} color="orange" className="!text-sm" />
-        <h2 className={`mt-6 ${heading}`}>{lang === "zh" ? "心得体会" : "Reflection"}</h2>
+        <h2 className={`mt-3 sm:mt-6 ${heading}`}>{lang === "zh" ? "心得体会" : "Reflection"}</h2>
         <Flourish />
         <p className="mt-6 max-w-3xl text-base leading-relaxed sm:text-lg text-ink">
           {lang === "zh"

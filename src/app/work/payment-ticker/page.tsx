@@ -483,7 +483,7 @@ export default function PaymentTickerPage() {
       <section className="relative mx-3 px-6 pb-12 pt-20 sm:mx-6 sm:px-10 sm:py-20 lg:px-14 lg:py-24">
         <DotGrid className="absolute right-10 top-14 hidden lg:grid" />
         <Eyebrow label={lang === "zh" ? "问题" : "The Problem"} color="orange" className={EB} />
-        <h2 className={`mt-6 ${heading}`}>
+        <h2 className={`mt-3 sm:mt-6 ${heading}`}>
           {lang === "zh" ? "玩家会略过支付异常提示" : "Payment alerts are often overlooked"}
         </h2>
         <Flourish />
@@ -518,7 +518,7 @@ export default function PaymentTickerPage() {
           color="orange"
           className={EB}
         />
-        <h2 className={`mt-6 ${heading}`}>
+        <h2 className={`mt-3 sm:mt-6 ${heading}`}>
           {lang === "zh" ? "当前的设计为什么效果有限" : "Why the current design is limited"}
         </h2>
         <Flourish />
@@ -549,7 +549,7 @@ export default function PaymentTickerPage() {
       {/* Exploring solutions */}
       <section className="relative mx-3 px-6 py-12 sm:mx-6 sm:px-10 sm:py-20 lg:px-14 lg:py-24">
         <Eyebrow label={lang === "zh" ? "探索方案" : "Exploring Solutions"} color="orange" className={EB} />
-        <h2 className={`mt-6 ${heading}`}>{lang === "zh" ? "探索方案" : "Explore solutions"}</h2>
+        <h2 className={`mt-3 sm:mt-6 ${heading}`}>{lang === "zh" ? "探索方案" : "Explore solutions"}</h2>
         <Flourish />
 
         <div className="mt-12 space-y-14">
@@ -587,7 +587,7 @@ export default function PaymentTickerPage() {
       <section className="relative mx-3 px-6 py-12 sm:mx-6 sm:px-10 sm:py-20 lg:px-14 lg:py-24">
         <DotGrid className="absolute right-10 top-14 hidden lg:grid" />
         <Eyebrow label={lang === "zh" ? "结果展示" : "Final Showcase"} color="orange" className={EB} />
-        <h2 className={`mt-6 ${heading}`}>{lang === "zh" ? "结果展示" : "Key results"}</h2>
+        <h2 className={`mt-3 sm:mt-6 ${heading}`}>{lang === "zh" ? "结果展示" : "Key results"}</h2>
         <Flourish />
 
         <div className="mt-12 space-y-14">
@@ -615,7 +615,7 @@ export default function PaymentTickerPage() {
       <section className="relative mx-3 px-6 py-12 sm:mx-6 sm:px-10 sm:py-20 lg:px-14 lg:py-24">
         <DotGrid className="absolute right-10 top-14 hidden lg:grid" />
         <Eyebrow label={lang === "zh" ? "心得" : "Reflection"} color="orange" className={EB} />
-        <h2 className={`mt-6 ${heading}`}>{lang === "zh" ? "心得体会" : "Insights & Reflections"}</h2>
+        <h2 className={`mt-3 sm:mt-6 ${heading}`}>{lang === "zh" ? "心得体会" : "Insights & Reflections"}</h2>
         <Flourish />
         <p className="mt-6 max-w-3xl text-base leading-relaxed text-ink sm:text-lg">{t(lang, REFLECTION)}</p>
       </section>

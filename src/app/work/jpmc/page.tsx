@@ -274,7 +274,7 @@ export default function JpmcPage() {
       <section className="relative mx-3 px-6 pb-8 pt-14 sm:mx-6 sm:px-10 sm:py-20 lg:px-14 lg:py-24">
         <DotGrid className="absolute right-10 top-14 hidden lg:grid" />
         <Eyebrow label={lang === "zh" ? "用户挑战" : "User Challenges"} color="periwinkle" className="!text-sm" />
-        <h2 className={`mt-6 ${heading}`}>
+        <h2 className={`mt-3 sm:mt-6 ${heading}`}>
           {lang === "zh" ? "设计协作，不该困在重复沟通里" : "Repetitive communication in collaboration"}
         </h2>
         <Flourish />
@@ -314,7 +314,7 @@ export default function JpmcPage() {
               </span>
               <Eyebrow label={lang === "zh" ? "项目目标" : "Project Objectives"} color="periwinkle" className="!text-sm" />
             </div>
-            <h2 className={`mt-6 ${heading}`}>
+            <h2 className={`mt-3 sm:mt-6 ${heading}`}>
               {lang === "zh" ? "建立统一的协作平台" : "A unified collaboration platform"}
             </h2>
             <Flourish />
@@ -362,7 +362,7 @@ export default function JpmcPage() {
         <div className="grid gap-8 lg:grid-cols-2 lg:items-center lg:gap-14">
           <div>
             <Eyebrow label={lang === "zh" ? "调研工作坊" : "Research Workshop"} color="periwinkle" className="!text-sm" />
-            <h2 className={`mt-6 ${heading}`}>{lang === "zh" ? "核心用户调研" : "Core User Research"}</h2>
+            <h2 className={`mt-3 sm:mt-6 ${heading}`}>{lang === "zh" ? "核心用户调研" : "Core User Research"}</h2>
             <Flourish />
             <p className="mt-6 text-base leading-relaxed text-ink sm:text-lg">
               {lang === "zh"
@@ -424,7 +424,7 @@ export default function JpmcPage() {
       <section className="relative mx-3 px-6 py-12 sm:mx-6 sm:px-10 sm:py-20 lg:px-14 lg:py-24">
         <DotGrid className="absolute right-10 top-14 hidden lg:grid" />
         <Eyebrow label={lang === "zh" ? "心得" : "Reflection"} color="orange" className="!text-sm" />
-        <h2 className={`mt-6 ${heading}`}>{lang === "zh" ? "心得体会" : "Insights & Reflections"}</h2>
+        <h2 className={`mt-3 sm:mt-6 ${heading}`}>{lang === "zh" ? "心得体会" : "Insights & Reflections"}</h2>
         <Flourish />
         <p className="mt-6 max-w-3xl text-base leading-relaxed text-ink sm:text-lg">
           {lang === "zh"
