@@ -216,7 +216,7 @@ const SOLUTIONS: Scenario[] = [
       },
       {
         label: { en: "Final Plan", zh: "最终方案" },
-        name: { en: "Simple Confirmation Modal", zh: "简洁确认弹窗" },
+        name: { en: "Confirmation Modal", zh: "简洁确认弹窗" },
         img: "/projects/payment/sol-all-simple.png",
         final: true,
         adv: [
