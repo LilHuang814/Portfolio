@@ -36,6 +36,18 @@
     flex-direction: column;
     justify-content: space-between;
     overflow: hidden;
+    position: relative;
+  }
+
+  /* ---- Abstract piano-keys motif (top-right, bleeds off corner) ---- */
+  .piano {
+    position: absolute;
+    top: -58px;
+    right: -70px;
+    width: 470px;
+    height: 217px;
+    transform: rotate(14deg);
+    transform-origin: 100% 0;
   }
 
   /* ---- Wordmark (signature, top) ---- */
@@ -142,6 +154,29 @@
 </head>
 <body>
   <div class="poster">
+
+    <!-- Abstract piano keys (music motif, top-right) -->
+    <div class="piano" aria-hidden="true">
+      <svg width="470" height="217" viewBox="-20 -50 520 240">
+        <!-- keybed / body -->
+        <rect x="-14" y="-40" width="486" height="204" rx="16" fill="#17160F"/>
+        <!-- white keys (paper); ink body shows through the gaps -->
+        <rect x="0"   y="0" width="52" height="150" rx="8" fill="#F1EDE3"/>
+        <rect x="58"  y="0" width="52" height="150" rx="8" fill="#F1EDE3"/>
+        <rect x="116" y="0" width="52" height="150" rx="8" fill="#F1EDE3"/>
+        <rect x="174" y="0" width="52" height="150" rx="8" fill="#F1EDE3"/>
+        <rect x="232" y="0" width="52" height="150" rx="8" fill="#F1EDE3"/>
+        <rect x="290" y="0" width="52" height="150" rx="8" fill="#F1EDE3"/>
+        <rect x="348" y="0" width="52" height="150" rx="8" fill="#F1EDE3"/>
+        <rect x="406" y="0" width="52" height="150" rx="8" fill="#F1EDE3"/>
+        <!-- black keys (ink) -->
+        <rect x="40"  y="0" width="30" height="92" rx="4" fill="#17160F"/>
+        <rect x="98"  y="0" width="30" height="92" rx="4" fill="#17160F"/>
+        <rect x="214" y="0" width="30" height="92" rx="4" fill="#17160F"/>
+        <rect x="272" y="0" width="30" height="92" rx="4" fill="#17160F"/>
+        <rect x="330" y="0" width="30" height="92" rx="4" fill="#17160F"/>
+      </svg>
+    </div>
 
     <!-- Wordmark -->
     <header class="wordmark">
